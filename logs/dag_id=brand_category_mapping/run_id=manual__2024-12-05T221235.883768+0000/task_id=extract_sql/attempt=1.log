@@ -1,0 +1,187 @@
+[2024-12-05T22:13:02.489+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:13:02.502+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:12:35.883768+00:00 [queued]>
+[2024-12-05T22:13:02.509+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:12:35.883768+00:00 [queued]>
+[2024-12-05T22:13:02.509+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:13:02.521+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:12:35.883768+00:00
+[2024-12-05T22:13:02.527+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:13:02.528+0000] {standard_task_runner.py:72} INFO - Started process 6651 to run task
+[2024-12-05T22:13:02.529+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:12:35.883768+00:00', '--job-id', '1447', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpyobfbn60']
+[2024-12-05T22:13:02.530+0000] {standard_task_runner.py:105} INFO - Job 1447: Subtask extract_sql
+[2024-12-05T22:13:02.566+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:12:35.883768+00:00 [running]> on host c7780884450d
+[2024-12-05T22:13:02.629+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:12:35.883768+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:12:35.883768+00:00'
+[2024-12-05T22:13:02.630+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:13:02.646+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **orangetoys** - kids, toys
+2. **orbotix** - electronics, toys
+3. **orchestra** - apparel, kids
+4. **oregon** - electronics, appliances
+5. **organickitchen** - food, medicine
+6. **organicshop** - cosmetics, medicine
+7. **organiczone** - cosmetics, medicine
+8. **oribel** - kids, furniture
+9. **orico** - electronics, accessories
+10. **orient** - appliances, electronics
+11. **origami** - furniture, appliances
+12. **original** - apparel, accessories
+13. **originalam.net** - apparel, accessories
+14. **originalamnet** - apparel, accessories
+15. **originalfittools** - sport, accessories
+16. **origins** - cosmetics, medicine
+17. **orijen** - food, medicine
+18. **orimag** - electronics
+19. **orion** - electronics, appliances
+20. **oris** - accessories, electronics
+21. **orivel** - accessories, apparel
+22. **orjade** - accessories, apparel
+23. **orla** - apparel
+24. **orliman** - medicine, accessories
+25. **orly** - cosmetics, accessories
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('orangetoys', 'kids'),
+    ('orbotix', 'electronics'),
+    ('orbotix', 'toys'),
+    ('orchestra', 'apparel'),
+    ('orchestra', 'kids'),
+    ('oregon', 'electronics'),
+    ('oregon', 'appliances'),
+    ('organickitchen', 'medicine'),
+    ('organicshop', 'medicine'),
+    ('organiczone', 'medicine'),
+    ('oribel', 'kids'),
+    ('oribel', 'furniture'),
+    ('orico', 'electronics'),
+    ('orico', 'accessories'),
+    ('orient', 'appliances'),
+    ('orient', 'electronics'),
+    ('origami', 'furniture'),
+    ('origami', 'appliances'),
+    ('original', 'apparel'),
+    ('original', 'accessories'),
+    ('originalam.net', 'apparel'),
+    ('originalam.net', 'accessories'),
+    ('originalamnet', 'apparel'),
+    ('originalamnet', 'accessories'),
+    ('originalfittools', 'sport'),
+    ('originalfittools', 'accessories'),
+    ('origins', 'medicine'),
+    ('origins', 'cosmetics'),
+    ('orijen', 'medicine'),
+    ('orijen', 'food'),
+    ('orimag', 'electronics'),
+    ('orion', 'electronics'),
+    ('orion', 'appliances'),
+    ('oris', 'accessories'),
+    ('oris', 'electronics'),
+    ('orivel', 'accessories'),
+    ('orivel', 'apparel'),
+    ('orjade', 'accessories'),
+    ('orjade', 'apparel'),
+    ('orla', 'apparel'),
+    ('orliman', 'medicine'),
+    ('orliman', 'accessories'),
+    ('orly', 'cosmetics'),
+    ('orly', 'accessories');
+```
+[2024-12-05T22:13:02.647+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('orangetoys', 'kids'),
+    ('orbotix', 'electronics'),
+    ('orbotix', 'toys'),
+    ('orchestra', 'apparel'),
+    ('orchestra', 'kids'),
+    ('oregon', 'electronics'),
+    ('oregon', 'appliances'),
+    ('organickitchen', 'medicine'),
+    ('organicshop', 'medicine'),
+    ('organiczone', 'medicine'),
+    ('oribel', 'kids'),
+    ('oribel', 'furniture'),
+    ('orico', 'electronics'),
+    ('orico', 'accessories'),
+    ('orient', 'appliances'),
+    ('orient', 'electronics'),
+    ('origami', 'furniture'),
+    ('origami', 'appliances'),
+    ('original', 'apparel'),
+    ('original', 'accessories'),
+    ('originalam.net', 'apparel'),
+    ('originalam.net', 'accessories'),
+    ('originalamnet', 'apparel'),
+    ('originalamnet', 'accessories'),
+    ('originalfittools', 'sport'),
+    ('originalfittools', 'accessories'),
+    ('origins', 'medicine'),
+    ('origins', 'cosmetics'),
+    ('orijen', 'medicine'),
+    ('orijen', 'food'),
+    ('orimag', 'electronics'),
+    ('orion', 'electronics'),
+    ('orion', 'appliances'),
+    ('oris', 'accessories'),
+    ('oris', 'electronics'),
+    ('orivel', 'accessories'),
+    ('orivel', 'apparel'),
+    ('orjade', 'accessories'),
+    ('orjade', 'apparel'),
+    ('orla', 'apparel'),
+    ('orliman', 'medicine'),
+    ('orliman', 'accessories'),
+    ('orly', 'cosmetics'),
+    ('orly', 'accessories');
+[2024-12-05T22:13:02.647+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('orangetoys', 'kids'),
+    ('orbotix', 'electronics'),
+    ('orbotix', 'toys'),
+    ('orchestra', 'apparel'),
+    ('orchestra', 'kids'),
+    ('oregon', 'electronics'),
+    ('oregon', 'appliances'),
+    ('organickitchen', 'medicine'),
+    ('organicshop', 'medicine'),
+    ('organiczone', 'medicine'),
+    ('oribel', 'kids'),
+    ('oribel', 'furniture'),
+    ('orico', 'electronics'),
+    ('orico', 'accessories'),
+    ('orient', 'appliances'),
+    ('orient', 'electronics'),
+    ('origami', 'furniture'),
+    ('origami', 'appliances'),
+    ('original', 'apparel'),
+    ('original', 'accessories'),
+    ('originalam.net', 'apparel'),
+    ('originalam.net', 'accessories'),
+    ('originalamnet', 'apparel'),
+    ('originalamnet', 'accessories'),
+    ('originalfittools', 'sport'),
+    ('originalfittools', 'accessories'),
+    ('origins', 'medicine'),
+    ('origins', 'cosmetics'),
+    ('orijen', 'medicine'),
+    ('orijen', 'food'),
+    ('orimag', 'electronics'),
+    ('orion', 'electronics'),
+    ('orion', 'appliances'),
+    ('oris', 'accessories'),
+    ('oris', 'electronics'),
+    ('orivel', 'accessories'),
+    ('orivel', 'apparel'),
+    ('orjade', 'accessories'),
+    ('orjade', 'apparel'),
+    ('orla', 'apparel'),
+    ('orliman', 'medicine'),
+    ('orliman', 'accessories'),
+    ('orly', 'cosmetics'),
+    ('orly', 'accessories');
+[2024-12-05T22:13:02.663+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:13:02.664+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:12:35.883768+00:00, execution_date=20241205T221235, start_date=20241205T221302, end_date=20241205T221302
+[2024-12-05T22:13:02.702+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:13:02.717+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:13:02.719+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,174 @@
+[2024-12-05T21:20:41.485+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:20:41.497+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:20:11.347156+00:00 [queued]>
+[2024-12-05T21:20:41.504+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:20:11.347156+00:00 [queued]>
+[2024-12-05T21:20:41.506+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:20:41.521+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:20:11.347156+00:00
+[2024-12-05T21:20:41.528+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3864) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:20:41.530+0000] {standard_task_runner.py:72} INFO - Started process 3865 to run task
+[2024-12-05T21:20:41.530+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:20:11.347156+00:00', '--job-id', '847', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpc_ihnxho']
+[2024-12-05T21:20:41.533+0000] {standard_task_runner.py:105} INFO - Job 847: Subtask extract_sql
+[2024-12-05T21:20:41.571+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:20:11.347156+00:00 [running]> on host c7780884450d
+[2024-12-05T21:20:41.665+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:20:11.347156+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:20:11.347156+00:00'
+[2024-12-05T21:20:41.666+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:20:41.692+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the results of the searches and the assigned categories for each brand:
+
+1. **delsot**: electronics
+2. **delta**: appliances, electronics
+3. **deltalux**: electronics, appliances
+4. **delux**: furniture, appliances
+5. **deluxe**: furniture, appliances
+6. **demark**: electronics, appliances
+7. **demi**: apparel, accessories
+8. **demidovskijzavod**: construction
+9. **demiray**: electronics
+10. **demix**: sport, apparel
+11. **dendy**: electronics
+12. **denn**: electronics
+13. **denon**: electronics
+14. **denso**: auto, electronics
+15. **denzel**: electronics
+16. **deonica**: medicine, cosmetics
+17. **deoproce**: cosmetics, medicine
+18. **depileve**: cosmetics, medicine
+19. **depo**: construction, appliances
+20. **deppa**: electronics
+21. **derevaski**: furniture
+22. **dermacol**: cosmetics, medicine
+23. **derspur**: stationery
+24. **derwent**: stationery
+25. **desatoekorolevstvo**: furniture, accessories
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('delsot', 'electronics'),
+    ('delta', 'appliances'),
+    ('delta', 'electronics'),
+    ('deltalux', 'electronics'),
+    ('deltalux', 'appliances'),
+    ('delux', 'furniture'),
+    ('delux', 'appliances'),
+    ('deluxe', 'furniture'),
+    ('deluxe', 'appliances'),
+    ('demark', 'electronics'),
+    ('demark', 'appliances'),
+    ('demi', 'apparel'),
+    ('demi', 'accessories'),
+    ('demidovskijzavod', 'construction'),
+    ('demiray', 'electronics'),
+    ('demix', 'sport'),
+    ('demix', 'apparel'),
+    ('dendy', 'electronics'),
+    ('denn', 'electronics'),
+    ('denon', 'electronics'),
+    ('denso', 'auto'),
+    ('denso', 'electronics'),
+    ('denzel', 'electronics'),
+    ('deonica', 'medicine'),
+    ('deonica', 'cosmetics'),
+    ('deoproce', 'cosmetics'),
+    ('deoproce', 'medicine'),
+    ('depileve', 'cosmetics'),
+    ('depileve', 'medicine'),
+    ('depo', 'construction'),
+    ('depo', 'appliances'),
+    ('deppa', 'electronics'),
+    ('derevaski', 'furniture'),
+    ('dermacol', 'cosmetics'),
+    ('dermacol', 'medicine'),
+    ('derspur', 'stationery'),
+    ('derwent', 'stationery'),
+    ('desatoekorolevstvo', 'furniture'),
+    ('desatoekorolevstvo', 'accessories');
+```
+
+This SQL statement maps each brand to its respective categories based on the searches conducted.
+[2024-12-05T21:20:41.693+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('delsot', 'electronics'),
+    ('delta', 'appliances'),
+    ('delta', 'electronics'),
+    ('deltalux', 'electronics'),
+    ('deltalux', 'appliances'),
+    ('delux', 'furniture'),
+    ('delux', 'appliances'),
+    ('deluxe', 'furniture'),
+    ('deluxe', 'appliances'),
+    ('demark', 'electronics'),
+    ('demark', 'appliances'),
+    ('demi', 'apparel'),
+    ('demi', 'accessories'),
+    ('demidovskijzavod', 'construction'),
+    ('demiray', 'electronics'),
+    ('demix', 'sport'),
+    ('demix', 'apparel'),
+    ('dendy', 'electronics'),
+    ('denn', 'electronics'),
+    ('denon', 'electronics'),
+    ('denso', 'auto'),
+    ('denso', 'electronics'),
+    ('denzel', 'electronics'),
+    ('deonica', 'medicine'),
+    ('deonica', 'cosmetics'),
+    ('deoproce', 'cosmetics'),
+    ('deoproce', 'medicine'),
+    ('depileve', 'cosmetics'),
+    ('depileve', 'medicine'),
+    ('depo', 'construction'),
+    ('depo', 'appliances'),
+    ('deppa', 'electronics'),
+    ('derevaski', 'furniture'),
+    ('dermacol', 'cosmetics'),
+    ('dermacol', 'medicine'),
+    ('derspur', 'stationery'),
+    ('derwent', 'stationery'),
+    ('desatoekorolevstvo', 'furniture'),
+    ('desatoekorolevstvo', 'accessories');
+[2024-12-05T21:20:41.694+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('delsot', 'electronics'),
+    ('delta', 'appliances'),
+    ('delta', 'electronics'),
+    ('deltalux', 'electronics'),
+    ('deltalux', 'appliances'),
+    ('delux', 'furniture'),
+    ('delux', 'appliances'),
+    ('deluxe', 'furniture'),
+    ('deluxe', 'appliances'),
+    ('demark', 'electronics'),
+    ('demark', 'appliances'),
+    ('demi', 'apparel'),
+    ('demi', 'accessories'),
+    ('demidovskijzavod', 'construction'),
+    ('demiray', 'electronics'),
+    ('demix', 'sport'),
+    ('demix', 'apparel'),
+    ('dendy', 'electronics'),
+    ('denn', 'electronics'),
+    ('denon', 'electronics'),
+    ('denso', 'auto'),
+    ('denso', 'electronics'),
+    ('denzel', 'electronics'),
+    ('deonica', 'medicine'),
+    ('deonica', 'cosmetics'),
+    ('deoproce', 'cosmetics'),
+    ('deoproce', 'medicine'),
+    ('depileve', 'cosmetics'),
+    ('depileve', 'medicine'),
+    ('depo', 'construction'),
+    ('depo', 'appliances'),
+    ('deppa', 'electronics'),
+    ('derevaski', 'furniture'),
+    ('dermacol', 'cosmetics'),
+    ('dermacol', 'medicine'),
+    ('derspur', 'stationery'),
+    ('derwent', 'stationery'),
+    ('desatoekorolevstvo', 'furniture'),
+    ('desatoekorolevstvo', 'accessories');
+[2024-12-05T21:20:41.722+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:20:41.722+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:20:11.347156+00:00, execution_date=20241205T212011, start_date=20241205T212041, end_date=20241205T212041
+[2024-12-05T21:20:41.744+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:20:41.768+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:20:41.771+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

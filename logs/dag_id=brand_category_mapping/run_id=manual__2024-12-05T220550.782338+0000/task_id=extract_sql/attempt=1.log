@@ -1,0 +1,184 @@
+[2024-12-05T22:06:19.789+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:06:19.801+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:05:50.782338+00:00 [queued]>
+[2024-12-05T22:06:19.808+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:05:50.782338+00:00 [queued]>
+[2024-12-05T22:06:19.808+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:06:19.819+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:05:50.782338+00:00
+[2024-12-05T22:06:19.825+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6286) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:06:19.826+0000] {standard_task_runner.py:72} INFO - Started process 6287 to run task
+[2024-12-05T22:06:19.826+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:05:50.782338+00:00', '--job-id', '1369', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmplsyp016q']
+[2024-12-05T22:06:19.828+0000] {standard_task_runner.py:105} INFO - Job 1369: Subtask extract_sql
+[2024-12-05T22:06:19.862+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:05:50.782338+00:00 [running]> on host c7780884450d
+[2024-12-05T22:06:19.919+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:05:50.782338+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:05:50.782338+00:00'
+[2024-12-05T22:06:19.920+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:06:19.937+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results:
+
+1. **moov** - apparel, accessories
+2. **mooveandfun** - kids, accessories
+3. **mopeksbel** - apparel
+4. **mora** - appliances, electronics
+5. **morakniv** - accessories, sport
+6. **morel** - electronics, appliances
+7. **morita** - appliances, electronics
+8. **moroshka** - kids
+9. **morphyrichards** - appliances
+10. **moschino** - apparel, accessories
+11. **mosconi** - electronics, auto
+12. **moser** - appliances, electronics
+13. **moshi** - electronics, accessories
+14. **mossani** - apparel, accessories
+15. **mostykultury** - accessories
+16. **motivyotdyha** - apparel, sport
+17. **motogp** - sport, apparel
+18. **motorcraft** - auto, appliances
+19. **motorola** - electronics, computers
+20. **motul** - auto, appliances
+21. **moulinex** - appliances
+22. **moulinvilla** - appliances
+23. **mountainbuggy** - kids, accessories
+24. **moxom** - electronics, accessories
+25. **mozaika-sintez** - stationery
+
+Now, here’s the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('moov', 'apparel'),
+    ('moov', 'accessories'),
+    ('mooveandfun', 'kids'),
+    ('mooveandfun', 'accessories'),
+    ('mopeksbel', 'apparel'),
+    ('mora', 'appliances'),
+    ('mora', 'electronics'),
+    ('morakniv', 'accessories'),
+    ('morakniv', 'sport'),
+    ('morel', 'electronics'),
+    ('morel', 'appliances'),
+    ('morita', 'appliances'),
+    ('morita', 'electronics'),
+    ('moroshka', 'kids'),
+    ('morphyrichards', 'appliances'),
+    ('moschino', 'apparel'),
+    ('moschino', 'accessories'),
+    ('mosconi', 'electronics'),
+    ('mosconi', 'auto'),
+    ('moser', 'appliances'),
+    ('moser', 'electronics'),
+    ('moshi', 'electronics'),
+    ('moshi', 'accessories'),
+    ('mossani', 'apparel'),
+    ('mossani', 'accessories'),
+    ('mostykultury', 'accessories'),
+    ('motivyotdyha', 'apparel'),
+    ('motivyotdyha', 'sport'),
+    ('motogp', 'sport'),
+    ('motogp', 'apparel'),
+    ('motorcraft', 'auto'),
+    ('motorcraft', 'appliances'),
+    ('motorola', 'electronics'),
+    ('motorola', 'computers'),
+    ('motul', 'auto'),
+    ('motul', 'appliances'),
+    ('moulinex', 'appliances'),
+    ('moulinvilla', 'appliances'),
+    ('mountainbuggy', 'kids'),
+    ('mountainbuggy', 'accessories'),
+    ('moxom', 'electronics'),
+    ('moxom', 'accessories'),
+    ('mozaika-sintez', 'stationery');
+```
+[2024-12-05T22:06:19.938+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('moov', 'apparel'),
+    ('moov', 'accessories'),
+    ('mooveandfun', 'kids'),
+    ('mooveandfun', 'accessories'),
+    ('mopeksbel', 'apparel'),
+    ('mora', 'appliances'),
+    ('mora', 'electronics'),
+    ('morakniv', 'accessories'),
+    ('morakniv', 'sport'),
+    ('morel', 'electronics'),
+    ('morel', 'appliances'),
+    ('morita', 'appliances'),
+    ('morita', 'electronics'),
+    ('moroshka', 'kids'),
+    ('morphyrichards', 'appliances'),
+    ('moschino', 'apparel'),
+    ('moschino', 'accessories'),
+    ('mosconi', 'electronics'),
+    ('mosconi', 'auto'),
+    ('moser', 'appliances'),
+    ('moser', 'electronics'),
+    ('moshi', 'electronics'),
+    ('moshi', 'accessories'),
+    ('mossani', 'apparel'),
+    ('mossani', 'accessories'),
+    ('mostykultury', 'accessories'),
+    ('motivyotdyha', 'apparel'),
+    ('motivyotdyha', 'sport'),
+    ('motogp', 'sport'),
+    ('motogp', 'apparel'),
+    ('motorcraft', 'auto'),
+    ('motorcraft', 'appliances'),
+    ('motorola', 'electronics'),
+    ('motorola', 'computers'),
+    ('motul', 'auto'),
+    ('motul', 'appliances'),
+    ('moulinex', 'appliances'),
+    ('moulinvilla', 'appliances'),
+    ('mountainbuggy', 'kids'),
+    ('mountainbuggy', 'accessories'),
+    ('moxom', 'electronics'),
+    ('moxom', 'accessories'),
+    ('mozaika-sintez', 'stationery');
+[2024-12-05T22:06:19.939+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('moov', 'apparel'),
+    ('moov', 'accessories'),
+    ('mooveandfun', 'kids'),
+    ('mooveandfun', 'accessories'),
+    ('mopeksbel', 'apparel'),
+    ('mora', 'appliances'),
+    ('mora', 'electronics'),
+    ('morakniv', 'accessories'),
+    ('morakniv', 'sport'),
+    ('morel', 'electronics'),
+    ('morel', 'appliances'),
+    ('morita', 'appliances'),
+    ('morita', 'electronics'),
+    ('moroshka', 'kids'),
+    ('morphyrichards', 'appliances'),
+    ('moschino', 'apparel'),
+    ('moschino', 'accessories'),
+    ('mosconi', 'electronics'),
+    ('mosconi', 'auto'),
+    ('moser', 'appliances'),
+    ('moser', 'electronics'),
+    ('moshi', 'electronics'),
+    ('moshi', 'accessories'),
+    ('mossani', 'apparel'),
+    ('mossani', 'accessories'),
+    ('mostykultury', 'accessories'),
+    ('motivyotdyha', 'apparel'),
+    ('motivyotdyha', 'sport'),
+    ('motogp', 'sport'),
+    ('motogp', 'apparel'),
+    ('motorcraft', 'auto'),
+    ('motorcraft', 'appliances'),
+    ('motorola', 'electronics'),
+    ('motorola', 'computers'),
+    ('motul', 'auto'),
+    ('motul', 'appliances'),
+    ('moulinex', 'appliances'),
+    ('moulinvilla', 'appliances'),
+    ('mountainbuggy', 'kids'),
+    ('mountainbuggy', 'accessories'),
+    ('moxom', 'electronics'),
+    ('moxom', 'accessories'),
+    ('mozaika-sintez', 'stationery');
+[2024-12-05T22:06:19.956+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:06:19.957+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:05:50.782338+00:00, execution_date=20241205T220550, start_date=20241205T220619, end_date=20241205T220619
+[2024-12-05T22:06:20.000+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:06:20.021+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:06:20.024+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

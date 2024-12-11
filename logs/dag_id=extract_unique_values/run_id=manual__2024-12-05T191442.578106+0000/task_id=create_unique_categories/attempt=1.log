@@ -1,0 +1,32 @@
+[2024-12-05T19:14:48.597+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T19:14:48.609+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T19:14:42.578106+00:00 [queued]>
+[2024-12-05T19:14:48.616+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T19:14:42.578106+00:00 [queued]>
+[2024-12-05T19:14:48.617+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T19:14:48.637+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): create_unique_categories> on 2024-12-05 19:14:42.578106+00:00
+[2024-12-05T19:14:48.645+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1008) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T19:14:48.647+0000] {standard_task_runner.py:72} INFO - Started process 1009 to run task
+[2024-12-05T19:14:48.647+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_unique_values', 'create_unique_categories', 'manual__2024-12-05T19:14:42.578106+00:00', '--job-id', '503', '--raw', '--subdir', 'DAGS_FOLDER/select_distinct_brands_categories.py', '--cfg-path', '/tmp/tmpupa1y696']
+[2024-12-05T19:14:48.648+0000] {standard_task_runner.py:105} INFO - Job 503: Subtask create_unique_categories
+[2024-12-05T19:14:48.685+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T19:14:42.578106+00:00 [running]> on host c7780884450d
+[2024-12-05T19:14:48.749+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_unique_values' AIRFLOW_CTX_TASK_ID='create_unique_categories' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T19:14:42.578106+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T19:14:42.578106+00:00'
+[2024-12-05T19:14:48.750+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T19:14:48.771+0000] {select_distinct_brands_categories.py:176} INFO - Обрабатываем ключ: 5
+[2024-12-05T19:14:48.772+0000] {select_distinct_brands_categories.py:191} INFO - Источник категорий: DDS.categories_Feb
+[2024-12-05T19:14:48.772+0000] {select_distinct_brands_categories.py:192} INFO - Целевая таблица категорий: DDS.unique_categories
+[2024-12-05T19:14:48.778+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T19:14:49.411+0000] {select_distinct_brands_categories.py:213} INFO - Соединение с PostgreSQL установлено.
+[2024-12-05T19:14:49.676+0000] {select_distinct_brands_categories.py:226} INFO - Целевая таблица 'DDS.unique_categories' создана или уже существует.
+[2024-12-05T19:14:49.858+0000] {select_distinct_brands_categories.py:237} INFO - Количество уникальных категорий в источнике: 138
+[2024-12-05T19:14:49.946+0000] {select_distinct_brands_categories.py:248} INFO - Количество категорий в целевой таблице до вставки: 135
+[2024-12-05T19:14:50.126+0000] {select_distinct_brands_categories.py:266} INFO - Новые уникальные категории добавлены в 'DDS.unique_categories': 3 записей.
+[2024-12-05T19:14:50.308+0000] {select_distinct_brands_categories.py:277} INFO - Количество категорий в целевой таблице после вставки: 138
+[2024-12-05T19:14:50.309+0000] {select_distinct_brands_categories.py:287} INFO - Курсор закрыт.
+[2024-12-05T19:14:50.309+0000] {select_distinct_brands_categories.py:290} INFO - Соединение с PostgreSQL закрыто.
+[2024-12-05T19:14:50.310+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T19:14:50.317+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T19:14:50.317+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extract_unique_values, task_id=create_unique_categories, run_id=manual__2024-12-05T19:14:42.578106+00:00, execution_date=20241205T191442, start_date=20241205T191448, end_date=20241205T191450
+[2024-12-05T19:14:50.347+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T19:14:50.364+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T19:14:50.367+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,130 @@
+[2024-12-05T21:40:35.026+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:40:35.042+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:40:08.866282+00:00 [queued]>
+[2024-12-05T21:40:35.055+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:40:08.866282+00:00 [queued]>
+[2024-12-05T21:40:35.055+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:40:35.071+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:40:08.866282+00:00
+[2024-12-05T21:40:35.078+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4921) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:40:35.080+0000] {standard_task_runner.py:72} INFO - Started process 4922 to run task
+[2024-12-05T21:40:35.080+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:40:08.866282+00:00', '--job-id', '1075', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp0hpu8e5p']
+[2024-12-05T21:40:35.082+0000] {standard_task_runner.py:105} INFO - Job 1075: Subtask extract_sql
+[2024-12-05T21:40:35.121+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:40:08.866282+00:00 [running]> on host c7780884450d
+[2024-12-05T21:40:35.186+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:40:08.866282+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:40:08.866282+00:00'
+[2024-12-05T21:40:35.187+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:40:35.206+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of each brand to its predefined categories based on the search results:
+
+1. **hjc** - auto (motorcycle helmets)
+2. **hkaudio** - electronics (audio equipment)
+3. **hktyre** - auto (tires)
+4. **hlebsol** - medicine (health products)
+5. **hobbi** - stationery (craft supplies)
+6. **hobbyworld** - kids (toys and games)
+7. **hobot** - appliances (robotic vacuum cleaners)
+8. **hoco** - accessories (mobile phone accessories)
+9. **hohner** - accessories (musical instruments)
+10. **hoka** - apparel (athletic footwear)
+11. **hola** - accessories (cosmetics and beauty products)
+12. **holatoys** - kids (toys)
+13. **holder** - accessories (various holders and stands)
+14. **holicy** - apparel (clothing)
+15. **holiday** - apparel (seasonal clothing)
+16. **holikaholika** - cosmetics (beauty products)
+17. **hollicy** - apparel (clothing)
+18. **homage** - apparel (clothing)
+19. **homeart** - furniture (home decor)
+20. **homeelement** - appliances (home products)
+21. **homelife** - furniture (home decor)
+22. **homestar** - appliances (home products)
+23. **homs** - furniture (home furniture)
+24. **homy** - furniture (home decor)
+25. **honda** - auto (vehicles and motorcycles)
+
+Now, here’s the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('hjc', 'auto'),
+    ('hkaudio', 'electronics'),
+    ('hktyre', 'auto'),
+    ('hlebsol', 'medicine'),
+    ('hobbi', 'stationery'),
+    ('hobbyworld', 'kids'),
+    ('hobot', 'appliances'),
+    ('hoco', 'accessories'),
+    ('hohner', 'accessories'),
+    ('hoka', 'apparel'),
+    ('hola', 'accessories'),
+    ('holatoys', 'kids'),
+    ('holder', 'accessories'),
+    ('holicy', 'apparel'),
+    ('holiday', 'apparel'),
+    ('holikaholika', 'cosmetics'),
+    ('hollicy', 'apparel'),
+    ('homage', 'apparel'),
+    ('homeart', 'furniture'),
+    ('homeelement', 'appliances'),
+    ('homelife', 'furniture'),
+    ('homestar', 'appliances'),
+    ('homs', 'furniture'),
+    ('homy', 'furniture'),
+    ('honda', 'auto');
+```
+[2024-12-05T21:40:35.207+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('hjc', 'auto'),
+    ('hkaudio', 'electronics'),
+    ('hktyre', 'auto'),
+    ('hlebsol', 'medicine'),
+    ('hobbi', 'stationery'),
+    ('hobbyworld', 'kids'),
+    ('hobot', 'appliances'),
+    ('hoco', 'accessories'),
+    ('hohner', 'accessories'),
+    ('hoka', 'apparel'),
+    ('hola', 'accessories'),
+    ('holatoys', 'kids'),
+    ('holder', 'accessories'),
+    ('holicy', 'apparel'),
+    ('holiday', 'apparel'),
+    ('holikaholika', 'cosmetics'),
+    ('hollicy', 'apparel'),
+    ('homage', 'apparel'),
+    ('homeart', 'furniture'),
+    ('homeelement', 'appliances'),
+    ('homelife', 'furniture'),
+    ('homestar', 'appliances'),
+    ('homs', 'furniture'),
+    ('homy', 'furniture'),
+    ('honda', 'auto');
+[2024-12-05T21:40:35.208+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('hjc', 'auto'),
+    ('hkaudio', 'electronics'),
+    ('hktyre', 'auto'),
+    ('hlebsol', 'medicine'),
+    ('hobbi', 'stationery'),
+    ('hobbyworld', 'kids'),
+    ('hobot', 'appliances'),
+    ('hoco', 'accessories'),
+    ('hohner', 'accessories'),
+    ('hoka', 'apparel'),
+    ('hola', 'accessories'),
+    ('holatoys', 'kids'),
+    ('holder', 'accessories'),
+    ('holicy', 'apparel'),
+    ('holiday', 'apparel'),
+    ('holikaholika', 'cosmetics'),
+    ('hollicy', 'apparel'),
+    ('homage', 'apparel'),
+    ('homeart', 'furniture'),
+    ('homeelement', 'appliances'),
+    ('homelife', 'furniture'),
+    ('homestar', 'appliances'),
+    ('homs', 'furniture'),
+    ('homy', 'furniture'),
+    ('honda', 'auto');
+[2024-12-05T21:40:35.226+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:40:35.227+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:40:08.866282+00:00, execution_date=20241205T214008, start_date=20241205T214035, end_date=20241205T214035
+[2024-12-05T21:40:35.254+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:40:35.273+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:40:35.277+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

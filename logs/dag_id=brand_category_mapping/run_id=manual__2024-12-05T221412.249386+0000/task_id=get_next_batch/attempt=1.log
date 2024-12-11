@@ -1,0 +1,22 @@
+[2024-12-05T22:14:14.946+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:14:14.957+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.get_next_batch manual__2024-12-05T22:14:12.249386+00:00 [queued]>
+[2024-12-05T22:14:14.963+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.get_next_batch manual__2024-12-05T22:14:12.249386+00:00 [queued]>
+[2024-12-05T22:14:14.963+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:14:14.976+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): get_next_batch> on 2024-12-05 22:14:12.249386+00:00
+[2024-12-05T22:14:14.982+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6719) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:14:14.983+0000] {standard_task_runner.py:72} INFO - Started process 6720 to run task
+[2024-12-05T22:14:14.983+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'get_next_batch', 'manual__2024-12-05T22:14:12.249386+00:00', '--job-id', '1463', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpvrrxd2b_']
+[2024-12-05T22:14:14.985+0000] {standard_task_runner.py:105} INFO - Job 1463: Subtask get_next_batch
+[2024-12-05T22:14:15.037+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.get_next_batch manual__2024-12-05T22:14:12.249386+00:00 [running]> on host c7780884450d
+[2024-12-05T22:14:15.109+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='get_next_batch' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:14:12.249386+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:14:12.249386+00:00'
+[2024-12-05T22:14:15.110+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:14:15.136+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:14:16.040+0000] {llm_mapping.py:73} INFO - Извлечено брендов: ['palit', 'palitra', 'palmbaby', 'palmers', 'palmolive', 'palms', 'palplay', 'pampers', 'panasonic', 'pandect', 'pandora', 'pangao', 'panier', 'panolino', 'panouge', 'pantum', 'papakarlo', 'papilla', 'parachute', 'paradiso', 'parafar', 'parallelkomiks', 'paremo', 'parfumsdemarly', 'parkcity']
+[2024-12-05T22:14:16.041+0000] {python.py:240} INFO - Done. Returned value was: {'batch': ['palit', 'palitra', 'palmbaby', 'palmers', 'palmolive', 'palms', 'palplay', 'pampers', 'panasonic', 'pandect', 'pandora', 'pangao', 'panier', 'panolino', 'panouge', 'pantum', 'papakarlo', 'papilla', 'parachute', 'paradiso', 'parafar', 'parallelkomiks', 'paremo', 'parfumsdemarly', 'parkcity'], 'next_index': 3850}
+[2024-12-05T22:14:16.061+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:14:16.062+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=get_next_batch, run_id=manual__2024-12-05T22:14:12.249386+00:00, execution_date=20241205T221412, start_date=20241205T221414, end_date=20241205T221416
+[2024-12-05T22:14:16.081+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:14:16.101+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:14:16.105+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

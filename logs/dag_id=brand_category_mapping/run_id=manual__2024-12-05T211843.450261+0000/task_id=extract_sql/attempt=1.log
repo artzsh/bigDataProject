@@ -1,0 +1,157 @@
+[2024-12-05T21:19:06.485+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:19:06.498+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:18:43.450261+00:00 [queued]>
+[2024-12-05T21:19:06.504+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:18:43.450261+00:00 [queued]>
+[2024-12-05T21:19:06.505+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:19:06.517+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:18:43.450261+00:00
+[2024-12-05T21:19:06.523+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3780) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:19:06.525+0000] {standard_task_runner.py:72} INFO - Started process 3781 to run task
+[2024-12-05T21:19:06.525+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:18:43.450261+00:00', '--job-id', '829', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp2t8nfw78']
+[2024-12-05T21:19:06.527+0000] {standard_task_runner.py:105} INFO - Job 829: Subtask extract_sql
+[2024-12-05T21:19:06.564+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:18:43.450261+00:00 [running]> on host c7780884450d
+[2024-12-05T21:19:06.631+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:18:43.450261+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:18:43.450261+00:00'
+[2024-12-05T21:19:06.632+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:19:06.651+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **cybex** - kids, accessories
+2. **dab** - electronics
+3. **dabo** - appliances
+4. **dabur** - medicine
+5. **dadget** - electronics
+6. **daesung** - appliances
+7. **daewoo** - appliances, auto
+8. **daewooelectronics** - electronics, appliances
+9. **dagee** - electronics
+10. **dageni** - electronics
+11. **dahatsu** - auto
+12. **dahon** - sport, accessories
+13. **dahua** - electronics
+14. **dainese** - apparel, accessories
+15. **daisy** - kids, stationery
+16. **daiwa** - sport, accessories
+17. **daiwerina** - apparel
+18. **dakar** - sport, auto
+19. **dalbello** - sport, apparel
+20. **dalianhantaitradecoltd** - construction
+21. **dam** - appliances
+22. **damixa** - appliances
+23. **damper** - construction
+24. **danau** - furniture
+25. **daneildesch** - electronics
+
+Now, here’s the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cybex', 'kids'),
+    ('cybex', 'accessories'),
+    ('dab', 'electronics'),
+    ('dabo', 'appliances'),
+    ('dabur', 'medicine'),
+    ('dadget', 'electronics'),
+    ('daesung', 'appliances'),
+    ('daewoo', 'appliances'),
+    ('daewoo', 'auto'),
+    ('daewooelectronics', 'electronics'),
+    ('daewooelectronics', 'appliances'),
+    ('dagee', 'electronics'),
+    ('dageni', 'electronics'),
+    ('dahatsu', 'auto'),
+    ('dahon', 'sport'),
+    ('dahon', 'accessories'),
+    ('dahua', 'electronics'),
+    ('dainese', 'apparel'),
+    ('dainese', 'accessories'),
+    ('daisy', 'kids'),
+    ('daisy', 'stationery'),
+    ('daiwa', 'sport'),
+    ('daiwa', 'accessories'),
+    ('daiwerina', 'apparel'),
+    ('dakar', 'sport'),
+    ('dakar', 'auto'),
+    ('dalbello', 'sport'),
+    ('dalbello', 'apparel'),
+    ('dalianhantaitradecoltd', 'construction'),
+    ('dam', 'appliances'),
+    ('damixa', 'appliances'),
+    ('damper', 'construction'),
+    ('danau', 'furniture'),
+    ('daneildesch', 'electronics');
+```
+[2024-12-05T21:19:06.652+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cybex', 'kids'),
+    ('cybex', 'accessories'),
+    ('dab', 'electronics'),
+    ('dabo', 'appliances'),
+    ('dabur', 'medicine'),
+    ('dadget', 'electronics'),
+    ('daesung', 'appliances'),
+    ('daewoo', 'appliances'),
+    ('daewoo', 'auto'),
+    ('daewooelectronics', 'electronics'),
+    ('daewooelectronics', 'appliances'),
+    ('dagee', 'electronics'),
+    ('dageni', 'electronics'),
+    ('dahatsu', 'auto'),
+    ('dahon', 'sport'),
+    ('dahon', 'accessories'),
+    ('dahua', 'electronics'),
+    ('dainese', 'apparel'),
+    ('dainese', 'accessories'),
+    ('daisy', 'kids'),
+    ('daisy', 'stationery'),
+    ('daiwa', 'sport'),
+    ('daiwa', 'accessories'),
+    ('daiwerina', 'apparel'),
+    ('dakar', 'sport'),
+    ('dakar', 'auto'),
+    ('dalbello', 'sport'),
+    ('dalbello', 'apparel'),
+    ('dalianhantaitradecoltd', 'construction'),
+    ('dam', 'appliances'),
+    ('damixa', 'appliances'),
+    ('damper', 'construction'),
+    ('danau', 'furniture'),
+    ('daneildesch', 'electronics');
+[2024-12-05T21:19:06.653+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cybex', 'kids'),
+    ('cybex', 'accessories'),
+    ('dab', 'electronics'),
+    ('dabo', 'appliances'),
+    ('dabur', 'medicine'),
+    ('dadget', 'electronics'),
+    ('daesung', 'appliances'),
+    ('daewoo', 'appliances'),
+    ('daewoo', 'auto'),
+    ('daewooelectronics', 'electronics'),
+    ('daewooelectronics', 'appliances'),
+    ('dagee', 'electronics'),
+    ('dageni', 'electronics'),
+    ('dahatsu', 'auto'),
+    ('dahon', 'sport'),
+    ('dahon', 'accessories'),
+    ('dahua', 'electronics'),
+    ('dainese', 'apparel'),
+    ('dainese', 'accessories'),
+    ('daisy', 'kids'),
+    ('daisy', 'stationery'),
+    ('daiwa', 'sport'),
+    ('daiwa', 'accessories'),
+    ('daiwerina', 'apparel'),
+    ('dakar', 'sport'),
+    ('dakar', 'auto'),
+    ('dalbello', 'sport'),
+    ('dalbello', 'apparel'),
+    ('dalianhantaitradecoltd', 'construction'),
+    ('dam', 'appliances'),
+    ('damixa', 'appliances'),
+    ('damper', 'construction'),
+    ('danau', 'furniture'),
+    ('daneildesch', 'electronics');
+[2024-12-05T21:19:06.671+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:19:06.672+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:18:43.450261+00:00, execution_date=20241205T211843, start_date=20241205T211906, end_date=20241205T211906
+[2024-12-05T21:19:06.699+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:19:06.718+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:19:06.721+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

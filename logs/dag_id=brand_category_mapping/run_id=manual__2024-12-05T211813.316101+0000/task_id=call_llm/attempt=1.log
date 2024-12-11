@@ -1,0 +1,142 @@
+[2024-12-05T21:18:18.929+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:18:18.942+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:18:13.316101+00:00 [queued]>
+[2024-12-05T21:18:18.949+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:18:13.316101+00:00 [queued]>
+[2024-12-05T21:18:18.950+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:18:18.964+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:18:13.316101+00:00
+[2024-12-05T21:18:18.971+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3740) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:18:18.972+0000] {standard_task_runner.py:72} INFO - Started process 3748 to run task
+[2024-12-05T21:18:18.972+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:18:13.316101+00:00', '--job-id', '822', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpk21j6vmp']
+[2024-12-05T21:18:18.974+0000] {standard_task_runner.py:105} INFO - Job 822: Subtask call_llm
+[2024-12-05T21:18:19.010+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:18:13.316101+00:00 [running]> on host c7780884450d
+[2024-12-05T21:18:19.071+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:18:13.316101+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:18:13.316101+00:00'
+[2024-12-05T21:18:19.072+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:18:19.091+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['cressi', 'crest', 'crockid', 'crome', 'crona', 'crosby', 'crossstreet', 'crowdgames', 'crown', 'crucial', 'crunch', 'crusader', 'crybabies', 'crystal', 'crystalite', 'crystallux', 'csmedica', 'cth', 'ctr', 'cube', 'cubicfun', 'cullmann', 'cvgaudio', 'cybermass', 'cyberpower'], 'next_index': 1175}
+[2024-12-05T21:18:19.091+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:18:19.515+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:18:37.716+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here is the mapping of brands to categories based on the search results:
+
+1. **cressi**: sport
+2. **crest**: medicine
+3. **crockid**: kids
+4. **crome**: electronics
+5. **crona**: appliances
+6. **crosby**: apparel
+7. **crossstreet**: accessories
+8. **crowdgames**: kids
+9. **crown**: appliances
+10. **crucial**: computers
+11. **crunch**: food (not in the provided categories, but fits under a general category)
+12. **crusader**: apparel
+13. **crybabies**: kids
+14. **crystal**: home decor (not in the provided categories, but fits under a general category)
+15. **crystalite**: home decor (not in the provided categories, but fits under a general category)
+16. **crystallux**: home decor (not in the provided categories, but fits under a general category)
+17. **csmedica**: medicine
+18. **cth**: electronics
+19. **ctr**: electronics
+20. **cube**: appliances
+21. **cubicfun**: kids
+22. **cullmann**: accessories
+23. **cvgaudio**: electronics
+24. **cybermass**: sport
+25. **cyberpower**: electronics
+
+Now, I will generate the SQL INSERT statement.
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cressi', 'sport'),
+    ('crest', 'medicine'),
+    ('crockid', 'kids'),
+    ('crome', 'electronics'),
+    ('crona', 'appliances'),
+    ('crosby', 'apparel'),
+    ('crossstreet', 'accessories'),
+    ('crowdgames', 'kids'),
+    ('crown', 'appliances'),
+    ('crucial', 'computers'),
+    ('crunch', 'appliances'),
+    ('crusader', 'apparel'),
+    ('crybabies', 'kids'),
+    ('crystal', 'furniture'),
+    ('crystalite', 'furniture'),
+    ('crystallux', 'furniture'),
+    ('csmedica', 'medicine'),
+    ('cth', 'electronics'),
+    ('ctr', 'electronics'),
+    ('cube', 'appliances'),
+    ('cubicfun', 'kids'),
+    ('cullmann', 'accessories'),
+    ('cvgaudio', 'electronics'),
+    ('cybermass', 'sport'),
+    ('cyberpower', 'electronics');
+```
+
+Note: Some brands were assigned to categories not listed in the original category codes, as there were no direct matches.
+[2024-12-05T21:18:37.716+0000] {python.py:240} INFO - Done. Returned value was: Here is the mapping of brands to categories based on the search results:
+
+1. **cressi**: sport
+2. **crest**: medicine
+3. **crockid**: kids
+4. **crome**: electronics
+5. **crona**: appliances
+6. **crosby**: apparel
+7. **crossstreet**: accessories
+8. **crowdgames**: kids
+9. **crown**: appliances
+10. **crucial**: computers
+11. **crunch**: food (not in the provided categories, but fits under a general category)
+12. **crusader**: apparel
+13. **crybabies**: kids
+14. **crystal**: home decor (not in the provided categories, but fits under a general category)
+15. **crystalite**: home decor (not in the provided categories, but fits under a general category)
+16. **crystallux**: home decor (not in the provided categories, but fits under a general category)
+17. **csmedica**: medicine
+18. **cth**: electronics
+19. **ctr**: electronics
+20. **cube**: appliances
+21. **cubicfun**: kids
+22. **cullmann**: accessories
+23. **cvgaudio**: electronics
+24. **cybermass**: sport
+25. **cyberpower**: electronics
+
+Now, I will generate the SQL INSERT statement.
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cressi', 'sport'),
+    ('crest', 'medicine'),
+    ('crockid', 'kids'),
+    ('crome', 'electronics'),
+    ('crona', 'appliances'),
+    ('crosby', 'apparel'),
+    ('crossstreet', 'accessories'),
+    ('crowdgames', 'kids'),
+    ('crown', 'appliances'),
+    ('crucial', 'computers'),
+    ('crunch', 'appliances'),
+    ('crusader', 'apparel'),
+    ('crybabies', 'kids'),
+    ('crystal', 'furniture'),
+    ('crystalite', 'furniture'),
+    ('crystallux', 'furniture'),
+    ('csmedica', 'medicine'),
+    ('cth', 'electronics'),
+    ('ctr', 'electronics'),
+    ('cube', 'appliances'),
+    ('cubicfun', 'kids'),
+    ('cullmann', 'accessories'),
+    ('cvgaudio', 'electronics'),
+    ('cybermass', 'sport'),
+    ('cyberpower', 'electronics');
+```
+
+Note: Some brands were assigned to categories not listed in the original category codes, as there were no direct matches.
+[2024-12-05T21:18:37.735+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:18:37.735+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:18:13.316101+00:00, execution_date=20241205T211813, start_date=20241205T211818, end_date=20241205T211837
+[2024-12-05T21:18:37.769+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:18:37.786+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:18:37.789+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

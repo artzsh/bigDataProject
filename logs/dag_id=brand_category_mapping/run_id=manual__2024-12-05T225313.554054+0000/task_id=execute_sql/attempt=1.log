@@ -1,0 +1,115 @@
+[2024-12-05T22:53:42.279+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:53:42.293+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:53:13.554054+00:00 [queued]>
+[2024-12-05T22:53:42.301+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:53:13.554054+00:00 [queued]>
+[2024-12-05T22:53:42.301+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:53:42.315+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:53:13.554054+00:00
+[2024-12-05T22:53:42.321+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8779) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:53:42.324+0000] {standard_task_runner.py:72} INFO - Started process 8780 to run task
+[2024-12-05T22:53:42.323+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:53:13.554054+00:00', '--job-id', '1904', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmplkeofj15']
+[2024-12-05T22:53:42.325+0000] {standard_task_runner.py:105} INFO - Job 1904: Subtask execute_sql
+[2024-12-05T22:53:42.362+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:53:13.554054+00:00 [running]> on host c7780884450d
+[2024-12-05T22:53:42.427+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:53:13.554054+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:53:13.554054+00:00'
+[2024-12-05T22:53:42.428+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:53:42.449+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('zlatek', 'stationery'),
+    ('zmi', 'electronics'),
+    ('zmi', 'appliances'),
+    ('zobo', 'kids'),
+    ('zobo', 'toys'),
+    ('zodiac', 'auto'),
+    ('zodiac', 'accessories'),
+    ('zodiak', 'apparel'),
+    ('zoizoi', 'kids'),
+    ('zoizoi', 'toys'),
+    ('zongshen', 'auto'),
+    ('zongshen', 'appliances'),
+    ('zooexpress', 'kids'),
+    ('zooexpress', 'toys'),
+    ('zoom', 'electronics'),
+    ('zoom', 'computers'),
+    ('zoomer', 'kids'),
+    ('zoomer', 'toys'),
+    ('zoops', 'kids'),
+    ('zoops', 'toys'),
+    ('zorg', 'appliances'),
+    ('zorg', 'electronics'),
+    ('zotac', 'computers'),
+    ('zotac', 'electronics'),
+    ('zowie', 'electronics'),
+    ('zowie', 'computers'),
+    ('zpao', 'apparel'),
+    ('zte', 'electronics'),
+    ('zte', 'computers'),
+    ('zubr', 'appliances'),
+    ('zubr', 'construction'),
+    ('zugo', 'apparel'),
+    ('zuru', 'kids'),
+    ('zuru', 'toys'),
+    ('zvezda', 'kids'),
+    ('zvezda', 'toys'),
+    ('zwerg', 'kids'),
+    ('zwerg', 'toys'),
+    ('zwilling', 'appliances'),
+    ('zwilling', 'accessories'),
+    ('zwillingjahenckels', 'appliances'),
+    ('zwillingjahenckels', 'accessories'),
+    ('zx', 'electronics'),
+    ('zyxel', 'electronics'),
+    ('zyxel', 'computers');
+[2024-12-05T22:53:42.456+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:53:43.264+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('zlatek', 'stationery'),
+    ('zmi', 'electronics'),
+    ('zmi', 'appliances'),
+    ('zobo', 'kids'),
+    ('zobo', 'toys'),
+    ('zodiac', 'auto'),
+    ('zodiac', 'accessories'),
+    ('zodiak', 'apparel'),
+    ('zoizoi', 'kids'),
+    ('zoizoi', 'toys'),
+    ('zongshen', 'auto'),
+    ('zongshen', 'appliances'),
+    ('zooexpress', 'kids'),
+    ('zooexpress', 'toys'),
+    ('zoom', 'electronics'),
+    ('zoom', 'computers'),
+    ('zoomer', 'kids'),
+    ('zoomer', 'toys'),
+    ('zoops', 'kids'),
+    ('zoops', 'toys'),
+    ('zorg', 'appliances'),
+    ('zorg', 'electronics'),
+    ('zotac', 'computers'),
+    ('zotac', 'electronics'),
+    ('zowie', 'electronics'),
+    ('zowie', 'computers'),
+    ('zpao', 'apparel'),
+    ('zte', 'electronics'),
+    ('zte', 'computers'),
+    ('zubr', 'appliances'),
+    ('zubr', 'construction'),
+    ('zugo', 'apparel'),
+    ('zuru', 'kids'),
+    ('zuru', 'toys'),
+    ('zvezda', 'kids'),
+    ('zvezda', 'toys'),
+    ('zwerg', 'kids'),
+    ('zwerg', 'toys'),
+    ('zwilling', 'appliances'),
+    ('zwilling', 'accessories'),
+    ('zwillingjahenckels', 'appliances'),
+    ('zwillingjahenckels', 'accessories'),
+    ('zx', 'electronics'),
+    ('zyxel', 'electronics'),
+    ('zyxel', 'computers');
+[2024-12-05T22:53:43.442+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:53:43.443+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:53:43.450+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:53:43.451+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:53:13.554054+00:00, execution_date=20241205T225313, start_date=20241205T225342, end_date=20241205T225343
+[2024-12-05T22:53:43.501+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:53:43.519+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:53:43.523+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

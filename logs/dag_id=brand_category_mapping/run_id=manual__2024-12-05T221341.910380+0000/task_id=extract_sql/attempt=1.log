@@ -1,0 +1,175 @@
+[2024-12-05T22:14:07.640+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:14:07.652+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:13:41.910380+00:00 [queued]>
+[2024-12-05T22:14:07.658+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:13:41.910380+00:00 [queued]>
+[2024-12-05T22:14:07.659+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:14:07.670+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:13:41.910380+00:00
+[2024-12-05T22:14:07.676+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6706) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:14:07.678+0000] {standard_task_runner.py:72} INFO - Started process 6707 to run task
+[2024-12-05T22:14:07.677+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:13:41.910380+00:00', '--job-id', '1459', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpmabxa98_']
+[2024-12-05T22:14:07.679+0000] {standard_task_runner.py:105} INFO - Job 1459: Subtask extract_sql
+[2024-12-05T22:14:07.755+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:13:41.910380+00:00 [running]> on host c7780884450d
+[2024-12-05T22:14:07.870+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:13:41.910380+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:13:41.910380+00:00'
+[2024-12-05T22:14:07.871+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:14:07.890+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results:
+
+1. **outwell** - country_yard, appliances
+2. **ovation** - apparel, accessories
+3. **overman** - furniture
+4. **ovevo** - electronics
+5. **ovk** - construction
+6. **owner** - auto, accessories
+7. **oxelo** - sport, kids
+8. **oxford** - stationery
+9. **oxygen** - medicine, electronics
+10. **oxygenbotanicals** - medicine, cosmetics
+11. **oystercosmetics** - cosmetics
+12. **ozkaplan** - apparel
+13. **ozobot** - electronics, kids
+14. **paa** - apparel
+15. **pablosky** - kids, apparel
+16. **packing** - construction, appliances
+17. **pagid** - auto
+18. **paint** - construction
+19. **paiste** - accessories, sport
+20. **pajak** - sport, apparel
+21. **pajaro** - apparel, accessories
+22. **palars** - furniture
+23. **palette** - stationery, art supplies
+24. **pali** - furniture, kids
+25. **palisad** - construction, country_yard
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('outwell', 'country_yard'),
+    ('outwell', 'appliances'),
+    ('ovation', 'apparel'),
+    ('ovation', 'accessories'),
+    ('overman', 'furniture'),
+    ('ovevo', 'electronics'),
+    ('ovk', 'construction'),
+    ('owner', 'auto'),
+    ('owner', 'accessories'),
+    ('oxelo', 'sport'),
+    ('oxelo', 'kids'),
+    ('oxford', 'stationery'),
+    ('oxygen', 'medicine'),
+    ('oxygen', 'electronics'),
+    ('oxygenbotanicals', 'medicine'),
+    ('oxygenbotanicals', 'cosmetics'),
+    ('oystercosmetics', 'cosmetics'),
+    ('ozkaplan', 'apparel'),
+    ('ozobot', 'electronics'),
+    ('ozobot', 'kids'),
+    ('paa', 'apparel'),
+    ('pablosky', 'kids'),
+    ('pablosky', 'apparel'),
+    ('packing', 'construction'),
+    ('packing', 'appliances'),
+    ('pagid', 'auto'),
+    ('paint', 'construction'),
+    ('paiste', 'accessories'),
+    ('paiste', 'sport'),
+    ('pajak', 'sport'),
+    ('pajak', 'apparel'),
+    ('pajaro', 'apparel'),
+    ('pajaro', 'accessories'),
+    ('palars', 'furniture'),
+    ('palette', 'stationery'),
+    ('palette', 'art supplies'),
+    ('pali', 'furniture'),
+    ('pali', 'kids'),
+    ('palisad', 'construction'),
+    ('palisad', 'country_yard');
+```
+[2024-12-05T22:14:07.891+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('outwell', 'country_yard'),
+    ('outwell', 'appliances'),
+    ('ovation', 'apparel'),
+    ('ovation', 'accessories'),
+    ('overman', 'furniture'),
+    ('ovevo', 'electronics'),
+    ('ovk', 'construction'),
+    ('owner', 'auto'),
+    ('owner', 'accessories'),
+    ('oxelo', 'sport'),
+    ('oxelo', 'kids'),
+    ('oxford', 'stationery'),
+    ('oxygen', 'medicine'),
+    ('oxygen', 'electronics'),
+    ('oxygenbotanicals', 'medicine'),
+    ('oxygenbotanicals', 'cosmetics'),
+    ('oystercosmetics', 'cosmetics'),
+    ('ozkaplan', 'apparel'),
+    ('ozobot', 'electronics'),
+    ('ozobot', 'kids'),
+    ('paa', 'apparel'),
+    ('pablosky', 'kids'),
+    ('pablosky', 'apparel'),
+    ('packing', 'construction'),
+    ('packing', 'appliances'),
+    ('pagid', 'auto'),
+    ('paint', 'construction'),
+    ('paiste', 'accessories'),
+    ('paiste', 'sport'),
+    ('pajak', 'sport'),
+    ('pajak', 'apparel'),
+    ('pajaro', 'apparel'),
+    ('pajaro', 'accessories'),
+    ('palars', 'furniture'),
+    ('palette', 'stationery'),
+    ('palette', 'art supplies'),
+    ('pali', 'furniture'),
+    ('pali', 'kids'),
+    ('palisad', 'construction'),
+    ('palisad', 'country_yard');
+[2024-12-05T22:14:07.891+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('outwell', 'country_yard'),
+    ('outwell', 'appliances'),
+    ('ovation', 'apparel'),
+    ('ovation', 'accessories'),
+    ('overman', 'furniture'),
+    ('ovevo', 'electronics'),
+    ('ovk', 'construction'),
+    ('owner', 'auto'),
+    ('owner', 'accessories'),
+    ('oxelo', 'sport'),
+    ('oxelo', 'kids'),
+    ('oxford', 'stationery'),
+    ('oxygen', 'medicine'),
+    ('oxygen', 'electronics'),
+    ('oxygenbotanicals', 'medicine'),
+    ('oxygenbotanicals', 'cosmetics'),
+    ('oystercosmetics', 'cosmetics'),
+    ('ozkaplan', 'apparel'),
+    ('ozobot', 'electronics'),
+    ('ozobot', 'kids'),
+    ('paa', 'apparel'),
+    ('pablosky', 'kids'),
+    ('pablosky', 'apparel'),
+    ('packing', 'construction'),
+    ('packing', 'appliances'),
+    ('pagid', 'auto'),
+    ('paint', 'construction'),
+    ('paiste', 'accessories'),
+    ('paiste', 'sport'),
+    ('pajak', 'sport'),
+    ('pajak', 'apparel'),
+    ('pajaro', 'apparel'),
+    ('pajaro', 'accessories'),
+    ('palars', 'furniture'),
+    ('palette', 'stationery'),
+    ('palette', 'art supplies'),
+    ('pali', 'furniture'),
+    ('pali', 'kids'),
+    ('palisad', 'construction'),
+    ('palisad', 'country_yard');
+[2024-12-05T22:14:07.907+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:14:07.908+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:13:41.910380+00:00, execution_date=20241205T221341, start_date=20241205T221407, end_date=20241205T221407
+[2024-12-05T22:14:07.932+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:14:07.953+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:14:07.956+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

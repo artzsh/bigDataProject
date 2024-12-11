@@ -1,0 +1,109 @@
+[2024-12-05T21:07:39.722+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:07:39.734+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:07:11.992383+00:00 [queued]>
+[2024-12-05T21:07:39.740+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:07:11.992383+00:00 [queued]>
+[2024-12-05T21:07:39.741+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:07:39.754+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 21:07:11.992383+00:00
+[2024-12-05T21:07:39.760+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3150) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:07:39.761+0000] {standard_task_runner.py:72} INFO - Started process 3151 to run task
+[2024-12-05T21:07:39.761+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T21:07:11.992383+00:00', '--job-id', '692', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp20isvqld']
+[2024-12-05T21:07:39.763+0000] {standard_task_runner.py:105} INFO - Job 692: Subtask execute_sql
+[2024-12-05T21:07:39.797+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:07:11.992383+00:00 [running]> on host c7780884450d
+[2024-12-05T21:07:39.859+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:07:11.992383+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:07:11.992383+00:00'
+[2024-12-05T21:07:39.860+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:07:39.879+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('belezza', 'medicine'),
+    ('belezza', 'cosmetics'),
+    ('belgia', 'furniture'),
+    ('belis', 'medicine'),
+    ('belis', 'cosmetics'),
+    ('beliss', 'medicine'),
+    ('beliss', 'cosmetics'),
+    ('belissimo', 'medicine'),
+    ('belissimo', 'cosmetics'),
+    ('belita', 'medicine'),
+    ('belita', 'cosmetics'),
+    ('belita-viteks', 'medicine'),
+    ('belita-viteks', 'cosmetics'),
+    ('belita-viteks', 'appliances'),
+    ('belka', 'stationery'),
+    ('belkin', 'electronics'),
+    ('belkin', 'accessories'),
+    ('belkosmex', 'medicine'),
+    ('belkosmex', 'cosmetics'),
+    ('bella', 'medicine'),
+    ('bella', 'cosmetics'),
+    ('bellamebel', 'furniture'),
+    ('belletti', 'furniture'),
+    ('belordesign', 'furniture'),
+    ('belux', 'furniture'),
+    ('belyjveter', 'apparel'),
+    ('benbat', 'kids'),
+    ('benbat', 'accessories'),
+    ('bene', 'appliances'),
+    ('bene', 'medicine'),
+    ('benebaby', 'kids'),
+    ('benebaby', 'medicine'),
+    ('benq', 'electronics'),
+    ('bentley', 'auto'),
+    ('bentley', 'accessories'),
+    ('bequiet', 'electronics'),
+    ('bequiet', 'appliances'),
+    ('berber', 'construction'),
+    ('berber', 'furniture'),
+    ('berdsk', 'appliances'),
+    ('bergamo', 'furniture'),
+    ('bergamo', 'appliances');
+[2024-12-05T21:07:39.886+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T21:07:40.688+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('belezza', 'medicine'),
+    ('belezza', 'cosmetics'),
+    ('belgia', 'furniture'),
+    ('belis', 'medicine'),
+    ('belis', 'cosmetics'),
+    ('beliss', 'medicine'),
+    ('beliss', 'cosmetics'),
+    ('belissimo', 'medicine'),
+    ('belissimo', 'cosmetics'),
+    ('belita', 'medicine'),
+    ('belita', 'cosmetics'),
+    ('belita-viteks', 'medicine'),
+    ('belita-viteks', 'cosmetics'),
+    ('belita-viteks', 'appliances'),
+    ('belka', 'stationery'),
+    ('belkin', 'electronics'),
+    ('belkin', 'accessories'),
+    ('belkosmex', 'medicine'),
+    ('belkosmex', 'cosmetics'),
+    ('bella', 'medicine'),
+    ('bella', 'cosmetics'),
+    ('bellamebel', 'furniture'),
+    ('belletti', 'furniture'),
+    ('belordesign', 'furniture'),
+    ('belux', 'furniture'),
+    ('belyjveter', 'apparel'),
+    ('benbat', 'kids'),
+    ('benbat', 'accessories'),
+    ('bene', 'appliances'),
+    ('bene', 'medicine'),
+    ('benebaby', 'kids'),
+    ('benebaby', 'medicine'),
+    ('benq', 'electronics'),
+    ('bentley', 'auto'),
+    ('bentley', 'accessories'),
+    ('bequiet', 'electronics'),
+    ('bequiet', 'appliances'),
+    ('berber', 'construction'),
+    ('berber', 'furniture'),
+    ('berdsk', 'appliances'),
+    ('bergamo', 'furniture'),
+    ('bergamo', 'appliances');
+[2024-12-05T21:07:40.867+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T21:07:40.868+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T21:07:40.876+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:07:40.876+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T21:07:11.992383+00:00, execution_date=20241205T210711, start_date=20241205T210739, end_date=20241205T210740
+[2024-12-05T21:07:40.898+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:07:40.916+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:07:40.919+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

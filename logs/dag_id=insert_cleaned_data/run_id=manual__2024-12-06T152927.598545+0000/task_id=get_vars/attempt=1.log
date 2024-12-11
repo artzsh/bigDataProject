@@ -1,0 +1,22 @@
+[2024-12-06T15:29:28.835+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T15:29:28.846+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.get_vars manual__2024-12-06T15:29:27.598545+00:00 [queued]>
+[2024-12-06T15:29:28.851+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.get_vars manual__2024-12-06T15:29:27.598545+00:00 [queued]>
+[2024-12-06T15:29:28.852+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T15:29:28.861+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): get_vars> on 2024-12-06 15:29:27.598545+00:00
+[2024-12-06T15:29:28.866+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2948) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T15:29:28.867+0000] {standard_task_runner.py:72} INFO - Started process 2949 to run task
+[2024-12-06T15:29:28.867+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'get_vars', 'manual__2024-12-06T15:29:27.598545+00:00', '--job-id', '2006', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmph28yacaa']
+[2024-12-06T15:29:28.868+0000] {standard_task_runner.py:105} INFO - Job 2006: Subtask get_vars
+[2024-12-06T15:29:28.898+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.get_vars manual__2024-12-06T15:29:27.598545+00:00 [running]> on host cb0074367deb
+[2024-12-06T15:29:28.951+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='get_vars' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T15:29:27.598545+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T15:29:27.598545+00:00'
+[2024-12-06T15:29:28.952+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T15:29:28.966+0000] {insert_cleaned_data.py:28} INFO - Текущий ключ: dm_var=1
+[2024-12-06T15:29:28.988+0000] {insert_cleaned_data.py:37} INFO - Получены переменные: dm_var=1, tables_json={'1': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Oct.csv.gz', 'table_name': 'eCommerce_Oct', 'brands_table_name': 'brands_Oct', 'categories_table_name': 'categories_Oct'}, '2': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz', 'table_name': 'eCommerce_Nov', 'brands_table_name': 'brands_Nov', 'categories_table_name': 'categories_Nov'}, '3': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Dec.csv.gz', 'table_name': 'eCommerce_Dec', 'brands_table_name': 'brands_Dec', 'categories_table_name': 'categories_Dec'}, '4': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz', 'table_name': 'eCommerce_Jan', 'brands_table_name': 'brands_Jan', 'categories_table_name': 'categories_Jan'}, '5': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Feb.csv.gz', 'table_name': 'eCommerce_Feb', 'brands_table_name': 'brands_Feb', 'categories_table_name': 'categories_Feb'}, '6': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Mar.csv.gz', 'table_name': 'eCommerce_Mar', 'brands_table_name': 'brands_Mar', 'categories_table_name': 'categories_Mar'}, '7': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Apr.csv.gz', 'table_name': 'eCommerce_Apr', 'brands_table_name': 'brands_Apr', 'categories_table_name': 'categories_Apr'}}
+[2024-12-06T15:29:28.989+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-06T15:29:28.996+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-06T15:29:28.997+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=insert_cleaned_data, task_id=get_vars, run_id=manual__2024-12-06T15:29:27.598545+00:00, execution_date=20241206T152927, start_date=20241206T152928, end_date=20241206T152928
+[2024-12-06T15:29:29.041+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-06T15:29:29.057+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-06T15:29:29.060+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

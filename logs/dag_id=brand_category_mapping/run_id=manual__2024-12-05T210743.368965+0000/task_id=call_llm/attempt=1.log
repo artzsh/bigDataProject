@@ -1,0 +1,186 @@
+[2024-12-05T21:07:48.644+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:07:48.655+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:07:43.368965+00:00 [queued]>
+[2024-12-05T21:07:48.661+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:07:43.368965+00:00 [queued]>
+[2024-12-05T21:07:48.662+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:07:48.674+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:07:43.368965+00:00
+[2024-12-05T21:07:48.680+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3163) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:07:48.681+0000] {standard_task_runner.py:72} INFO - Started process 3164 to run task
+[2024-12-05T21:07:48.681+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:07:43.368965+00:00', '--job-id', '696', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp7p7as6k0']
+[2024-12-05T21:07:48.683+0000] {standard_task_runner.py:105} INFO - Job 696: Subtask call_llm
+[2024-12-05T21:07:48.718+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:07:43.368965+00:00 [running]> on host c7780884450d
+[2024-12-05T21:07:48.789+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:07:43.368965+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:07:43.368965+00:00'
+[2024-12-05T21:07:48.792+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:07:48.813+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['bergauf', 'berger', 'berghoff', 'bergner', 'bering', 'berkley', 'berkut', 'berlinger', 'berlingerhaus', 'bernina', 'berossi', 'bertoni', 'bertonilorelli', 'beru', 'besafe', 'bessey', 'best', 'bestbalance', 'bestia', 'bestlife', 'bestoy', 'bestway', 'besty', 'bethesda', 'betsy'], 'next_index': 650}
+[2024-12-05T21:07:48.813+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:07:49.340+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:08:09.700+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here is the mapping of the brands to their respective categories based on the search results:
+
+1. **bergauf**: construction
+2. **berger**: construction, tools
+3. **berghoff**: appliances, kitchenware
+4. **bergner**: kitchenware, appliances
+5. **bering**: accessories, watches
+6. **berkley**: sport, fishing equipment
+7. **berkut**: electronics, tools
+8. **berlinger**: appliances, kitchenware
+9. **berlingerhaus**: appliances, kitchenware
+10. **bernina**: appliances, sewing machines
+11. **berossi**: accessories, bags
+12. **bertoni**: apparel, clothing
+13. **bertonilorelli**: kids, baby products
+14. **beru**: auto, automotive parts
+15. **besafe**: kids, safety products
+16. **bessey**: tools, construction
+17. **best**: appliances, home goods
+18. **bestbalance**: fitness, sport
+19. **bestia**: apparel, bags
+20. **bestlife**: medicine, health products
+21. **bestoy**: kids, toys
+22. **bestway**: country_yard, outdoor equipment
+23. **besty**: apparel, clothing
+24. **bethesda**: medicine, health products
+25. **betsy**: apparel, clothing
+
+Now, I will generate the SQL INSERT statement based on this mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('bergauf', 'construction'),
+    ('berger', 'construction'),
+    ('berger', 'tools'),
+    ('berghoff', 'appliances'),
+    ('berghoff', 'kitchenware'),
+    ('bergner', 'kitchenware'),
+    ('bergner', 'appliances'),
+    ('bering', 'accessories'),
+    ('bering', 'watches'),
+    ('berkley', 'sport'),
+    ('berkley', 'fishing equipment'),
+    ('berkut', 'electronics'),
+    ('berkut', 'tools'),
+    ('berlinger', 'appliances'),
+    ('berlinger', 'kitchenware'),
+    ('berlingerhaus', 'appliances'),
+    ('berlingerhaus', 'kitchenware'),
+    ('bernina', 'appliances'),
+    ('bernina', 'sewing machines'),
+    ('berossi', 'accessories'),
+    ('berossi', 'bags'),
+    ('bertoni', 'apparel'),
+    ('bertoni', 'clothing'),
+    ('bertonilorelli', 'kids'),
+    ('bertonilorelli', 'baby products'),
+    ('beru', 'auto'),
+    ('beru', 'automotive parts'),
+    ('besafe', 'kids'),
+    ('besafe', 'safety products'),
+    ('bessey', 'tools'),
+    ('bessey', 'construction'),
+    ('best', 'appliances'),
+    ('best', 'home goods'),
+    ('bestbalance', 'fitness'),
+    ('bestbalance', 'sport'),
+    ('bestia', 'apparel'),
+    ('bestia', 'bags'),
+    ('bestlife', 'medicine'),
+    ('bestlife', 'health products'),
+    ('bestoy', 'kids'),
+    ('bestoy', 'toys'),
+    ('bestway', 'country_yard'),
+    ('bestway', 'outdoor equipment'),
+    ('besty', 'apparel'),
+    ('besty', 'clothing'),
+    ('bethesda', 'medicine'),
+    ('bethesda', 'health products'),
+    ('betsy', 'apparel'),
+    ('betsy', 'clothing');
+```
+[2024-12-05T21:08:09.701+0000] {python.py:240} INFO - Done. Returned value was: Here is the mapping of the brands to their respective categories based on the search results:
+
+1. **bergauf**: construction
+2. **berger**: construction, tools
+3. **berghoff**: appliances, kitchenware
+4. **bergner**: kitchenware, appliances
+5. **bering**: accessories, watches
+6. **berkley**: sport, fishing equipment
+7. **berkut**: electronics, tools
+8. **berlinger**: appliances, kitchenware
+9. **berlingerhaus**: appliances, kitchenware
+10. **bernina**: appliances, sewing machines
+11. **berossi**: accessories, bags
+12. **bertoni**: apparel, clothing
+13. **bertonilorelli**: kids, baby products
+14. **beru**: auto, automotive parts
+15. **besafe**: kids, safety products
+16. **bessey**: tools, construction
+17. **best**: appliances, home goods
+18. **bestbalance**: fitness, sport
+19. **bestia**: apparel, bags
+20. **bestlife**: medicine, health products
+21. **bestoy**: kids, toys
+22. **bestway**: country_yard, outdoor equipment
+23. **besty**: apparel, clothing
+24. **bethesda**: medicine, health products
+25. **betsy**: apparel, clothing
+
+Now, I will generate the SQL INSERT statement based on this mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('bergauf', 'construction'),
+    ('berger', 'construction'),
+    ('berger', 'tools'),
+    ('berghoff', 'appliances'),
+    ('berghoff', 'kitchenware'),
+    ('bergner', 'kitchenware'),
+    ('bergner', 'appliances'),
+    ('bering', 'accessories'),
+    ('bering', 'watches'),
+    ('berkley', 'sport'),
+    ('berkley', 'fishing equipment'),
+    ('berkut', 'electronics'),
+    ('berkut', 'tools'),
+    ('berlinger', 'appliances'),
+    ('berlinger', 'kitchenware'),
+    ('berlingerhaus', 'appliances'),
+    ('berlingerhaus', 'kitchenware'),
+    ('bernina', 'appliances'),
+    ('bernina', 'sewing machines'),
+    ('berossi', 'accessories'),
+    ('berossi', 'bags'),
+    ('bertoni', 'apparel'),
+    ('bertoni', 'clothing'),
+    ('bertonilorelli', 'kids'),
+    ('bertonilorelli', 'baby products'),
+    ('beru', 'auto'),
+    ('beru', 'automotive parts'),
+    ('besafe', 'kids'),
+    ('besafe', 'safety products'),
+    ('bessey', 'tools'),
+    ('bessey', 'construction'),
+    ('best', 'appliances'),
+    ('best', 'home goods'),
+    ('bestbalance', 'fitness'),
+    ('bestbalance', 'sport'),
+    ('bestia', 'apparel'),
+    ('bestia', 'bags'),
+    ('bestlife', 'medicine'),
+    ('bestlife', 'health products'),
+    ('bestoy', 'kids'),
+    ('bestoy', 'toys'),
+    ('bestway', 'country_yard'),
+    ('bestway', 'outdoor equipment'),
+    ('besty', 'apparel'),
+    ('besty', 'clothing'),
+    ('bethesda', 'medicine'),
+    ('bethesda', 'health products'),
+    ('betsy', 'apparel'),
+    ('betsy', 'clothing');
+```
+[2024-12-05T21:08:09.722+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:08:09.723+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:07:43.368965+00:00, execution_date=20241205T210743, start_date=20241205T210748, end_date=20241205T210809
+[2024-12-05T21:08:09.750+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:08:09.772+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:08:09.775+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,99 @@
+[2024-12-05T22:00:28.320+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:00:28.331+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:59:36.905066+00:00 [queued]>
+[2024-12-05T22:00:28.337+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:59:36.905066+00:00 [queued]>
+[2024-12-05T22:00:28.338+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:00:28.350+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 21:59:36.905066+00:00
+[2024-12-05T22:00:28.357+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5960) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:00:28.358+0000] {standard_task_runner.py:72} INFO - Started process 5961 to run task
+[2024-12-05T22:00:28.358+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T21:59:36.905066+00:00', '--job-id', '1298', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp5z_v3fml']
+[2024-12-05T22:00:28.360+0000] {standard_task_runner.py:105} INFO - Job 1298: Subtask execute_sql
+[2024-12-05T22:00:28.394+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:59:36.905066+00:00 [running]> on host c7780884450d
+[2024-12-05T22:00:28.456+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:59:36.905066+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:59:36.905066+00:00'
+[2024-12-05T22:00:28.457+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:00:28.474+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('marta', 'apparel'),
+    ('martinex', 'appliances'),
+    ('martinex', 'electronics'),
+    ('martinez', 'apparel'),
+    ('martinez', 'accessories'),
+    ('martinromas', 'furniture'),
+    ('maruemsta', 'stationery'),
+    ('maruishi', 'appliances'),
+    ('marusa', 'apparel'),
+    ('marvel', 'apparel'),
+    ('marvel', 'accessories'),
+    ('marvel', 'electronics'),
+    ('masaimedved', 'kids'),
+    ('maserati', 'auto'),
+    ('masi', 'apparel'),
+    ('masi', 'sport'),
+    ('masima', 'apparel'),
+    ('massagie', 'medicine'),
+    ('massagie', 'accessories'),
+    ('masseffect', 'electronics'),
+    ('masstige', 'apparel'),
+    ('masstige', 'accessories'),
+    ('masstone', 'electronics'),
+    ('mastela', 'kids'),
+    ('mastela', 'accessories'),
+    ('master', 'appliances'),
+    ('master', 'tools'),
+    ('masterbrilliant', 'appliances'),
+    ('masterbrilliant', 'electronics'),
+    ('mastercraft', 'construction'),
+    ('mastercraft', 'tools'),
+    ('masterfish', 'appliances'),
+    ('masteriq', 'electronics'),
+    ('masters', 'sport'),
+    ('masteryard', 'country_yard'),
+    ('masteryard', 'tools'),
+    ('mastino', 'apparel');
+[2024-12-05T22:00:28.482+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:00:29.277+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('marta', 'apparel'),
+    ('martinex', 'appliances'),
+    ('martinex', 'electronics'),
+    ('martinez', 'apparel'),
+    ('martinez', 'accessories'),
+    ('martinromas', 'furniture'),
+    ('maruemsta', 'stationery'),
+    ('maruishi', 'appliances'),
+    ('marusa', 'apparel'),
+    ('marvel', 'apparel'),
+    ('marvel', 'accessories'),
+    ('marvel', 'electronics'),
+    ('masaimedved', 'kids'),
+    ('maserati', 'auto'),
+    ('masi', 'apparel'),
+    ('masi', 'sport'),
+    ('masima', 'apparel'),
+    ('massagie', 'medicine'),
+    ('massagie', 'accessories'),
+    ('masseffect', 'electronics'),
+    ('masstige', 'apparel'),
+    ('masstige', 'accessories'),
+    ('masstone', 'electronics'),
+    ('mastela', 'kids'),
+    ('mastela', 'accessories'),
+    ('master', 'appliances'),
+    ('master', 'tools'),
+    ('masterbrilliant', 'appliances'),
+    ('masterbrilliant', 'electronics'),
+    ('mastercraft', 'construction'),
+    ('mastercraft', 'tools'),
+    ('masterfish', 'appliances'),
+    ('masteriq', 'electronics'),
+    ('masters', 'sport'),
+    ('masteryard', 'country_yard'),
+    ('masteryard', 'tools'),
+    ('mastino', 'apparel');
+[2024-12-05T22:00:29.569+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:00:29.570+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:00:29.578+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:00:29.579+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T21:59:36.905066+00:00, execution_date=20241205T215936, start_date=20241205T220028, end_date=20241205T220029
+[2024-12-05T22:00:29.616+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:00:29.632+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:00:29.635+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

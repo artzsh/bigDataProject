@@ -1,0 +1,138 @@
+[2024-12-03T23:36:10.903+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-03T23:36:10.916+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_brands_batches.call_llm manual__2024-12-03T23:36:08.216434+00:00 [queued]>
+[2024-12-03T23:36:10.923+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_brands_batches.call_llm manual__2024-12-03T23:36:08.216434+00:00 [queued]>
+[2024-12-03T23:36:10.924+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-03T23:36:10.936+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-03 23:36:08.216434+00:00
+[2024-12-03T23:36:10.941+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=386) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-03T23:36:10.942+0000] {standard_task_runner.py:72} INFO - Started process 387 to run task
+[2024-12-03T23:36:10.943+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'process_brands_batches', 'call_llm', 'manual__2024-12-03T23:36:08.216434+00:00', '--job-id', '340', '--raw', '--subdir', 'DAGS_FOLDER/llm_test.py', '--cfg-path', '/tmp/tmp0f2tbbeb']
+[2024-12-03T23:36:10.945+0000] {standard_task_runner.py:105} INFO - Job 340: Subtask call_llm
+[2024-12-03T23:36:10.983+0000] {task_command.py:467} INFO - Running <TaskInstance: process_brands_batches.call_llm manual__2024-12-03T23:36:08.216434+00:00 [running]> on host 175560b3a058
+[2024-12-03T23:36:11.042+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='process_brands_batches' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-03T23:36:08.216434+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-03T23:36:08.216434+00:00'
+[2024-12-03T23:36:11.043+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-03T23:36:11.061+0000] {llm_test.py:152} INFO - Извлечён return_value: {'batch': ['a-case', 'a-derma', 'a-elita', 'a-mega', 'a-toys', 'aardwolf', 'abc', 'abhika', 'abk', 'absolutechampion', 'abtoys', 'academie', 'acana', 'acase', 'accesstyle', 'acd', 'acebeam', 'acer', 'achilles', 'acm', 'acme', 'acoola', 'acorp', 'acorsa', 'acqua'], 'next_index': 25}
+[2024-12-03T23:36:11.061+0000] {llm_test.py:124} INFO - Отправка запроса к LLM.
+[2024-12-03T23:36:11.488+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.1 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-03T23:36:29.712+0000] {llm_test.py:138} INFO - Получен ответ от LLM: Here are the brands mapped to their respective categories based on the search results:
+
+1. **a-case**: electronics
+2. **a-derma**: medicine
+3. **a-elita**: apparel
+4. **a-mega**: appliances
+5. **a-toys**: kids
+6. **aardwolf**: construction
+7. **abc**: stationery
+8. **abhika**: apparel
+9. **abk**: electronics
+10. **absolutechampion**: sport
+11. **abtoys**: kids
+12. **academie**: medicine
+13. **acana**: food (not in predefined categories, but closest is medicine)
+14. **acase**: electronics
+15. **accesstyle**: accessories
+16. **acd**: electronics
+17. **acebeam**: electronics
+18. **acer**: computers
+19. **achilles**: footwear (not in predefined categories, but closest is apparel)
+20. **acm**: electronics
+21. **acme**: appliances
+22. **acoola**: apparel
+23. **acorp**: electronics
+24. **acorsa**: electronics
+25. **acqua**: cosmetics (not in predefined categories, but closest is medicine)
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO project.brand_category_rules_1 (brand, category_index) VALUES
+    ('a-case', 'electronics'),
+    ('a-derma', 'medicine'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abhika', 'apparel'),
+    ('abk', 'electronics'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('academie', 'medicine'),
+    ('acana', 'medicine'),
+    ('acase', 'electronics'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('achilles', 'apparel'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'electronics'),
+    ('acqua', 'medicine');
+```
+[2024-12-03T23:36:29.713+0000] {python.py:240} INFO - Done. Returned value was: Here are the brands mapped to their respective categories based on the search results:
+
+1. **a-case**: electronics
+2. **a-derma**: medicine
+3. **a-elita**: apparel
+4. **a-mega**: appliances
+5. **a-toys**: kids
+6. **aardwolf**: construction
+7. **abc**: stationery
+8. **abhika**: apparel
+9. **abk**: electronics
+10. **absolutechampion**: sport
+11. **abtoys**: kids
+12. **academie**: medicine
+13. **acana**: food (not in predefined categories, but closest is medicine)
+14. **acase**: electronics
+15. **accesstyle**: accessories
+16. **acd**: electronics
+17. **acebeam**: electronics
+18. **acer**: computers
+19. **achilles**: footwear (not in predefined categories, but closest is apparel)
+20. **acm**: electronics
+21. **acme**: appliances
+22. **acoola**: apparel
+23. **acorp**: electronics
+24. **acorsa**: electronics
+25. **acqua**: cosmetics (not in predefined categories, but closest is medicine)
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO project.brand_category_rules_1 (brand, category_index) VALUES
+    ('a-case', 'electronics'),
+    ('a-derma', 'medicine'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abhika', 'apparel'),
+    ('abk', 'electronics'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('academie', 'medicine'),
+    ('acana', 'medicine'),
+    ('acase', 'electronics'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('achilles', 'apparel'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'electronics'),
+    ('acqua', 'medicine');
+```
+[2024-12-03T23:36:29.731+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-03T23:36:29.731+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=process_brands_batches, task_id=call_llm, run_id=manual__2024-12-03T23:36:08.216434+00:00, execution_date=20241203T233608, start_date=20241203T233610, end_date=20241203T233629
+[2024-12-03T23:36:29.781+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-03T23:36:29.797+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-03T23:36:29.800+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

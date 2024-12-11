@@ -1,0 +1,154 @@
+[2024-12-05T21:16:07.514+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:16:07.527+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:15:47.474086+00:00 [queued]>
+[2024-12-05T21:16:07.533+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:15:47.474086+00:00 [queued]>
+[2024-12-05T21:16:07.534+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:16:07.547+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:15:47.474086+00:00
+[2024-12-05T21:16:07.553+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3612) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:16:07.555+0000] {standard_task_runner.py:72} INFO - Started process 3613 to run task
+[2024-12-05T21:16:07.555+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:15:47.474086+00:00', '--job-id', '793', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpvwmkjgjk']
+[2024-12-05T21:16:07.557+0000] {standard_task_runner.py:105} INFO - Job 793: Subtask extract_sql
+[2024-12-05T21:16:07.595+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:15:47.474086+00:00 [running]> on host c7780884450d
+[2024-12-05T21:16:07.668+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:15:47.474086+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:15:47.474086+00:00'
+[2024-12-05T21:16:07.669+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:16:07.691+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the categories assigned to each brand based on their products:
+
+1. **cikoo** - kids
+2. **cilek** - furniture, kids
+3. **cilia** - furniture
+4. **cillit** - appliances
+5. **cime** - appliances
+6. **cinemood** - electronics
+7. **circle** - electronics
+8. **cisco** - computers, electronics
+9. **citilux** - appliances, electronics
+10. **citizen** - accessories, electronics
+11. **citycolor** - cosmetics (not in provided categories, but can be considered under accessories)
+12. **cityrover** - auto
+13. **cityup** - auto
+14. **clanfrancoferre** - apparel, accessories
+15. **clarion** - electronics, auto
+16. **clariss** - apparel
+17. **classen** - construction, furniture
+18. **clasy** - appliances
+19. **clatronic** - appliances
+20. **claudebernard** - accessories
+21. **claudedozorme** - accessories
+22. **clevan** - electronics
+23. **clever** - appliances
+24. **clevercompany** - appliances, kids
+25. **cliff** - apparel
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cikoo', 'kids'),
+    ('cilek', 'furniture'),
+    ('cilek', 'kids'),
+    ('cilia', 'furniture'),
+    ('cillit', 'appliances'),
+    ('cime', 'appliances'),
+    ('cinemood', 'electronics'),
+    ('circle', 'electronics'),
+    ('cisco', 'computers'),
+    ('cisco', 'electronics'),
+    ('citilux', 'appliances'),
+    ('citilux', 'electronics'),
+    ('citizen', 'accessories'),
+    ('citizen', 'electronics'),
+    ('citycolor', 'accessories'),
+    ('cityrover', 'auto'),
+    ('cityup', 'auto'),
+    ('clanfrancoferre', 'apparel'),
+    ('clanfrancoferre', 'accessories'),
+    ('clarion', 'electronics'),
+    ('clarion', 'auto'),
+    ('clariss', 'apparel'),
+    ('classen', 'construction'),
+    ('classen', 'furniture'),
+    ('clasy', 'appliances'),
+    ('clatronic', 'appliances'),
+    ('claudebernard', 'accessories'),
+    ('claudedozorme', 'accessories'),
+    ('clevan', 'electronics'),
+    ('clever', 'appliances'),
+    ('clevercompany', 'appliances'),
+    ('clevercompany', 'kids'),
+    ('cliff', 'apparel');
+```
+[2024-12-05T21:16:07.692+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cikoo', 'kids'),
+    ('cilek', 'furniture'),
+    ('cilek', 'kids'),
+    ('cilia', 'furniture'),
+    ('cillit', 'appliances'),
+    ('cime', 'appliances'),
+    ('cinemood', 'electronics'),
+    ('circle', 'electronics'),
+    ('cisco', 'computers'),
+    ('cisco', 'electronics'),
+    ('citilux', 'appliances'),
+    ('citilux', 'electronics'),
+    ('citizen', 'accessories'),
+    ('citizen', 'electronics'),
+    ('citycolor', 'accessories'),
+    ('cityrover', 'auto'),
+    ('cityup', 'auto'),
+    ('clanfrancoferre', 'apparel'),
+    ('clanfrancoferre', 'accessories'),
+    ('clarion', 'electronics'),
+    ('clarion', 'auto'),
+    ('clariss', 'apparel'),
+    ('classen', 'construction'),
+    ('classen', 'furniture'),
+    ('clasy', 'appliances'),
+    ('clatronic', 'appliances'),
+    ('claudebernard', 'accessories'),
+    ('claudedozorme', 'accessories'),
+    ('clevan', 'electronics'),
+    ('clever', 'appliances'),
+    ('clevercompany', 'appliances'),
+    ('clevercompany', 'kids'),
+    ('cliff', 'apparel');
+[2024-12-05T21:16:07.693+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('cikoo', 'kids'),
+    ('cilek', 'furniture'),
+    ('cilek', 'kids'),
+    ('cilia', 'furniture'),
+    ('cillit', 'appliances'),
+    ('cime', 'appliances'),
+    ('cinemood', 'electronics'),
+    ('circle', 'electronics'),
+    ('cisco', 'computers'),
+    ('cisco', 'electronics'),
+    ('citilux', 'appliances'),
+    ('citilux', 'electronics'),
+    ('citizen', 'accessories'),
+    ('citizen', 'electronics'),
+    ('citycolor', 'accessories'),
+    ('cityrover', 'auto'),
+    ('cityup', 'auto'),
+    ('clanfrancoferre', 'apparel'),
+    ('clanfrancoferre', 'accessories'),
+    ('clarion', 'electronics'),
+    ('clarion', 'auto'),
+    ('clariss', 'apparel'),
+    ('classen', 'construction'),
+    ('classen', 'furniture'),
+    ('clasy', 'appliances'),
+    ('clatronic', 'appliances'),
+    ('claudebernard', 'accessories'),
+    ('claudedozorme', 'accessories'),
+    ('clevan', 'electronics'),
+    ('clever', 'appliances'),
+    ('clevercompany', 'appliances'),
+    ('clevercompany', 'kids'),
+    ('cliff', 'apparel');
+[2024-12-05T21:16:07.712+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:16:07.713+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:15:47.474086+00:00, execution_date=20241205T211547, start_date=20241205T211607, end_date=20241205T211607
+[2024-12-05T21:16:07.729+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:16:07.752+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:16:07.755+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

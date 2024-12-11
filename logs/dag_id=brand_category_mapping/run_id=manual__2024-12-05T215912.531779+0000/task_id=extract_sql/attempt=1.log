@@ -1,0 +1,195 @@
+[2024-12-05T21:59:32.501+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:59:32.514+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:59:12.531779+00:00 [queued]>
+[2024-12-05T21:59:32.522+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:59:12.531779+00:00 [queued]>
+[2024-12-05T21:59:32.522+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:59:32.536+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:59:12.531779+00:00
+[2024-12-05T21:59:32.544+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5922) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:59:32.546+0000] {standard_task_runner.py:72} INFO - Started process 5930 to run task
+[2024-12-05T21:59:32.545+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:59:12.531779+00:00', '--job-id', '1291', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpqvbnugm0']
+[2024-12-05T21:59:32.548+0000] {standard_task_runner.py:105} INFO - Job 1291: Subtask extract_sql
+[2024-12-05T21:59:32.586+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:59:12.531779+00:00 [running]> on host c7780884450d
+[2024-12-05T21:59:32.653+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:59:12.531779+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:59:12.531779+00:00'
+[2024-12-05T21:59:32.654+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:59:32.672+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the provided brands to their respective categories based on the search results:
+
+1. **marching** - sport
+2. **marcjacobs** - apparel, accessories
+3. **marcomen** - apparel, accessories
+4. **marcotozzi** - apparel, accessories
+5. **marcotozzipremio** - apparel, accessories
+6. **mariaiskusnica** - furniture, home decor
+7. **marianplast** - construction, appliances
+8. **maribel** - furniture, home decor
+9. **marimex** - appliances, sport
+10. **mario** - apparel, accessories
+11. **mark** - apparel, accessories
+12. **markbass** - electronics, sport
+13. **markell** - medicine, cosmetics
+14. **marker** - stationery, sport
+15. **market** - general (not fitting neatly into categories)
+16. **markjacobs** - apparel, accessories
+17. **marko** - apparel, accessories
+18. **markwins** - cosmetics, accessories
+19. **marley** - electronics, accessories
+20. **marmorin** - construction, home improvement
+21. **mars** - food (not fitting neatly into categories)
+22. **marseille** - furniture, home decor
+23. **marshal** - electronics, appliances
+24. **marshall** - electronics, accessories
+25. **mart** - general (not fitting neatly into categories)
+
+Now, here’s the SQL INSERT statement based on the above mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('marching', 'sport'),
+    ('marcjacobs', 'apparel'),
+    ('marcjacobs', 'accessories'),
+    ('marcomen', 'apparel'),
+    ('marcomen', 'accessories'),
+    ('marcotozzi', 'apparel'),
+    ('marcotozzi', 'accessories'),
+    ('marcotozzipremio', 'apparel'),
+    ('marcotozzipremio', 'accessories'),
+    ('mariaiskusnica', 'furniture'),
+    ('mariaiskusnica', 'home decor'),
+    ('marianplast', 'construction'),
+    ('marianplast', 'appliances'),
+    ('maribel', 'furniture'),
+    ('maribel', 'home decor'),
+    ('marimex', 'appliances'),
+    ('marimex', 'sport'),
+    ('mario', 'apparel'),
+    ('mario', 'accessories'),
+    ('mark', 'apparel'),
+    ('mark', 'accessories'),
+    ('markbass', 'electronics'),
+    ('markbass', 'sport'),
+    ('markell', 'medicine'),
+    ('markell', 'cosmetics'),
+    ('marker', 'stationery'),
+    ('marker', 'sport'),
+    ('market', 'general'),
+    ('markjacobs', 'apparel'),
+    ('markjacobs', 'accessories'),
+    ('marko', 'apparel'),
+    ('marko', 'accessories'),
+    ('markwins', 'cosmetics'),
+    ('markwins', 'accessories'),
+    ('marley', 'electronics'),
+    ('marley', 'accessories'),
+    ('marmorin', 'construction'),
+    ('marmorin', 'home improvement'),
+    ('mars', 'food'),
+    ('marseille', 'furniture'),
+    ('marseille', 'home decor'),
+    ('marshal', 'electronics'),
+    ('marshal', 'appliances'),
+    ('marshall', 'electronics'),
+    ('marshall', 'accessories'),
+    ('mart', 'general');
+```
+
+This SQL statement includes all the brands along with their assigned categories based on the search results.
+[2024-12-05T21:59:32.673+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('marching', 'sport'),
+    ('marcjacobs', 'apparel'),
+    ('marcjacobs', 'accessories'),
+    ('marcomen', 'apparel'),
+    ('marcomen', 'accessories'),
+    ('marcotozzi', 'apparel'),
+    ('marcotozzi', 'accessories'),
+    ('marcotozzipremio', 'apparel'),
+    ('marcotozzipremio', 'accessories'),
+    ('mariaiskusnica', 'furniture'),
+    ('mariaiskusnica', 'home decor'),
+    ('marianplast', 'construction'),
+    ('marianplast', 'appliances'),
+    ('maribel', 'furniture'),
+    ('maribel', 'home decor'),
+    ('marimex', 'appliances'),
+    ('marimex', 'sport'),
+    ('mario', 'apparel'),
+    ('mario', 'accessories'),
+    ('mark', 'apparel'),
+    ('mark', 'accessories'),
+    ('markbass', 'electronics'),
+    ('markbass', 'sport'),
+    ('markell', 'medicine'),
+    ('markell', 'cosmetics'),
+    ('marker', 'stationery'),
+    ('marker', 'sport'),
+    ('market', 'general'),
+    ('markjacobs', 'apparel'),
+    ('markjacobs', 'accessories'),
+    ('marko', 'apparel'),
+    ('marko', 'accessories'),
+    ('markwins', 'cosmetics'),
+    ('markwins', 'accessories'),
+    ('marley', 'electronics'),
+    ('marley', 'accessories'),
+    ('marmorin', 'construction'),
+    ('marmorin', 'home improvement'),
+    ('mars', 'food'),
+    ('marseille', 'furniture'),
+    ('marseille', 'home decor'),
+    ('marshal', 'electronics'),
+    ('marshal', 'appliances'),
+    ('marshall', 'electronics'),
+    ('marshall', 'accessories'),
+    ('mart', 'general');
+[2024-12-05T21:59:32.673+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('marching', 'sport'),
+    ('marcjacobs', 'apparel'),
+    ('marcjacobs', 'accessories'),
+    ('marcomen', 'apparel'),
+    ('marcomen', 'accessories'),
+    ('marcotozzi', 'apparel'),
+    ('marcotozzi', 'accessories'),
+    ('marcotozzipremio', 'apparel'),
+    ('marcotozzipremio', 'accessories'),
+    ('mariaiskusnica', 'furniture'),
+    ('mariaiskusnica', 'home decor'),
+    ('marianplast', 'construction'),
+    ('marianplast', 'appliances'),
+    ('maribel', 'furniture'),
+    ('maribel', 'home decor'),
+    ('marimex', 'appliances'),
+    ('marimex', 'sport'),
+    ('mario', 'apparel'),
+    ('mario', 'accessories'),
+    ('mark', 'apparel'),
+    ('mark', 'accessories'),
+    ('markbass', 'electronics'),
+    ('markbass', 'sport'),
+    ('markell', 'medicine'),
+    ('markell', 'cosmetics'),
+    ('marker', 'stationery'),
+    ('marker', 'sport'),
+    ('market', 'general'),
+    ('markjacobs', 'apparel'),
+    ('markjacobs', 'accessories'),
+    ('marko', 'apparel'),
+    ('marko', 'accessories'),
+    ('markwins', 'cosmetics'),
+    ('markwins', 'accessories'),
+    ('marley', 'electronics'),
+    ('marley', 'accessories'),
+    ('marmorin', 'construction'),
+    ('marmorin', 'home improvement'),
+    ('mars', 'food'),
+    ('marseille', 'furniture'),
+    ('marseille', 'home decor'),
+    ('marshal', 'electronics'),
+    ('marshal', 'appliances'),
+    ('marshall', 'electronics'),
+    ('marshall', 'accessories'),
+    ('mart', 'general');
+[2024-12-05T21:59:32.691+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:59:32.693+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:59:12.531779+00:00, execution_date=20241205T215912, start_date=20241205T215932, end_date=20241205T215932
+[2024-12-05T21:59:32.720+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:59:32.740+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:59:32.743+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

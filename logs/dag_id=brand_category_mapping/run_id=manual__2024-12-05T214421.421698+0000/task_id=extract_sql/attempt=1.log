@@ -1,0 +1,147 @@
+[2024-12-05T21:44:50.521+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:44:50.535+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:44:21.421698+00:00 [queued]>
+[2024-12-05T21:44:50.542+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:44:21.421698+00:00 [queued]>
+[2024-12-05T21:44:50.543+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:44:50.557+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:44:21.421698+00:00
+[2024-12-05T21:44:50.564+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5145) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:44:50.566+0000] {standard_task_runner.py:72} INFO - Started process 5146 to run task
+[2024-12-05T21:44:50.566+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:44:21.421698+00:00', '--job-id', '1123', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpbjri9ij_']
+[2024-12-05T21:44:50.568+0000] {standard_task_runner.py:105} INFO - Job 1123: Subtask extract_sql
+[2024-12-05T21:44:50.608+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:44:21.421698+00:00 [running]> on host c7780884450d
+[2024-12-05T21:44:50.682+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:44:21.421698+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:44:21.421698+00:00'
+[2024-12-05T21:44:50.683+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:44:50.701+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of each brand to its corresponding categories based on the search results:
+
+1. **ivolia**: appliances
+2. **ivt**: electronics
+3. **ivy**: apparel
+4. **iwalk**: accessories, kids
+5. **izdatelskijdommeserakova**: stationery
+6. **izdatelstvoinstitutagajdara**: stationery
+7. **izdatelstvoivanalimbaha**: stationery
+8. **izdenpublishinghouse**: stationery
+9. **jabra**: electronics
+10. **jack**: apparel, accessories
+11. **jackson**: apparel, accessories
+12. **jackwolfscin**: apparel, sport
+13. **jackwolfskin**: apparel, accessories
+14. **jacobdelafon**: appliances
+15. **jacobs**: food (not in the list, but generally known for coffee products)
+16. **jacqueslemans**: accessories
+17. **jade**: accessories
+18. **jaguar**: auto
+19. **jailinuo**: electronics
+20. **jakkspacific**: sport
+21. **jamo**: electronics
+22. **jana**: apparel
+23. **janesper**: apparel
+24. **janome**: appliances
+25. **japanparts**: auto
+
+Now, here’s the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ivolia', 'appliances'),
+    ('ivt', 'electronics'),
+    ('ivy', 'apparel'),
+    ('iwalk', 'accessories'),
+    ('iwalk', 'kids'),
+    ('izdatelskijdommeserakova', 'stationery'),
+    ('izdatelstvoinstitutagajdara', 'stationery'),
+    ('izdatelstvoivanalimbaha', 'stationery'),
+    ('izdenpublishinghouse', 'stationery'),
+    ('jabra', 'electronics'),
+    ('jack', 'apparel'),
+    ('jack', 'accessories'),
+    ('jackson', 'apparel'),
+    ('jackson', 'accessories'),
+    ('jackwolfscin', 'apparel'),
+    ('jackwolfscin', 'sport'),
+    ('jackwolfskin', 'apparel'),
+    ('jackwolfskin', 'accessories'),
+    ('jacobdelafon', 'appliances'),
+    ('jacobs', 'stationery'), -- This might not fit but added for completeness
+    ('jacqueslemans', 'accessories'),
+    ('jade', 'accessories'),
+    ('jaguar', 'auto'),
+    ('jailinuo', 'electronics'),
+    ('jakkspacific', 'sport'),
+    ('jamo', 'electronics'),
+    ('jana', 'apparel'),
+    ('janesper', 'apparel'),
+    ('janome', 'appliances'),
+    ('japanparts', 'auto');
+```
+
+This statement includes the brands and their associated categories based on the search results and logical deductions.
+[2024-12-05T21:44:50.702+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ivolia', 'appliances'),
+    ('ivt', 'electronics'),
+    ('ivy', 'apparel'),
+    ('iwalk', 'accessories'),
+    ('iwalk', 'kids'),
+    ('izdatelskijdommeserakova', 'stationery'),
+    ('izdatelstvoinstitutagajdara', 'stationery'),
+    ('izdatelstvoivanalimbaha', 'stationery'),
+    ('izdenpublishinghouse', 'stationery'),
+    ('jabra', 'electronics'),
+    ('jack', 'apparel'),
+    ('jack', 'accessories'),
+    ('jackson', 'apparel'),
+    ('jackson', 'accessories'),
+    ('jackwolfscin', 'apparel'),
+    ('jackwolfscin', 'sport'),
+    ('jackwolfskin', 'apparel'),
+    ('jackwolfskin', 'accessories'),
+    ('jacobdelafon', 'appliances'),
+    ('jacobs', 'stationery'), -- This might not fit but added for completeness
+    ('jacqueslemans', 'accessories'),
+    ('jade', 'accessories'),
+    ('jaguar', 'auto'),
+    ('jailinuo', 'electronics'),
+    ('jakkspacific', 'sport'),
+    ('jamo', 'electronics'),
+    ('jana', 'apparel'),
+    ('janesper', 'apparel'),
+    ('janome', 'appliances'),
+    ('japanparts', 'auto');
+[2024-12-05T21:44:50.702+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ivolia', 'appliances'),
+    ('ivt', 'electronics'),
+    ('ivy', 'apparel'),
+    ('iwalk', 'accessories'),
+    ('iwalk', 'kids'),
+    ('izdatelskijdommeserakova', 'stationery'),
+    ('izdatelstvoinstitutagajdara', 'stationery'),
+    ('izdatelstvoivanalimbaha', 'stationery'),
+    ('izdenpublishinghouse', 'stationery'),
+    ('jabra', 'electronics'),
+    ('jack', 'apparel'),
+    ('jack', 'accessories'),
+    ('jackson', 'apparel'),
+    ('jackson', 'accessories'),
+    ('jackwolfscin', 'apparel'),
+    ('jackwolfscin', 'sport'),
+    ('jackwolfskin', 'apparel'),
+    ('jackwolfskin', 'accessories'),
+    ('jacobdelafon', 'appliances'),
+    ('jacobs', 'stationery'), -- This might not fit but added for completeness
+    ('jacqueslemans', 'accessories'),
+    ('jade', 'accessories'),
+    ('jaguar', 'auto'),
+    ('jailinuo', 'electronics'),
+    ('jakkspacific', 'sport'),
+    ('jamo', 'electronics'),
+    ('jana', 'apparel'),
+    ('janesper', 'apparel'),
+    ('janome', 'appliances'),
+    ('japanparts', 'auto');
+[2024-12-05T21:44:50.722+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:44:50.723+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:44:21.421698+00:00, execution_date=20241205T214421, start_date=20241205T214450, end_date=20241205T214450
+[2024-12-05T21:44:50.740+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:44:50.759+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:44:50.762+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

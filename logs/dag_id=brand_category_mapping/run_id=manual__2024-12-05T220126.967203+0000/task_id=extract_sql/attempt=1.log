@@ -1,0 +1,156 @@
+[2024-12-05T22:01:46.686+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:01:46.699+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:01:26.967203+00:00 [queued]>
+[2024-12-05T22:01:46.706+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:01:26.967203+00:00 [queued]>
+[2024-12-05T22:01:46.707+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:01:46.721+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:01:26.967203+00:00
+[2024-12-05T22:01:46.727+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6041) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:01:46.728+0000] {standard_task_runner.py:72} INFO - Started process 6042 to run task
+[2024-12-05T22:01:46.729+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:01:26.967203+00:00', '--job-id', '1315', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp9724msrs']
+[2024-12-05T22:01:46.731+0000] {standard_task_runner.py:105} INFO - Job 1315: Subtask extract_sql
+[2024-12-05T22:01:46.769+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:01:26.967203+00:00 [running]> on host c7780884450d
+[2024-12-05T22:01:46.834+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:01:26.967203+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:01:26.967203+00:00'
+[2024-12-05T22:01:46.836+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:01:46.854+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results:
+
+1. **mdlab** - medicine
+2. **mdv** - medicine
+3. **meade** - electronics, sport
+4. **meanlove** - apparel, accessories
+5. **measy** - electronics, appliances
+6. **mebberi** - furniture
+7. **mebbery** - furniture
+8. **mebbery.kz** - furniture
+9. **mebberykz** - furniture
+10. **mebelazii** - furniture
+11. **mebelcon** - furniture
+12. **mebelev** - furniture
+13. **mebelgrad** - furniture
+14. **mebels** - furniture
+15. **mebelservice** - furniture
+16. **mebelson** - furniture
+17. **mebelswow-rn** - furniture
+18. **mebelux** - furniture
+19. **meccano** - kids, accessories
+20. **mecta** - electronics, appliances
+21. **medalist** - sport, medicine
+22. **medela** - medicine
+23. **medeli** - electronics, music
+24. **medi** - medicine
+25. **mediheal** - medicine, skincare
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mdlab', 'medicine'),
+    ('mdv', 'medicine'),
+    ('meade', 'electronics'),
+    ('meade', 'sport'),
+    ('meanlove', 'apparel'),
+    ('meanlove', 'accessories'),
+    ('measy', 'electronics'),
+    ('measy', 'appliances'),
+    ('mebberi', 'furniture'),
+    ('mebbery', 'furniture'),
+    ('mebbery.kz', 'furniture'),
+    ('mebberykz', 'furniture'),
+    ('mebelazii', 'furniture'),
+    ('mebelcon', 'furniture'),
+    ('mebelev', 'furniture'),
+    ('mebelgrad', 'furniture'),
+    ('mebels', 'furniture'),
+    ('mebelservice', 'furniture'),
+    ('mebelson', 'furniture'),
+    ('mebelswow-rn', 'furniture'),
+    ('mebelux', 'furniture'),
+    ('meccano', 'kids'),
+    ('meccano', 'accessories'),
+    ('mecta', 'electronics'),
+    ('mecta', 'appliances'),
+    ('medalist', 'sport'),
+    ('medalist', 'medicine'),
+    ('medela', 'medicine'),
+    ('medeli', 'electronics'),
+    ('medeli', 'music'),
+    ('medi', 'medicine'),
+    ('mediheal', 'medicine'),
+    ('mediheal', 'skincare');
+``` 
+
+This SQL statement maps each brand to its corresponding categories.
+[2024-12-05T22:01:46.855+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mdlab', 'medicine'),
+    ('mdv', 'medicine'),
+    ('meade', 'electronics'),
+    ('meade', 'sport'),
+    ('meanlove', 'apparel'),
+    ('meanlove', 'accessories'),
+    ('measy', 'electronics'),
+    ('measy', 'appliances'),
+    ('mebberi', 'furniture'),
+    ('mebbery', 'furniture'),
+    ('mebbery.kz', 'furniture'),
+    ('mebberykz', 'furniture'),
+    ('mebelazii', 'furniture'),
+    ('mebelcon', 'furniture'),
+    ('mebelev', 'furniture'),
+    ('mebelgrad', 'furniture'),
+    ('mebels', 'furniture'),
+    ('mebelservice', 'furniture'),
+    ('mebelson', 'furniture'),
+    ('mebelswow-rn', 'furniture'),
+    ('mebelux', 'furniture'),
+    ('meccano', 'kids'),
+    ('meccano', 'accessories'),
+    ('mecta', 'electronics'),
+    ('mecta', 'appliances'),
+    ('medalist', 'sport'),
+    ('medalist', 'medicine'),
+    ('medela', 'medicine'),
+    ('medeli', 'electronics'),
+    ('medeli', 'music'),
+    ('medi', 'medicine'),
+    ('mediheal', 'medicine'),
+    ('mediheal', 'skincare');
+[2024-12-05T22:01:46.855+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mdlab', 'medicine'),
+    ('mdv', 'medicine'),
+    ('meade', 'electronics'),
+    ('meade', 'sport'),
+    ('meanlove', 'apparel'),
+    ('meanlove', 'accessories'),
+    ('measy', 'electronics'),
+    ('measy', 'appliances'),
+    ('mebberi', 'furniture'),
+    ('mebbery', 'furniture'),
+    ('mebbery.kz', 'furniture'),
+    ('mebberykz', 'furniture'),
+    ('mebelazii', 'furniture'),
+    ('mebelcon', 'furniture'),
+    ('mebelev', 'furniture'),
+    ('mebelgrad', 'furniture'),
+    ('mebels', 'furniture'),
+    ('mebelservice', 'furniture'),
+    ('mebelson', 'furniture'),
+    ('mebelswow-rn', 'furniture'),
+    ('mebelux', 'furniture'),
+    ('meccano', 'kids'),
+    ('meccano', 'accessories'),
+    ('mecta', 'electronics'),
+    ('mecta', 'appliances'),
+    ('medalist', 'sport'),
+    ('medalist', 'medicine'),
+    ('medela', 'medicine'),
+    ('medeli', 'electronics'),
+    ('medeli', 'music'),
+    ('medi', 'medicine'),
+    ('mediheal', 'medicine'),
+    ('mediheal', 'skincare');
+[2024-12-05T22:01:46.873+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:01:46.874+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:01:26.967203+00:00, execution_date=20241205T220126, start_date=20241205T220146, end_date=20241205T220146
+[2024-12-05T22:01:46.903+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:01:46.922+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:01:46.925+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

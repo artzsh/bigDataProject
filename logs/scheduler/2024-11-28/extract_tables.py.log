@@ -1,0 +1,28 @@
+[2024-11-28T07:40:01.956+0000] {processor.py:186} INFO - Started process (PID=59) to work on /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:40:01.957+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extract_tables.py for tasks to queue
+[2024-11-28T07:40:01.960+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:01.959+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:40:02.483+0000] {processor.py:925} INFO - DAG(s) 'extract_tables' retrieved from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:40:02.498+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:02.498+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:40:02.517+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:02.517+0000] {dag.py:4180} INFO - Setting next_dagrun for extract_tables to 2024-11-28 00:00:00+00:00, run_after=2024-11-29 00:00:00+00:00
+[2024-11-28T07:40:02.535+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extract_tables.py took 0.583 seconds
+[2024-11-28T07:40:33.007+0000] {processor.py:186} INFO - Started process (PID=81) to work on /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:40:33.009+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extract_tables.py for tasks to queue
+[2024-11-28T07:40:33.015+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:33.014+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:40:33.546+0000] {processor.py:925} INFO - DAG(s) 'extract_tables' retrieved from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:40:33.561+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:33.560+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:40:33.578+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:33.578+0000] {dag.py:4180} INFO - Setting next_dagrun for extract_tables to 2024-11-28 00:00:00+00:00, run_after=2024-11-29 00:00:00+00:00
+[2024-11-28T07:40:33.593+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extract_tables.py took 0.598 seconds
+[2024-11-28T07:41:04.010+0000] {processor.py:186} INFO - Started process (PID=105) to work on /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:41:04.010+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extract_tables.py for tasks to queue
+[2024-11-28T07:41:04.012+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:04.012+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:41:04.416+0000] {processor.py:925} INFO - DAG(s) 'extract_tables' retrieved from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:41:04.431+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:04.430+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:41:04.445+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:04.445+0000] {dag.py:4180} INFO - Setting next_dagrun for extract_tables to 2024-11-28 00:00:00+00:00, run_after=2024-11-29 00:00:00+00:00
+[2024-11-28T07:41:04.459+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extract_tables.py took 0.453 seconds
+[2024-11-28T07:41:35.128+0000] {processor.py:186} INFO - Started process (PID=123) to work on /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:41:35.129+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extract_tables.py for tasks to queue
+[2024-11-28T07:41:35.131+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:35.130+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:41:35.588+0000] {processor.py:925} INFO - DAG(s) 'extract_tables' retrieved from /opt/airflow/dags/extract_tables.py
+[2024-11-28T07:41:35.604+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:35.603+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:41:35.620+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:35.619+0000] {dag.py:4180} INFO - Setting next_dagrun for extract_tables to 2024-11-28 00:00:00+00:00, run_after=2024-11-29 00:00:00+00:00
+[2024-11-28T07:41:35.635+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extract_tables.py took 0.511 seconds

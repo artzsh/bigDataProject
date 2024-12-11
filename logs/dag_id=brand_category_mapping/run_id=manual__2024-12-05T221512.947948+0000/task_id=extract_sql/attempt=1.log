@@ -1,0 +1,209 @@
+[2024-12-05T22:15:44.843+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:15:44.858+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:15:12.947948+00:00 [queued]>
+[2024-12-05T22:15:44.868+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:15:12.947948+00:00 [queued]>
+[2024-12-05T22:15:44.869+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:15:44.883+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:15:12.947948+00:00
+[2024-12-05T22:15:44.890+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6790) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:15:44.891+0000] {standard_task_runner.py:72} INFO - Started process 6791 to run task
+[2024-12-05T22:15:44.892+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:15:12.947948+00:00', '--job-id', '1477', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpyya_95ib']
+[2024-12-05T22:15:44.894+0000] {standard_task_runner.py:105} INFO - Job 1477: Subtask extract_sql
+[2024-12-05T22:15:44.933+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:15:12.947948+00:00 [running]> on host c7780884450d
+[2024-12-05T22:15:45.004+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:15:12.947948+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:15:12.947948+00:00'
+[2024-12-05T22:15:45.005+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:15:45.024+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the brands to their respective categories based on the search results:
+
+1. **paws** - pet supplies (not a direct category, but can fit in accessories)
+   - **Assigned Categories**: accessories
+
+2. **payot** - skincare and cosmetics
+   - **Assigned Categories**: medicine
+
+3. **pccooler** - computer cooling solutions
+   - **Assigned Categories**: computers, electronics
+
+4. **pdw** - construction and plumbing products
+   - **Assigned Categories**: construction
+
+5. **peak** - outdoor and sports apparel
+   - **Assigned Categories**: apparel, sport
+
+6. **pearl** - jewelry and accessories
+   - **Assigned Categories**: accessories
+
+7. **pearson** - educational books and materials
+   - **Assigned Categories**: stationery
+
+8. **peavey** - musical instruments and audio equipment
+   - **Assigned Categories**: electronics
+
+9. **pebble** - smartwatches and fitness trackers
+   - **Assigned Categories**: electronics
+
+10. **peda** - educational toys and children's products
+    - **Assigned Categories**: kids, stationery
+
+11. **pediasure** - nutritional products for children
+    - **Assigned Categories**: medicine, kids
+
+12. **pedigree** - pet food and supplies
+    - **Assigned Categories**: accessories
+
+13. **pedrollo** - pumps and related equipment
+    - **Assigned Categories**: appliances, construction
+
+14. **peg-perego** - baby products and toys
+    - **Assigned Categories**: kids, accessories
+
+15. **pegperego** - baby products and toys (duplicate of above)
+    - **Assigned Categories**: kids, accessories
+
+16. **pelengas** - fishing gear and accessories
+    - **Assigned Categories**: sport, accessories
+
+17. **pelliot** - outdoor clothing and gear
+    - **Assigned Categories**: apparel, sport
+
+18. **penn** - fishing tackle and equipment
+    - **Assigned Categories**: sport, accessories
+
+19. **pennsula** - home goods and furniture
+    - **Assigned Categories**: furniture
+
+20. **penny** - stationery and office supplies
+    - **Assigned Categories**: stationery
+
+21. **penrui** - writing instruments and stationery
+    - **Assigned Categories**: stationery
+
+22. **pensofal** - cookware and kitchen products
+    - **Assigned Categories**: appliances
+
+23. **pentart** - art supplies and crafts
+    - **Assigned Categories**: stationery
+
+24. **pentax** - cameras and optical equipment
+    - **Assigned Categories**: electronics
+
+25. **pentel** - writing instruments and art supplies
+    - **Assigned Categories**: stationery
+
+Based on the above mappings, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('paws', 'accessories'),
+    ('payot', 'medicine'),
+    ('pccooler', 'computers'),
+    ('pccooler', 'electronics'),
+    ('pdw', 'construction'),
+    ('peak', 'apparel'),
+    ('peak', 'sport'),
+    ('pearl', 'accessories'),
+    ('pearson', 'stationery'),
+    ('peavey', 'electronics'),
+    ('pebble', 'electronics'),
+    ('peda', 'kids'),
+    ('peda', 'stationery'),
+    ('pediasure', 'medicine'),
+    ('pediasure', 'kids'),
+    ('pedigree', 'accessories'),
+    ('pedrollo', 'appliances'),
+    ('pedrollo', 'construction'),
+    ('peg-perego', 'kids'),
+    ('peg-perego', 'accessories'),
+    ('pegperego', 'kids'),
+    ('pegperego', 'accessories'),
+    ('pelengas', 'sport'),
+    ('pelengas', 'accessories'),
+    ('pelliot', 'apparel'),
+    ('pelliot', 'sport'),
+    ('penn', 'sport'),
+    ('penn', 'accessories'),
+    ('pennsula', 'furniture'),
+    ('penny', 'stationery'),
+    ('penrui', 'stationery'),
+    ('pensofal', 'appliances'),
+    ('pentart', 'stationery'),
+    ('pentax', 'electronics'),
+    ('pentel', 'stationery');
+```
+[2024-12-05T22:15:45.025+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('paws', 'accessories'),
+    ('payot', 'medicine'),
+    ('pccooler', 'computers'),
+    ('pccooler', 'electronics'),
+    ('pdw', 'construction'),
+    ('peak', 'apparel'),
+    ('peak', 'sport'),
+    ('pearl', 'accessories'),
+    ('pearson', 'stationery'),
+    ('peavey', 'electronics'),
+    ('pebble', 'electronics'),
+    ('peda', 'kids'),
+    ('peda', 'stationery'),
+    ('pediasure', 'medicine'),
+    ('pediasure', 'kids'),
+    ('pedigree', 'accessories'),
+    ('pedrollo', 'appliances'),
+    ('pedrollo', 'construction'),
+    ('peg-perego', 'kids'),
+    ('peg-perego', 'accessories'),
+    ('pegperego', 'kids'),
+    ('pegperego', 'accessories'),
+    ('pelengas', 'sport'),
+    ('pelengas', 'accessories'),
+    ('pelliot', 'apparel'),
+    ('pelliot', 'sport'),
+    ('penn', 'sport'),
+    ('penn', 'accessories'),
+    ('pennsula', 'furniture'),
+    ('penny', 'stationery'),
+    ('penrui', 'stationery'),
+    ('pensofal', 'appliances'),
+    ('pentart', 'stationery'),
+    ('pentax', 'electronics'),
+    ('pentel', 'stationery');
+[2024-12-05T22:15:45.025+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('paws', 'accessories'),
+    ('payot', 'medicine'),
+    ('pccooler', 'computers'),
+    ('pccooler', 'electronics'),
+    ('pdw', 'construction'),
+    ('peak', 'apparel'),
+    ('peak', 'sport'),
+    ('pearl', 'accessories'),
+    ('pearson', 'stationery'),
+    ('peavey', 'electronics'),
+    ('pebble', 'electronics'),
+    ('peda', 'kids'),
+    ('peda', 'stationery'),
+    ('pediasure', 'medicine'),
+    ('pediasure', 'kids'),
+    ('pedigree', 'accessories'),
+    ('pedrollo', 'appliances'),
+    ('pedrollo', 'construction'),
+    ('peg-perego', 'kids'),
+    ('peg-perego', 'accessories'),
+    ('pegperego', 'kids'),
+    ('pegperego', 'accessories'),
+    ('pelengas', 'sport'),
+    ('pelengas', 'accessories'),
+    ('pelliot', 'apparel'),
+    ('pelliot', 'sport'),
+    ('penn', 'sport'),
+    ('penn', 'accessories'),
+    ('pennsula', 'furniture'),
+    ('penny', 'stationery'),
+    ('penrui', 'stationery'),
+    ('pensofal', 'appliances'),
+    ('pentart', 'stationery'),
+    ('pentax', 'electronics'),
+    ('pentel', 'stationery');
+[2024-12-05T22:15:45.043+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:15:45.043+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:15:12.947948+00:00, execution_date=20241205T221512, start_date=20241205T221544, end_date=20241205T221545
+[2024-12-05T22:15:45.066+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:15:45.086+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:15:45.089+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,187 @@
+[2024-12-05T21:35:00.589+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:35:00.602+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:34:31.459133+00:00 [queued]>
+[2024-12-05T21:35:00.610+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:34:31.459133+00:00 [queued]>
+[2024-12-05T21:35:00.611+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:35:00.624+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:34:31.459133+00:00
+[2024-12-05T21:35:00.630+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4641) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:35:00.631+0000] {standard_task_runner.py:72} INFO - Started process 4642 to run task
+[2024-12-05T21:35:00.631+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:34:31.459133+00:00', '--job-id', '1015', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpcnxppym2']
+[2024-12-05T21:35:00.633+0000] {standard_task_runner.py:105} INFO - Job 1015: Subtask extract_sql
+[2024-12-05T21:35:00.668+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:34:31.459133+00:00 [running]> on host c7780884450d
+[2024-12-05T21:35:00.730+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:34:31.459133+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:34:31.459133+00:00'
+[2024-12-05T21:35:00.731+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:35:00.749+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results and analysis:
+
+1. **gladen** - electronics
+2. **gladiator** - furniture, appliances
+3. **glam-forever** - apparel, accessories
+4. **glamglow** - medicine, cosmetics
+5. **glamour** - apparel, cosmetics
+6. **glamvers** - apparel, accessories
+7. **glasman** - appliances
+8. **glimmeies** - kids, toys
+9. **glimmies** - kids, toys
+10. **glissade** - apparel, sport
+11. **glo** - cosmetics, medicine
+12. **global** - electronics, appliances
+13. **globalkeratin** - medicine, cosmetics
+14. **globaltoys** - kids, toys
+15. **globber** - kids, sport
+16. **globex** - electronics
+17. **globo** - kids, toys
+18. **globus** - appliances
+19. **glory** - apparel, accessories
+20. **gloxy** - electronics
+21. **gmini** - kids, electronics
+22. **gmslivgidromasao** - auto
+23. **gnu** - apparel, sport
+24. **goalzero** - appliances, electronics
+25. **godin** - musical instruments, accessories
+
+Now, here's the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gladen', 'electronics'),
+    ('gladiator', 'furniture'),
+    ('gladiator', 'appliances'),
+    ('glam-forever', 'apparel'),
+    ('glam-forever', 'accessories'),
+    ('glamglow', 'medicine'),
+    ('glamglow', 'cosmetics'),
+    ('glamour', 'apparel'),
+    ('glamour', 'cosmetics'),
+    ('glamvers', 'apparel'),
+    ('glamvers', 'accessories'),
+    ('glasman', 'appliances'),
+    ('glimmeies', 'kids'),
+    ('glimmeies', 'toys'),
+    ('glimmies', 'kids'),
+    ('glimmies', 'toys'),
+    ('glissade', 'apparel'),
+    ('glissade', 'sport'),
+    ('glo', 'cosmetics'),
+    ('glo', 'medicine'),
+    ('global', 'electronics'),
+    ('global', 'appliances'),
+    ('globalkeratin', 'medicine'),
+    ('globalkeratin', 'cosmetics'),
+    ('globaltoys', 'kids'),
+    ('globaltoys', 'toys'),
+    ('globber', 'kids'),
+    ('globber', 'sport'),
+    ('globex', 'electronics'),
+    ('globo', 'kids'),
+    ('globo', 'toys'),
+    ('globus', 'appliances'),
+    ('glory', 'apparel'),
+    ('glory', 'accessories'),
+    ('gloxy', 'electronics'),
+    ('gmini', 'kids'),
+    ('gmini', 'electronics'),
+    ('gmslivgidromasao', 'auto'),
+    ('gnu', 'apparel'),
+    ('gnu', 'sport'),
+    ('goalzero', 'appliances'),
+    ('goalzero', 'electronics'),
+    ('godin', 'musical instruments'),
+    ('godin', 'accessories');
+```
+[2024-12-05T21:35:00.750+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gladen', 'electronics'),
+    ('gladiator', 'furniture'),
+    ('gladiator', 'appliances'),
+    ('glam-forever', 'apparel'),
+    ('glam-forever', 'accessories'),
+    ('glamglow', 'medicine'),
+    ('glamglow', 'cosmetics'),
+    ('glamour', 'apparel'),
+    ('glamour', 'cosmetics'),
+    ('glamvers', 'apparel'),
+    ('glamvers', 'accessories'),
+    ('glasman', 'appliances'),
+    ('glimmeies', 'kids'),
+    ('glimmeies', 'toys'),
+    ('glimmies', 'kids'),
+    ('glimmies', 'toys'),
+    ('glissade', 'apparel'),
+    ('glissade', 'sport'),
+    ('glo', 'cosmetics'),
+    ('glo', 'medicine'),
+    ('global', 'electronics'),
+    ('global', 'appliances'),
+    ('globalkeratin', 'medicine'),
+    ('globalkeratin', 'cosmetics'),
+    ('globaltoys', 'kids'),
+    ('globaltoys', 'toys'),
+    ('globber', 'kids'),
+    ('globber', 'sport'),
+    ('globex', 'electronics'),
+    ('globo', 'kids'),
+    ('globo', 'toys'),
+    ('globus', 'appliances'),
+    ('glory', 'apparel'),
+    ('glory', 'accessories'),
+    ('gloxy', 'electronics'),
+    ('gmini', 'kids'),
+    ('gmini', 'electronics'),
+    ('gmslivgidromasao', 'auto'),
+    ('gnu', 'apparel'),
+    ('gnu', 'sport'),
+    ('goalzero', 'appliances'),
+    ('goalzero', 'electronics'),
+    ('godin', 'musical instruments'),
+    ('godin', 'accessories');
+[2024-12-05T21:35:00.751+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gladen', 'electronics'),
+    ('gladiator', 'furniture'),
+    ('gladiator', 'appliances'),
+    ('glam-forever', 'apparel'),
+    ('glam-forever', 'accessories'),
+    ('glamglow', 'medicine'),
+    ('glamglow', 'cosmetics'),
+    ('glamour', 'apparel'),
+    ('glamour', 'cosmetics'),
+    ('glamvers', 'apparel'),
+    ('glamvers', 'accessories'),
+    ('glasman', 'appliances'),
+    ('glimmeies', 'kids'),
+    ('glimmeies', 'toys'),
+    ('glimmies', 'kids'),
+    ('glimmies', 'toys'),
+    ('glissade', 'apparel'),
+    ('glissade', 'sport'),
+    ('glo', 'cosmetics'),
+    ('glo', 'medicine'),
+    ('global', 'electronics'),
+    ('global', 'appliances'),
+    ('globalkeratin', 'medicine'),
+    ('globalkeratin', 'cosmetics'),
+    ('globaltoys', 'kids'),
+    ('globaltoys', 'toys'),
+    ('globber', 'kids'),
+    ('globber', 'sport'),
+    ('globex', 'electronics'),
+    ('globo', 'kids'),
+    ('globo', 'toys'),
+    ('globus', 'appliances'),
+    ('glory', 'apparel'),
+    ('glory', 'accessories'),
+    ('gloxy', 'electronics'),
+    ('gmini', 'kids'),
+    ('gmini', 'electronics'),
+    ('gmslivgidromasao', 'auto'),
+    ('gnu', 'apparel'),
+    ('gnu', 'sport'),
+    ('goalzero', 'appliances'),
+    ('goalzero', 'electronics'),
+    ('godin', 'musical instruments'),
+    ('godin', 'accessories');
+[2024-12-05T21:35:00.767+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:35:00.768+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:34:31.459133+00:00, execution_date=20241205T213431, start_date=20241205T213500, end_date=20241205T213500
+[2024-12-05T21:35:00.805+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:35:00.823+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:35:00.826+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,168 @@
+[2024-12-05T21:03:52.128+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:03:52.138+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:03:45.590729+00:00 [queued]>
+[2024-12-05T21:03:52.144+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:03:45.590729+00:00 [queued]>
+[2024-12-05T21:03:52.145+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:03:52.156+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:03:45.590729+00:00
+[2024-12-05T21:03:52.161+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2966) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:03:52.163+0000] {standard_task_runner.py:72} INFO - Started process 2967 to run task
+[2024-12-05T21:03:52.163+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:03:45.590729+00:00', '--job-id', '654', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpws7g6w0a']
+[2024-12-05T21:03:52.164+0000] {standard_task_runner.py:105} INFO - Job 654: Subtask call_llm
+[2024-12-05T21:03:52.196+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:03:45.590729+00:00 [running]> on host c7780884450d
+[2024-12-05T21:03:52.252+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:03:45.590729+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:03:45.590729+00:00'
+[2024-12-05T21:03:52.253+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:03:52.268+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['avizor', 'avrora', 'avrorateksdizajn', 'avs', 'avtolider', 'avtotent', 'awei', 'axe', 'axis', 'axiver', 'axper', 'aywiparts', 'azbuka', 'azbuka-attikus', 'azbukvarik', 'azzaro', 'babalo', 'babe', 'babies', 'babolat', 'baboo', 'babor', 'baby', 'babyborn', 'babybotte'], 'next_index': 475}
+[2024-12-05T21:03:52.269+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:03:52.856+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:04:09.699+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the assigned categories for each brand based on the specified steps:
+
+1. **avizor**: medicine
+2. **avrora**: appliances, electronics
+3. **avrorateksdizajn**: furniture, accessories
+4. **avs**: electronics, appliances
+5. **avtolider**: auto
+6. **avtotent**: auto, accessories
+7. **awei**: electronics
+8. **axe**: accessories, apparel
+9. **axis**: electronics
+10. **axiver**: auto, accessories
+11. **axper**: auto
+12. **aywiparts**: auto, accessories
+13. **azbuka**: stationery, kids
+14. **azbuka-attikus**: stationery, kids
+15. **azbukvarik**: stationery, kids
+16. **azzaro**: apparel, accessories
+17. **babalo**: kids
+18. **babe**: kids, apparel
+19. **babies**: kids
+20. **babolat**: sport, apparel
+21. **baboo**: kids
+22. **babor**: medicine, cosmetics
+23. **baby**: kids
+24. **babyborn**: kids
+25. **babybotte**: kids, apparel
+
+Now, I will generate the SQL INSERT statement for the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('avizor', 'medicine'),
+    ('avrora', 'appliances'),
+    ('avrora', 'electronics'),
+    ('avrorateksdizajn', 'furniture'),
+    ('avrorateksdizajn', 'accessories'),
+    ('avs', 'electronics'),
+    ('avs', 'appliances'),
+    ('avtolider', 'auto'),
+    ('avtotent', 'auto'),
+    ('avtotent', 'accessories'),
+    ('awei', 'electronics'),
+    ('axe', 'accessories'),
+    ('axe', 'apparel'),
+    ('axis', 'electronics'),
+    ('axiver', 'auto'),
+    ('axiver', 'accessories'),
+    ('axper', 'auto'),
+    ('aywiparts', 'auto'),
+    ('aywiparts', 'accessories'),
+    ('azbuka', 'stationery'),
+    ('azbuka', 'kids'),
+    ('azbuka-attikus', 'stationery'),
+    ('azbuka-attikus', 'kids'),
+    ('azbukvarik', 'stationery'),
+    ('azbukvarik', 'kids'),
+    ('azzaro', 'apparel'),
+    ('azzaro', 'accessories'),
+    ('babalo', 'kids'),
+    ('babe', 'kids'),
+    ('babe', 'apparel'),
+    ('babies', 'kids'),
+    ('babolat', 'sport'),
+    ('babolat', 'apparel'),
+    ('baboo', 'kids'),
+    ('babor', 'medicine'),
+    ('babor', 'cosmetics'),
+    ('baby', 'kids'),
+    ('babyborn', 'kids'),
+    ('babybotte', 'kids'),
+    ('babybotte', 'apparel');
+```
+[2024-12-05T21:04:09.699+0000] {python.py:240} INFO - Done. Returned value was: Here are the assigned categories for each brand based on the specified steps:
+
+1. **avizor**: medicine
+2. **avrora**: appliances, electronics
+3. **avrorateksdizajn**: furniture, accessories
+4. **avs**: electronics, appliances
+5. **avtolider**: auto
+6. **avtotent**: auto, accessories
+7. **awei**: electronics
+8. **axe**: accessories, apparel
+9. **axis**: electronics
+10. **axiver**: auto, accessories
+11. **axper**: auto
+12. **aywiparts**: auto, accessories
+13. **azbuka**: stationery, kids
+14. **azbuka-attikus**: stationery, kids
+15. **azbukvarik**: stationery, kids
+16. **azzaro**: apparel, accessories
+17. **babalo**: kids
+18. **babe**: kids, apparel
+19. **babies**: kids
+20. **babolat**: sport, apparel
+21. **baboo**: kids
+22. **babor**: medicine, cosmetics
+23. **baby**: kids
+24. **babyborn**: kids
+25. **babybotte**: kids, apparel
+
+Now, I will generate the SQL INSERT statement for the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('avizor', 'medicine'),
+    ('avrora', 'appliances'),
+    ('avrora', 'electronics'),
+    ('avrorateksdizajn', 'furniture'),
+    ('avrorateksdizajn', 'accessories'),
+    ('avs', 'electronics'),
+    ('avs', 'appliances'),
+    ('avtolider', 'auto'),
+    ('avtotent', 'auto'),
+    ('avtotent', 'accessories'),
+    ('awei', 'electronics'),
+    ('axe', 'accessories'),
+    ('axe', 'apparel'),
+    ('axis', 'electronics'),
+    ('axiver', 'auto'),
+    ('axiver', 'accessories'),
+    ('axper', 'auto'),
+    ('aywiparts', 'auto'),
+    ('aywiparts', 'accessories'),
+    ('azbuka', 'stationery'),
+    ('azbuka', 'kids'),
+    ('azbuka-attikus', 'stationery'),
+    ('azbuka-attikus', 'kids'),
+    ('azbukvarik', 'stationery'),
+    ('azbukvarik', 'kids'),
+    ('azzaro', 'apparel'),
+    ('azzaro', 'accessories'),
+    ('babalo', 'kids'),
+    ('babe', 'kids'),
+    ('babe', 'apparel'),
+    ('babies', 'kids'),
+    ('babolat', 'sport'),
+    ('babolat', 'apparel'),
+    ('baboo', 'kids'),
+    ('babor', 'medicine'),
+    ('babor', 'cosmetics'),
+    ('baby', 'kids'),
+    ('babyborn', 'kids'),
+    ('babybotte', 'kids'),
+    ('babybotte', 'apparel');
+```
+[2024-12-05T21:04:09.724+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:04:09.724+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:03:45.590729+00:00, execution_date=20241205T210345, start_date=20241205T210352, end_date=20241205T210409
+[2024-12-05T21:04:09.754+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:04:09.774+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:04:09.777+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,157 @@
+[2024-12-05T21:18:08.089+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:18:08.101+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:17:39.787754+00:00 [queued]>
+[2024-12-05T21:18:08.108+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:17:39.787754+00:00 [queued]>
+[2024-12-05T21:18:08.108+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:18:08.121+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:17:39.787754+00:00
+[2024-12-05T21:18:08.127+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3724) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:18:08.129+0000] {standard_task_runner.py:72} INFO - Started process 3725 to run task
+[2024-12-05T21:18:08.128+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:17:39.787754+00:00', '--job-id', '817', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpzg7u_g_3']
+[2024-12-05T21:18:08.130+0000] {standard_task_runner.py:105} INFO - Job 817: Subtask extract_sql
+[2024-12-05T21:18:08.167+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:17:39.787754+00:00 [running]> on host c7780884450d
+[2024-12-05T21:18:08.286+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:17:39.787754+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:17:39.787754+00:00'
+[2024-12-05T21:18:08.289+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:18:08.332+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results:
+
+1. **corsocomo** - apparel, accessories
+2. **cort** - furniture, appliances
+3. **cortland** - furniture, appliances
+4. **cosottinni** - apparel
+5. **cosrx** - medicine, cosmetics
+6. **costadinafur** - apparel
+7. **coty** - cosmetics, medicine
+8. **cougar** - electronics, accessories (gaming peripherals)
+9. **courvoisier** - beverages (not in predefined categories, but closest could be 'country_yard' for outdoor use)
+10. **covani** - apparel, accessories
+11. **cover** - electronics (especially phone accessories)
+12. **cowon** - electronics (audio devices)
+13. **cozmo** - electronics (robotics)
+14. **cpl** - electronics (LED lighting)
+15. **craft** - stationery, appliances (crafting tools)
+16. **crane** - appliances (humidifiers and air purifiers)
+17. **crea** - stationery, craft supplies
+18. **creative** - stationery
+19. **creature** - apparel (possibly themed merchandise)
+20. **creavit** - appliances (bathroom fixtures)
+21. **creed** - cosmetics, medicine (fragrances)
+22. **cremesso** - appliances (coffee machines)
+23. **creo** - electronics (3D printing)
+24. **creoceramique** - construction (ceramic materials)
+25. **crescina** - medicine (hair loss treatment)
+
+Now, here is the SQL INSERT statement based on the categories assigned:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('corsocomo', 'apparel'),
+    ('corsocomo', 'accessories'),
+    ('cort', 'furniture'),
+    ('cort', 'appliances'),
+    ('cortland', 'furniture'),
+    ('cortland', 'appliances'),
+    ('cosottinni', 'apparel'),
+    ('cosrx', 'medicine'),
+    ('cosrx', 'cosmetics'),
+    ('costadinafur', 'apparel'),
+    ('coty', 'cosmetics'),
+    ('coty', 'medicine'),
+    ('cougar', 'electronics'),
+    ('cougar', 'accessories'),
+    ('courvoisier', 'country_yard'),
+    ('covani', 'apparel'),
+    ('covani', 'accessories'),
+    ('cover', 'electronics'),
+    ('cowon', 'electronics'),
+    ('cozmo', 'electronics'),
+    ('cpl', 'electronics'),
+    ('craft', 'stationery'),
+    ('craft', 'appliances'),
+    ('crane', 'appliances'),
+    ('crea', 'stationery'),
+    ('creative', 'stationery'),
+    ('creature', 'apparel'),
+    ('creavit', 'appliances'),
+    ('creed', 'cosmetics'),
+    ('creed', 'medicine'),
+    ('cremesso', 'appliances'),
+    ('creo', 'electronics'),
+    ('creoceramique', 'construction'),
+    ('crescina', 'medicine');
+```
+[2024-12-05T21:18:08.334+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('corsocomo', 'apparel'),
+    ('corsocomo', 'accessories'),
+    ('cort', 'furniture'),
+    ('cort', 'appliances'),
+    ('cortland', 'furniture'),
+    ('cortland', 'appliances'),
+    ('cosottinni', 'apparel'),
+    ('cosrx', 'medicine'),
+    ('cosrx', 'cosmetics'),
+    ('costadinafur', 'apparel'),
+    ('coty', 'cosmetics'),
+    ('coty', 'medicine'),
+    ('cougar', 'electronics'),
+    ('cougar', 'accessories'),
+    ('courvoisier', 'country_yard'),
+    ('covani', 'apparel'),
+    ('covani', 'accessories'),
+    ('cover', 'electronics'),
+    ('cowon', 'electronics'),
+    ('cozmo', 'electronics'),
+    ('cpl', 'electronics'),
+    ('craft', 'stationery'),
+    ('craft', 'appliances'),
+    ('crane', 'appliances'),
+    ('crea', 'stationery'),
+    ('creative', 'stationery'),
+    ('creature', 'apparel'),
+    ('creavit', 'appliances'),
+    ('creed', 'cosmetics'),
+    ('creed', 'medicine'),
+    ('cremesso', 'appliances'),
+    ('creo', 'electronics'),
+    ('creoceramique', 'construction'),
+    ('crescina', 'medicine');
+[2024-12-05T21:18:08.335+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('corsocomo', 'apparel'),
+    ('corsocomo', 'accessories'),
+    ('cort', 'furniture'),
+    ('cort', 'appliances'),
+    ('cortland', 'furniture'),
+    ('cortland', 'appliances'),
+    ('cosottinni', 'apparel'),
+    ('cosrx', 'medicine'),
+    ('cosrx', 'cosmetics'),
+    ('costadinafur', 'apparel'),
+    ('coty', 'cosmetics'),
+    ('coty', 'medicine'),
+    ('cougar', 'electronics'),
+    ('cougar', 'accessories'),
+    ('courvoisier', 'country_yard'),
+    ('covani', 'apparel'),
+    ('covani', 'accessories'),
+    ('cover', 'electronics'),
+    ('cowon', 'electronics'),
+    ('cozmo', 'electronics'),
+    ('cpl', 'electronics'),
+    ('craft', 'stationery'),
+    ('craft', 'appliances'),
+    ('crane', 'appliances'),
+    ('crea', 'stationery'),
+    ('creative', 'stationery'),
+    ('creature', 'apparel'),
+    ('creavit', 'appliances'),
+    ('creed', 'cosmetics'),
+    ('creed', 'medicine'),
+    ('cremesso', 'appliances'),
+    ('creo', 'electronics'),
+    ('creoceramique', 'construction'),
+    ('crescina', 'medicine');
+[2024-12-05T21:18:08.359+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:18:08.360+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:17:39.787754+00:00, execution_date=20241205T211739, start_date=20241205T211808, end_date=20241205T211808
+[2024-12-05T21:18:08.384+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:18:08.402+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:18:08.405+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

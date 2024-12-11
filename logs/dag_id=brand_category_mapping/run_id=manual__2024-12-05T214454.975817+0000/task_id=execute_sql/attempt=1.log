@@ -1,0 +1,91 @@
+[2024-12-05T21:45:23.031+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:45:23.045+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:44:54.975817+00:00 [queued]>
+[2024-12-05T21:45:23.055+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:44:54.975817+00:00 [queued]>
+[2024-12-05T21:45:23.055+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:45:23.070+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 21:44:54.975817+00:00
+[2024-12-05T21:45:23.076+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5176) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:45:23.078+0000] {standard_task_runner.py:72} INFO - Started process 5177 to run task
+[2024-12-05T21:45:23.079+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T21:44:54.975817+00:00', '--job-id', '1130', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpcyq3psu_']
+[2024-12-05T21:45:23.081+0000] {standard_task_runner.py:105} INFO - Job 1130: Subtask execute_sql
+[2024-12-05T21:45:23.121+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:44:54.975817+00:00 [running]> on host c7780884450d
+[2024-12-05T21:45:23.189+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:44:54.975817+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:44:54.975817+00:00'
+[2024-12-05T21:45:23.190+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:45:23.209+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('jardin', 'country_yard'),
+    ('jarko', 'appliances'),
+    ('jasic', 'electronics'),
+    ('jasic', 'appliances'),
+    ('jasmine', 'apparel'),
+    ('jasmine', 'accessories'),
+    ('jata', 'appliances'),
+    ('jawbone', 'electronics'),
+    ('jazwares', 'kids'),
+    ('jazwares', 'toys'),
+    ('jb', 'electronics'),
+    ('jbl', 'electronics'),
+    ('jeep', 'auto'),
+    ('jeep', 'accessories'),
+    ('jekod', 'electronics'),
+    ('jekod', 'accessories'),
+    ('jellyfishjam', 'kids'),
+    ('jellyfishjam', 'toys'),
+    ('jessnail', 'accessories'),
+    ('jet', 'electronics'),
+    ('jetair', 'appliances'),
+    ('jetem', 'appliances'),
+    ('jetpik', 'appliances'),
+    ('jeunepremier', 'kids'),
+    ('jeunepremier', 'apparel'),
+    ('jhiningmoment', 'accessories'),
+    ('jiada', 'auto'),
+    ('jianuo', 'electronics'),
+    ('jiaxingharleybabycar', 'kids'),
+    ('jiaxingharleybabycar', 'auto'),
+    ('jigott', 'apparel'),
+    ('jihlavabohemia', 'furniture'),
+    ('jika', 'appliances');
+[2024-12-05T21:45:23.215+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T21:45:24.014+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('jardin', 'country_yard'),
+    ('jarko', 'appliances'),
+    ('jasic', 'electronics'),
+    ('jasic', 'appliances'),
+    ('jasmine', 'apparel'),
+    ('jasmine', 'accessories'),
+    ('jata', 'appliances'),
+    ('jawbone', 'electronics'),
+    ('jazwares', 'kids'),
+    ('jazwares', 'toys'),
+    ('jb', 'electronics'),
+    ('jbl', 'electronics'),
+    ('jeep', 'auto'),
+    ('jeep', 'accessories'),
+    ('jekod', 'electronics'),
+    ('jekod', 'accessories'),
+    ('jellyfishjam', 'kids'),
+    ('jellyfishjam', 'toys'),
+    ('jessnail', 'accessories'),
+    ('jet', 'electronics'),
+    ('jetair', 'appliances'),
+    ('jetem', 'appliances'),
+    ('jetpik', 'appliances'),
+    ('jeunepremier', 'kids'),
+    ('jeunepremier', 'apparel'),
+    ('jhiningmoment', 'accessories'),
+    ('jiada', 'auto'),
+    ('jianuo', 'electronics'),
+    ('jiaxingharleybabycar', 'kids'),
+    ('jiaxingharleybabycar', 'auto'),
+    ('jigott', 'apparel'),
+    ('jihlavabohemia', 'furniture'),
+    ('jika', 'appliances');
+[2024-12-05T21:45:24.250+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T21:45:24.251+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T21:45:24.259+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:45:24.260+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T21:44:54.975817+00:00, execution_date=20241205T214454, start_date=20241205T214523, end_date=20241205T214524
+[2024-12-05T21:45:24.296+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:45:24.315+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:45:24.318+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

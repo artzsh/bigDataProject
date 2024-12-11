@@ -1,0 +1,77 @@
+[2024-12-05T21:09:16.286+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:09:16.302+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:08:47.172899+00:00 [queued]>
+[2024-12-05T21:09:16.310+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:08:47.172899+00:00 [queued]>
+[2024-12-05T21:09:16.311+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:09:16.326+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 21:08:47.172899+00:00
+[2024-12-05T21:09:16.332+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3236) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:09:16.333+0000] {standard_task_runner.py:72} INFO - Started process 3237 to run task
+[2024-12-05T21:09:16.334+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T21:08:47.172899+00:00', '--job-id', '710', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpy_ypbmn2']
+[2024-12-05T21:09:16.336+0000] {standard_task_runner.py:105} INFO - Job 710: Subtask execute_sql
+[2024-12-05T21:09:16.379+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:08:47.172899+00:00 [running]> on host c7780884450d
+[2024-12-05T21:09:16.448+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:08:47.172899+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:08:47.172899+00:00'
+[2024-12-05T21:09:16.449+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:09:16.467+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('bingo', 'kids'),
+    ('bio', 'medicine'),
+    ('bioderma', 'medicine'),
+    ('bioderma', 'cosmetics'),
+    ('biofinity', 'medicine'),
+    ('biography', 'stationery'),
+    ('bioinhaler', 'medicine'),
+    ('biol', 'medicine'),
+    ('biolage', 'cosmetics'),
+    ('biolane', 'medicine'),
+    ('biomecanics', 'kids'),
+    ('biomed', 'medicine'),
+    ('bionime', 'medicine'),
+    ('bio-oil', 'medicine'),
+    ('biostal', 'appliances'),
+    ('biostar', 'medicine'),
+    ('biotech', 'medicine'),
+    ('bio-tekstil', 'apparel'),
+    ('biotherm', 'cosmetics'),
+    ('biovea', 'medicine'),
+    ('biovise', 'medicine'),
+    ('bioworld', 'apparel'),
+    ('birusa', 'appliances'),
+    ('bisou', 'accessories'),
+    ('bissell', 'appliances'),
+    ('biwec', 'appliances');
+[2024-12-05T21:09:16.475+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T21:09:17.288+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('bingo', 'kids'),
+    ('bio', 'medicine'),
+    ('bioderma', 'medicine'),
+    ('bioderma', 'cosmetics'),
+    ('biofinity', 'medicine'),
+    ('biography', 'stationery'),
+    ('bioinhaler', 'medicine'),
+    ('biol', 'medicine'),
+    ('biolage', 'cosmetics'),
+    ('biolane', 'medicine'),
+    ('biomecanics', 'kids'),
+    ('biomed', 'medicine'),
+    ('bionime', 'medicine'),
+    ('bio-oil', 'medicine'),
+    ('biostal', 'appliances'),
+    ('biostar', 'medicine'),
+    ('biotech', 'medicine'),
+    ('bio-tekstil', 'apparel'),
+    ('biotherm', 'cosmetics'),
+    ('biovea', 'medicine'),
+    ('biovise', 'medicine'),
+    ('bioworld', 'apparel'),
+    ('birusa', 'appliances'),
+    ('bisou', 'accessories'),
+    ('bissell', 'appliances'),
+    ('biwec', 'appliances');
+[2024-12-05T21:09:17.467+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T21:09:17.467+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T21:09:17.476+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:09:17.477+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T21:08:47.172899+00:00, execution_date=20241205T210847, start_date=20241205T210916, end_date=20241205T210917
+[2024-12-05T21:09:17.512+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:09:17.553+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:09:17.559+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

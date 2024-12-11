@@ -1,0 +1,166 @@
+[2024-12-05T21:24:06.791+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:24:06.804+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:23:39.751223+00:00 [queued]>
+[2024-12-05T21:24:06.811+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:23:39.751223+00:00 [queued]>
+[2024-12-05T21:24:06.812+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:24:06.825+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:23:39.751223+00:00
+[2024-12-05T21:24:06.832+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4053) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:24:06.833+0000] {standard_task_runner.py:72} INFO - Started process 4054 to run task
+[2024-12-05T21:24:06.833+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:23:39.751223+00:00', '--job-id', '889', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpp4gcsmy6']
+[2024-12-05T21:24:06.836+0000] {standard_task_runner.py:105} INFO - Job 889: Subtask extract_sql
+[2024-12-05T21:24:06.874+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:23:39.751223+00:00 [running]> on host c7780884450d
+[2024-12-05T21:24:06.934+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:23:39.751223+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:23:39.751223+00:00'
+[2024-12-05T21:24:06.935+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:24:06.954+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the brands along with their assigned categories based on the search results:
+
+1. **dvirtex** - construction
+2. **dwt** - construction, appliances
+3. **dxracer** - furniture, accessories
+4. **dyflon** - appliances
+5. **dymatize** - sport, medicine
+6. **dynacord** - electronics
+7. **dynafit** - sport
+8. **dynamic** - electronics, appliances
+9. **dynastar** - sport
+10. **dyson** - appliances, electronics
+11. **dzhanelli** - apparel
+12. **ea** - electronics, computers
+13. **eagle** - auto, country_yard
+14. **eago** - appliances, furniture
+15. **earson** - electronics
+16. **easycamp** - accessories, sport
+17. **easygo** - accessories
+18. **easylink** - electronics
+19. **easywalker** - kids, accessories
+20. **eaton** - electronics, appliances
+21. **e-blue** - electronics
+22. **ebox** - electronics
+23. **ecco** - apparel, accessories
+24. **ecler** - electronics
+25. **eco** - appliances
+
+Now, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('dvirtex', 'construction'),
+    ('dwt', 'construction'),
+    ('dwt', 'appliances'),
+    ('dxracer', 'furniture'),
+    ('dxracer', 'accessories'),
+    ('dyflon', 'appliances'),
+    ('dymatize', 'sport'),
+    ('dymatize', 'medicine'),
+    ('dynacord', 'electronics'),
+    ('dynafit', 'sport'),
+    ('dynamic', 'electronics'),
+    ('dynamic', 'appliances'),
+    ('dynastar', 'sport'),
+    ('dyson', 'appliances'),
+    ('dyson', 'electronics'),
+    ('dzhanelli', 'apparel'),
+    ('ea', 'electronics'),
+    ('ea', 'computers'),
+    ('eagle', 'auto'),
+    ('eagle', 'country_yard'),
+    ('eago', 'appliances'),
+    ('eago', 'furniture'),
+    ('earson', 'electronics'),
+    ('easycamp', 'accessories'),
+    ('easycamp', 'sport'),
+    ('easygo', 'accessories'),
+    ('easylink', 'electronics'),
+    ('easywalker', 'kids'),
+    ('easywalker', 'accessories'),
+    ('eaton', 'electronics'),
+    ('eaton', 'appliances'),
+    ('e-blue', 'electronics'),
+    ('ebox', 'electronics'),
+    ('ecco', 'apparel'),
+    ('ecco', 'accessories'),
+    ('ecler', 'electronics'),
+    ('eco', 'appliances');
+```
+[2024-12-05T21:24:06.954+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('dvirtex', 'construction'),
+    ('dwt', 'construction'),
+    ('dwt', 'appliances'),
+    ('dxracer', 'furniture'),
+    ('dxracer', 'accessories'),
+    ('dyflon', 'appliances'),
+    ('dymatize', 'sport'),
+    ('dymatize', 'medicine'),
+    ('dynacord', 'electronics'),
+    ('dynafit', 'sport'),
+    ('dynamic', 'electronics'),
+    ('dynamic', 'appliances'),
+    ('dynastar', 'sport'),
+    ('dyson', 'appliances'),
+    ('dyson', 'electronics'),
+    ('dzhanelli', 'apparel'),
+    ('ea', 'electronics'),
+    ('ea', 'computers'),
+    ('eagle', 'auto'),
+    ('eagle', 'country_yard'),
+    ('eago', 'appliances'),
+    ('eago', 'furniture'),
+    ('earson', 'electronics'),
+    ('easycamp', 'accessories'),
+    ('easycamp', 'sport'),
+    ('easygo', 'accessories'),
+    ('easylink', 'electronics'),
+    ('easywalker', 'kids'),
+    ('easywalker', 'accessories'),
+    ('eaton', 'electronics'),
+    ('eaton', 'appliances'),
+    ('e-blue', 'electronics'),
+    ('ebox', 'electronics'),
+    ('ecco', 'apparel'),
+    ('ecco', 'accessories'),
+    ('ecler', 'electronics'),
+    ('eco', 'appliances');
+[2024-12-05T21:24:06.955+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('dvirtex', 'construction'),
+    ('dwt', 'construction'),
+    ('dwt', 'appliances'),
+    ('dxracer', 'furniture'),
+    ('dxracer', 'accessories'),
+    ('dyflon', 'appliances'),
+    ('dymatize', 'sport'),
+    ('dymatize', 'medicine'),
+    ('dynacord', 'electronics'),
+    ('dynafit', 'sport'),
+    ('dynamic', 'electronics'),
+    ('dynamic', 'appliances'),
+    ('dynastar', 'sport'),
+    ('dyson', 'appliances'),
+    ('dyson', 'electronics'),
+    ('dzhanelli', 'apparel'),
+    ('ea', 'electronics'),
+    ('ea', 'computers'),
+    ('eagle', 'auto'),
+    ('eagle', 'country_yard'),
+    ('eago', 'appliances'),
+    ('eago', 'furniture'),
+    ('earson', 'electronics'),
+    ('easycamp', 'accessories'),
+    ('easycamp', 'sport'),
+    ('easygo', 'accessories'),
+    ('easylink', 'electronics'),
+    ('easywalker', 'kids'),
+    ('easywalker', 'accessories'),
+    ('eaton', 'electronics'),
+    ('eaton', 'appliances'),
+    ('e-blue', 'electronics'),
+    ('ebox', 'electronics'),
+    ('ecco', 'apparel'),
+    ('ecco', 'accessories'),
+    ('ecler', 'electronics'),
+    ('eco', 'appliances');
+[2024-12-05T21:24:06.971+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:24:06.972+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:23:39.751223+00:00, execution_date=20241205T212339, start_date=20241205T212406, end_date=20241205T212406
+[2024-12-05T21:24:07.007+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:24:07.029+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:24:07.034+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,32 @@
+[2024-11-27T18:38:00.957+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-27T18:38:00.969+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_tables.create_categories_table scheduled__2024-11-26T00:00:00+00:00 [queued]>
+[2024-11-27T18:38:00.975+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_tables.create_categories_table scheduled__2024-11-26T00:00:00+00:00 [queued]>
+[2024-11-27T18:38:00.976+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-27T18:38:00.986+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): create_categories_table> on 2024-11-26 00:00:00+00:00
+[2024-11-27T18:38:00.991+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=119) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-27T18:38:00.993+0000] {standard_task_runner.py:72} INFO - Started process 121 to run task
+[2024-11-27T18:38:00.993+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_tables', 'create_categories_table', 'scheduled__2024-11-26T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/extract_tables.py', '--cfg-path', '/tmp/tmpx12q4vbb']
+[2024-11-27T18:38:00.996+0000] {standard_task_runner.py:105} INFO - Job 13: Subtask create_categories_table
+[2024-11-27T18:38:01.032+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_tables.create_categories_table scheduled__2024-11-26T00:00:00+00:00 [running]> on host b6d44e76794e
+[2024-11-27T18:38:01.091+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_tables' AIRFLOW_CTX_TASK_ID='create_categories_table' AIRFLOW_CTX_EXECUTION_DATE='2024-11-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-26T00:00:00+00:00'
+[2024-11-27T18:38:01.092+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-27T18:38:01.115+0000] {logging_mixin.py:190} INFO - [INFO] Обрабатываем ключ: 1
+[2024-11-27T18:38:01.116+0000] {logging_mixin.py:190} INFO - [INFO] Информация о таблице: {'1': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Oct.csv.gz', 'table_name': 'eCommerce_Oct', 'brands_table_name': 'brands_Oct', 'categories_table_name': 'categories_Oct'}, '2': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz', 'table_name': 'eCommerce_Nov', 'brands_table_name': 'brands_Nov', 'categories_table_name': 'categories_Nov'}, '3': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Dec.csv.gz', 'table_name': 'eCommerce_Dec', 'brands_table_name': 'brands_Dec', 'categories_table_name': 'categories_Dec'}, '4': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz', 'table_name': 'eCommerce_Jan', 'brands_table_name': 'brands_Jan', 'categories_table_name': 'categories_Jan'}, '5': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Feb.csv.gz', 'table_name': 'eCommerce_Feb', 'brands_table_name': 'brands_Feb', 'categories_table_name': 'categories_Feb'}, '6': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Mar.csv.gz', 'table_name': 'eCommerce_Mar', 'brands_table_name': 'brands_Mar', 'categories_table_name': 'categories_Mar'}, '7': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Apr.csv.gz', 'table_name': 'eCommerce_Apr', 'brands_table_name': 'brands_Apr', 'categories_table_name': 'categories_Apr'}}
+[2024-11-27T18:38:01.116+0000] {logging_mixin.py:190} INFO - [INFO] Основная таблица: DDS.eCommerce_Oct
+[2024-11-27T18:38:01.116+0000] {logging_mixin.py:190} INFO - [INFO] Таблица брендов: DDS.categories_Oct
+[2024-11-27T18:38:01.120+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-11-27T18:38:01.120+0000] {logging_mixin.py:190} INFO - [INFO] Установка соединения с PostgreSQL.
+[2024-11-27T18:38:01.853+0000] {logging_mixin.py:190} INFO - [INFO] Соединение установлено.
+[2024-11-27T18:38:01.854+0000] {logging_mixin.py:190} INFO - [INFO] Создание таблицы брендов 'DDS.categories_Oct' с уникальными categories.
+[2024-11-27T18:38:02.184+0000] {logging_mixin.py:190} INFO - [INFO] Таблица 'DDS.categories_Oct' успешно создана или обновлена.
+[2024-11-27T18:38:02.185+0000] {logging_mixin.py:190} INFO - [INFO] Курсор закрыт.
+[2024-11-27T18:38:02.187+0000] {logging_mixin.py:190} INFO - [INFO] Соединение с PostgreSQL закрыто.
+[2024-11-27T18:38:02.188+0000] {logging_mixin.py:190} INFO - [COMPLETE] Таблица 'DDS.categories_Oct' с уникальными брендами создана.
+[2024-11-27T18:38:02.189+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-27T18:38:02.203+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-27T18:38:02.205+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extract_tables, task_id=create_categories_table, run_id=scheduled__2024-11-26T00:00:00+00:00, execution_date=20241126T000000, start_date=20241127T183800, end_date=20241127T183802
+[2024-11-27T18:38:02.251+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-27T18:38:02.267+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-27T18:38:02.270+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

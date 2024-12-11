@@ -1,0 +1,175 @@
+[2024-12-05T20:59:01.256+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T20:59:01.269+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T20:58:32.248355+00:00 [queued]>
+[2024-12-05T20:59:01.279+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T20:58:32.248355+00:00 [queued]>
+[2024-12-05T20:59:01.279+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T20:59:01.294+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 20:58:32.248355+00:00
+[2024-12-05T20:59:01.300+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2698) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T20:59:01.302+0000] {standard_task_runner.py:72} INFO - Started process 2699 to run task
+[2024-12-05T20:59:01.302+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T20:58:32.248355+00:00', '--job-id', '595', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp_jfaqick']
+[2024-12-05T20:59:01.304+0000] {standard_task_runner.py:105} INFO - Job 595: Subtask extract_sql
+[2024-12-05T20:59:01.342+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T20:58:32.248355+00:00 [running]> on host c7780884450d
+[2024-12-05T20:59:01.424+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T20:58:32.248355+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T20:58:32.248355+00:00'
+[2024-12-05T20:59:01.425+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T20:59:01.446+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the brands provided, I will categorize each one according to their products. Here are the results of the categorization:
+
+1. **amatis** - appliances
+2. **amazfit** - electronics, sport
+3. **amazon** - electronics, appliances, apparel, accessories, furniture, stationery
+4. **ambassador** - apparel, accessories
+5. **ambition** - apparel, sport
+6. **amd** - computers, electronics
+7. **amefa** - appliances, kitchenware
+8. **a-mega** - appliances
+9. **amega** - appliances
+10. **amen** - apparel
+11. **amercook** - appliances, kitchenware
+12. **americancrew** - accessories, apparel
+13. **americanmotionfitness** - sport, appliances
+14. **amet** - electronics
+15. **amf** - sport
+16. **amico** - electronics
+17. **amigami** - kids
+18. **amiibo** - kids, electronics
+19. **amistar** - appliances
+20. **amos** - stationery
+21. **amouage** - accessories, apparel
+22. **amova** - electronics
+23. **ampeg** - electronics
+24. **am-pm** - appliances
+25. **am.pm** - appliances
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('amatis', 'appliances'),
+    ('amazfit', 'electronics'),
+    ('amazfit', 'sport'),
+    ('amazon', 'electronics'),
+    ('amazon', 'appliances'),
+    ('amazon', 'apparel'),
+    ('amazon', 'accessories'),
+    ('amazon', 'furniture'),
+    ('amazon', 'stationery'),
+    ('ambassador', 'apparel'),
+    ('ambassador', 'accessories'),
+    ('ambition', 'apparel'),
+    ('ambition', 'sport'),
+    ('amd', 'computers'),
+    ('amd', 'electronics'),
+    ('amefa', 'appliances'),
+    ('amefa', 'kitchenware'),
+    ('a-mega', 'appliances'),
+    ('amega', 'appliances'),
+    ('amen', 'apparel'),
+    ('amercook', 'appliances'),
+    ('amercook', 'kitchenware'),
+    ('americancrew', 'accessories'),
+    ('americancrew', 'apparel'),
+    ('americanmotionfitness', 'sport'),
+    ('americanmotionfitness', 'appliances'),
+    ('amet', 'electronics'),
+    ('amf', 'sport'),
+    ('amico', 'electronics'),
+    ('amigami', 'kids'),
+    ('amiibo', 'kids'),
+    ('amiibo', 'electronics'),
+    ('amistar', 'appliances'),
+    ('amos', 'stationery'),
+    ('amouage', 'accessories'),
+    ('amouage', 'apparel'),
+    ('amova', 'electronics'),
+    ('ampeg', 'electronics'),
+    ('am-pm', 'appliances'),
+    ('am.pm', 'appliances');
+```
+[2024-12-05T20:59:01.447+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('amatis', 'appliances'),
+    ('amazfit', 'electronics'),
+    ('amazfit', 'sport'),
+    ('amazon', 'electronics'),
+    ('amazon', 'appliances'),
+    ('amazon', 'apparel'),
+    ('amazon', 'accessories'),
+    ('amazon', 'furniture'),
+    ('amazon', 'stationery'),
+    ('ambassador', 'apparel'),
+    ('ambassador', 'accessories'),
+    ('ambition', 'apparel'),
+    ('ambition', 'sport'),
+    ('amd', 'computers'),
+    ('amd', 'electronics'),
+    ('amefa', 'appliances'),
+    ('amefa', 'kitchenware'),
+    ('a-mega', 'appliances'),
+    ('amega', 'appliances'),
+    ('amen', 'apparel'),
+    ('amercook', 'appliances'),
+    ('amercook', 'kitchenware'),
+    ('americancrew', 'accessories'),
+    ('americancrew', 'apparel'),
+    ('americanmotionfitness', 'sport'),
+    ('americanmotionfitness', 'appliances'),
+    ('amet', 'electronics'),
+    ('amf', 'sport'),
+    ('amico', 'electronics'),
+    ('amigami', 'kids'),
+    ('amiibo', 'kids'),
+    ('amiibo', 'electronics'),
+    ('amistar', 'appliances'),
+    ('amos', 'stationery'),
+    ('amouage', 'accessories'),
+    ('amouage', 'apparel'),
+    ('amova', 'electronics'),
+    ('ampeg', 'electronics'),
+    ('am-pm', 'appliances'),
+    ('am.pm', 'appliances');
+[2024-12-05T20:59:01.447+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('amatis', 'appliances'),
+    ('amazfit', 'electronics'),
+    ('amazfit', 'sport'),
+    ('amazon', 'electronics'),
+    ('amazon', 'appliances'),
+    ('amazon', 'apparel'),
+    ('amazon', 'accessories'),
+    ('amazon', 'furniture'),
+    ('amazon', 'stationery'),
+    ('ambassador', 'apparel'),
+    ('ambassador', 'accessories'),
+    ('ambition', 'apparel'),
+    ('ambition', 'sport'),
+    ('amd', 'computers'),
+    ('amd', 'electronics'),
+    ('amefa', 'appliances'),
+    ('amefa', 'kitchenware'),
+    ('a-mega', 'appliances'),
+    ('amega', 'appliances'),
+    ('amen', 'apparel'),
+    ('amercook', 'appliances'),
+    ('amercook', 'kitchenware'),
+    ('americancrew', 'accessories'),
+    ('americancrew', 'apparel'),
+    ('americanmotionfitness', 'sport'),
+    ('americanmotionfitness', 'appliances'),
+    ('amet', 'electronics'),
+    ('amf', 'sport'),
+    ('amico', 'electronics'),
+    ('amigami', 'kids'),
+    ('amiibo', 'kids'),
+    ('amiibo', 'electronics'),
+    ('amistar', 'appliances'),
+    ('amos', 'stationery'),
+    ('amouage', 'accessories'),
+    ('amouage', 'apparel'),
+    ('amova', 'electronics'),
+    ('ampeg', 'electronics'),
+    ('am-pm', 'appliances'),
+    ('am.pm', 'appliances');
+[2024-12-05T20:59:01.466+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T20:59:01.467+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T20:58:32.248355+00:00, execution_date=20241205T205832, start_date=20241205T205901, end_date=20241205T205901
+[2024-12-05T20:59:01.517+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T20:59:01.536+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T20:59:01.541+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

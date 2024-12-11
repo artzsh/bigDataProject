@@ -1,0 +1,148 @@
+[2024-12-05T21:37:54.709+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:37:54.724+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:37:07.445945+00:00 [queued]>
+[2024-12-05T21:37:54.732+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:37:07.445945+00:00 [queued]>
+[2024-12-05T21:37:54.732+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:37:54.747+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:37:07.445945+00:00
+[2024-12-05T21:37:54.754+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4781) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:37:54.755+0000] {standard_task_runner.py:72} INFO - Started process 4782 to run task
+[2024-12-05T21:37:54.755+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:37:07.445945+00:00', '--job-id', '1045', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp8fhcdpbz']
+[2024-12-05T21:37:54.757+0000] {standard_task_runner.py:105} INFO - Job 1045: Subtask extract_sql
+[2024-12-05T21:37:54.796+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:37:07.445945+00:00 [running]> on host c7780884450d
+[2024-12-05T21:37:54.866+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:37:07.445945+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:37:07.445945+00:00'
+[2024-12-05T21:37:54.867+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:37:54.888+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results:
+
+1. **gucci**: apparel, accessories
+2. **gudi**: kids
+3. **guerisson**: medicine, cosmetics
+4. **guerlain**: cosmetics, medicine
+5. **guerlainlapetiterob**: cosmetics
+6. **guess**: apparel, accessories
+7. **gula**: appliances
+8. **guliver**: kids
+9. **gulliver**: kids
+10. **gumarnyzubri**: medicine
+11. **gungho**: apparel
+12. **gustavsberg**: appliances, furniture
+13. **gutrend**: appliances
+14. **guzzini**: appliances, accessories
+15. **habilead**: stationery
+16. **hachette**: stationery
+17. **hada**: cosmetics
+18. **hadaa**: cosmetics
+19. **hadarrosen**: apparel
+20. **haday**: appliances
+21. **haeger**: appliances
+22. **hagen**: appliances
+23. **haier**: appliances
+24. **hairdorables**: kids
+25. **haken**: stationery
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gucci', 'apparel'),
+    ('gucci', 'accessories'),
+    ('gudi', 'kids'),
+    ('guerisson', 'medicine'),
+    ('guerisson', 'cosmetics'),
+    ('guerlain', 'cosmetics'),
+    ('guerlain', 'medicine'),
+    ('guerlainlapetiterob', 'cosmetics'),
+    ('guess', 'apparel'),
+    ('guess', 'accessories'),
+    ('gula', 'appliances'),
+    ('guliver', 'kids'),
+    ('gulliver', 'kids'),
+    ('gumarnyzubri', 'medicine'),
+    ('gungho', 'apparel'),
+    ('gustavsberg', 'appliances'),
+    ('gustavsberg', 'furniture'),
+    ('gutrend', 'appliances'),
+    ('guzzini', 'appliances'),
+    ('guzzini', 'accessories'),
+    ('habilead', 'stationery'),
+    ('hachette', 'stationery'),
+    ('hada', 'cosmetics'),
+    ('hadaa', 'cosmetics'),
+    ('hadarrosen', 'apparel'),
+    ('haday', 'appliances'),
+    ('haeger', 'appliances'),
+    ('hagen', 'appliances'),
+    ('haier', 'appliances'),
+    ('hairdorables', 'kids'),
+    ('haken', 'stationery');
+```
+[2024-12-05T21:37:54.889+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gucci', 'apparel'),
+    ('gucci', 'accessories'),
+    ('gudi', 'kids'),
+    ('guerisson', 'medicine'),
+    ('guerisson', 'cosmetics'),
+    ('guerlain', 'cosmetics'),
+    ('guerlain', 'medicine'),
+    ('guerlainlapetiterob', 'cosmetics'),
+    ('guess', 'apparel'),
+    ('guess', 'accessories'),
+    ('gula', 'appliances'),
+    ('guliver', 'kids'),
+    ('gulliver', 'kids'),
+    ('gumarnyzubri', 'medicine'),
+    ('gungho', 'apparel'),
+    ('gustavsberg', 'appliances'),
+    ('gustavsberg', 'furniture'),
+    ('gutrend', 'appliances'),
+    ('guzzini', 'appliances'),
+    ('guzzini', 'accessories'),
+    ('habilead', 'stationery'),
+    ('hachette', 'stationery'),
+    ('hada', 'cosmetics'),
+    ('hadaa', 'cosmetics'),
+    ('hadarrosen', 'apparel'),
+    ('haday', 'appliances'),
+    ('haeger', 'appliances'),
+    ('hagen', 'appliances'),
+    ('haier', 'appliances'),
+    ('hairdorables', 'kids'),
+    ('haken', 'stationery');
+[2024-12-05T21:37:54.889+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gucci', 'apparel'),
+    ('gucci', 'accessories'),
+    ('gudi', 'kids'),
+    ('guerisson', 'medicine'),
+    ('guerisson', 'cosmetics'),
+    ('guerlain', 'cosmetics'),
+    ('guerlain', 'medicine'),
+    ('guerlainlapetiterob', 'cosmetics'),
+    ('guess', 'apparel'),
+    ('guess', 'accessories'),
+    ('gula', 'appliances'),
+    ('guliver', 'kids'),
+    ('gulliver', 'kids'),
+    ('gumarnyzubri', 'medicine'),
+    ('gungho', 'apparel'),
+    ('gustavsberg', 'appliances'),
+    ('gustavsberg', 'furniture'),
+    ('gutrend', 'appliances'),
+    ('guzzini', 'appliances'),
+    ('guzzini', 'accessories'),
+    ('habilead', 'stationery'),
+    ('hachette', 'stationery'),
+    ('hada', 'cosmetics'),
+    ('hadaa', 'cosmetics'),
+    ('hadarrosen', 'apparel'),
+    ('haday', 'appliances'),
+    ('haeger', 'appliances'),
+    ('hagen', 'appliances'),
+    ('haier', 'appliances'),
+    ('hairdorables', 'kids'),
+    ('haken', 'stationery');
+[2024-12-05T21:37:54.908+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:37:54.909+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:37:07.445945+00:00, execution_date=20241205T213707, start_date=20241205T213754, end_date=20241205T213754
+[2024-12-05T21:37:54.930+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:37:54.950+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:37:54.953+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

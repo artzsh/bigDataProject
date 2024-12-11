@@ -1,0 +1,189 @@
+[2024-12-05T21:13:43.273+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:13:43.286+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:13:19.097272+00:00 [queued]>
+[2024-12-05T21:13:43.292+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:13:19.097272+00:00 [queued]>
+[2024-12-05T21:13:43.293+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:13:43.306+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:13:19.097272+00:00
+[2024-12-05T21:13:43.312+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3479) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:13:43.313+0000] {standard_task_runner.py:72} INFO - Started process 3480 to run task
+[2024-12-05T21:13:43.313+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:13:19.097272+00:00', '--job-id', '763', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp144nh_l4']
+[2024-12-05T21:13:43.315+0000] {standard_task_runner.py:105} INFO - Job 763: Subtask extract_sql
+[2024-12-05T21:13:43.350+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:13:19.097272+00:00 [running]> on host c7780884450d
+[2024-12-05T21:13:43.416+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:13:19.097272+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:13:19.097272+00:00'
+[2024-12-05T21:13:43.417+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:13:43.437+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the brands to their respective categories based on the search results and reasoning:
+
+1. **camino** - country_yard
+2. **campinggaz** - appliances, outdoor
+3. **camptown** - apparel, outdoor
+4. **camshel** - furniture, outdoor
+5. **can-am** - auto, outdoor
+6. **canam** - auto, outdoor
+7. **candide** - kids, apparel
+8. **candino** - accessories, apparel
+9. **candy** - kids, accessories
+10. **candylocks** - kids, accessories
+11. **cannondale** - sport, bicycles
+12. **canon** - electronics
+13. **canton** - furniture, home
+14. **cantra** - construction
+15. **canwood** - furniture, construction
+16. **canyon** - sport, bicycles
+17. **capcom** - electronics, gaming
+18. **capdase** - electronics, accessories
+19. **capella** - electronics, appliances
+20. **capline** - stationery
+21. **caprice** - apparel
+22. **carahardwood** - construction, furniture
+23. **caramelia** - food (not in categories but fits)
+24. **caravanmusic** - electronics, accessories
+25. **caraya** - apparel, accessories
+
+Now, here's the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('camino', 'country_yard'),
+    ('campinggaz', 'appliances'),
+    ('campinggaz', 'outdoor'),
+    ('camptown', 'apparel'),
+    ('camptown', 'outdoor'),
+    ('camshel', 'furniture'),
+    ('camshel', 'outdoor'),
+    ('can-am', 'auto'),
+    ('can-am', 'outdoor'),
+    ('canam', 'auto'),
+    ('canam', 'outdoor'),
+    ('candide', 'kids'),
+    ('candide', 'apparel'),
+    ('candino', 'accessories'),
+    ('candino', 'apparel'),
+    ('candy', 'kids'),
+    ('candy', 'accessories'),
+    ('candylocks', 'kids'),
+    ('candylocks', 'accessories'),
+    ('cannondale', 'sport'),
+    ('cannondale', 'bicycles'),
+    ('canon', 'electronics'),
+    ('canton', 'furniture'),
+    ('canton', 'home'),
+    ('cantra', 'construction'),
+    ('canwood', 'furniture'),
+    ('canwood', 'construction'),
+    ('canyon', 'sport'),
+    ('canyon', 'bicycles'),
+    ('capcom', 'electronics'),
+    ('capcom', 'gaming'),
+    ('capdase', 'electronics'),
+    ('capdase', 'accessories'),
+    ('capella', 'electronics'),
+    ('capella', 'appliances'),
+    ('capline', 'stationery'),
+    ('caprice', 'apparel'),
+    ('carahardwood', 'construction'),
+    ('carahardwood', 'furniture'),
+    ('caramelia', 'food'),
+    ('caravanmusic', 'electronics'),
+    ('caravanmusic', 'accessories'),
+    ('caraya', 'apparel'),
+    ('caraya', 'accessories');
+``` 
+
+This SQL statement represents the mapping of each brand to its appropriate categories based on the search results and logical deductions.
+[2024-12-05T21:13:43.438+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('camino', 'country_yard'),
+    ('campinggaz', 'appliances'),
+    ('campinggaz', 'outdoor'),
+    ('camptown', 'apparel'),
+    ('camptown', 'outdoor'),
+    ('camshel', 'furniture'),
+    ('camshel', 'outdoor'),
+    ('can-am', 'auto'),
+    ('can-am', 'outdoor'),
+    ('canam', 'auto'),
+    ('canam', 'outdoor'),
+    ('candide', 'kids'),
+    ('candide', 'apparel'),
+    ('candino', 'accessories'),
+    ('candino', 'apparel'),
+    ('candy', 'kids'),
+    ('candy', 'accessories'),
+    ('candylocks', 'kids'),
+    ('candylocks', 'accessories'),
+    ('cannondale', 'sport'),
+    ('cannondale', 'bicycles'),
+    ('canon', 'electronics'),
+    ('canton', 'furniture'),
+    ('canton', 'home'),
+    ('cantra', 'construction'),
+    ('canwood', 'furniture'),
+    ('canwood', 'construction'),
+    ('canyon', 'sport'),
+    ('canyon', 'bicycles'),
+    ('capcom', 'electronics'),
+    ('capcom', 'gaming'),
+    ('capdase', 'electronics'),
+    ('capdase', 'accessories'),
+    ('capella', 'electronics'),
+    ('capella', 'appliances'),
+    ('capline', 'stationery'),
+    ('caprice', 'apparel'),
+    ('carahardwood', 'construction'),
+    ('carahardwood', 'furniture'),
+    ('caramelia', 'food'),
+    ('caravanmusic', 'electronics'),
+    ('caravanmusic', 'accessories'),
+    ('caraya', 'apparel'),
+    ('caraya', 'accessories');
+[2024-12-05T21:13:43.438+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('camino', 'country_yard'),
+    ('campinggaz', 'appliances'),
+    ('campinggaz', 'outdoor'),
+    ('camptown', 'apparel'),
+    ('camptown', 'outdoor'),
+    ('camshel', 'furniture'),
+    ('camshel', 'outdoor'),
+    ('can-am', 'auto'),
+    ('can-am', 'outdoor'),
+    ('canam', 'auto'),
+    ('canam', 'outdoor'),
+    ('candide', 'kids'),
+    ('candide', 'apparel'),
+    ('candino', 'accessories'),
+    ('candino', 'apparel'),
+    ('candy', 'kids'),
+    ('candy', 'accessories'),
+    ('candylocks', 'kids'),
+    ('candylocks', 'accessories'),
+    ('cannondale', 'sport'),
+    ('cannondale', 'bicycles'),
+    ('canon', 'electronics'),
+    ('canton', 'furniture'),
+    ('canton', 'home'),
+    ('cantra', 'construction'),
+    ('canwood', 'furniture'),
+    ('canwood', 'construction'),
+    ('canyon', 'sport'),
+    ('canyon', 'bicycles'),
+    ('capcom', 'electronics'),
+    ('capcom', 'gaming'),
+    ('capdase', 'electronics'),
+    ('capdase', 'accessories'),
+    ('capella', 'electronics'),
+    ('capella', 'appliances'),
+    ('capline', 'stationery'),
+    ('caprice', 'apparel'),
+    ('carahardwood', 'construction'),
+    ('carahardwood', 'furniture'),
+    ('caramelia', 'food'),
+    ('caravanmusic', 'electronics'),
+    ('caravanmusic', 'accessories'),
+    ('caraya', 'apparel'),
+    ('caraya', 'accessories');
+[2024-12-05T21:13:43.457+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:13:43.458+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:13:19.097272+00:00, execution_date=20241205T211319, start_date=20241205T211343, end_date=20241205T211343
+[2024-12-05T21:13:43.487+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:13:43.507+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:13:43.511+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,130 @@
+[2024-12-03T23:32:02.848+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-03T23:32:02.860+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_brands_batches.extract_sql manual__2024-12-03T23:31:41.078019+00:00 [queued]>
+[2024-12-03T23:32:02.866+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_brands_batches.extract_sql manual__2024-12-03T23:31:41.078019+00:00 [queued]>
+[2024-12-03T23:32:02.866+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-03T23:32:02.876+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-03 23:31:41.078019+00:00
+[2024-12-03T23:32:02.882+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=314) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-03T23:32:02.883+0000] {standard_task_runner.py:72} INFO - Started process 315 to run task
+[2024-12-03T23:32:02.883+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'process_brands_batches', 'extract_sql', 'manual__2024-12-03T23:31:41.078019+00:00', '--job-id', '333', '--raw', '--subdir', 'DAGS_FOLDER/llm_test.py', '--cfg-path', '/tmp/tmpt0q7o67n']
+[2024-12-03T23:32:02.885+0000] {standard_task_runner.py:105} INFO - Job 333: Subtask extract_sql
+[2024-12-03T23:32:02.917+0000] {task_command.py:467} INFO - Running <TaskInstance: process_brands_batches.extract_sql manual__2024-12-03T23:31:41.078019+00:00 [running]> on host 175560b3a058
+[2024-12-03T23:32:02.967+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='process_brands_batches' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-03T23:31:41.078019+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-03T23:31:41.078019+00:00'
+[2024-12-03T23:32:02.969+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-03T23:32:02.984+0000] {llm_test.py:184} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results and the predefined category codes:
+
+1. **a-case**: electronics
+2. **a-derma**: medicine
+3. **a-elita**: apparel
+4. **a-mega**: appliances
+5. **a-toys**: kids
+6. **aardwolf**: construction
+7. **abc**: stationery
+8. **abhika**: accessories
+9. **abk**: electronics
+10. **absolutechampion**: sport
+11. **abtoys**: kids
+12. **academie**: medicine
+13. **acana**: medicine
+14. **acase**: electronics
+15. **accesstyle**: accessories
+16. **acd**: electronics
+17. **acebeam**: electronics
+18. **acer**: computers
+19. **achilles**: apparel
+20. **acm**: electronics
+21. **acme**: appliances
+22. **acoola**: apparel
+23. **acorp**: electronics
+24. **acorsa**: appliances
+25. **acqua**: accessories
+
+Now, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO brand_category_rules_1 (brand, category_prefix) VALUES
+    ('a-case', 'electronics'),
+    ('a-derma', 'medicine'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abhika', 'accessories'),
+    ('abk', 'electronics'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('academie', 'medicine'),
+    ('acana', 'medicine'),
+    ('acase', 'electronics'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('achilles', 'apparel'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'appliances'),
+    ('acqua', 'accessories');
+```
+[2024-12-03T23:32:02.985+0000] {llm_test.py:171} INFO - Извлечён SQL-код:
+INSERT INTO brand_category_rules_1 (brand, category_prefix) VALUES
+    ('a-case', 'electronics'),
+    ('a-derma', 'medicine'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abhika', 'accessories'),
+    ('abk', 'electronics'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('academie', 'medicine'),
+    ('acana', 'medicine'),
+    ('acase', 'electronics'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('achilles', 'apparel'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'appliances'),
+    ('acqua', 'accessories');
+[2024-12-03T23:32:02.985+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO brand_category_rules_1 (brand, category_prefix) VALUES
+    ('a-case', 'electronics'),
+    ('a-derma', 'medicine'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abhika', 'accessories'),
+    ('abk', 'electronics'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('academie', 'medicine'),
+    ('acana', 'medicine'),
+    ('acase', 'electronics'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('achilles', 'apparel'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'appliances'),
+    ('acqua', 'accessories');
+[2024-12-03T23:32:03.001+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-03T23:32:03.001+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=process_brands_batches, task_id=extract_sql, run_id=manual__2024-12-03T23:31:41.078019+00:00, execution_date=20241203T233141, start_date=20241203T233202, end_date=20241203T233203
+[2024-12-03T23:32:03.017+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-03T23:32:03.036+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-03T23:32:03.039+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

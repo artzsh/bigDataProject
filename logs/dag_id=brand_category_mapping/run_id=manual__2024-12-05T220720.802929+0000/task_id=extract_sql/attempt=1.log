@@ -1,0 +1,181 @@
+[2024-12-05T22:07:56.943+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:07:56.958+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:07:20.802929+00:00 [queued]>
+[2024-12-05T22:07:56.965+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:07:20.802929+00:00 [queued]>
+[2024-12-05T22:07:56.966+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:07:56.980+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:07:20.802929+00:00
+[2024-12-05T22:07:56.986+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6370) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:07:56.988+0000] {standard_task_runner.py:72} INFO - Started process 6371 to run task
+[2024-12-05T22:07:56.988+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:07:20.802929+00:00', '--job-id', '1387', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp2nkt1rkt']
+[2024-12-05T22:07:56.990+0000] {standard_task_runner.py:105} INFO - Job 1387: Subtask extract_sql
+[2024-12-05T22:07:57.027+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:07:20.802929+00:00 [running]> on host c7780884450d
+[2024-12-05T22:07:57.091+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:07:20.802929+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:07:20.802929+00:00'
+[2024-12-05T22:07:57.092+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:07:57.111+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here's the mapping of the brands to their respective categories based on the search results:
+
+1. **namazu** - electronics
+2. **nanga** - apparel
+3. **nania** - kids, accessories
+4. **nannic** - medicine, cosmetics
+5. **nanoleaf** - electronics
+6. **nanrobot** - auto, electronics
+7. **naomi** - apparel
+8. **naranda** - furniture
+9. **narcisorodriguez** - apparel, accessories
+10. **nardi** - furniture, outdoor
+11. **narodnyerecepty** - medicine
+12. **narva** - electronics, appliances
+13. **nasbro** - kids, toys
+14. **nascitaprofessional** - medicine, cosmetics
+15. **nashville** - apparel, accessories
+16. **nasomatto** - medicine, cosmetics
+17. **nationalbusiness** - stationery
+18. **native** - apparel, accessories
+19. **natrol** - medicine
+20. **naturakamchatka** - medicine, cosmetics
+21. **naturalist** - medicine, cosmetics
+22. **naturasiberica** - medicine, cosmetics
+23. **natureby** - medicine, cosmetics
+24. **naturehike** - apparel, outdoor
+25. **naturella** - medicine, cosmetics
+
+Now, here’s the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('namazu', 'electronics'),
+    ('nanga', 'apparel'),
+    ('nania', 'kids'),
+    ('nania', 'accessories'),
+    ('nannic', 'medicine'),
+    ('nannic', 'cosmetics'),
+    ('nanoleaf', 'electronics'),
+    ('nanrobot', 'auto'),
+    ('nanrobot', 'electronics'),
+    ('naomi', 'apparel'),
+    ('naranda', 'furniture'),
+    ('narcisorodriguez', 'apparel'),
+    ('narcisorodriguez', 'accessories'),
+    ('nardi', 'furniture'),
+    ('nardi', 'outdoor'),
+    ('narodnyerecepty', 'medicine'),
+    ('narva', 'electronics'),
+    ('narva', 'appliances'),
+    ('nasbro', 'kids'),
+    ('nasbro', 'toys'),
+    ('nascitaprofessional', 'medicine'),
+    ('nascitaprofessional', 'cosmetics'),
+    ('nashville', 'apparel'),
+    ('nashville', 'accessories'),
+    ('nasomatto', 'medicine'),
+    ('nasomatto', 'cosmetics'),
+    ('nationalbusiness', 'stationery'),
+    ('native', 'apparel'),
+    ('native', 'accessories'),
+    ('natrol', 'medicine'),
+    ('naturakamchatka', 'medicine'),
+    ('naturakamchatka', 'cosmetics'),
+    ('naturalist', 'medicine'),
+    ('naturalist', 'cosmetics'),
+    ('naturasiberica', 'medicine'),
+    ('naturasiberica', 'cosmetics'),
+    ('natureby', 'medicine'),
+    ('natureby', 'cosmetics'),
+    ('naturehike', 'apparel'),
+    ('naturehike', 'outdoor'),
+    ('naturella', 'medicine'),
+    ('naturella', 'cosmetics');
+```
+[2024-12-05T22:07:57.112+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('namazu', 'electronics'),
+    ('nanga', 'apparel'),
+    ('nania', 'kids'),
+    ('nania', 'accessories'),
+    ('nannic', 'medicine'),
+    ('nannic', 'cosmetics'),
+    ('nanoleaf', 'electronics'),
+    ('nanrobot', 'auto'),
+    ('nanrobot', 'electronics'),
+    ('naomi', 'apparel'),
+    ('naranda', 'furniture'),
+    ('narcisorodriguez', 'apparel'),
+    ('narcisorodriguez', 'accessories'),
+    ('nardi', 'furniture'),
+    ('nardi', 'outdoor'),
+    ('narodnyerecepty', 'medicine'),
+    ('narva', 'electronics'),
+    ('narva', 'appliances'),
+    ('nasbro', 'kids'),
+    ('nasbro', 'toys'),
+    ('nascitaprofessional', 'medicine'),
+    ('nascitaprofessional', 'cosmetics'),
+    ('nashville', 'apparel'),
+    ('nashville', 'accessories'),
+    ('nasomatto', 'medicine'),
+    ('nasomatto', 'cosmetics'),
+    ('nationalbusiness', 'stationery'),
+    ('native', 'apparel'),
+    ('native', 'accessories'),
+    ('natrol', 'medicine'),
+    ('naturakamchatka', 'medicine'),
+    ('naturakamchatka', 'cosmetics'),
+    ('naturalist', 'medicine'),
+    ('naturalist', 'cosmetics'),
+    ('naturasiberica', 'medicine'),
+    ('naturasiberica', 'cosmetics'),
+    ('natureby', 'medicine'),
+    ('natureby', 'cosmetics'),
+    ('naturehike', 'apparel'),
+    ('naturehike', 'outdoor'),
+    ('naturella', 'medicine'),
+    ('naturella', 'cosmetics');
+[2024-12-05T22:07:57.113+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('namazu', 'electronics'),
+    ('nanga', 'apparel'),
+    ('nania', 'kids'),
+    ('nania', 'accessories'),
+    ('nannic', 'medicine'),
+    ('nannic', 'cosmetics'),
+    ('nanoleaf', 'electronics'),
+    ('nanrobot', 'auto'),
+    ('nanrobot', 'electronics'),
+    ('naomi', 'apparel'),
+    ('naranda', 'furniture'),
+    ('narcisorodriguez', 'apparel'),
+    ('narcisorodriguez', 'accessories'),
+    ('nardi', 'furniture'),
+    ('nardi', 'outdoor'),
+    ('narodnyerecepty', 'medicine'),
+    ('narva', 'electronics'),
+    ('narva', 'appliances'),
+    ('nasbro', 'kids'),
+    ('nasbro', 'toys'),
+    ('nascitaprofessional', 'medicine'),
+    ('nascitaprofessional', 'cosmetics'),
+    ('nashville', 'apparel'),
+    ('nashville', 'accessories'),
+    ('nasomatto', 'medicine'),
+    ('nasomatto', 'cosmetics'),
+    ('nationalbusiness', 'stationery'),
+    ('native', 'apparel'),
+    ('native', 'accessories'),
+    ('natrol', 'medicine'),
+    ('naturakamchatka', 'medicine'),
+    ('naturakamchatka', 'cosmetics'),
+    ('naturalist', 'medicine'),
+    ('naturalist', 'cosmetics'),
+    ('naturasiberica', 'medicine'),
+    ('naturasiberica', 'cosmetics'),
+    ('natureby', 'medicine'),
+    ('natureby', 'cosmetics'),
+    ('naturehike', 'apparel'),
+    ('naturehike', 'outdoor'),
+    ('naturella', 'medicine'),
+    ('naturella', 'cosmetics');
+[2024-12-05T22:07:57.132+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:07:57.132+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:07:20.802929+00:00, execution_date=20241205T220720, start_date=20241205T220756, end_date=20241205T220757
+[2024-12-05T22:07:57.162+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:07:57.182+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:07:57.185+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

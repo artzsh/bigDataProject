@@ -1,0 +1,154 @@
+[2024-12-05T22:43:59.532+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:43:59.546+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:43:24.319792+00:00 [queued]>
+[2024-12-05T22:43:59.554+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:43:24.319792+00:00 [queued]>
+[2024-12-05T22:43:59.555+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:43:59.568+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:43:24.319792+00:00
+[2024-12-05T22:43:59.575+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8230) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:43:59.577+0000] {standard_task_runner.py:72} INFO - Started process 8231 to run task
+[2024-12-05T22:43:59.576+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:43:24.319792+00:00', '--job-id', '1783', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp8cwe313z']
+[2024-12-05T22:43:59.578+0000] {standard_task_runner.py:105} INFO - Job 1783: Subtask extract_sql
+[2024-12-05T22:43:59.615+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:43:24.319792+00:00 [running]> on host c7780884450d
+[2024-12-05T22:43:59.683+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:43:24.319792+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:43:24.319792+00:00'
+[2024-12-05T22:43:59.685+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:43:59.703+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on their products:
+
+1. **troyka** - stationery
+2. **trucktec** - auto
+3. **true** - appliances, electronics
+4. **truealchemy** - medicine
+5. **trukinauki** - kids
+6. **trunki** - kids, accessories
+7. **trusardy** - apparel, accessories
+8. **trussardi** - apparel, accessories
+9. **trust** - electronics
+10. **truva** - appliances
+11. **trw** - auto
+12. **trx** - fitness, sport
+13. **tsg** - sport
+14. **tsubaki** - cosmetics, medicine
+15. **tsv** - electronics
+16. **tuarex** - appliances
+17. **tubor** - construction
+18. **tucano** - accessories, computers
+19. **tuctuc** - kids, apparel
+20. **tuffoni** - furniture
+21. **tuka** - appliances
+22. **tuncmatik** - auto
+23. **tundra** - apparel, outdoor
+24. **tunia** - apparel
+25. **turbo** - auto, appliances
+
+Now, here is the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('troyka', 'stationery'),
+    ('trucktec', 'auto'),
+    ('true', 'appliances'),
+    ('true', 'electronics'),
+    ('truealchemy', 'medicine'),
+    ('trukinauki', 'kids'),
+    ('trunki', 'kids'),
+    ('trunki', 'accessories'),
+    ('trusardy', 'apparel'),
+    ('trusardy', 'accessories'),
+    ('trussardi', 'apparel'),
+    ('trussardi', 'accessories'),
+    ('trust', 'electronics'),
+    ('truva', 'appliances'),
+    ('trw', 'auto'),
+    ('trx', 'sport'),
+    ('tsg', 'sport'),
+    ('tsubaki', 'medicine'),
+    ('tsv', 'electronics'),
+    ('tuarex', 'appliances'),
+    ('tubor', 'construction'),
+    ('tucano', 'accessories'),
+    ('tucano', 'computers'),
+    ('tuctuc', 'kids'),
+    ('tuctuc', 'apparel'),
+    ('tuffoni', 'furniture'),
+    ('tuka', 'appliances'),
+    ('tuncmatik', 'auto'),
+    ('tundra', 'apparel'),
+    ('tundra', 'outdoor'),
+    ('tunia', 'apparel'),
+    ('turbo', 'auto'),
+    ('turbo', 'appliances');
+```
+[2024-12-05T22:43:59.704+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('troyka', 'stationery'),
+    ('trucktec', 'auto'),
+    ('true', 'appliances'),
+    ('true', 'electronics'),
+    ('truealchemy', 'medicine'),
+    ('trukinauki', 'kids'),
+    ('trunki', 'kids'),
+    ('trunki', 'accessories'),
+    ('trusardy', 'apparel'),
+    ('trusardy', 'accessories'),
+    ('trussardi', 'apparel'),
+    ('trussardi', 'accessories'),
+    ('trust', 'electronics'),
+    ('truva', 'appliances'),
+    ('trw', 'auto'),
+    ('trx', 'sport'),
+    ('tsg', 'sport'),
+    ('tsubaki', 'medicine'),
+    ('tsv', 'electronics'),
+    ('tuarex', 'appliances'),
+    ('tubor', 'construction'),
+    ('tucano', 'accessories'),
+    ('tucano', 'computers'),
+    ('tuctuc', 'kids'),
+    ('tuctuc', 'apparel'),
+    ('tuffoni', 'furniture'),
+    ('tuka', 'appliances'),
+    ('tuncmatik', 'auto'),
+    ('tundra', 'apparel'),
+    ('tundra', 'outdoor'),
+    ('tunia', 'apparel'),
+    ('turbo', 'auto'),
+    ('turbo', 'appliances');
+[2024-12-05T22:43:59.704+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('troyka', 'stationery'),
+    ('trucktec', 'auto'),
+    ('true', 'appliances'),
+    ('true', 'electronics'),
+    ('truealchemy', 'medicine'),
+    ('trukinauki', 'kids'),
+    ('trunki', 'kids'),
+    ('trunki', 'accessories'),
+    ('trusardy', 'apparel'),
+    ('trusardy', 'accessories'),
+    ('trussardi', 'apparel'),
+    ('trussardi', 'accessories'),
+    ('trust', 'electronics'),
+    ('truva', 'appliances'),
+    ('trw', 'auto'),
+    ('trx', 'sport'),
+    ('tsg', 'sport'),
+    ('tsubaki', 'medicine'),
+    ('tsv', 'electronics'),
+    ('tuarex', 'appliances'),
+    ('tubor', 'construction'),
+    ('tucano', 'accessories'),
+    ('tucano', 'computers'),
+    ('tuctuc', 'kids'),
+    ('tuctuc', 'apparel'),
+    ('tuffoni', 'furniture'),
+    ('tuka', 'appliances'),
+    ('tuncmatik', 'auto'),
+    ('tundra', 'apparel'),
+    ('tundra', 'outdoor'),
+    ('tunia', 'apparel'),
+    ('turbo', 'auto'),
+    ('turbo', 'appliances');
+[2024-12-05T22:43:59.721+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:43:59.721+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:43:24.319792+00:00, execution_date=20241205T224324, start_date=20241205T224359, end_date=20241205T224359
+[2024-12-05T22:43:59.751+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:43:59.770+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:43:59.773+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

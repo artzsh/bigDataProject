@@ -1,0 +1,180 @@
+[2024-12-05T21:42:07.025+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:42:07.039+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:41:43.067861+00:00 [queued]>
+[2024-12-05T21:42:07.047+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:41:43.067861+00:00 [queued]>
+[2024-12-05T21:42:07.047+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:42:07.060+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:41:43.067861+00:00
+[2024-12-05T21:42:07.065+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5005) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:42:07.067+0000] {standard_task_runner.py:72} INFO - Started process 5006 to run task
+[2024-12-05T21:42:07.067+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:41:43.067861+00:00', '--job-id', '1093', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmptdyluk1u']
+[2024-12-05T21:42:07.069+0000] {standard_task_runner.py:105} INFO - Job 1093: Subtask extract_sql
+[2024-12-05T21:42:07.105+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:41:43.067861+00:00 [running]> on host c7780884450d
+[2024-12-05T21:42:07.168+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:41:43.067861+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:41:43.067861+00:00'
+[2024-12-05T21:42:07.169+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:42:07.188+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the provided brands and the steps outlined, here is the mapping of each brand to the appropriate categories:
+
+1. **hycell** - electronics
+2. **hygge** - furniture, accessories
+3. **hynix** - electronics, computers
+4. **hyper** - electronics, computers
+5. **hyperx** - electronics, computers, accessories
+6. **hyundai** - auto, appliances
+7. **i-baby** - kids, accessories
+8. **ibaby** - kids, accessories
+9. **ibanez** - musical instruments, accessories
+10. **ibili** - appliances, kitchen
+11. **ibox** - electronics, accessories
+12. **icepeak** - apparel, sport
+13. **icer** - appliances
+14. **iconbit** - electronics
+15. **icutes** - kids, accessories
+16. **idan** - furniture
+17. **id-cooling** - computers, electronics
+18. **iddis** - appliances
+19. **ideal** - appliances
+20. **ideallux** - appliances, furniture
+21. **idealspaten** - construction, tools
+22. **idillia** - furniture
+23. **iek** - electronics
+24. **ifree** - electronics
+25. **iglu** - country_yard, furniture
+
+Now, here is the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('hycell', 'electronics'),
+    ('hygge', 'furniture'),
+    ('hygge', 'accessories'),
+    ('hynix', 'electronics'),
+    ('hynix', 'computers'),
+    ('hyper', 'electronics'),
+    ('hyper', 'computers'),
+    ('hyperx', 'electronics'),
+    ('hyperx', 'computers'),
+    ('hyperx', 'accessories'),
+    ('hyundai', 'auto'),
+    ('hyundai', 'appliances'),
+    ('i-baby', 'kids'),
+    ('i-baby', 'accessories'),
+    ('ibaby', 'kids'),
+    ('ibaby', 'accessories'),
+    ('ibanez', 'accessories'),
+    ('ibili', 'appliances'),
+    ('ibili', 'kitchen'),
+    ('ibox', 'electronics'),
+    ('ibox', 'accessories'),
+    ('icepeak', 'apparel'),
+    ('icepeak', 'sport'),
+    ('icer', 'appliances'),
+    ('iconbit', 'electronics'),
+    ('icutes', 'kids'),
+    ('icutes', 'accessories'),
+    ('idan', 'furniture'),
+    ('id-cooling', 'computers'),
+    ('id-cooling', 'electronics'),
+    ('iddis', 'appliances'),
+    ('ideal', 'appliances'),
+    ('ideallux', 'appliances'),
+    ('ideallux', 'furniture'),
+    ('idealspaten', 'construction'),
+    ('idealspaten', 'tools'),
+    ('idillia', 'furniture'),
+    ('iek', 'electronics'),
+    ('ifree', 'electronics'),
+    ('iglu', 'country_yard'),
+    ('iglu', 'furniture');
+``` 
+
+This SQL statement will correctly reflect the mapping of each brand to its respective categories based on the provided information.
+[2024-12-05T21:42:07.188+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('hycell', 'electronics'),
+    ('hygge', 'furniture'),
+    ('hygge', 'accessories'),
+    ('hynix', 'electronics'),
+    ('hynix', 'computers'),
+    ('hyper', 'electronics'),
+    ('hyper', 'computers'),
+    ('hyperx', 'electronics'),
+    ('hyperx', 'computers'),
+    ('hyperx', 'accessories'),
+    ('hyundai', 'auto'),
+    ('hyundai', 'appliances'),
+    ('i-baby', 'kids'),
+    ('i-baby', 'accessories'),
+    ('ibaby', 'kids'),
+    ('ibaby', 'accessories'),
+    ('ibanez', 'accessories'),
+    ('ibili', 'appliances'),
+    ('ibili', 'kitchen'),
+    ('ibox', 'electronics'),
+    ('ibox', 'accessories'),
+    ('icepeak', 'apparel'),
+    ('icepeak', 'sport'),
+    ('icer', 'appliances'),
+    ('iconbit', 'electronics'),
+    ('icutes', 'kids'),
+    ('icutes', 'accessories'),
+    ('idan', 'furniture'),
+    ('id-cooling', 'computers'),
+    ('id-cooling', 'electronics'),
+    ('iddis', 'appliances'),
+    ('ideal', 'appliances'),
+    ('ideallux', 'appliances'),
+    ('ideallux', 'furniture'),
+    ('idealspaten', 'construction'),
+    ('idealspaten', 'tools'),
+    ('idillia', 'furniture'),
+    ('iek', 'electronics'),
+    ('ifree', 'electronics'),
+    ('iglu', 'country_yard'),
+    ('iglu', 'furniture');
+[2024-12-05T21:42:07.189+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('hycell', 'electronics'),
+    ('hygge', 'furniture'),
+    ('hygge', 'accessories'),
+    ('hynix', 'electronics'),
+    ('hynix', 'computers'),
+    ('hyper', 'electronics'),
+    ('hyper', 'computers'),
+    ('hyperx', 'electronics'),
+    ('hyperx', 'computers'),
+    ('hyperx', 'accessories'),
+    ('hyundai', 'auto'),
+    ('hyundai', 'appliances'),
+    ('i-baby', 'kids'),
+    ('i-baby', 'accessories'),
+    ('ibaby', 'kids'),
+    ('ibaby', 'accessories'),
+    ('ibanez', 'accessories'),
+    ('ibili', 'appliances'),
+    ('ibili', 'kitchen'),
+    ('ibox', 'electronics'),
+    ('ibox', 'accessories'),
+    ('icepeak', 'apparel'),
+    ('icepeak', 'sport'),
+    ('icer', 'appliances'),
+    ('iconbit', 'electronics'),
+    ('icutes', 'kids'),
+    ('icutes', 'accessories'),
+    ('idan', 'furniture'),
+    ('id-cooling', 'computers'),
+    ('id-cooling', 'electronics'),
+    ('iddis', 'appliances'),
+    ('ideal', 'appliances'),
+    ('ideallux', 'appliances'),
+    ('ideallux', 'furniture'),
+    ('idealspaten', 'construction'),
+    ('idealspaten', 'tools'),
+    ('idillia', 'furniture'),
+    ('iek', 'electronics'),
+    ('ifree', 'electronics'),
+    ('iglu', 'country_yard'),
+    ('iglu', 'furniture');
+[2024-12-05T21:42:07.206+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:42:07.206+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:41:43.067861+00:00, execution_date=20241205T214143, start_date=20241205T214207, end_date=20241205T214207
+[2024-12-05T21:42:07.241+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:42:07.258+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:42:07.261+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

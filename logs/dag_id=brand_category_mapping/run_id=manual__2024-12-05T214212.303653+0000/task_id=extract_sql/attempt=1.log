@@ -1,0 +1,172 @@
+[2024-12-05T21:42:46.280+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:42:46.293+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:42:12.303653+00:00 [queued]>
+[2024-12-05T21:42:46.300+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:42:12.303653+00:00 [queued]>
+[2024-12-05T21:42:46.300+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:42:46.314+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:42:12.303653+00:00
+[2024-12-05T21:42:46.321+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5033) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:42:46.322+0000] {standard_task_runner.py:72} INFO - Started process 5034 to run task
+[2024-12-05T21:42:46.322+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:42:12.303653+00:00', '--job-id', '1099', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpwxmkaj7n']
+[2024-12-05T21:42:46.324+0000] {standard_task_runner.py:105} INFO - Job 1099: Subtask extract_sql
+[2024-12-05T21:42:46.359+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:42:12.303653+00:00 [running]> on host c7780884450d
+[2024-12-05T21:42:46.424+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:42:12.303653+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:42:12.303653+00:00'
+[2024-12-05T21:42:46.425+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:42:46.444+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the brands provided, here are the assigned categories after performing the necessary searches:
+
+1. **igraemvmeste** - Not enough information found; assigned categories: **(apparel, accessories)**
+2. **igrikizoo** - Not enough information found; assigned categories: **(kids)**
+3. **iittala** - Known for glassware and home decor; assigned categories: **(furniture, accessories)**
+4. **iiyama** - Known for monitors and displays; assigned categories: **(electronics, computers)**
+5. **ikea** - Known for furniture and home goods; assigned categories: **(furniture, appliances)**
+6. **ikki** - Not enough information found; assigned categories: **(apparel)**
+7. **ikkm** - Not enough information found; assigned categories: **(apparel)**
+8. **ilash** - Associated with beauty products; assigned categories: **(accessories)**
+9. **ilife** - Known for robotic vacuum cleaners; assigned categories: **(appliances, electronics)**
+10. **illumico** - Known for lighting products; assigned categories: **(appliances, electronics)**
+11. **imax** - Known for entertainment and imaging; assigned categories: **(electronics)**
+12. **imctoys** - Known for toys; assigned categories: **(kids)**
+13. **imenza** - Not enough information found; assigned categories: **(apparel, accessories)**
+14. **imetec** - Known for kitchen appliances; assigned categories: **(appliances)**
+15. **imex** - Known for home and garden products; assigned categories: **(country_yard, furniture)**
+16. **imou** - Known for home security cameras; assigned categories: **(electronics)**
+17. **impeks** - Not enough information found; assigned categories: **(apparel, accessories)**
+18. **imperial** - Not enough information found; assigned categories: **(apparel, accessories)**
+19. **imperiameha** - Not enough information found; assigned categories: **(apparel, accessories)**
+20. **impex** - Known for various home products; assigned categories: **(furniture, appliances)**
+21. **imprelly** - Not enough information found; assigned categories: **(apparel)**
+22. **imtoy** - Known for toys; assigned categories: **(kids)**
+23. **imx** - Not enough information found; assigned categories: **(electronics)**
+24. **incanto** - Known for home textiles; assigned categories: **(furniture, apparel)**
+25. **incar** - Known for automotive accessories; assigned categories: **(auto, accessories)**
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('igraemvmeste', 'apparel'),
+    ('igraemvmeste', 'accessories'),
+    ('igrikizoo', 'kids'),
+    ('iittala', 'furniture'),
+    ('iittala', 'accessories'),
+    ('iiyama', 'electronics'),
+    ('iiyama', 'computers'),
+    ('ikea', 'furniture'),
+    ('ikea', 'appliances'),
+    ('ikki', 'apparel'),
+    ('ikkm', 'apparel'),
+    ('ilash', 'accessories'),
+    ('ilife', 'appliances'),
+    ('ilife', 'electronics'),
+    ('illumico', 'appliances'),
+    ('illumico', 'electronics'),
+    ('imax', 'electronics'),
+    ('imctoys', 'kids'),
+    ('imenza', 'apparel'),
+    ('imenza', 'accessories'),
+    ('imetec', 'appliances'),
+    ('imex', 'country_yard'),
+    ('imex', 'furniture'),
+    ('imou', 'electronics'),
+    ('impeks', 'apparel'),
+    ('impeks', 'accessories'),
+    ('imperial', 'apparel'),
+    ('imperial', 'accessories'),
+    ('imperiameha', 'apparel'),
+    ('imperiameha', 'accessories'),
+    ('impex', 'furniture'),
+    ('impex', 'appliances'),
+    ('imprelly', 'apparel'),
+    ('imtoy', 'kids'),
+    ('imx', 'electronics'),
+    ('incanto', 'furniture'),
+    ('incanto', 'apparel'),
+    ('incar', 'auto'),
+    ('incar', 'accessories');
+```
+[2024-12-05T21:42:46.445+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('igraemvmeste', 'apparel'),
+    ('igraemvmeste', 'accessories'),
+    ('igrikizoo', 'kids'),
+    ('iittala', 'furniture'),
+    ('iittala', 'accessories'),
+    ('iiyama', 'electronics'),
+    ('iiyama', 'computers'),
+    ('ikea', 'furniture'),
+    ('ikea', 'appliances'),
+    ('ikki', 'apparel'),
+    ('ikkm', 'apparel'),
+    ('ilash', 'accessories'),
+    ('ilife', 'appliances'),
+    ('ilife', 'electronics'),
+    ('illumico', 'appliances'),
+    ('illumico', 'electronics'),
+    ('imax', 'electronics'),
+    ('imctoys', 'kids'),
+    ('imenza', 'apparel'),
+    ('imenza', 'accessories'),
+    ('imetec', 'appliances'),
+    ('imex', 'country_yard'),
+    ('imex', 'furniture'),
+    ('imou', 'electronics'),
+    ('impeks', 'apparel'),
+    ('impeks', 'accessories'),
+    ('imperial', 'apparel'),
+    ('imperial', 'accessories'),
+    ('imperiameha', 'apparel'),
+    ('imperiameha', 'accessories'),
+    ('impex', 'furniture'),
+    ('impex', 'appliances'),
+    ('imprelly', 'apparel'),
+    ('imtoy', 'kids'),
+    ('imx', 'electronics'),
+    ('incanto', 'furniture'),
+    ('incanto', 'apparel'),
+    ('incar', 'auto'),
+    ('incar', 'accessories');
+[2024-12-05T21:42:46.445+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('igraemvmeste', 'apparel'),
+    ('igraemvmeste', 'accessories'),
+    ('igrikizoo', 'kids'),
+    ('iittala', 'furniture'),
+    ('iittala', 'accessories'),
+    ('iiyama', 'electronics'),
+    ('iiyama', 'computers'),
+    ('ikea', 'furniture'),
+    ('ikea', 'appliances'),
+    ('ikki', 'apparel'),
+    ('ikkm', 'apparel'),
+    ('ilash', 'accessories'),
+    ('ilife', 'appliances'),
+    ('ilife', 'electronics'),
+    ('illumico', 'appliances'),
+    ('illumico', 'electronics'),
+    ('imax', 'electronics'),
+    ('imctoys', 'kids'),
+    ('imenza', 'apparel'),
+    ('imenza', 'accessories'),
+    ('imetec', 'appliances'),
+    ('imex', 'country_yard'),
+    ('imex', 'furniture'),
+    ('imou', 'electronics'),
+    ('impeks', 'apparel'),
+    ('impeks', 'accessories'),
+    ('imperial', 'apparel'),
+    ('imperial', 'accessories'),
+    ('imperiameha', 'apparel'),
+    ('imperiameha', 'accessories'),
+    ('impex', 'furniture'),
+    ('impex', 'appliances'),
+    ('imprelly', 'apparel'),
+    ('imtoy', 'kids'),
+    ('imx', 'electronics'),
+    ('incanto', 'furniture'),
+    ('incanto', 'apparel'),
+    ('incar', 'auto'),
+    ('incar', 'accessories');
+[2024-12-05T21:42:46.462+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:42:46.462+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:42:12.303653+00:00, execution_date=20241205T214212, start_date=20241205T214246, end_date=20241205T214246
+[2024-12-05T21:42:46.496+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:42:46.519+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:42:46.522+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,77 @@
+[2024-12-05T22:43:21.209+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:43:21.222+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:42:40.665156+00:00 [queued]>
+[2024-12-05T22:43:21.228+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:42:40.665156+00:00 [queued]>
+[2024-12-05T22:43:21.229+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:43:21.242+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:42:40.665156+00:00
+[2024-12-05T22:43:21.248+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:43:21.249+0000] {standard_task_runner.py:72} INFO - Started process 8199 to run task
+[2024-12-05T22:43:21.250+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:42:40.665156+00:00', '--job-id', '1778', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmprq9ao0wv']
+[2024-12-05T22:43:21.252+0000] {standard_task_runner.py:105} INFO - Job 1778: Subtask execute_sql
+[2024-12-05T22:43:21.289+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:42:40.665156+00:00 [running]> on host c7780884450d
+[2024-12-05T22:43:21.353+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:42:40.665156+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:42:40.665156+00:00'
+[2024-12-05T22:43:21.354+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:43:21.374+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('trendbeauty', 'medicine'),
+    ('trendbeuty', 'medicine'),
+    ('trendnet', 'electronics'),
+    ('trendvision', 'medicine'),
+    ('trendy', 'apparel'),
+    ('trento', 'apparel'),
+    ('tresemme', 'medicine'),
+    ('trespass', 'apparel'),
+    ('trevi', 'electronics'),
+    ('t-rex', 'accessories'),
+    ('triangle', 'sport'),
+    ('triban', 'sport'),
+    ('trichup', 'medicine'),
+    ('tridevatoecarstvo', 'construction'),
+    ('trikota', 'apparel'),
+    ('trinx', 'sport'),
+    ('tristar', 'appliances'),
+    ('tristar', 'electronics'),
+    ('triton', 'sport'),
+    ('tritower', 'construction'),
+    ('triumf', 'sport'),
+    ('triumphnord', 'apparel'),
+    ('triumphtree', 'furniture'),
+    ('trixie', 'accessories'),
+    ('trollbeads', 'accessories'),
+    ('trolls', 'kids');
+[2024-12-05T22:43:21.381+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:43:22.169+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('trendbeauty', 'medicine'),
+    ('trendbeuty', 'medicine'),
+    ('trendnet', 'electronics'),
+    ('trendvision', 'medicine'),
+    ('trendy', 'apparel'),
+    ('trento', 'apparel'),
+    ('tresemme', 'medicine'),
+    ('trespass', 'apparel'),
+    ('trevi', 'electronics'),
+    ('t-rex', 'accessories'),
+    ('triangle', 'sport'),
+    ('triban', 'sport'),
+    ('trichup', 'medicine'),
+    ('tridevatoecarstvo', 'construction'),
+    ('trikota', 'apparel'),
+    ('trinx', 'sport'),
+    ('tristar', 'appliances'),
+    ('tristar', 'electronics'),
+    ('triton', 'sport'),
+    ('tritower', 'construction'),
+    ('triumf', 'sport'),
+    ('triumphnord', 'apparel'),
+    ('triumphtree', 'furniture'),
+    ('trixie', 'accessories'),
+    ('trollbeads', 'accessories'),
+    ('trolls', 'kids');
+[2024-12-05T22:43:22.343+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:43:22.343+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:43:22.351+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:43:22.352+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:42:40.665156+00:00, execution_date=20241205T224240, start_date=20241205T224321, end_date=20241205T224322
+[2024-12-05T22:43:22.387+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:43:22.411+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:43:22.415+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

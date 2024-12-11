@@ -1,0 +1,113 @@
+[2024-12-05T21:35:01.665+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:35:01.679+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:34:31.459133+00:00 [queued]>
+[2024-12-05T21:35:01.688+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:34:31.459133+00:00 [queued]>
+[2024-12-05T21:35:01.688+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:35:01.701+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 21:34:31.459133+00:00
+[2024-12-05T21:35:01.707+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4644) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:35:01.708+0000] {standard_task_runner.py:72} INFO - Started process 4645 to run task
+[2024-12-05T21:35:01.709+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T21:34:31.459133+00:00', '--job-id', '1016', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpusw86pwg']
+[2024-12-05T21:35:01.711+0000] {standard_task_runner.py:105} INFO - Job 1016: Subtask execute_sql
+[2024-12-05T21:35:01.747+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:34:31.459133+00:00 [running]> on host c7780884450d
+[2024-12-05T21:35:01.811+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:34:31.459133+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:34:31.459133+00:00'
+[2024-12-05T21:35:01.813+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:35:01.831+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gladen', 'electronics'),
+    ('gladiator', 'furniture'),
+    ('gladiator', 'appliances'),
+    ('glam-forever', 'apparel'),
+    ('glam-forever', 'accessories'),
+    ('glamglow', 'medicine'),
+    ('glamglow', 'cosmetics'),
+    ('glamour', 'apparel'),
+    ('glamour', 'cosmetics'),
+    ('glamvers', 'apparel'),
+    ('glamvers', 'accessories'),
+    ('glasman', 'appliances'),
+    ('glimmeies', 'kids'),
+    ('glimmeies', 'toys'),
+    ('glimmies', 'kids'),
+    ('glimmies', 'toys'),
+    ('glissade', 'apparel'),
+    ('glissade', 'sport'),
+    ('glo', 'cosmetics'),
+    ('glo', 'medicine'),
+    ('global', 'electronics'),
+    ('global', 'appliances'),
+    ('globalkeratin', 'medicine'),
+    ('globalkeratin', 'cosmetics'),
+    ('globaltoys', 'kids'),
+    ('globaltoys', 'toys'),
+    ('globber', 'kids'),
+    ('globber', 'sport'),
+    ('globex', 'electronics'),
+    ('globo', 'kids'),
+    ('globo', 'toys'),
+    ('globus', 'appliances'),
+    ('glory', 'apparel'),
+    ('glory', 'accessories'),
+    ('gloxy', 'electronics'),
+    ('gmini', 'kids'),
+    ('gmini', 'electronics'),
+    ('gmslivgidromasao', 'auto'),
+    ('gnu', 'apparel'),
+    ('gnu', 'sport'),
+    ('goalzero', 'appliances'),
+    ('goalzero', 'electronics'),
+    ('godin', 'musical instruments'),
+    ('godin', 'accessories');
+[2024-12-05T21:35:01.838+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T21:35:02.647+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gladen', 'electronics'),
+    ('gladiator', 'furniture'),
+    ('gladiator', 'appliances'),
+    ('glam-forever', 'apparel'),
+    ('glam-forever', 'accessories'),
+    ('glamglow', 'medicine'),
+    ('glamglow', 'cosmetics'),
+    ('glamour', 'apparel'),
+    ('glamour', 'cosmetics'),
+    ('glamvers', 'apparel'),
+    ('glamvers', 'accessories'),
+    ('glasman', 'appliances'),
+    ('glimmeies', 'kids'),
+    ('glimmeies', 'toys'),
+    ('glimmies', 'kids'),
+    ('glimmies', 'toys'),
+    ('glissade', 'apparel'),
+    ('glissade', 'sport'),
+    ('glo', 'cosmetics'),
+    ('glo', 'medicine'),
+    ('global', 'electronics'),
+    ('global', 'appliances'),
+    ('globalkeratin', 'medicine'),
+    ('globalkeratin', 'cosmetics'),
+    ('globaltoys', 'kids'),
+    ('globaltoys', 'toys'),
+    ('globber', 'kids'),
+    ('globber', 'sport'),
+    ('globex', 'electronics'),
+    ('globo', 'kids'),
+    ('globo', 'toys'),
+    ('globus', 'appliances'),
+    ('glory', 'apparel'),
+    ('glory', 'accessories'),
+    ('gloxy', 'electronics'),
+    ('gmini', 'kids'),
+    ('gmini', 'electronics'),
+    ('gmslivgidromasao', 'auto'),
+    ('gnu', 'apparel'),
+    ('gnu', 'sport'),
+    ('goalzero', 'appliances'),
+    ('goalzero', 'electronics'),
+    ('godin', 'musical instruments'),
+    ('godin', 'accessories');
+[2024-12-05T21:35:02.825+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T21:35:02.826+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T21:35:02.833+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:35:02.834+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T21:34:31.459133+00:00, execution_date=20241205T213431, start_date=20241205T213501, end_date=20241205T213502
+[2024-12-05T21:35:02.886+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:35:02.905+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:35:02.909+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

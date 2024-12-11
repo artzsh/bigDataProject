@@ -1,0 +1,132 @@
+[2024-12-05T21:39:28.713+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:39:28.724+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:39:04.397057+00:00 [queued]>
+[2024-12-05T21:39:28.730+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:39:04.397057+00:00 [queued]>
+[2024-12-05T21:39:28.730+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:39:28.743+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:39:04.397057+00:00
+[2024-12-05T21:39:28.749+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4865) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:39:28.751+0000] {standard_task_runner.py:72} INFO - Started process 4866 to run task
+[2024-12-05T21:39:28.750+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:39:04.397057+00:00', '--job-id', '1063', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpecs3i05_']
+[2024-12-05T21:39:28.752+0000] {standard_task_runner.py:105} INFO - Job 1063: Subtask extract_sql
+[2024-12-05T21:39:28.788+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:39:04.397057+00:00 [running]> on host c7780884450d
+[2024-12-05T21:39:28.853+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:39:04.397057+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:39:04.397057+00:00'
+[2024-12-05T21:39:28.854+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:39:28.872+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the processed mapping of brands to their respective categories based on the search results:
+
+1. **healbe** - medicine
+2. **hebeigrindingwheelfactory** - construction
+3. **hec** - electronics
+4. **heco** - appliances
+5. **heidelbergcement** - construction
+6. **heinola** - appliances
+7. **heinz** - food (not included in the category codes, but could be considered under a broader context)
+8. **helios** - electronics
+9. **helix** - stationery
+10. **hellion** - electronics
+11. **helloganic** - medicine
+12. **hellomaggie** - kids
+13. **helstons** - apparel
+14. **helvetia** - furniture
+15. **helvi** - appliances
+16. **henglei** - auto
+17. **hera** - cosmetics (not included in the category codes, but could be considered under a broader context)
+18. **hercules** - appliances
+19. **heresis** - electronics
+20. **herlitz** - stationery
+21. **herman** - furniture
+22. **hermes** - accessories
+23. **hermle** - appliances
+24. **hertfordshirepress** - stationery
+25. **hertz** - auto
+
+Now, I will generate the SQL INSERT statement based on the above mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('healbe', 'medicine'),
+    ('hebeigrindingwheelfactory', 'construction'),
+    ('hec', 'electronics'),
+    ('heco', 'appliances'),
+    ('heidelbergcement', 'construction'),
+    ('heinola', 'appliances'),
+    ('heinz', 'apparel'),  -- Note: Heinz primarily sells food products
+    ('helios', 'electronics'),
+    ('helix', 'stationery'),
+    ('hellion', 'electronics'),
+    ('helloganic', 'medicine'),
+    ('hellomaggie', 'kids'),
+    ('helstons', 'apparel'),
+    ('helvetia', 'furniture'),
+    ('helvi', 'appliances'),
+    ('henglei', 'auto'),
+    ('hera', 'apparel'),  -- Note: Hera primarily sells cosmetics
+    ('hercules', 'appliances'),
+    ('heresis', 'electronics'),
+    ('herlitz', 'stationery'),
+    ('herman', 'furniture'),
+    ('hermes', 'accessories'),
+    ('hermle', 'appliances'),
+    ('hertfordshirepress', 'stationery'),
+    ('hertz', 'auto');
+```
+
+This SQL statement reflects the category assignments based on the brands provided.
+[2024-12-05T21:39:28.873+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('healbe', 'medicine'),
+    ('hebeigrindingwheelfactory', 'construction'),
+    ('hec', 'electronics'),
+    ('heco', 'appliances'),
+    ('heidelbergcement', 'construction'),
+    ('heinola', 'appliances'),
+    ('heinz', 'apparel'),  -- Note: Heinz primarily sells food products
+    ('helios', 'electronics'),
+    ('helix', 'stationery'),
+    ('hellion', 'electronics'),
+    ('helloganic', 'medicine'),
+    ('hellomaggie', 'kids'),
+    ('helstons', 'apparel'),
+    ('helvetia', 'furniture'),
+    ('helvi', 'appliances'),
+    ('henglei', 'auto'),
+    ('hera', 'apparel'),  -- Note: Hera primarily sells cosmetics
+    ('hercules', 'appliances'),
+    ('heresis', 'electronics'),
+    ('herlitz', 'stationery'),
+    ('herman', 'furniture'),
+    ('hermes', 'accessories'),
+    ('hermle', 'appliances'),
+    ('hertfordshirepress', 'stationery'),
+    ('hertz', 'auto');
+[2024-12-05T21:39:28.874+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('healbe', 'medicine'),
+    ('hebeigrindingwheelfactory', 'construction'),
+    ('hec', 'electronics'),
+    ('heco', 'appliances'),
+    ('heidelbergcement', 'construction'),
+    ('heinola', 'appliances'),
+    ('heinz', 'apparel'),  -- Note: Heinz primarily sells food products
+    ('helios', 'electronics'),
+    ('helix', 'stationery'),
+    ('hellion', 'electronics'),
+    ('helloganic', 'medicine'),
+    ('hellomaggie', 'kids'),
+    ('helstons', 'apparel'),
+    ('helvetia', 'furniture'),
+    ('helvi', 'appliances'),
+    ('henglei', 'auto'),
+    ('hera', 'apparel'),  -- Note: Hera primarily sells cosmetics
+    ('hercules', 'appliances'),
+    ('heresis', 'electronics'),
+    ('herlitz', 'stationery'),
+    ('herman', 'furniture'),
+    ('hermes', 'accessories'),
+    ('hermle', 'appliances'),
+    ('hertfordshirepress', 'stationery'),
+    ('hertz', 'auto');
+[2024-12-05T21:39:28.891+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:39:28.891+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:39:04.397057+00:00, execution_date=20241205T213904, start_date=20241205T213928, end_date=20241205T213928
+[2024-12-05T21:39:28.925+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:39:28.943+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:39:28.946+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

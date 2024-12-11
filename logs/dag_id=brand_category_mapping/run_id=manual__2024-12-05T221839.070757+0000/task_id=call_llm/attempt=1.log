@@ -1,0 +1,168 @@
+[2024-12-05T22:18:43.976+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:18:43.989+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:18:39.070757+00:00 [queued]>
+[2024-12-05T22:18:43.996+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:18:39.070757+00:00 [queued]>
+[2024-12-05T22:18:43.997+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:18:44.011+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:18:39.070757+00:00
+[2024-12-05T22:18:44.017+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6946) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:18:44.019+0000] {standard_task_runner.py:72} INFO - Started process 6947 to run task
+[2024-12-05T22:18:44.019+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:18:39.070757+00:00', '--job-id', '1512', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpypxfqhyn']
+[2024-12-05T22:18:44.021+0000] {standard_task_runner.py:105} INFO - Job 1512: Subtask call_llm
+[2024-12-05T22:18:44.062+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:18:39.070757+00:00 [running]> on host c7780884450d
+[2024-12-05T22:18:44.133+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:18:39.070757+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:18:39.070757+00:00'
+[2024-12-05T22:18:44.134+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:18:44.152+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['powerman', 'powerplant', 'powerrangers', 'powertec', 'powertrac', 'pozis', 'pqi', 'prada', 'praktik', 'prc', 'preciosa', 'prego', 'premier', 'premium', 'premiumbaby', 'premont', 'president', 'presonus', 'prestige', 'prestigepro', 'prestigio', 'preston', 'pride', 'prime', 'primi'], 'next_index': 4050}
+[2024-12-05T22:18:44.152+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:18:44.575+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:19:02.702+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the brands and their assigned categories based on the search results and logical deductions:
+
+1. **powerman** - electronics, appliances
+2. **powerplant** - appliances
+3. **powerrangers** - kids, apparel
+4. **powertec** - electronics, appliances
+5. **powertrac** - auto, construction
+6. **pozis** - appliances, electronics
+7. **pqi** - electronics, computers
+8. **prada** - apparel, accessories
+9. **praktik** - construction, appliances
+10. **prc** - electronics
+11. **preciosa** - accessories
+12. **prego** - furniture, appliances
+13. **premier** - appliances, electronics
+14. **premium** - appliances
+15. **premiumbaby** - kids, apparel
+16. **premont** - kids, apparel
+17. **president** - electronics
+18. **presonus** - electronics
+19. **prestige** - electronics
+20. **prestigepro** - electronics
+21. **prestigio** - electronics, computers
+22. **preston** - furniture
+23. **pride** - auto, sport
+24. **prime** - electronics
+25. **primi** - kids, apparel
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('powerman', 'electronics'),
+    ('powerman', 'appliances'),
+    ('powerplant', 'appliances'),
+    ('powerrangers', 'kids'),
+    ('powerrangers', 'apparel'),
+    ('powertec', 'electronics'),
+    ('powertec', 'appliances'),
+    ('powertrac', 'auto'),
+    ('powertrac', 'construction'),
+    ('pozis', 'appliances'),
+    ('pozis', 'electronics'),
+    ('pqi', 'electronics'),
+    ('pqi', 'computers'),
+    ('prada', 'apparel'),
+    ('prada', 'accessories'),
+    ('praktik', 'construction'),
+    ('praktik', 'appliances'),
+    ('prc', 'electronics'),
+    ('preciosa', 'accessories'),
+    ('prego', 'furniture'),
+    ('prego', 'appliances'),
+    ('premier', 'appliances'),
+    ('premier', 'electronics'),
+    ('premium', 'appliances'),
+    ('premiumbaby', 'kids'),
+    ('premiumbaby', 'apparel'),
+    ('premont', 'kids'),
+    ('premont', 'apparel'),
+    ('president', 'electronics'),
+    ('presonus', 'electronics'),
+    ('prestige', 'electronics'),
+    ('prestigepro', 'electronics'),
+    ('prestigio', 'electronics'),
+    ('prestigio', 'computers'),
+    ('preston', 'furniture'),
+    ('pride', 'auto'),
+    ('pride', 'sport'),
+    ('prime', 'electronics'),
+    ('primi', 'kids'),
+    ('primi', 'apparel');
+```
+[2024-12-05T22:19:02.702+0000] {python.py:240} INFO - Done. Returned value was: Here are the brands and their assigned categories based on the search results and logical deductions:
+
+1. **powerman** - electronics, appliances
+2. **powerplant** - appliances
+3. **powerrangers** - kids, apparel
+4. **powertec** - electronics, appliances
+5. **powertrac** - auto, construction
+6. **pozis** - appliances, electronics
+7. **pqi** - electronics, computers
+8. **prada** - apparel, accessories
+9. **praktik** - construction, appliances
+10. **prc** - electronics
+11. **preciosa** - accessories
+12. **prego** - furniture, appliances
+13. **premier** - appliances, electronics
+14. **premium** - appliances
+15. **premiumbaby** - kids, apparel
+16. **premont** - kids, apparel
+17. **president** - electronics
+18. **presonus** - electronics
+19. **prestige** - electronics
+20. **prestigepro** - electronics
+21. **prestigio** - electronics, computers
+22. **preston** - furniture
+23. **pride** - auto, sport
+24. **prime** - electronics
+25. **primi** - kids, apparel
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('powerman', 'electronics'),
+    ('powerman', 'appliances'),
+    ('powerplant', 'appliances'),
+    ('powerrangers', 'kids'),
+    ('powerrangers', 'apparel'),
+    ('powertec', 'electronics'),
+    ('powertec', 'appliances'),
+    ('powertrac', 'auto'),
+    ('powertrac', 'construction'),
+    ('pozis', 'appliances'),
+    ('pozis', 'electronics'),
+    ('pqi', 'electronics'),
+    ('pqi', 'computers'),
+    ('prada', 'apparel'),
+    ('prada', 'accessories'),
+    ('praktik', 'construction'),
+    ('praktik', 'appliances'),
+    ('prc', 'electronics'),
+    ('preciosa', 'accessories'),
+    ('prego', 'furniture'),
+    ('prego', 'appliances'),
+    ('premier', 'appliances'),
+    ('premier', 'electronics'),
+    ('premium', 'appliances'),
+    ('premiumbaby', 'kids'),
+    ('premiumbaby', 'apparel'),
+    ('premont', 'kids'),
+    ('premont', 'apparel'),
+    ('president', 'electronics'),
+    ('presonus', 'electronics'),
+    ('prestige', 'electronics'),
+    ('prestigepro', 'electronics'),
+    ('prestigio', 'electronics'),
+    ('prestigio', 'computers'),
+    ('preston', 'furniture'),
+    ('pride', 'auto'),
+    ('pride', 'sport'),
+    ('prime', 'electronics'),
+    ('primi', 'kids'),
+    ('primi', 'apparel');
+```
+[2024-12-05T22:19:02.724+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:19:02.725+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:18:39.070757+00:00, execution_date=20241205T221839, start_date=20241205T221843, end_date=20241205T221902
+[2024-12-05T22:19:02.776+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:19:02.793+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:19:02.796+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,175 @@
+[2024-12-05T22:19:04.111+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:19:04.125+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:18:39.070757+00:00 [queued]>
+[2024-12-05T22:19:04.132+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:18:39.070757+00:00 [queued]>
+[2024-12-05T22:19:04.132+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:19:04.146+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:18:39.070757+00:00
+[2024-12-05T22:19:04.153+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6958) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:19:04.154+0000] {standard_task_runner.py:72} INFO - Started process 6959 to run task
+[2024-12-05T22:19:04.154+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:18:39.070757+00:00', '--job-id', '1513', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpv1hi10xe']
+[2024-12-05T22:19:04.156+0000] {standard_task_runner.py:105} INFO - Job 1513: Subtask extract_sql
+[2024-12-05T22:19:04.194+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:18:39.070757+00:00 [running]> on host c7780884450d
+[2024-12-05T22:19:04.271+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:18:39.070757+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:18:39.070757+00:00'
+[2024-12-05T22:19:04.272+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:19:04.290+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the brands and their assigned categories based on the search results and logical deductions:
+
+1. **powerman** - electronics, appliances
+2. **powerplant** - appliances
+3. **powerrangers** - kids, apparel
+4. **powertec** - electronics, appliances
+5. **powertrac** - auto, construction
+6. **pozis** - appliances, electronics
+7. **pqi** - electronics, computers
+8. **prada** - apparel, accessories
+9. **praktik** - construction, appliances
+10. **prc** - electronics
+11. **preciosa** - accessories
+12. **prego** - furniture, appliances
+13. **premier** - appliances, electronics
+14. **premium** - appliances
+15. **premiumbaby** - kids, apparel
+16. **premont** - kids, apparel
+17. **president** - electronics
+18. **presonus** - electronics
+19. **prestige** - electronics
+20. **prestigepro** - electronics
+21. **prestigio** - electronics, computers
+22. **preston** - furniture
+23. **pride** - auto, sport
+24. **prime** - electronics
+25. **primi** - kids, apparel
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('powerman', 'electronics'),
+    ('powerman', 'appliances'),
+    ('powerplant', 'appliances'),
+    ('powerrangers', 'kids'),
+    ('powerrangers', 'apparel'),
+    ('powertec', 'electronics'),
+    ('powertec', 'appliances'),
+    ('powertrac', 'auto'),
+    ('powertrac', 'construction'),
+    ('pozis', 'appliances'),
+    ('pozis', 'electronics'),
+    ('pqi', 'electronics'),
+    ('pqi', 'computers'),
+    ('prada', 'apparel'),
+    ('prada', 'accessories'),
+    ('praktik', 'construction'),
+    ('praktik', 'appliances'),
+    ('prc', 'electronics'),
+    ('preciosa', 'accessories'),
+    ('prego', 'furniture'),
+    ('prego', 'appliances'),
+    ('premier', 'appliances'),
+    ('premier', 'electronics'),
+    ('premium', 'appliances'),
+    ('premiumbaby', 'kids'),
+    ('premiumbaby', 'apparel'),
+    ('premont', 'kids'),
+    ('premont', 'apparel'),
+    ('president', 'electronics'),
+    ('presonus', 'electronics'),
+    ('prestige', 'electronics'),
+    ('prestigepro', 'electronics'),
+    ('prestigio', 'electronics'),
+    ('prestigio', 'computers'),
+    ('preston', 'furniture'),
+    ('pride', 'auto'),
+    ('pride', 'sport'),
+    ('prime', 'electronics'),
+    ('primi', 'kids'),
+    ('primi', 'apparel');
+```
+[2024-12-05T22:19:04.291+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('powerman', 'electronics'),
+    ('powerman', 'appliances'),
+    ('powerplant', 'appliances'),
+    ('powerrangers', 'kids'),
+    ('powerrangers', 'apparel'),
+    ('powertec', 'electronics'),
+    ('powertec', 'appliances'),
+    ('powertrac', 'auto'),
+    ('powertrac', 'construction'),
+    ('pozis', 'appliances'),
+    ('pozis', 'electronics'),
+    ('pqi', 'electronics'),
+    ('pqi', 'computers'),
+    ('prada', 'apparel'),
+    ('prada', 'accessories'),
+    ('praktik', 'construction'),
+    ('praktik', 'appliances'),
+    ('prc', 'electronics'),
+    ('preciosa', 'accessories'),
+    ('prego', 'furniture'),
+    ('prego', 'appliances'),
+    ('premier', 'appliances'),
+    ('premier', 'electronics'),
+    ('premium', 'appliances'),
+    ('premiumbaby', 'kids'),
+    ('premiumbaby', 'apparel'),
+    ('premont', 'kids'),
+    ('premont', 'apparel'),
+    ('president', 'electronics'),
+    ('presonus', 'electronics'),
+    ('prestige', 'electronics'),
+    ('prestigepro', 'electronics'),
+    ('prestigio', 'electronics'),
+    ('prestigio', 'computers'),
+    ('preston', 'furniture'),
+    ('pride', 'auto'),
+    ('pride', 'sport'),
+    ('prime', 'electronics'),
+    ('primi', 'kids'),
+    ('primi', 'apparel');
+[2024-12-05T22:19:04.291+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('powerman', 'electronics'),
+    ('powerman', 'appliances'),
+    ('powerplant', 'appliances'),
+    ('powerrangers', 'kids'),
+    ('powerrangers', 'apparel'),
+    ('powertec', 'electronics'),
+    ('powertec', 'appliances'),
+    ('powertrac', 'auto'),
+    ('powertrac', 'construction'),
+    ('pozis', 'appliances'),
+    ('pozis', 'electronics'),
+    ('pqi', 'electronics'),
+    ('pqi', 'computers'),
+    ('prada', 'apparel'),
+    ('prada', 'accessories'),
+    ('praktik', 'construction'),
+    ('praktik', 'appliances'),
+    ('prc', 'electronics'),
+    ('preciosa', 'accessories'),
+    ('prego', 'furniture'),
+    ('prego', 'appliances'),
+    ('premier', 'appliances'),
+    ('premier', 'electronics'),
+    ('premium', 'appliances'),
+    ('premiumbaby', 'kids'),
+    ('premiumbaby', 'apparel'),
+    ('premont', 'kids'),
+    ('premont', 'apparel'),
+    ('president', 'electronics'),
+    ('presonus', 'electronics'),
+    ('prestige', 'electronics'),
+    ('prestigepro', 'electronics'),
+    ('prestigio', 'electronics'),
+    ('prestigio', 'computers'),
+    ('preston', 'furniture'),
+    ('pride', 'auto'),
+    ('pride', 'sport'),
+    ('prime', 'electronics'),
+    ('primi', 'kids'),
+    ('primi', 'apparel');
+[2024-12-05T22:19:04.309+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:19:04.310+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:18:39.070757+00:00, execution_date=20241205T221839, start_date=20241205T221904, end_date=20241205T221904
+[2024-12-05T22:19:04.328+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:19:04.348+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:19:04.351+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

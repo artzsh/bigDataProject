@@ -1,0 +1,144 @@
+[2024-12-05T21:45:58.399+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:45:58.412+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:45:27.128616+00:00 [queued]>
+[2024-12-05T21:45:58.418+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:45:27.128616+00:00 [queued]>
+[2024-12-05T21:45:58.419+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:45:58.431+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:45:27.128616+00:00
+[2024-12-05T21:45:58.437+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5201) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:45:58.439+0000] {standard_task_runner.py:72} INFO - Started process 5202 to run task
+[2024-12-05T21:45:58.439+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:45:27.128616+00:00', '--job-id', '1135', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp3o6_0v6c']
+[2024-12-05T21:45:58.440+0000] {standard_task_runner.py:105} INFO - Job 1135: Subtask extract_sql
+[2024-12-05T21:45:58.474+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:45:27.128616+00:00 [running]> on host c7780884450d
+[2024-12-05T21:45:58.532+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:45:27.128616+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:45:27.128616+00:00'
+[2024-12-05T21:45:58.533+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:45:58.550+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their respective categories based on the search queries:
+
+1. **jimcarrey**: Not a product brand; could be assigned to *apparel* (related to entertainment).
+2. **jimmychoo**: *apparel*, *accessories* (luxury fashion brand).
+3. **jincostech**: *electronics* (technology products).
+4. **jinga**: *toys* (related to games, could fit under *kids*).
+5. **jinjianfeng**: *appliances* (related to home appliances).
+6. **jinkairui**: *electronics* (likely related to tech gadgets).
+7. **jinma**: *construction* (machinery and tools).
+8. **jinyuan**: *appliances* (home appliances).
+9. **jio**: *electronics* (telecommunications and electronics).
+10. **jjrc**: *electronics*, *kids* (drones and toys).
+11. **jkexer**: *sport* (fitness equipment).
+12. **joby**: *accessories*, *electronics* (camera accessories).
+13. **jocelyn**: *apparel* (fashion brand).
+14. **jockey**: *apparel* (underwear and loungewear).
+15. **joe**: *apparel* (fashion brand).
+16. **joerex**: *sport* (fitness and sports equipment).
+17. **johnnytheskull**: *apparel* (fashion brand).
+18. **johnrichardo**: *apparel* (fashion brand).
+19. **johnvarvatos**: *apparel*, *accessories* (men's fashion).
+20. **joie**: *apparel* (women's fashion).
+21. **joieanglia**: *apparel* (fashion brand).
+22. **joker**: *apparel* (related to character clothing).
+23. **joma**: *sport* (sportswear).
+24. **jomalone**: *accessories* (fragrances).
+25. **jonnesway**: *tools*, *construction* (automotive and hand tools).
+
+Now, here's the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('jimcarrey', 'apparel'),
+    ('jimmychoo', 'apparel'),
+    ('jimmychoo', 'accessories'),
+    ('jincostech', 'electronics'),
+    ('jinga', 'kids'),
+    ('jinjianfeng', 'appliances'),
+    ('jinkairui', 'electronics'),
+    ('jinma', 'construction'),
+    ('jinyuan', 'appliances'),
+    ('jio', 'electronics'),
+    ('jjrc', 'electronics'),
+    ('jjrc', 'kids'),
+    ('jkexer', 'sport'),
+    ('joby', 'accessories'),
+    ('joby', 'electronics'),
+    ('jocelyn', 'apparel'),
+    ('jockey', 'apparel'),
+    ('joe', 'apparel'),
+    ('joerex', 'sport'),
+    ('johnnytheskull', 'apparel'),
+    ('johnrichardo', 'apparel'),
+    ('johnvarvatos', 'apparel'),
+    ('johnvarvatos', 'accessories'),
+    ('joie', 'apparel'),
+    ('joieanglia', 'apparel'),
+    ('joker', 'apparel'),
+    ('joma', 'sport'),
+    ('jomalone', 'accessories'),
+    ('jonnesway', 'construction');
+``` 
+
+This statement contains all the brands and their associated categories as per the analysis.
+[2024-12-05T21:45:58.551+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('jimcarrey', 'apparel'),
+    ('jimmychoo', 'apparel'),
+    ('jimmychoo', 'accessories'),
+    ('jincostech', 'electronics'),
+    ('jinga', 'kids'),
+    ('jinjianfeng', 'appliances'),
+    ('jinkairui', 'electronics'),
+    ('jinma', 'construction'),
+    ('jinyuan', 'appliances'),
+    ('jio', 'electronics'),
+    ('jjrc', 'electronics'),
+    ('jjrc', 'kids'),
+    ('jkexer', 'sport'),
+    ('joby', 'accessories'),
+    ('joby', 'electronics'),
+    ('jocelyn', 'apparel'),
+    ('jockey', 'apparel'),
+    ('joe', 'apparel'),
+    ('joerex', 'sport'),
+    ('johnnytheskull', 'apparel'),
+    ('johnrichardo', 'apparel'),
+    ('johnvarvatos', 'apparel'),
+    ('johnvarvatos', 'accessories'),
+    ('joie', 'apparel'),
+    ('joieanglia', 'apparel'),
+    ('joker', 'apparel'),
+    ('joma', 'sport'),
+    ('jomalone', 'accessories'),
+    ('jonnesway', 'construction');
+[2024-12-05T21:45:58.551+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('jimcarrey', 'apparel'),
+    ('jimmychoo', 'apparel'),
+    ('jimmychoo', 'accessories'),
+    ('jincostech', 'electronics'),
+    ('jinga', 'kids'),
+    ('jinjianfeng', 'appliances'),
+    ('jinkairui', 'electronics'),
+    ('jinma', 'construction'),
+    ('jinyuan', 'appliances'),
+    ('jio', 'electronics'),
+    ('jjrc', 'electronics'),
+    ('jjrc', 'kids'),
+    ('jkexer', 'sport'),
+    ('joby', 'accessories'),
+    ('joby', 'electronics'),
+    ('jocelyn', 'apparel'),
+    ('jockey', 'apparel'),
+    ('joe', 'apparel'),
+    ('joerex', 'sport'),
+    ('johnnytheskull', 'apparel'),
+    ('johnrichardo', 'apparel'),
+    ('johnvarvatos', 'apparel'),
+    ('johnvarvatos', 'accessories'),
+    ('joie', 'apparel'),
+    ('joieanglia', 'apparel'),
+    ('joker', 'apparel'),
+    ('joma', 'sport'),
+    ('jomalone', 'accessories'),
+    ('jonnesway', 'construction');
+[2024-12-05T21:45:58.566+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:45:58.567+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:45:27.128616+00:00, execution_date=20241205T214527, start_date=20241205T214558, end_date=20241205T214558
+[2024-12-05T21:45:58.613+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:45:58.630+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:45:58.633+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

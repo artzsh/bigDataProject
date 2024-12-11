@@ -1,0 +1,164 @@
+[2024-12-05T22:08:05.948+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:08:05.962+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:08:01.104604+00:00 [queued]>
+[2024-12-05T22:08:05.969+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:08:01.104604+00:00 [queued]>
+[2024-12-05T22:08:05.969+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:08:05.983+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:08:01.104604+00:00
+[2024-12-05T22:08:05.989+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6386) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:08:05.990+0000] {standard_task_runner.py:72} INFO - Started process 6394 to run task
+[2024-12-05T22:08:05.990+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:08:01.104604+00:00', '--job-id', '1392', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp_9bacv23']
+[2024-12-05T22:08:05.992+0000] {standard_task_runner.py:105} INFO - Job 1392: Subtask call_llm
+[2024-12-05T22:08:06.029+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:08:01.104604+00:00 [running]> on host c7780884450d
+[2024-12-05T22:08:06.099+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:08:01.104604+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:08:01.104604+00:00'
+[2024-12-05T22:08:06.100+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:08:06.118+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['naturepan', 'naturerepublic', 'naughtydog', 'navi-box', 'navigator', 'navitel', 'nazadkistokam', 'nbnorthbayou', 'nec', 'neff', 'neilpryde', 'nella', 'neman', 'neo', 'neoclassic', 'neoline', 'neposeda', 'neptun', 'nerf', 'nescafe', 'neskucnyeigry', 'nesquik', 'nest', 'nestle', 'nestogen'], 'next_index': 3550}
+[2024-12-05T22:08:06.118+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:08:06.556+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:08:26.474+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of brands to their respective categories based on the search results:
+
+1. **naturepan**: appliances
+2. **naturerepublic**: medicine, accessories
+3. **naughtydog**: apparel, accessories
+4. **navi-box**: electronics
+5. **navigator**: electronics, computers
+6. **navitel**: electronics, auto
+7. **nazadkistokam**: furniture
+8. **nbnorthbayou**: electronics
+9. **nec**: electronics, computers
+10. **neff**: apparel, accessories
+11. **neilpryde**: sport, apparel
+12. **nella**: kids
+13. **neman**: furniture
+14. **neo**: electronics
+15. **neoclassic**: furniture
+16. **neoline**: electronics, auto
+17. **neposeda**: furniture
+18. **neptun**: appliances
+19. **nerf**: kids, sport
+20. **nescafe**: food, medicine
+21. **neskucnyeigry**: kids
+22. **nesquik**: food, kids
+23. **nest**: furniture
+24. **nestle**: food, medicine
+25. **nestogen**: medicine, food
+
+Now, I will create the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('naturepan', 'appliances'),
+    ('naturerepublic', 'medicine'),
+    ('naturerepublic', 'accessories'),
+    ('naughtydog', 'apparel'),
+    ('naughtydog', 'accessories'),
+    ('navi-box', 'electronics'),
+    ('navigator', 'electronics'),
+    ('navigator', 'computers'),
+    ('navitel', 'electronics'),
+    ('navitel', 'auto'),
+    ('nazadkistokam', 'furniture'),
+    ('nbnorthbayou', 'electronics'),
+    ('nec', 'electronics'),
+    ('nec', 'computers'),
+    ('neff', 'apparel'),
+    ('neff', 'accessories'),
+    ('neilpryde', 'sport'),
+    ('neilpryde', 'apparel'),
+    ('nella', 'kids'),
+    ('neman', 'furniture'),
+    ('neo', 'electronics'),
+    ('neoclassic', 'furniture'),
+    ('neoline', 'electronics'),
+    ('neoline', 'auto'),
+    ('neposeda', 'furniture'),
+    ('neptun', 'appliances'),
+    ('nerf', 'kids'),
+    ('nerf', 'sport'),
+    ('nescafe', 'medicine'),
+    ('nescafe', 'food'),
+    ('neskucnyeigry', 'kids'),
+    ('nesquik', 'food'),
+    ('nesquik', 'kids'),
+    ('nest', 'furniture'),
+    ('nestle', 'food'),
+    ('nestle', 'medicine'),
+    ('nestogen', 'medicine'),
+    ('nestogen', 'food');
+```
+[2024-12-05T22:08:26.475+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of brands to their respective categories based on the search results:
+
+1. **naturepan**: appliances
+2. **naturerepublic**: medicine, accessories
+3. **naughtydog**: apparel, accessories
+4. **navi-box**: electronics
+5. **navigator**: electronics, computers
+6. **navitel**: electronics, auto
+7. **nazadkistokam**: furniture
+8. **nbnorthbayou**: electronics
+9. **nec**: electronics, computers
+10. **neff**: apparel, accessories
+11. **neilpryde**: sport, apparel
+12. **nella**: kids
+13. **neman**: furniture
+14. **neo**: electronics
+15. **neoclassic**: furniture
+16. **neoline**: electronics, auto
+17. **neposeda**: furniture
+18. **neptun**: appliances
+19. **nerf**: kids, sport
+20. **nescafe**: food, medicine
+21. **neskucnyeigry**: kids
+22. **nesquik**: food, kids
+23. **nest**: furniture
+24. **nestle**: food, medicine
+25. **nestogen**: medicine, food
+
+Now, I will create the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('naturepan', 'appliances'),
+    ('naturerepublic', 'medicine'),
+    ('naturerepublic', 'accessories'),
+    ('naughtydog', 'apparel'),
+    ('naughtydog', 'accessories'),
+    ('navi-box', 'electronics'),
+    ('navigator', 'electronics'),
+    ('navigator', 'computers'),
+    ('navitel', 'electronics'),
+    ('navitel', 'auto'),
+    ('nazadkistokam', 'furniture'),
+    ('nbnorthbayou', 'electronics'),
+    ('nec', 'electronics'),
+    ('nec', 'computers'),
+    ('neff', 'apparel'),
+    ('neff', 'accessories'),
+    ('neilpryde', 'sport'),
+    ('neilpryde', 'apparel'),
+    ('nella', 'kids'),
+    ('neman', 'furniture'),
+    ('neo', 'electronics'),
+    ('neoclassic', 'furniture'),
+    ('neoline', 'electronics'),
+    ('neoline', 'auto'),
+    ('neposeda', 'furniture'),
+    ('neptun', 'appliances'),
+    ('nerf', 'kids'),
+    ('nerf', 'sport'),
+    ('nescafe', 'medicine'),
+    ('nescafe', 'food'),
+    ('neskucnyeigry', 'kids'),
+    ('nesquik', 'food'),
+    ('nesquik', 'kids'),
+    ('nest', 'furniture'),
+    ('nestle', 'food'),
+    ('nestle', 'medicine'),
+    ('nestogen', 'medicine'),
+    ('nestogen', 'food');
+```
+[2024-12-05T22:08:26.494+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:08:26.495+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:08:01.104604+00:00, execution_date=20241205T220801, start_date=20241205T220805, end_date=20241205T220826
+[2024-12-05T22:08:26.534+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:08:26.550+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:08:26.553+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

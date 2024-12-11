@@ -1,0 +1,784 @@
+[2024-12-01T00:01:06.989+0000] {processor.py:186} INFO - Started process (PID=64) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:01:06.990+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:01:06.992+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:01:06.992+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:01:07.668+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:01:07.710+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:01:07.709+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:01:07.764+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:01:07.763+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:00:00+00:00, run_after=2024-12-01 00:01:00+00:00
+[2024-12-01T00:01:07.794+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.809 seconds
+[2024-12-01T00:01:38.171+0000] {processor.py:186} INFO - Started process (PID=85) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:01:38.172+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:01:38.174+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:01:38.174+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:01:38.566+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:01:38.580+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:01:38.580+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:01:38.597+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:01:38.597+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:00:00+00:00, run_after=2024-12-01 00:01:00+00:00
+[2024-12-01T00:01:38.610+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.444 seconds
+[2024-12-01T00:02:09.206+0000] {processor.py:186} INFO - Started process (PID=105) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:02:09.207+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:02:09.208+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:02:09.208+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:02:09.655+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:02:09.692+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:02:09.692+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:02:09.717+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:02:09.717+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:01:00+00:00, run_after=2024-12-01 00:02:00+00:00
+[2024-12-01T00:02:09.732+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.530 seconds
+[2024-12-01T00:03:00.394+0000] {processor.py:186} INFO - Started process (PID=66) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:03:00.395+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:03:00.397+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:03:00.397+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:03:00.829+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:03:00.849+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:03:00.848+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:03:00.870+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:03:00.869+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:02:00+00:00, run_after=2024-12-01 00:03:00+00:00
+[2024-12-01T00:03:00.888+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.499 seconds
+[2024-12-01T00:03:31.268+0000] {processor.py:186} INFO - Started process (PID=86) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:03:31.269+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:03:31.271+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:03:31.271+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:03:31.622+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:03:31.635+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:03:31.634+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:03:31.651+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:03:31.650+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:02:00+00:00, run_after=2024-12-01 00:03:00+00:00
+[2024-12-01T00:03:31.665+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.402 seconds
+[2024-12-01T00:04:01.984+0000] {processor.py:186} INFO - Started process (PID=106) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:04:01.985+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:04:01.987+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:04:01.987+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:04:02.372+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:04:02.392+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:04:02.392+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:04:02.412+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:04:02.412+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:03:00+00:00, run_after=2024-12-01 00:04:00+00:00
+[2024-12-01T00:04:02.428+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.449 seconds
+[2024-12-01T00:04:33.268+0000] {processor.py:186} INFO - Started process (PID=132) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:04:33.269+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:04:33.271+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:04:33.270+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:04:33.730+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:04:33.745+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:04:33.745+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:04:33.762+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:04:33.762+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:03:00+00:00, run_after=2024-12-01 00:04:00+00:00
+[2024-12-01T00:04:33.786+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.524 seconds
+[2024-12-01T00:06:01.905+0000] {processor.py:186} INFO - Started process (PID=60) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:06:01.906+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:06:01.908+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:06:01.908+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:06:02.263+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:06:02.277+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:06:02.277+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:06:02.296+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:06:02.296+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:05:00+00:00, run_after=2024-12-01 00:06:00+00:00
+[2024-12-01T00:06:02.311+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.411 seconds
+[2024-12-01T00:06:32.695+0000] {processor.py:186} INFO - Started process (PID=80) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:06:32.696+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:06:32.698+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:06:32.697+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:06:33.054+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:06:33.069+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:06:33.068+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:06:33.086+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:06:33.086+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:05:00+00:00, run_after=2024-12-01 00:06:00+00:00
+[2024-12-01T00:06:33.102+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.412 seconds
+[2024-12-01T00:07:03.636+0000] {processor.py:186} INFO - Started process (PID=100) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:07:03.637+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:07:03.639+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:07:03.639+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:07:04.094+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:07:04.108+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:07:04.108+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:07:04.125+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:07:04.125+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:06:00+00:00, run_after=2024-12-01 00:07:00+00:00
+[2024-12-01T00:07:04.140+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.508 seconds
+[2024-12-01T00:07:34.562+0000] {processor.py:186} INFO - Started process (PID=120) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:07:34.563+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:07:34.565+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:07:34.565+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:07:34.926+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:07:34.940+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:07:34.940+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:07:34.959+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:07:34.959+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:06:00+00:00, run_after=2024-12-01 00:07:00+00:00
+[2024-12-01T00:07:34.973+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.416 seconds
+[2024-12-01T00:08:05.418+0000] {processor.py:186} INFO - Started process (PID=140) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:08:05.418+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:08:05.420+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:08:05.420+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:08:05.762+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:08:05.775+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:08:05.775+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:08:05.793+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:08:05.793+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:07:00+00:00, run_after=2024-12-01 00:08:00+00:00
+[2024-12-01T00:08:05.807+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.394 seconds
+[2024-12-01T00:08:52.496+0000] {processor.py:186} INFO - Started process (PID=61) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:08:52.496+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:08:52.499+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:08:52.498+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:08:52.891+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:08:52.906+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:08:52.906+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:08:52.927+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:08:52.927+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:07:00+00:00, run_after=2024-12-01 00:08:00+00:00
+[2024-12-01T00:08:52.946+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.455 seconds
+[2024-12-01T00:09:23.439+0000] {processor.py:186} INFO - Started process (PID=81) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:09:23.440+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:09:23.442+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:09:23.442+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:09:23.817+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:09:23.834+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:09:23.833+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:09:23.852+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:09:23.852+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:08:00+00:00, run_after=2024-12-01 00:09:00+00:00
+[2024-12-01T00:09:23.870+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.437 seconds
+[2024-12-01T00:09:54.945+0000] {processor.py:186} INFO - Started process (PID=100) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:09:54.946+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:09:54.947+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:09:54.947+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:09:55.343+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:09:55.357+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:09:55.356+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:09:55.375+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:09:55.374+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:08:00+00:00, run_after=2024-12-01 00:09:00+00:00
+[2024-12-01T00:09:55.389+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.449 seconds
+[2024-12-01T00:10:26.904+0000] {processor.py:186} INFO - Started process (PID=126) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:10:26.905+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:10:26.907+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:10:26.906+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:10:27.414+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:10:27.428+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:10:27.428+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:10:27.447+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:10:27.446+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:09:00+00:00, run_after=2024-12-01 00:10:00+00:00
+[2024-12-01T00:10:27.461+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.562 seconds
+[2024-12-01T00:10:58.087+0000] {processor.py:186} INFO - Started process (PID=147) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:10:58.088+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:10:58.090+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:10:58.090+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:10:58.606+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:10:58.621+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:10:58.621+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:10:58.640+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:10:58.640+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:09:00+00:00, run_after=2024-12-01 00:10:00+00:00
+[2024-12-01T00:10:58.655+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.573 seconds
+[2024-12-01T00:11:28.972+0000] {processor.py:186} INFO - Started process (PID=167) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:11:28.973+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:11:28.975+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:11:28.975+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:11:29.243+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:11:29.261+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:11:29.261+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:11:29.282+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:11:29.282+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:10:00+00:00, run_after=2024-12-01 00:11:00+00:00
+[2024-12-01T00:11:29.298+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.332 seconds
+[2024-12-01T00:11:59.645+0000] {processor.py:186} INFO - Started process (PID=187) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:11:59.646+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:11:59.648+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:11:59.648+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:11:59.898+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:11:59.916+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:11:59.915+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:11:59.936+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:11:59.936+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:10:00+00:00, run_after=2024-12-01 00:11:00+00:00
+[2024-12-01T00:11:59.953+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.313 seconds
+[2024-12-01T00:12:30.187+0000] {processor.py:186} INFO - Started process (PID=207) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:12:30.188+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:12:30.190+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:12:30.190+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:12:30.437+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:12:30.453+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:12:30.453+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:12:30.472+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:12:30.472+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:11:00+00:00, run_after=2024-12-01 00:12:00+00:00
+[2024-12-01T00:12:30.489+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.306 seconds
+[2024-12-01T00:13:00.686+0000] {processor.py:186} INFO - Started process (PID=227) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:13:00.687+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:13:00.689+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:13:00.689+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:13:00.922+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:13:00.938+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:13:00.938+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:13:00.957+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:13:00.956+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:12:00+00:00, run_after=2024-12-01 00:13:00+00:00
+[2024-12-01T00:13:00.973+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.292 seconds
+[2024-12-01T00:13:31.217+0000] {processor.py:186} INFO - Started process (PID=247) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:13:31.218+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:13:31.220+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:13:31.219+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:13:31.479+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:13:31.495+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:13:31.495+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:13:31.516+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:13:31.515+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:12:00+00:00, run_after=2024-12-01 00:13:00+00:00
+[2024-12-01T00:13:31.531+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.319 seconds
+[2024-12-01T00:14:01.872+0000] {processor.py:186} INFO - Started process (PID=267) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:14:01.873+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:14:01.875+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:14:01.875+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:14:02.094+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:14:02.108+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:14:02.108+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:14:02.124+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:14:02.124+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:13:00+00:00, run_after=2024-12-01 00:14:00+00:00
+[2024-12-01T00:14:02.137+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.269 seconds
+[2024-12-01T00:14:32.450+0000] {processor.py:186} INFO - Started process (PID=287) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:14:32.451+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:14:32.453+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:14:32.453+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:14:32.698+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:14:32.731+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:14:32.731+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:14:32.774+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:14:32.774+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:13:00+00:00, run_after=2024-12-01 00:14:00+00:00
+[2024-12-01T00:14:32.808+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.362 seconds
+[2024-12-01T00:15:03.340+0000] {processor.py:186} INFO - Started process (PID=307) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:15:03.342+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:15:03.347+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:15:03.347+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:15:03.620+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:15:03.637+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:15:03.637+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:15:03.656+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:15:03.656+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:14:00+00:00, run_after=2024-12-01 00:15:00+00:00
+[2024-12-01T00:15:03.674+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.344 seconds
+[2024-12-01T00:15:33.885+0000] {processor.py:186} INFO - Started process (PID=327) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:15:33.886+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:15:33.888+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:15:33.887+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:15:34.124+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:15:34.141+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:15:34.141+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:15:34.162+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:15:34.162+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:14:00+00:00, run_after=2024-12-01 00:15:00+00:00
+[2024-12-01T00:15:34.179+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.298 seconds
+[2024-12-01T00:16:04.529+0000] {processor.py:186} INFO - Started process (PID=347) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:16:04.530+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:16:04.532+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:16:04.531+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:16:04.762+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:16:04.776+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:16:04.776+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:16:04.796+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:16:04.795+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:15:00+00:00, run_after=2024-12-01 00:16:00+00:00
+[2024-12-01T00:16:04.809+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.285 seconds
+[2024-12-01T00:16:35.170+0000] {processor.py:186} INFO - Started process (PID=367) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:16:35.171+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:16:35.173+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:16:35.173+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:16:35.412+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:16:35.427+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:16:35.427+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:16:35.458+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:16:35.458+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:15:00+00:00, run_after=2024-12-01 00:16:00+00:00
+[2024-12-01T00:16:35.477+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.312 seconds
+[2024-12-01T00:17:06.023+0000] {processor.py:186} INFO - Started process (PID=387) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:17:06.024+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:17:06.026+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:17:06.026+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:17:06.253+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:17:06.267+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:17:06.267+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:17:06.285+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:17:06.285+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:16:00+00:00, run_after=2024-12-01 00:17:00+00:00
+[2024-12-01T00:17:06.298+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.280 seconds
+[2024-12-01T00:17:36.892+0000] {processor.py:186} INFO - Started process (PID=407) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:17:36.894+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:17:36.899+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:17:36.898+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:17:37.413+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:17:37.438+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:17:37.438+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:17:37.465+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:17:37.465+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:16:00+00:00, run_after=2024-12-01 00:17:00+00:00
+[2024-12-01T00:17:37.489+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.604 seconds
+[2024-12-01T00:18:07.672+0000] {processor.py:186} INFO - Started process (PID=427) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:18:07.673+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:18:07.675+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:18:07.675+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:18:07.908+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:18:07.924+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:18:07.924+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:18:07.942+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:18:07.942+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:17:00+00:00, run_after=2024-12-01 00:18:00+00:00
+[2024-12-01T00:18:07.956+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.289 seconds
+[2024-12-01T00:18:38.334+0000] {processor.py:186} INFO - Started process (PID=447) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:18:38.335+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:18:38.337+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:18:38.337+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:18:38.643+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:18:38.678+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:18:38.677+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:18:38.704+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:18:38.704+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:17:00+00:00, run_after=2024-12-01 00:18:00+00:00
+[2024-12-01T00:18:38.791+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.463 seconds
+[2024-12-01T00:19:09.180+0000] {processor.py:186} INFO - Started process (PID=467) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:19:09.181+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:19:09.183+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:19:09.183+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:19:09.427+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:19:09.444+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:19:09.444+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:19:09.464+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:19:09.464+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:18:00+00:00, run_after=2024-12-01 00:19:00+00:00
+[2024-12-01T00:19:09.480+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.305 seconds
+[2024-12-01T00:19:39.879+0000] {processor.py:186} INFO - Started process (PID=487) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:19:39.880+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:19:39.882+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:19:39.881+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:19:40.176+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:19:40.213+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:19:40.212+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:19:40.263+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:19:40.263+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:18:00+00:00, run_after=2024-12-01 00:19:00+00:00
+[2024-12-01T00:19:40.285+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.413 seconds
+[2024-12-01T00:20:10.524+0000] {processor.py:186} INFO - Started process (PID=507) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:20:10.525+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:20:10.527+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:20:10.526+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:20:10.868+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:20:10.884+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:20:10.884+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:20:10.904+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:20:10.903+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:19:00+00:00, run_after=2024-12-01 00:20:00+00:00
+[2024-12-01T00:20:10.923+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.404 seconds
+[2024-12-01T00:20:41.223+0000] {processor.py:186} INFO - Started process (PID=527) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:20:41.223+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:20:41.226+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:20:41.225+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:20:41.481+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:20:41.500+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:20:41.500+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:20:41.521+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:20:41.521+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:19:00+00:00, run_after=2024-12-01 00:20:00+00:00
+[2024-12-01T00:20:41.541+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.323 seconds
+[2024-12-01T00:21:11.867+0000] {processor.py:186} INFO - Started process (PID=547) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:21:11.868+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:21:11.871+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:21:11.870+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:21:12.153+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:21:12.170+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:21:12.170+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:21:12.193+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:21:12.193+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:20:00+00:00, run_after=2024-12-01 00:21:00+00:00
+[2024-12-01T00:21:12.215+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.355 seconds
+[2024-12-01T00:21:42.873+0000] {processor.py:186} INFO - Started process (PID=567) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:21:42.874+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:21:42.877+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:21:42.876+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:21:43.156+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:21:43.174+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:21:43.174+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:21:43.194+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:21:43.194+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:20:00+00:00, run_after=2024-12-01 00:21:00+00:00
+[2024-12-01T00:21:43.211+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.344 seconds
+[2024-12-01T00:22:13.495+0000] {processor.py:186} INFO - Started process (PID=587) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:22:13.496+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:22:13.499+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:22:13.498+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:22:13.771+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:22:13.788+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:22:13.788+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:22:13.809+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:22:13.809+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:21:00+00:00, run_after=2024-12-01 00:22:00+00:00
+[2024-12-01T00:22:13.826+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.337 seconds
+[2024-12-01T00:22:44.325+0000] {processor.py:186} INFO - Started process (PID=607) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:22:44.326+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:22:44.329+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:22:44.328+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:22:44.608+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:22:44.627+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:22:44.627+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:22:44.651+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:22:44.651+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:21:00+00:00, run_after=2024-12-01 00:22:00+00:00
+[2024-12-01T00:22:44.669+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.350 seconds
+[2024-12-01T00:23:15.081+0000] {processor.py:186} INFO - Started process (PID=628) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:23:15.082+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:23:15.084+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:23:15.084+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:23:15.399+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:23:15.419+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:23:15.419+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:23:15.445+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:23:15.445+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:22:00+00:00, run_after=2024-12-01 00:23:00+00:00
+[2024-12-01T00:23:15.466+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.392 seconds
+[2024-12-01T00:23:45.969+0000] {processor.py:186} INFO - Started process (PID=648) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:23:45.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:23:45.973+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:23:45.973+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:23:46.275+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:23:46.294+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:23:46.294+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:23:46.315+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:23:46.315+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:22:00+00:00, run_after=2024-12-01 00:23:00+00:00
+[2024-12-01T00:23:46.335+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.374 seconds
+[2024-12-01T00:24:16.751+0000] {processor.py:186} INFO - Started process (PID=668) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:24:16.752+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:24:16.755+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:24:16.754+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:24:17.072+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:24:17.095+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:24:17.095+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:24:17.122+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:24:17.122+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:23:00+00:00, run_after=2024-12-01 00:24:00+00:00
+[2024-12-01T00:24:17.148+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.403 seconds
+[2024-12-01T00:24:47.410+0000] {processor.py:186} INFO - Started process (PID=688) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:24:47.411+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:24:47.414+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:24:47.414+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:24:47.722+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:24:47.741+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:24:47.741+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:24:47.764+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:24:47.764+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:23:00+00:00, run_after=2024-12-01 00:24:00+00:00
+[2024-12-01T00:24:47.788+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.384 seconds
+[2024-12-01T00:25:18.633+0000] {processor.py:186} INFO - Started process (PID=708) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:25:18.635+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:25:18.641+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:25:18.640+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:25:19.075+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:25:19.095+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:25:19.094+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:25:19.121+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:25:19.120+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:24:00+00:00, run_after=2024-12-01 00:25:00+00:00
+[2024-12-01T00:25:19.164+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.541 seconds
+[2024-12-01T00:25:49.479+0000] {processor.py:186} INFO - Started process (PID=727) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:25:49.480+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:25:49.482+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:25:49.482+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:25:49.751+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:25:49.770+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:25:49.769+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:25:49.792+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:25:49.792+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:24:00+00:00, run_after=2024-12-01 00:25:00+00:00
+[2024-12-01T00:25:49.812+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.339 seconds
+[2024-12-01T00:26:19.859+0000] {processor.py:186} INFO - Started process (PID=746) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:26:19.860+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:26:19.863+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:26:19.862+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:26:20.166+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:26:20.191+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:26:20.191+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:26:20.214+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:26:20.214+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:25:00+00:00, run_after=2024-12-01 00:26:00+00:00
+[2024-12-01T00:26:20.235+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.382 seconds
+[2024-12-01T00:26:50.741+0000] {processor.py:186} INFO - Started process (PID=766) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:26:50.742+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:26:50.744+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:26:50.744+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:26:51.032+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:26:51.051+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:26:51.051+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:26:51.075+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:26:51.075+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:25:00+00:00, run_after=2024-12-01 00:26:00+00:00
+[2024-12-01T00:26:51.097+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.363 seconds
+[2024-12-01T00:27:21.223+0000] {processor.py:186} INFO - Started process (PID=786) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:27:21.224+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:27:21.227+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:27:21.226+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:27:21.529+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:27:21.557+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:27:21.557+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:27:21.580+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:27:21.580+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:26:00+00:00, run_after=2024-12-01 00:27:00+00:00
+[2024-12-01T00:27:21.602+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.385 seconds
+[2024-12-01T00:27:51.768+0000] {processor.py:186} INFO - Started process (PID=806) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:27:51.769+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:27:51.771+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:27:51.771+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:27:52.089+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:27:52.112+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:27:52.112+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:27:52.138+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:27:52.138+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:26:00+00:00, run_after=2024-12-01 00:27:00+00:00
+[2024-12-01T00:27:52.162+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.399 seconds
+[2024-12-01T00:28:22.697+0000] {processor.py:186} INFO - Started process (PID=826) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:28:22.698+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:28:22.701+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:28:22.700+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:28:22.998+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:28:23.017+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:28:23.017+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:28:23.038+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:28:23.038+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:27:00+00:00, run_after=2024-12-01 00:28:00+00:00
+[2024-12-01T00:28:23.057+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.366 seconds
+[2024-12-01T00:28:53.205+0000] {processor.py:186} INFO - Started process (PID=846) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:28:53.206+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:28:53.209+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:28:53.208+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:28:53.548+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:28:53.577+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:28:53.576+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:28:53.608+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:28:53.607+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:27:00+00:00, run_after=2024-12-01 00:28:00+00:00
+[2024-12-01T00:28:53.634+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.434 seconds
+[2024-12-01T00:29:23.754+0000] {processor.py:186} INFO - Started process (PID=866) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:29:23.755+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:29:23.759+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:29:23.758+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:29:24.098+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:29:24.122+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:29:24.122+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:29:24.148+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:29:24.147+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:28:00+00:00, run_after=2024-12-01 00:29:00+00:00
+[2024-12-01T00:29:24.172+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.424 seconds
+[2024-12-01T00:29:54.361+0000] {processor.py:186} INFO - Started process (PID=886) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:29:54.362+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:29:54.365+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:29:54.365+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:29:54.664+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:29:54.686+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:29:54.685+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:29:54.708+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:29:54.708+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:28:00+00:00, run_after=2024-12-01 00:29:00+00:00
+[2024-12-01T00:29:54.728+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.373 seconds
+[2024-12-01T00:30:24.917+0000] {processor.py:186} INFO - Started process (PID=906) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:30:24.918+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:30:24.921+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:30:24.920+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:30:25.216+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:30:25.235+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:30:25.235+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:30:25.259+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:30:25.258+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:29:00+00:00, run_after=2024-12-01 00:30:00+00:00
+[2024-12-01T00:30:25.282+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.371 seconds
+[2024-12-01T00:30:55.551+0000] {processor.py:186} INFO - Started process (PID=926) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:30:55.552+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:30:55.555+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:30:55.554+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:30:55.863+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:30:55.884+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:30:55.883+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:30:55.908+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:30:55.908+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:29:00+00:00, run_after=2024-12-01 00:30:00+00:00
+[2024-12-01T00:30:56.096+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.552 seconds
+[2024-12-01T00:31:26.552+0000] {processor.py:186} INFO - Started process (PID=948) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:31:26.554+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:31:26.556+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:31:26.556+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:31:26.873+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:31:26.894+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:31:26.894+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:31:26.915+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:31:26.915+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:30:00+00:00, run_after=2024-12-01 00:31:00+00:00
+[2024-12-01T00:31:26.936+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.390 seconds
+[2024-12-01T00:31:57.000+0000] {processor.py:186} INFO - Started process (PID=967) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:31:57.002+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:31:57.005+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:31:57.005+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:31:57.406+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:31:57.428+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:31:57.428+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:31:57.596+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:31:57.596+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:30:00+00:00, run_after=2024-12-01 00:31:00+00:00
+[2024-12-01T00:31:57.624+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.630 seconds
+[2024-12-01T00:32:28.021+0000] {processor.py:186} INFO - Started process (PID=992) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:32:28.022+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:32:28.024+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:32:28.024+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:32:28.325+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:32:28.347+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:32:28.346+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:32:28.373+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:32:28.373+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:31:00+00:00, run_after=2024-12-01 00:32:00+00:00
+[2024-12-01T00:32:28.396+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.381 seconds
+[2024-12-01T00:32:59.111+0000] {processor.py:186} INFO - Started process (PID=1012) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:32:59.112+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:32:59.115+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:32:59.114+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:32:59.399+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:32:59.419+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:32:59.419+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:32:59.443+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:32:59.443+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:31:00+00:00, run_after=2024-12-01 00:32:00+00:00
+[2024-12-01T00:32:59.616+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.510 seconds
+[2024-12-01T00:33:30.029+0000] {processor.py:186} INFO - Started process (PID=1032) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:33:30.030+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:33:30.033+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:33:30.033+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:33:30.332+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:33:30.351+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:33:30.350+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:33:30.374+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:33:30.374+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:32:00+00:00, run_after=2024-12-01 00:33:00+00:00
+[2024-12-01T00:33:30.396+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.372 seconds
+[2024-12-01T00:34:00.731+0000] {processor.py:186} INFO - Started process (PID=1052) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:34:00.732+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:34:00.735+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:34:00.734+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:34:01.023+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:34:01.042+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:34:01.042+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:34:01.231+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:34:01.231+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:33:00+00:00, run_after=2024-12-01 00:34:00+00:00
+[2024-12-01T00:34:01.250+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.524 seconds
+[2024-12-01T00:34:31.568+0000] {processor.py:186} INFO - Started process (PID=1074) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:34:31.569+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:34:31.572+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:34:31.571+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:34:31.989+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:34:32.004+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:34:32.004+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:34:32.023+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:34:32.023+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:33:00+00:00, run_after=2024-12-01 00:34:00+00:00
+[2024-12-01T00:34:32.041+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.478 seconds
+[2024-12-01T00:35:02.257+0000] {processor.py:186} INFO - Started process (PID=1094) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:35:02.259+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:35:02.262+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:35:02.262+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:35:02.708+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:35:02.728+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:35:02.727+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:35:02.752+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:35:02.752+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:34:00+00:00, run_after=2024-12-01 00:35:00+00:00
+[2024-12-01T00:35:02.771+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.520 seconds
+[2024-12-01T00:35:32.899+0000] {processor.py:186} INFO - Started process (PID=1114) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:35:32.900+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:35:32.903+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:35:32.903+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:35:33.332+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:35:33.348+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:35:33.347+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:35:33.368+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:35:33.367+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:34:00+00:00, run_after=2024-12-01 00:35:00+00:00
+[2024-12-01T00:35:33.385+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.492 seconds
+[2024-12-01T00:36:03.651+0000] {processor.py:186} INFO - Started process (PID=1134) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:36:03.652+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:36:03.655+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:36:03.655+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:36:04.139+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:36:04.159+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:36:04.159+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:36:04.182+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:36:04.182+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:35:00+00:00, run_after=2024-12-01 00:36:00+00:00
+[2024-12-01T00:36:04.201+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.557 seconds
+[2024-12-01T00:36:34.723+0000] {processor.py:186} INFO - Started process (PID=1152) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:36:34.725+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:36:34.727+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:36:34.726+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:36:35.205+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:36:35.244+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:36:35.244+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:36:35.267+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:36:35.266+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:35:00+00:00, run_after=2024-12-01 00:36:00+00:00
+[2024-12-01T00:36:35.288+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.570 seconds
+[2024-12-01T00:37:05.346+0000] {processor.py:186} INFO - Started process (PID=1172) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:37:05.347+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:37:05.350+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:37:05.349+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:37:05.837+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:37:05.854+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:37:05.853+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:37:05.889+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:37:05.889+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:36:00+00:00, run_after=2024-12-01 00:37:00+00:00
+[2024-12-01T00:37:05.927+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.587 seconds
+[2024-12-01T00:37:36.265+0000] {processor.py:186} INFO - Started process (PID=1192) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:37:36.266+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:37:36.269+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:37:36.269+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:37:36.753+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:37:36.770+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:37:36.769+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:37:36.792+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:37:36.792+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:36:00+00:00, run_after=2024-12-01 00:37:00+00:00
+[2024-12-01T00:37:36.814+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.555 seconds
+[2024-12-01T00:38:06.952+0000] {processor.py:186} INFO - Started process (PID=1212) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:38:06.953+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:38:06.955+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:38:06.955+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:38:07.399+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:38:07.417+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:38:07.416+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:38:07.438+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:38:07.438+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:37:00+00:00, run_after=2024-12-01 00:38:00+00:00
+[2024-12-01T00:38:07.456+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.511 seconds
+[2024-12-01T00:38:37.963+0000] {processor.py:186} INFO - Started process (PID=1232) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:38:37.964+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:38:37.967+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:38:37.966+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:38:38.446+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:38:38.468+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:38:38.468+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:38:38.492+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:38:38.492+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:37:00+00:00, run_after=2024-12-01 00:38:00+00:00
+[2024-12-01T00:38:38.512+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.555 seconds
+[2024-12-01T00:39:08.765+0000] {processor.py:186} INFO - Started process (PID=1252) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:39:08.766+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:39:08.769+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:39:08.769+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:39:09.213+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:39:09.229+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:39:09.229+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:39:09.251+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:39:09.250+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:38:00+00:00, run_after=2024-12-01 00:39:00+00:00
+[2024-12-01T00:39:09.269+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.510 seconds
+[2024-12-01T00:39:39.721+0000] {processor.py:186} INFO - Started process (PID=1272) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:39:39.722+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:39:39.724+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:39:39.724+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:39:40.177+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:39:40.196+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:39:40.196+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:39:40.217+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:39:40.216+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:38:00+00:00, run_after=2024-12-01 00:39:00+00:00
+[2024-12-01T00:39:40.235+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.519 seconds
+[2024-12-01T00:40:10.619+0000] {processor.py:186} INFO - Started process (PID=1292) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:40:10.620+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:40:10.623+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:40:10.622+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:40:11.041+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:40:11.058+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:40:11.058+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:40:11.085+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:40:11.084+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:39:00+00:00, run_after=2024-12-01 00:40:00+00:00
+[2024-12-01T00:40:11.103+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.490 seconds
+[2024-12-01T00:40:41.268+0000] {processor.py:186} INFO - Started process (PID=1312) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:40:41.269+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:40:41.271+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:40:41.271+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:40:41.746+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:40:41.764+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:40:41.764+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:40:41.786+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:40:41.785+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:39:00+00:00, run_after=2024-12-01 00:40:00+00:00
+[2024-12-01T00:40:41.806+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.545 seconds
+[2024-12-01T00:41:12.133+0000] {processor.py:186} INFO - Started process (PID=1332) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:41:12.134+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:41:12.136+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:41:12.136+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:41:12.569+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:41:12.588+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:41:12.587+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:41:12.612+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:41:12.611+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:40:00+00:00, run_after=2024-12-01 00:41:00+00:00
+[2024-12-01T00:41:12.633+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.506 seconds
+[2024-12-01T00:41:42.743+0000] {processor.py:186} INFO - Started process (PID=1352) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:41:42.744+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:41:42.746+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:41:42.746+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:41:43.209+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:41:43.227+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:41:43.226+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:41:43.245+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:41:43.245+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:40:00+00:00, run_after=2024-12-01 00:41:00+00:00
+[2024-12-01T00:41:43.264+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.529 seconds
+[2024-12-01T00:42:13.329+0000] {processor.py:186} INFO - Started process (PID=1372) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:42:13.330+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:42:13.332+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:42:13.332+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:42:13.753+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:42:13.769+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:42:13.769+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:42:13.790+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:42:13.789+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:41:00+00:00, run_after=2024-12-01 00:42:00+00:00
+[2024-12-01T00:42:13.807+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.485 seconds
+[2024-12-01T00:42:43.916+0000] {processor.py:186} INFO - Started process (PID=1392) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:42:43.917+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:42:43.920+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:42:43.920+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:42:44.396+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:42:44.418+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:42:44.417+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:42:44.439+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:42:44.439+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:41:00+00:00, run_after=2024-12-01 00:42:00+00:00
+[2024-12-01T00:42:44.457+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.547 seconds
+[2024-12-01T00:43:14.606+0000] {processor.py:186} INFO - Started process (PID=1412) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:43:14.607+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:43:14.610+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:43:14.610+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:43:15.051+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:43:15.068+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:43:15.068+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:43:15.089+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:43:15.088+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:42:00+00:00, run_after=2024-12-01 00:43:00+00:00
+[2024-12-01T00:43:15.112+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.512 seconds
+[2024-12-01T00:43:45.233+0000] {processor.py:186} INFO - Started process (PID=1432) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:43:45.235+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:43:45.237+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:43:45.236+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:43:45.680+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:43:45.699+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:43:45.698+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:43:45.718+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:43:45.718+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:42:00+00:00, run_after=2024-12-01 00:43:00+00:00
+[2024-12-01T00:43:45.736+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.509 seconds
+[2024-12-01T00:44:16.145+0000] {processor.py:186} INFO - Started process (PID=1452) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:44:16.146+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:44:16.149+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:44:16.149+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:44:16.597+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:44:16.615+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:44:16.615+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:44:16.637+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:44:16.637+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:43:00+00:00, run_after=2024-12-01 00:44:00+00:00
+[2024-12-01T00:44:16.661+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.523 seconds
+[2024-12-01T00:44:46.974+0000] {processor.py:186} INFO - Started process (PID=1472) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:44:46.975+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:44:46.984+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:44:46.983+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:44:47.524+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:44:47.545+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:44:47.544+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:44:47.565+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:44:47.565+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:43:00+00:00, run_after=2024-12-01 00:44:00+00:00
+[2024-12-01T00:44:47.588+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.620 seconds
+[2024-12-01T00:45:17.939+0000] {processor.py:186} INFO - Started process (PID=1492) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:45:17.940+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:45:17.943+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:45:17.942+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:45:18.517+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:45:18.546+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:45:18.545+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:45:18.594+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:45:18.593+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:44:00+00:00, run_after=2024-12-01 00:45:00+00:00
+[2024-12-01T00:45:18.643+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.710 seconds
+[2024-12-01T00:45:48.785+0000] {processor.py:186} INFO - Started process (PID=1512) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:45:48.786+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:45:48.788+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:45:48.788+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:45:49.244+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:45:49.261+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:45:49.261+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:45:49.280+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:45:49.280+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:44:00+00:00, run_after=2024-12-01 00:45:00+00:00
+[2024-12-01T00:45:49.298+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.520 seconds
+[2024-12-01T00:46:19.483+0000] {processor.py:186} INFO - Started process (PID=1532) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:46:19.484+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:46:19.486+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:46:19.486+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:46:19.912+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:46:19.930+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:46:19.930+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:46:19.951+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:46:19.951+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:45:00+00:00, run_after=2024-12-01 00:46:00+00:00
+[2024-12-01T00:46:19.972+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.495 seconds
+[2024-12-01T00:46:50.199+0000] {processor.py:186} INFO - Started process (PID=1552) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:46:50.201+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:46:50.203+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:46:50.203+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:46:50.664+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:46:50.682+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:46:50.682+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:46:50.702+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:46:50.702+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:45:00+00:00, run_after=2024-12-01 00:46:00+00:00
+[2024-12-01T00:46:50.721+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.527 seconds
+[2024-12-01T00:47:20.828+0000] {processor.py:186} INFO - Started process (PID=1572) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:47:20.829+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:47:20.832+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:47:20.831+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:47:21.262+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:47:21.278+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:47:21.278+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:47:21.297+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:47:21.297+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:46:00+00:00, run_after=2024-12-01 00:47:00+00:00
+[2024-12-01T00:47:21.317+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.495 seconds
+[2024-12-01T00:47:51.485+0000] {processor.py:186} INFO - Started process (PID=1592) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:47:51.486+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:47:51.489+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:47:51.488+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:47:51.987+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:47:52.006+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:47:52.006+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:47:52.025+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:47:52.025+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:46:00+00:00, run_after=2024-12-01 00:47:00+00:00
+[2024-12-01T00:47:52.042+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.565 seconds
+[2024-12-01T00:48:22.214+0000] {processor.py:186} INFO - Started process (PID=1612) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:48:22.216+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:48:22.222+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:48:22.221+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:48:22.677+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:48:22.694+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:48:22.693+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:48:22.714+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:48:22.714+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:47:00+00:00, run_after=2024-12-01 00:48:00+00:00
+[2024-12-01T00:48:22.740+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.534 seconds
+[2024-12-01T00:48:52.870+0000] {processor.py:186} INFO - Started process (PID=1632) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:48:52.871+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:48:52.874+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:48:52.873+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:48:53.350+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:48:53.371+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:48:53.371+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:48:53.393+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:48:53.393+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:47:00+00:00, run_after=2024-12-01 00:48:00+00:00
+[2024-12-01T00:48:53.413+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.548 seconds
+[2024-12-01T00:49:24.430+0000] {processor.py:186} INFO - Started process (PID=1652) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:49:24.431+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:49:24.434+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:49:24.433+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:49:24.910+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:49:24.927+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:49:24.927+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:49:24.948+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:49:24.948+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:48:00+00:00, run_after=2024-12-01 00:49:00+00:00
+[2024-12-01T00:49:24.970+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.546 seconds
+[2024-12-01T00:49:55.091+0000] {processor.py:186} INFO - Started process (PID=1672) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:49:55.092+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:49:55.095+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:49:55.095+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:49:55.521+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:49:55.538+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:49:55.537+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:49:55.556+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:49:55.556+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:48:00+00:00, run_after=2024-12-01 00:49:00+00:00
+[2024-12-01T00:49:55.574+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.488 seconds
+[2024-12-01T00:50:25.950+0000] {processor.py:186} INFO - Started process (PID=1692) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:50:25.951+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:50:25.953+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:50:25.953+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:50:26.414+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:50:26.430+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:50:26.430+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:50:26.450+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:50:26.450+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:49:00+00:00, run_after=2024-12-01 00:50:00+00:00
+[2024-12-01T00:50:26.470+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.526 seconds
+[2024-12-01T00:50:56.745+0000] {processor.py:186} INFO - Started process (PID=1712) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:50:56.746+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:50:56.750+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:50:56.749+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:50:57.186+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:50:57.203+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:50:57.202+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:50:57.223+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:50:57.223+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:49:00+00:00, run_after=2024-12-01 00:50:00+00:00
+[2024-12-01T00:50:57.240+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.501 seconds
+[2024-12-01T00:51:27.357+0000] {processor.py:186} INFO - Started process (PID=1732) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:51:27.358+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:51:27.361+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:51:27.360+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:51:27.806+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:51:27.824+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:51:27.823+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:51:27.844+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:51:27.844+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:50:00+00:00, run_after=2024-12-01 00:51:00+00:00
+[2024-12-01T00:51:27.862+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.511 seconds
+[2024-12-01T00:51:58.331+0000] {processor.py:186} INFO - Started process (PID=1752) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:51:58.332+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:51:58.335+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:51:58.335+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:51:58.795+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:51:58.815+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:51:58.815+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:51:58.839+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:51:58.838+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:50:00+00:00, run_after=2024-12-01 00:51:00+00:00
+[2024-12-01T00:51:58.862+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.537 seconds
+[2024-12-01T00:52:28.918+0000] {processor.py:186} INFO - Started process (PID=1773) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:52:28.919+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:52:28.922+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:52:28.921+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:52:29.344+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:52:29.360+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:52:29.359+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:52:29.380+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:52:29.380+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:51:00+00:00, run_after=2024-12-01 00:52:00+00:00
+[2024-12-01T00:52:29.398+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.485 seconds
+[2024-12-01T00:52:59.694+0000] {processor.py:186} INFO - Started process (PID=1798) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:52:59.697+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:52:59.702+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:52:59.701+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:53:00.265+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:53:00.298+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:53:00.297+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:53:00.320+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:53:00.320+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:52:00+00:00, run_after=2024-12-01 00:53:00+00:00
+[2024-12-01T00:53:00.339+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.656 seconds
+[2024-12-01T00:53:30.826+0000] {processor.py:186} INFO - Started process (PID=1818) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:53:30.827+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:53:30.829+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:53:30.829+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:53:31.256+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:53:31.274+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:53:31.274+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:53:31.295+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:53:31.294+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:52:00+00:00, run_after=2024-12-01 00:53:00+00:00
+[2024-12-01T00:53:31.313+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.493 seconds
+[2024-12-01T00:54:01.405+0000] {processor.py:186} INFO - Started process (PID=1838) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:54:01.406+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:54:01.409+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:54:01.408+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:54:01.841+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:54:01.857+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:54:01.857+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:54:01.877+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:54:01.877+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:53:00+00:00, run_after=2024-12-01 00:54:00+00:00
+[2024-12-01T00:54:01.895+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.498 seconds
+[2024-12-01T00:54:32.039+0000] {processor.py:186} INFO - Started process (PID=1858) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:54:32.040+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:54:32.044+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:54:32.043+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:54:32.364+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:54:32.385+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:54:32.385+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:54:32.408+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:54:32.408+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:53:00+00:00, run_after=2024-12-01 00:54:00+00:00
+[2024-12-01T00:54:32.429+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.395 seconds
+[2024-12-01T00:55:02.726+0000] {processor.py:186} INFO - Started process (PID=1878) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:55:02.727+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:55:02.730+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:55:02.730+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:55:03.024+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:55:03.043+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:55:03.042+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:55:03.064+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:55:03.064+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:54:00+00:00, run_after=2024-12-01 00:55:00+00:00
+[2024-12-01T00:55:03.086+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.365 seconds
+[2024-12-01T00:55:33.388+0000] {processor.py:186} INFO - Started process (PID=1898) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:55:33.389+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:55:33.392+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:55:33.391+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:55:33.688+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:55:33.712+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:55:33.712+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:55:33.740+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:55:33.739+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:54:00+00:00, run_after=2024-12-01 00:55:00+00:00
+[2024-12-01T00:55:33.763+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.380 seconds
+[2024-12-01T00:56:04.067+0000] {processor.py:186} INFO - Started process (PID=1918) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:56:04.068+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:56:04.072+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:56:04.072+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:56:04.387+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:56:04.407+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:56:04.407+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:56:04.430+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:56:04.430+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:55:00+00:00, run_after=2024-12-01 00:56:00+00:00
+[2024-12-01T00:56:04.453+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.394 seconds
+[2024-12-01T00:56:34.627+0000] {processor.py:186} INFO - Started process (PID=1938) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:56:34.628+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:56:34.631+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:56:34.631+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:56:34.939+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:56:34.960+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:56:34.960+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:56:34.984+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:56:34.984+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:55:00+00:00, run_after=2024-12-01 00:56:00+00:00
+[2024-12-01T00:56:35.006+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.385 seconds
+[2024-12-01T00:57:05.120+0000] {processor.py:186} INFO - Started process (PID=1958) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:57:05.121+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:57:05.124+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:57:05.124+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:57:05.413+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:57:05.435+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:57:05.435+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:57:05.458+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:57:05.458+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:56:00+00:00, run_after=2024-12-01 00:57:00+00:00
+[2024-12-01T00:57:05.480+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.366 seconds
+[2024-12-01T00:57:35.633+0000] {processor.py:186} INFO - Started process (PID=1977) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:57:35.634+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:57:35.637+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:57:35.636+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:57:35.928+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:57:35.957+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:57:35.957+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:57:36.010+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:57:36.009+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:56:00+00:00, run_after=2024-12-01 00:57:00+00:00
+[2024-12-01T00:57:36.030+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.403 seconds
+[2024-12-01T00:58:06.396+0000] {processor.py:186} INFO - Started process (PID=1997) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:58:06.397+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:58:06.400+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:58:06.399+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:58:06.709+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:58:06.731+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:58:06.731+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:58:06.754+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:58:06.754+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:57:00+00:00, run_after=2024-12-01 00:58:00+00:00
+[2024-12-01T00:58:06.776+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.386 seconds
+[2024-12-01T00:58:37.161+0000] {processor.py:186} INFO - Started process (PID=2017) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:58:37.162+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:58:37.165+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:58:37.165+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:58:37.451+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:58:37.474+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:58:37.473+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:58:37.497+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:58:37.497+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:57:00+00:00, run_after=2024-12-01 00:58:00+00:00
+[2024-12-01T00:58:37.523+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.369 seconds
+[2024-12-01T00:59:07.969+0000] {processor.py:186} INFO - Started process (PID=2037) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:59:07.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:59:07.973+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:59:07.972+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:59:08.256+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:59:08.279+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:59:08.279+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:59:08.306+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:59:08.306+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:58:00+00:00, run_after=2024-12-01 00:59:00+00:00
+[2024-12-01T00:59:08.333+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.369 seconds
+[2024-12-01T00:59:38.753+0000] {processor.py:186} INFO - Started process (PID=2057) to work on /opt/airflow/dags/large_load.py
+[2024-12-01T00:59:38.754+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/large_load.py for tasks to queue
+[2024-12-01T00:59:38.758+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:59:38.758+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/large_load.py
+[2024-12-01T00:59:39.044+0000] {processor.py:925} INFO - DAG(s) 'download_test' retrieved from /opt/airflow/dags/large_load.py
+[2024-12-01T00:59:39.061+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:59:39.061+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-01T00:59:39.080+0000] {logging_mixin.py:190} INFO - [2024-12-01T00:59:39.080+0000] {dag.py:4180} INFO - Setting next_dagrun for download_test to 2024-12-01 00:58:00+00:00, run_after=2024-12-01 00:59:00+00:00
+[2024-12-01T00:59:39.098+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/large_load.py took 0.354 seconds

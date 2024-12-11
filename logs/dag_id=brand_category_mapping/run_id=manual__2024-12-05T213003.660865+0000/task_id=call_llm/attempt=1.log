@@ -1,0 +1,152 @@
+[2024-12-05T21:30:08.551+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:30:08.563+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:30:03.660865+00:00 [queued]>
+[2024-12-05T21:30:08.569+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:30:03.660865+00:00 [queued]>
+[2024-12-05T21:30:08.569+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:30:08.581+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:30:03.660865+00:00
+[2024-12-05T21:30:08.587+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4384) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:30:08.588+0000] {standard_task_runner.py:72} INFO - Started process 4385 to run task
+[2024-12-05T21:30:08.588+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:30:03.660865+00:00', '--job-id', '960', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp2u5etvcp']
+[2024-12-05T21:30:08.590+0000] {standard_task_runner.py:105} INFO - Job 960: Subtask call_llm
+[2024-12-05T21:30:08.626+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:30:03.660865+00:00 [running]> on host c7780884450d
+[2024-12-05T21:30:08.687+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:30:03.660865+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:30:03.660865+00:00'
+[2024-12-05T21:30:08.688+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:30:08.705+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['ferre', 'ferrino', 'festina', 'festool', 'fibos', 'ficopro', 'fidan', 'fiesta', 'fiio', 'fila', 'filly', 'filodoro', 'fini', 'finish', 'finland', 'fiorenza', 'fipar', 'fireball', 'firepower', 'firestone', 'firman', 'first', 'fischer', 'fisher', 'fisherman'], 'next_index': 1750}
+[2024-12-05T21:30:08.706+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:30:09.117+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:30:25.676+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Sure! Based on the brands you provided, I will categorize them according to their products. Here’s the mapping I came up with:
+
+1. **ferre** - apparel
+2. **ferrino** - apparel, accessories
+3. **festina** - accessories
+4. **festool** - construction, appliances
+5. **fibos** - electronics
+6. **ficopro** - appliances
+7. **fidan** - construction
+8. **fiesta** - appliances
+9. **fiio** - electronics
+10. **fila** - apparel, accessories
+11. **filly** - kids
+12. **filodoro** - apparel
+13. **fini** - construction
+14. **finish** - appliances
+15. **finland** - country_yard
+16. **fiorenza** - furniture
+17. **fipar** - construction
+18. **fireball** - auto
+19. **firepower** - auto
+20. **firestone** - auto
+21. **firman** - appliances, auto
+22. **first** - stationery
+23. **fischer** - construction, appliances
+24. **fisher** - electronics
+25. **fisherman** - sport
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ferre', 'apparel'),
+    ('ferrino', 'apparel'),
+    ('ferrino', 'accessories'),
+    ('festina', 'accessories'),
+    ('festool', 'construction'),
+    ('festool', 'appliances'),
+    ('fibos', 'electronics'),
+    ('ficopro', 'appliances'),
+    ('fidan', 'construction'),
+    ('fiesta', 'appliances'),
+    ('fiio', 'electronics'),
+    ('fila', 'apparel'),
+    ('fila', 'accessories'),
+    ('filly', 'kids'),
+    ('filodoro', 'apparel'),
+    ('fini', 'construction'),
+    ('finish', 'appliances'),
+    ('finland', 'country_yard'),
+    ('fiorenza', 'furniture'),
+    ('fipar', 'construction'),
+    ('fireball', 'auto'),
+    ('firepower', 'auto'),
+    ('firestone', 'auto'),
+    ('firman', 'appliances'),
+    ('firman', 'auto'),
+    ('first', 'stationery'),
+    ('fischer', 'construction'),
+    ('fischer', 'appliances'),
+    ('fisher', 'electronics'),
+    ('fisherman', 'sport');
+```
+
+This statement includes all the brands and their corresponding categories as identified.
+[2024-12-05T21:30:25.677+0000] {python.py:240} INFO - Done. Returned value was: Sure! Based on the brands you provided, I will categorize them according to their products. Here’s the mapping I came up with:
+
+1. **ferre** - apparel
+2. **ferrino** - apparel, accessories
+3. **festina** - accessories
+4. **festool** - construction, appliances
+5. **fibos** - electronics
+6. **ficopro** - appliances
+7. **fidan** - construction
+8. **fiesta** - appliances
+9. **fiio** - electronics
+10. **fila** - apparel, accessories
+11. **filly** - kids
+12. **filodoro** - apparel
+13. **fini** - construction
+14. **finish** - appliances
+15. **finland** - country_yard
+16. **fiorenza** - furniture
+17. **fipar** - construction
+18. **fireball** - auto
+19. **firepower** - auto
+20. **firestone** - auto
+21. **firman** - appliances, auto
+22. **first** - stationery
+23. **fischer** - construction, appliances
+24. **fisher** - electronics
+25. **fisherman** - sport
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ferre', 'apparel'),
+    ('ferrino', 'apparel'),
+    ('ferrino', 'accessories'),
+    ('festina', 'accessories'),
+    ('festool', 'construction'),
+    ('festool', 'appliances'),
+    ('fibos', 'electronics'),
+    ('ficopro', 'appliances'),
+    ('fidan', 'construction'),
+    ('fiesta', 'appliances'),
+    ('fiio', 'electronics'),
+    ('fila', 'apparel'),
+    ('fila', 'accessories'),
+    ('filly', 'kids'),
+    ('filodoro', 'apparel'),
+    ('fini', 'construction'),
+    ('finish', 'appliances'),
+    ('finland', 'country_yard'),
+    ('fiorenza', 'furniture'),
+    ('fipar', 'construction'),
+    ('fireball', 'auto'),
+    ('firepower', 'auto'),
+    ('firestone', 'auto'),
+    ('firman', 'appliances'),
+    ('firman', 'auto'),
+    ('first', 'stationery'),
+    ('fischer', 'construction'),
+    ('fischer', 'appliances'),
+    ('fisher', 'electronics'),
+    ('fisherman', 'sport');
+```
+
+This statement includes all the brands and their corresponding categories as identified.
+[2024-12-05T21:30:25.695+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:30:25.696+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:30:03.660865+00:00, execution_date=20241205T213003, start_date=20241205T213008, end_date=20241205T213025
+[2024-12-05T21:30:25.723+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:30:25.744+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:30:25.746+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

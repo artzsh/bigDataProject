@@ -1,0 +1,125 @@
+[2024-12-05T21:33:02.462+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:33:02.474+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:32:34.265185+00:00 [queued]>
+[2024-12-05T21:33:02.479+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:32:34.265185+00:00 [queued]>
+[2024-12-05T21:33:02.480+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:33:02.492+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 21:32:34.265185+00:00
+[2024-12-05T21:33:02.498+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4532) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:33:02.499+0000] {standard_task_runner.py:72} INFO - Started process 4533 to run task
+[2024-12-05T21:33:02.499+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T21:32:34.265185+00:00', '--job-id', '992', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpgl7wdpru']
+[2024-12-05T21:33:02.501+0000] {standard_task_runner.py:105} INFO - Job 992: Subtask execute_sql
+[2024-12-05T21:33:02.538+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T21:32:34.265185+00:00 [running]> on host c7780884450d
+[2024-12-05T21:33:02.602+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:32:34.265185+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:32:34.265185+00:00'
+[2024-12-05T21:33:02.604+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:33:02.625+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fujifilm', 'electronics'),
+    ('fujifilm', 'appliances'),
+    ('fundesk', 'furniture'),
+    ('fundesk', 'stationery'),
+    ('funred', 'kids'),
+    ('funred', 'toys'),
+    ('funtzio', 'kids'),
+    ('funtzio', 'toys'),
+    ('funville', 'kids'),
+    ('funville', 'toys'),
+    ('furreal', 'kids'),
+    ('furreal', 'toys'),
+    ('furutech', 'electronics'),
+    ('furutech', 'accessories'),
+    ('futura', 'appliances'),
+    ('futura', 'electronics'),
+    ('fxn', 'sport'),
+    ('fxn', 'accessories'),
+    ('gabolparadise', 'accessories'),
+    ('gabolparadise', 'luggage'),
+    ('gabor', 'apparel'),
+    ('gabor', 'accessories'),
+    ('gad', 'electronics'),
+    ('gad', 'accessories'),
+    ('ga-de', 'cosmetics'),
+    ('ga-de', 'accessories'),
+    ('gadkija', 'apparel'),
+    ('gadkija', 'accessories'),
+    ('gaga', 'apparel'),
+    ('gaga', 'accessories'),
+    ('gaggia', 'appliances'),
+    ('gaggia', 'electronics'),
+    ('gaint', 'electronics'),
+    ('gaint', 'appliances'),
+    ('gainward', 'electronics'),
+    ('gainward', 'computers'),
+    ('gaissina', 'apparel'),
+    ('gaissina', 'accessories'),
+    ('galacticos', 'apparel'),
+    ('galacticos', 'sport'),
+    ('galantcosmetic', 'cosmetics'),
+    ('galantcosmetic', 'accessories'),
+    ('galanz', 'appliances'),
+    ('galanz', 'electronics'),
+    ('galaxy', 'electronics'),
+    ('galaxy', 'appliances'),
+    ('galobaby', 'kids'),
+    ('galobaby', 'apparel'),
+    ('gamdias', 'electronics'),
+    ('gamdias', 'computers');
+[2024-12-05T21:33:02.633+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T21:33:03.430+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fujifilm', 'electronics'),
+    ('fujifilm', 'appliances'),
+    ('fundesk', 'furniture'),
+    ('fundesk', 'stationery'),
+    ('funred', 'kids'),
+    ('funred', 'toys'),
+    ('funtzio', 'kids'),
+    ('funtzio', 'toys'),
+    ('funville', 'kids'),
+    ('funville', 'toys'),
+    ('furreal', 'kids'),
+    ('furreal', 'toys'),
+    ('furutech', 'electronics'),
+    ('furutech', 'accessories'),
+    ('futura', 'appliances'),
+    ('futura', 'electronics'),
+    ('fxn', 'sport'),
+    ('fxn', 'accessories'),
+    ('gabolparadise', 'accessories'),
+    ('gabolparadise', 'luggage'),
+    ('gabor', 'apparel'),
+    ('gabor', 'accessories'),
+    ('gad', 'electronics'),
+    ('gad', 'accessories'),
+    ('ga-de', 'cosmetics'),
+    ('ga-de', 'accessories'),
+    ('gadkija', 'apparel'),
+    ('gadkija', 'accessories'),
+    ('gaga', 'apparel'),
+    ('gaga', 'accessories'),
+    ('gaggia', 'appliances'),
+    ('gaggia', 'electronics'),
+    ('gaint', 'electronics'),
+    ('gaint', 'appliances'),
+    ('gainward', 'electronics'),
+    ('gainward', 'computers'),
+    ('gaissina', 'apparel'),
+    ('gaissina', 'accessories'),
+    ('galacticos', 'apparel'),
+    ('galacticos', 'sport'),
+    ('galantcosmetic', 'cosmetics'),
+    ('galantcosmetic', 'accessories'),
+    ('galanz', 'appliances'),
+    ('galanz', 'electronics'),
+    ('galaxy', 'electronics'),
+    ('galaxy', 'appliances'),
+    ('galobaby', 'kids'),
+    ('galobaby', 'apparel'),
+    ('gamdias', 'electronics'),
+    ('gamdias', 'computers');
+[2024-12-05T21:33:03.609+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T21:33:03.610+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T21:33:03.617+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:33:03.618+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T21:32:34.265185+00:00, execution_date=20241205T213234, start_date=20241205T213302, end_date=20241205T213303
+[2024-12-05T21:33:03.636+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:33:03.655+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:33:03.658+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

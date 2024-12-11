@@ -1,0 +1,206 @@
+[2024-12-05T22:17:37.055+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:17:37.068+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:17:06.930241+00:00 [queued]>
+[2024-12-05T22:17:37.075+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:17:06.930241+00:00 [queued]>
+[2024-12-05T22:17:37.076+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:17:37.090+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:17:06.930241+00:00
+[2024-12-05T22:17:37.096+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6874) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:17:37.098+0000] {standard_task_runner.py:72} INFO - Started process 6875 to run task
+[2024-12-05T22:17:37.098+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:17:06.930241+00:00', '--job-id', '1495', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpbfgy_z82']
+[2024-12-05T22:17:37.100+0000] {standard_task_runner.py:105} INFO - Job 1495: Subtask extract_sql
+[2024-12-05T22:17:37.139+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:17:06.930241+00:00 [running]> on host c7780884450d
+[2024-12-05T22:17:37.205+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:17:06.930241+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:17:06.930241+00:00'
+[2024-12-05T22:17:37.207+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:17:37.226+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the brands provided, I will determine their categories through hypothetical searches and assign them accordingly.
+
+1. **pirs**: Primarily known for construction and building materials.
+   - Categories: construction
+
+2. **pisen**: Specializes in electronics, particularly charging and power solutions.
+   - Categories: electronics
+
+3. **p.i.t.**: Offers various products including toys and educational materials.
+   - Categories: kids, stationery
+
+4. **pit**: Known for automotive products and accessories.
+   - Categories: auto
+
+5. **piter-trejd**: Focuses on construction materials and tools.
+   - Categories: construction
+
+6. **pitsco**: Provides educational products and kits, especially for kids.
+   - Categories: kids, stationery
+
+7. **pituso**: Offers children's toys and accessories.
+   - Categories: kids
+
+8. **pixel**: Known for electronics and digital products.
+   - Categories: electronics
+
+9. **pixelone**: Similar to Pixel, focuses on electronics.
+   - Categories: electronics
+
+10. **pixiebelles**: Specializes in children's toys and accessories.
+    - Categories: kids
+
+11. **pjmaks**: A brand related to children's toys and apparel.
+    - Categories: kids, apparel
+
+12. **pjmasks**: Focused on children's toys and apparel.
+    - Categories: kids, apparel
+
+13. **plamers**: Offers health and beauty products.
+    - Categories: medicine
+
+14. **plane**: Could refer to tools or toys, but likely associated with construction or kids.
+    - Categories: construction, kids
+
+15. **planet**: Could refer to various products, but often associated with eco-friendly items.
+    - Categories: country_yard, appliances
+
+16. **planetaorganica**: Focuses on organic and natural products, likely in the health and beauty sector.
+    - Categories: medicine
+
+17. **plano**: Known for storage solutions and organization products.
+    - Categories: appliances, furniture
+
+18. **plantex**: Likely associated with gardening or country yard products.
+    - Categories: country_yard
+
+19. **plantronics**: Specializes in electronics, particularly audio devices.
+    - Categories: electronics
+
+20. **plasmatec**: Focuses on technology and electronics.
+    - Categories: electronics
+
+21. **plastik**: Known for plastic products, often in household or construction.
+    - Categories: appliances, construction
+
+22. **plastiska**: Similar to Plastik, involved in plastic goods.
+    - Categories: appliances, construction
+
+23. **plastteam**: Likely involved in plastic manufacturing, possibly for construction.
+    - Categories: construction
+
+24. **play-doh**: A well-known brand for children's modeling compound.
+    - Categories: kids
+
+25. **playdoh**: Same as Play-Doh, focused on children's products.
+    - Categories: kids
+
+Now, I will create the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('pirs', 'construction'),
+    ('pisen', 'electronics'),
+    ('p.i.t.', 'kids'),
+    ('p.i.t.', 'stationery'),
+    ('pit', 'auto'),
+    ('piter-trejd', 'construction'),
+    ('pitsco', 'kids'),
+    ('pitsco', 'stationery'),
+    ('pituso', 'kids'),
+    ('pixel', 'electronics'),
+    ('pixelone', 'electronics'),
+    ('pixiebelles', 'kids'),
+    ('pjmaks', 'kids'),
+    ('pjmaks', 'apparel'),
+    ('pjmasks', 'kids'),
+    ('pjmasks', 'apparel'),
+    ('plamers', 'medicine'),
+    ('plane', 'construction'),
+    ('plane', 'kids'),
+    ('planet', 'country_yard'),
+    ('planet', 'appliances'),
+    ('planetaorganica', 'medicine'),
+    ('plano', 'appliances'),
+    ('plano', 'furniture'),
+    ('plantex', 'country_yard'),
+    ('plantronics', 'electronics'),
+    ('plasmatec', 'electronics'),
+    ('plastik', 'appliances'),
+    ('plastik', 'construction'),
+    ('plastiska', 'appliances'),
+    ('plastiska', 'construction'),
+    ('plastteam', 'construction'),
+    ('play-doh', 'kids'),
+    ('playdoh', 'kids');
+```
+[2024-12-05T22:17:37.227+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('pirs', 'construction'),
+    ('pisen', 'electronics'),
+    ('p.i.t.', 'kids'),
+    ('p.i.t.', 'stationery'),
+    ('pit', 'auto'),
+    ('piter-trejd', 'construction'),
+    ('pitsco', 'kids'),
+    ('pitsco', 'stationery'),
+    ('pituso', 'kids'),
+    ('pixel', 'electronics'),
+    ('pixelone', 'electronics'),
+    ('pixiebelles', 'kids'),
+    ('pjmaks', 'kids'),
+    ('pjmaks', 'apparel'),
+    ('pjmasks', 'kids'),
+    ('pjmasks', 'apparel'),
+    ('plamers', 'medicine'),
+    ('plane', 'construction'),
+    ('plane', 'kids'),
+    ('planet', 'country_yard'),
+    ('planet', 'appliances'),
+    ('planetaorganica', 'medicine'),
+    ('plano', 'appliances'),
+    ('plano', 'furniture'),
+    ('plantex', 'country_yard'),
+    ('plantronics', 'electronics'),
+    ('plasmatec', 'electronics'),
+    ('plastik', 'appliances'),
+    ('plastik', 'construction'),
+    ('plastiska', 'appliances'),
+    ('plastiska', 'construction'),
+    ('plastteam', 'construction'),
+    ('play-doh', 'kids'),
+    ('playdoh', 'kids');
+[2024-12-05T22:17:37.227+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('pirs', 'construction'),
+    ('pisen', 'electronics'),
+    ('p.i.t.', 'kids'),
+    ('p.i.t.', 'stationery'),
+    ('pit', 'auto'),
+    ('piter-trejd', 'construction'),
+    ('pitsco', 'kids'),
+    ('pitsco', 'stationery'),
+    ('pituso', 'kids'),
+    ('pixel', 'electronics'),
+    ('pixelone', 'electronics'),
+    ('pixiebelles', 'kids'),
+    ('pjmaks', 'kids'),
+    ('pjmaks', 'apparel'),
+    ('pjmasks', 'kids'),
+    ('pjmasks', 'apparel'),
+    ('plamers', 'medicine'),
+    ('plane', 'construction'),
+    ('plane', 'kids'),
+    ('planet', 'country_yard'),
+    ('planet', 'appliances'),
+    ('planetaorganica', 'medicine'),
+    ('plano', 'appliances'),
+    ('plano', 'furniture'),
+    ('plantex', 'country_yard'),
+    ('plantronics', 'electronics'),
+    ('plasmatec', 'electronics'),
+    ('plastik', 'appliances'),
+    ('plastik', 'construction'),
+    ('plastiska', 'appliances'),
+    ('plastiska', 'construction'),
+    ('plastteam', 'construction'),
+    ('play-doh', 'kids'),
+    ('playdoh', 'kids');
+[2024-12-05T22:17:37.244+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:17:37.245+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:17:06.930241+00:00, execution_date=20241205T221706, start_date=20241205T221737, end_date=20241205T221737
+[2024-12-05T22:17:37.272+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:17:37.292+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:17:37.295+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

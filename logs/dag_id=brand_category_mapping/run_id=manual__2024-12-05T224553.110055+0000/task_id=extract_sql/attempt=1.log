@@ -1,0 +1,132 @@
+[2024-12-05T22:46:15.613+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:46:15.626+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:45:53.110055+00:00 [queued]>
+[2024-12-05T22:46:15.633+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:45:53.110055+00:00 [queued]>
+[2024-12-05T22:46:15.633+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:46:15.646+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:45:53.110055+00:00
+[2024-12-05T22:46:15.653+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8363) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:46:15.655+0000] {standard_task_runner.py:72} INFO - Started process 8364 to run task
+[2024-12-05T22:46:15.655+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:45:53.110055+00:00', '--job-id', '1813', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpwz0e3rdr']
+[2024-12-05T22:46:15.657+0000] {standard_task_runner.py:105} INFO - Job 1813: Subtask extract_sql
+[2024-12-05T22:46:15.692+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:45:53.110055+00:00 [running]> on host c7780884450d
+[2024-12-05T22:46:15.756+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:45:53.110055+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:45:53.110055+00:00'
+[2024-12-05T22:46:15.757+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:46:15.775+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the provided brands, I will categorize them based on the search queries. Here are the results:
+
+1. **v-color**: electronics (ink and printing)
+2. **vcom**: electronics (cables and connectors)
+3. **vdk**: electronics (computer peripherals)
+4. **vdovichev**: apparel (clothing)
+5. **vectron**: electronics (point of sale systems)
+6. **vega**: electronics (audio and video equipment)
+7. **vegas**: electronics (gaming and entertainment)
+8. **veho**: electronics (cameras and accessories)
+9. **velena**: apparel (clothing)
+10. **velform**: accessories (beauty and personal care)
+11. **velikiereki**: apparel (clothing)
+12. **vellarti**: apparel (clothing)
+13. **velo**: sport (bicycles and accessories)
+14. **velocifero**: auto (electric scooters)
+15. **velvet**: apparel (clothing)
+16. **velvet-santiago**: apparel (clothing)
+17. **venere**: furniture (home decor)
+18. **vensi**: appliances (kitchen appliances)
+19. **venta**: electronics (air conditioning and heating)
+20. **ventara**: appliances (home appliances)
+21. **ventura**: accessories (travel gear)
+22. **venum**: sport (fitness and martial arts gear)
+23. **verbatim**: electronics (storage and data solutions)
+24. **verdi**: furniture (home decor)
+25. **veritas**: electronics (data storage and backup solutions)
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('v-color', 'electronics'),
+    ('vcom', 'electronics'),
+    ('vdk', 'electronics'),
+    ('vdovichev', 'apparel'),
+    ('vectron', 'electronics'),
+    ('vega', 'electronics'),
+    ('vegas', 'electronics'),
+    ('veho', 'electronics'),
+    ('velena', 'apparel'),
+    ('velform', 'accessories'),
+    ('velikiereki', 'apparel'),
+    ('vellarti', 'apparel'),
+    ('velo', 'sport'),
+    ('velocifero', 'auto'),
+    ('velvet', 'apparel'),
+    ('velvet-santiago', 'apparel'),
+    ('venere', 'furniture'),
+    ('vensi', 'appliances'),
+    ('venta', 'electronics'),
+    ('ventara', 'appliances'),
+    ('ventura', 'accessories'),
+    ('venum', 'sport'),
+    ('verbatim', 'electronics'),
+    ('verdi', 'furniture'),
+    ('veritas', 'electronics');
+```
+
+This SQL statement will insert the brand-category mappings into the specified table.
+[2024-12-05T22:46:15.776+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('v-color', 'electronics'),
+    ('vcom', 'electronics'),
+    ('vdk', 'electronics'),
+    ('vdovichev', 'apparel'),
+    ('vectron', 'electronics'),
+    ('vega', 'electronics'),
+    ('vegas', 'electronics'),
+    ('veho', 'electronics'),
+    ('velena', 'apparel'),
+    ('velform', 'accessories'),
+    ('velikiereki', 'apparel'),
+    ('vellarti', 'apparel'),
+    ('velo', 'sport'),
+    ('velocifero', 'auto'),
+    ('velvet', 'apparel'),
+    ('velvet-santiago', 'apparel'),
+    ('venere', 'furniture'),
+    ('vensi', 'appliances'),
+    ('venta', 'electronics'),
+    ('ventara', 'appliances'),
+    ('ventura', 'accessories'),
+    ('venum', 'sport'),
+    ('verbatim', 'electronics'),
+    ('verdi', 'furniture'),
+    ('veritas', 'electronics');
+[2024-12-05T22:46:15.777+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('v-color', 'electronics'),
+    ('vcom', 'electronics'),
+    ('vdk', 'electronics'),
+    ('vdovichev', 'apparel'),
+    ('vectron', 'electronics'),
+    ('vega', 'electronics'),
+    ('vegas', 'electronics'),
+    ('veho', 'electronics'),
+    ('velena', 'apparel'),
+    ('velform', 'accessories'),
+    ('velikiereki', 'apparel'),
+    ('vellarti', 'apparel'),
+    ('velo', 'sport'),
+    ('velocifero', 'auto'),
+    ('velvet', 'apparel'),
+    ('velvet-santiago', 'apparel'),
+    ('venere', 'furniture'),
+    ('vensi', 'appliances'),
+    ('venta', 'electronics'),
+    ('ventara', 'appliances'),
+    ('ventura', 'accessories'),
+    ('venum', 'sport'),
+    ('verbatim', 'electronics'),
+    ('verdi', 'furniture'),
+    ('veritas', 'electronics');
+[2024-12-05T22:46:15.795+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:46:15.795+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:45:53.110055+00:00, execution_date=20241205T224553, start_date=20241205T224615, end_date=20241205T224615
+[2024-12-05T22:46:15.829+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:46:15.847+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:46:15.850+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

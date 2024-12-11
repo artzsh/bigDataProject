@@ -1,0 +1,150 @@
+[2024-12-05T21:31:09.270+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:31:09.283+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:31:04.327283+00:00 [queued]>
+[2024-12-05T21:31:09.291+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:31:04.327283+00:00 [queued]>
+[2024-12-05T21:31:09.291+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:31:09.307+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:31:04.327283+00:00
+[2024-12-05T21:31:09.315+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4433) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:31:09.317+0000] {standard_task_runner.py:72} INFO - Started process 4434 to run task
+[2024-12-05T21:31:09.316+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:31:04.327283+00:00', '--job-id', '972', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpds_4ua2l']
+[2024-12-05T21:31:09.318+0000] {standard_task_runner.py:105} INFO - Job 972: Subtask call_llm
+[2024-12-05T21:31:09.363+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:31:04.327283+00:00 [running]> on host c7780884450d
+[2024-12-05T21:31:09.439+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:31:04.327283+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:31:04.327283+00:00'
+[2024-12-05T21:31:09.441+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:31:09.461+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['flashpoint', 'flavia', 'fleet', 'fleetlutner', 'flex', 'flexter', 'fli', 'flicker', 'flight', 'floralis', 'florencemode', 'florentina', 'floresan', 'flormar', 'flortek', 'fly', 'flybotic', 'flystep', 'fnixbebe', 'focal', 'focusrite', 'fokos', 'folia', 'foliant', 'foligain'], 'next_index': 1800}
+[2024-12-05T21:31:09.462+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:31:09.898+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:31:28.382+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the categories assigned to each brand based on the search results:
+
+1. **flashpoint**: electronics
+2. **flavia**: appliances, electronics
+3. **fleet**: auto
+4. **fleetlutner**: apparel, accessories
+5. **flex**: electronics, accessories
+6. **flexter**: electronics
+7. **fli**: electronics
+8. **flicker**: electronics
+9. **flight**: apparel, accessories
+10. **floralis**: beauty, cosmetics
+11. **florencemode**: apparel
+12. **florentina**: apparel
+13. **floresan**: beauty, cosmetics
+14. **flormar**: beauty, cosmetics
+15. **flortek**: electronics
+16. **fly**: apparel, accessories
+17. **flybotic**: electronics
+18. **flystep**: apparel, accessories
+19. **fnixbebe**: kids
+20. **focal**: electronics
+21. **focusrite**: electronics
+22. **fokos**: appliances
+23. **folia**: stationery
+24. **foliant**: stationery
+25. **foligain**: medicine
+
+Now, generating the SQL INSERT statement based on these mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('flashpoint', 'electronics'),
+    ('flavia', 'appliances'),
+    ('flavia', 'electronics'),
+    ('fleet', 'auto'),
+    ('fleetlutner', 'apparel'),
+    ('fleetlutner', 'accessories'),
+    ('flex', 'electronics'),
+    ('flex', 'accessories'),
+    ('flexter', 'electronics'),
+    ('fli', 'electronics'),
+    ('flicker', 'electronics'),
+    ('flight', 'apparel'),
+    ('flight', 'accessories'),
+    ('floralis', 'beauty'),
+    ('florencemode', 'apparel'),
+    ('florentina', 'apparel'),
+    ('floresan', 'beauty'),
+    ('flormar', 'beauty'),
+    ('flortek', 'electronics'),
+    ('fly', 'apparel'),
+    ('fly', 'accessories'),
+    ('flybotic', 'electronics'),
+    ('flystep', 'apparel'),
+    ('flystep', 'accessories'),
+    ('fnixbebe', 'kids'),
+    ('focal', 'electronics'),
+    ('focusrite', 'electronics'),
+    ('fokos', 'appliances'),
+    ('folia', 'stationery'),
+    ('foliant', 'stationery'),
+    ('foligain', 'medicine');
+```
+[2024-12-05T21:31:28.382+0000] {python.py:240} INFO - Done. Returned value was: Here are the categories assigned to each brand based on the search results:
+
+1. **flashpoint**: electronics
+2. **flavia**: appliances, electronics
+3. **fleet**: auto
+4. **fleetlutner**: apparel, accessories
+5. **flex**: electronics, accessories
+6. **flexter**: electronics
+7. **fli**: electronics
+8. **flicker**: electronics
+9. **flight**: apparel, accessories
+10. **floralis**: beauty, cosmetics
+11. **florencemode**: apparel
+12. **florentina**: apparel
+13. **floresan**: beauty, cosmetics
+14. **flormar**: beauty, cosmetics
+15. **flortek**: electronics
+16. **fly**: apparel, accessories
+17. **flybotic**: electronics
+18. **flystep**: apparel, accessories
+19. **fnixbebe**: kids
+20. **focal**: electronics
+21. **focusrite**: electronics
+22. **fokos**: appliances
+23. **folia**: stationery
+24. **foliant**: stationery
+25. **foligain**: medicine
+
+Now, generating the SQL INSERT statement based on these mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('flashpoint', 'electronics'),
+    ('flavia', 'appliances'),
+    ('flavia', 'electronics'),
+    ('fleet', 'auto'),
+    ('fleetlutner', 'apparel'),
+    ('fleetlutner', 'accessories'),
+    ('flex', 'electronics'),
+    ('flex', 'accessories'),
+    ('flexter', 'electronics'),
+    ('fli', 'electronics'),
+    ('flicker', 'electronics'),
+    ('flight', 'apparel'),
+    ('flight', 'accessories'),
+    ('floralis', 'beauty'),
+    ('florencemode', 'apparel'),
+    ('florentina', 'apparel'),
+    ('floresan', 'beauty'),
+    ('flormar', 'beauty'),
+    ('flortek', 'electronics'),
+    ('fly', 'apparel'),
+    ('fly', 'accessories'),
+    ('flybotic', 'electronics'),
+    ('flystep', 'apparel'),
+    ('flystep', 'accessories'),
+    ('fnixbebe', 'kids'),
+    ('focal', 'electronics'),
+    ('focusrite', 'electronics'),
+    ('fokos', 'appliances'),
+    ('folia', 'stationery'),
+    ('foliant', 'stationery'),
+    ('foligain', 'medicine');
+```
+[2024-12-05T21:31:28.408+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:31:28.408+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:31:04.327283+00:00, execution_date=20241205T213104, start_date=20241205T213109, end_date=20241205T213128
+[2024-12-05T21:31:28.438+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:31:28.458+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:31:28.461+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

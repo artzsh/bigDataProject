@@ -1,0 +1,33 @@
+[2024-11-27T19:40:35.409+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-27T19:40:35.420+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.clean_table manual__2024-11-27T19:28:49.638771+00:00 [queued]>
+[2024-11-27T19:40:35.425+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.clean_table manual__2024-11-27T19:28:49.638771+00:00 [queued]>
+[2024-11-27T19:40:35.426+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-27T19:40:35.436+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): clean_table> on 2024-11-27 19:28:49.638771+00:00
+[2024-11-27T19:40:35.443+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1065) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-27T19:40:35.445+0000] {standard_task_runner.py:72} INFO - Started process 1067 to run task
+[2024-11-27T19:40:35.445+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'clean_table', 'manual__2024-11-27T19:28:49.638771+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp7bbmn47r']
+[2024-11-27T19:40:35.447+0000] {standard_task_runner.py:105} INFO - Job 47: Subtask clean_table
+[2024-11-27T19:40:35.480+0000] {task_command.py:467} INFO - Running <TaskInstance: ETL.clean_table manual__2024-11-27T19:28:49.638771+00:00 [running]> on host b6d44e76794e
+[2024-11-27T19:40:35.537+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='clean_table' AIRFLOW_CTX_EXECUTION_DATE='2024-11-27T19:28:49.638771+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-27T19:28:49.638771+00:00'
+[2024-11-27T19:40:35.538+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-27T19:40:35.558+0000] {logging_mixin.py:190} INFO - [INFO] Обрабатываем ключ: 4
+[2024-11-27T19:40:35.559+0000] {logging_mixin.py:190} INFO - [INFO] Информация о таблице: {'1': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Oct.csv.gz', 'table_name': 'eCommerce_Oct', 'brands_table_name': 'brands_Oct', 'categories_table_name': 'categories_Oct'}, '2': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz', 'table_name': 'eCommerce_Nov', 'brands_table_name': 'brands_Nov', 'categories_table_name': 'categories_Nov'}, '3': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Dec.csv.gz', 'table_name': 'eCommerce_Dec', 'brands_table_name': 'brands_Dec', 'categories_table_name': 'categories_Dec'}, '4': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz', 'table_name': 'eCommerce_Jan', 'brands_table_name': 'brands_Jan', 'categories_table_name': 'categories_Jan'}, '5': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Feb.csv.gz', 'table_name': 'eCommerce_Feb', 'brands_table_name': 'brands_Feb', 'categories_table_name': 'categories_Feb'}, '6': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Mar.csv.gz', 'table_name': 'eCommerce_Mar', 'brands_table_name': 'brands_Mar', 'categories_table_name': 'categories_Mar'}, '7': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Apr.csv.gz', 'table_name': 'eCommerce_Apr', 'brands_table_name': 'brands_Apr', 'categories_table_name': 'categories_Apr'}}
+[2024-11-27T19:40:35.559+0000] {logging_mixin.py:190} INFO - [INFO] Основная таблица: DDS-STG.eCommerce_Jan
+[2024-11-27T19:40:35.562+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-11-27T19:40:35.563+0000] {logging_mixin.py:190} INFO - [INFO] Установка соединения с PostgreSQL.
+[2024-11-27T19:40:35.622+0000] {logging_mixin.py:190} INFO - [INFO] Соединение установлено.
+[2024-11-27T19:40:35.622+0000] {logging_mixin.py:190} INFO - [INFO] Удаление строк, где brand IS NULL.
+[2024-11-27T19:41:51.553+0000] {logging_mixin.py:190} INFO - [SUCCESS] Удалены 6540255 строк с brand IS NULL.
+[2024-11-27T19:41:51.554+0000] {logging_mixin.py:190} INFO - [INFO] Удаление строк, где category_code IS NULL.
+[2024-11-27T19:43:09.051+0000] {logging_mixin.py:190} INFO - [SUCCESS] Удалены 4105060 строк с category_code IS NULL.
+[2024-11-27T19:43:09.051+0000] {logging_mixin.py:190} INFO - [INFO] Курсор закрыт.
+[2024-11-27T19:43:09.052+0000] {logging_mixin.py:190} INFO - [INFO] Соединение с PostgreSQL закрыто.
+[2024-11-27T19:43:09.052+0000] {logging_mixin.py:190} INFO - [COMPLETE] Удаление строк с NULL завершено для таблицы 'DDS-STG.eCommerce_Jan'.
+[2024-11-27T19:43:09.053+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-27T19:43:09.060+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-27T19:43:09.060+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ETL, task_id=clean_table, run_id=manual__2024-11-27T19:28:49.638771+00:00, execution_date=20241127T192849, start_date=20241127T194035, end_date=20241127T194309
+[2024-11-27T19:43:09.077+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-27T19:43:09.089+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-27T19:43:09.092+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

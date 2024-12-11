@@ -1,0 +1,68 @@
+[2024-11-28T07:40:03.545+0000] {processor.py:186} INFO - Started process (PID=68) to work on /opt/airflow/dags/weather.py
+[2024-11-28T07:40:03.546+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather.py for tasks to queue
+[2024-11-28T07:40:03.548+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:03.548+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/weather.py
+[2024-11-28T07:40:03.940+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:03.936+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/weather.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/weather.py", line 19, in <module>
+    key_wwo = Variable.get("KEY_API_WWO")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable KEY_API_WWO does not exist'
+[2024-11-28T07:40:03.941+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/weather.py
+[2024-11-28T07:40:03.949+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather.py took 0.409 seconds
+[2024-11-28T07:40:34.205+0000] {processor.py:186} INFO - Started process (PID=95) to work on /opt/airflow/dags/weather.py
+[2024-11-28T07:40:34.206+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather.py for tasks to queue
+[2024-11-28T07:40:34.210+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:34.209+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/weather.py
+[2024-11-28T07:40:34.682+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:34.679+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/weather.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/weather.py", line 19, in <module>
+    key_wwo = Variable.get("KEY_API_WWO")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable KEY_API_WWO does not exist'
+[2024-11-28T07:40:34.683+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/weather.py
+[2024-11-28T07:40:34.692+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather.py took 0.495 seconds
+[2024-11-28T07:41:05.463+0000] {processor.py:186} INFO - Started process (PID=113) to work on /opt/airflow/dags/weather.py
+[2024-11-28T07:41:05.464+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather.py for tasks to queue
+[2024-11-28T07:41:05.466+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:05.465+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/weather.py
+[2024-11-28T07:41:05.834+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:05.831+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/weather.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/weather.py", line 19, in <module>
+    key_wwo = Variable.get("KEY_API_WWO")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable KEY_API_WWO does not exist'
+[2024-11-28T07:41:05.835+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/weather.py
+[2024-11-28T07:41:05.843+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather.py took 0.384 seconds
+[2024-11-28T07:41:36.618+0000] {processor.py:186} INFO - Started process (PID=132) to work on /opt/airflow/dags/weather.py
+[2024-11-28T07:41:36.619+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/weather.py for tasks to queue
+[2024-11-28T07:41:36.621+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:36.620+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/weather.py
+[2024-11-28T07:41:36.983+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:36.980+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/weather.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/weather.py", line 19, in <module>
+    key_wwo = Variable.get("KEY_API_WWO")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable KEY_API_WWO does not exist'
+[2024-11-28T07:41:36.984+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/weather.py
+[2024-11-28T07:41:36.992+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/weather.py took 0.379 seconds

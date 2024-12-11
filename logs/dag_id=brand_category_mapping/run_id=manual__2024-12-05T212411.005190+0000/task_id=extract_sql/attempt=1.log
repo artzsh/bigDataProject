@@ -1,0 +1,166 @@
+[2024-12-05T21:24:33.975+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:24:33.990+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:24:11.005190+00:00 [queued]>
+[2024-12-05T21:24:33.999+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:24:11.005190+00:00 [queued]>
+[2024-12-05T21:24:34.000+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:24:34.015+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:24:11.005190+00:00
+[2024-12-05T21:24:34.022+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4081) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:24:34.024+0000] {standard_task_runner.py:72} INFO - Started process 4082 to run task
+[2024-12-05T21:24:34.023+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:24:11.005190+00:00', '--job-id', '895', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp4rbpjmt9']
+[2024-12-05T21:24:34.025+0000] {standard_task_runner.py:105} INFO - Job 895: Subtask extract_sql
+[2024-12-05T21:24:34.066+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:24:11.005190+00:00 [running]> on host c7780884450d
+[2024-12-05T21:24:34.141+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:24:11.005190+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:24:11.005190+00:00'
+[2024-12-05T21:24:34.144+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:24:34.164+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the brands mapped to their respective categories based on the search results:
+
+1. **ecobalance** - appliances
+2. **ecocool** - appliances, electronics
+3. **ecocraft** - construction, country_yard
+4. **ecoiffier** - kids, toys
+5. **ecolab** - medicine, cleaning products
+6. **ecolaboratorie** - medicine, cleaning products
+7. **ecolaboratory** - medicine, cleaning products
+8. **ecolatier** - accessories
+9. **ecolight** - electronics, appliances
+10. **ecologystone** - construction, country_yard
+11. **econair** - appliances, electronics
+12. **ecosoft** - computers, electronics
+13. **ecoterm** - appliances
+14. **ecotex** - apparel, textiles
+15. **ecs** - electronics
+16. **edcon** - apparel
+17. **edelform** - appliances
+18. **edelman** - accessories
+19. **edelvejs** - apparel
+20. **edem** - medicine
+21. **eden** - furniture, country_yard
+22. **edge** - electronics
+23. **edifier** - electronics
+24. **edon** - appliances
+25. **edox** - accessories
+
+Now, here is the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ecobalance', 'appliances'),
+    ('ecocool', 'appliances'),
+    ('ecocool', 'electronics'),
+    ('ecocraft', 'construction'),
+    ('ecocraft', 'country_yard'),
+    ('ecoiffier', 'kids'),
+    ('ecoiffier', 'toys'),
+    ('ecolab', 'medicine'),
+    ('ecolab', 'cleaning products'),
+    ('ecolaboratorie', 'medicine'),
+    ('ecolaboratorie', 'cleaning products'),
+    ('ecolaboratory', 'medicine'),
+    ('ecolaboratory', 'cleaning products'),
+    ('ecolatier', 'accessories'),
+    ('ecolight', 'electronics'),
+    ('ecolight', 'appliances'),
+    ('ecologystone', 'construction'),
+    ('ecologystone', 'country_yard'),
+    ('econair', 'appliances'),
+    ('econair', 'electronics'),
+    ('ecosoft', 'computers'),
+    ('ecosoft', 'electronics'),
+    ('ecoterm', 'appliances'),
+    ('ecotex', 'apparel'),
+    ('ecotex', 'textiles'),
+    ('ecs', 'electronics'),
+    ('edcon', 'apparel'),
+    ('edelform', 'appliances'),
+    ('edelman', 'accessories'),
+    ('edelvejs', 'apparel'),
+    ('edem', 'medicine'),
+    ('eden', 'furniture'),
+    ('eden', 'country_yard'),
+    ('edge', 'electronics'),
+    ('edifier', 'electronics'),
+    ('edon', 'appliances'),
+    ('edox', 'accessories');
+```
+[2024-12-05T21:24:34.165+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ecobalance', 'appliances'),
+    ('ecocool', 'appliances'),
+    ('ecocool', 'electronics'),
+    ('ecocraft', 'construction'),
+    ('ecocraft', 'country_yard'),
+    ('ecoiffier', 'kids'),
+    ('ecoiffier', 'toys'),
+    ('ecolab', 'medicine'),
+    ('ecolab', 'cleaning products'),
+    ('ecolaboratorie', 'medicine'),
+    ('ecolaboratorie', 'cleaning products'),
+    ('ecolaboratory', 'medicine'),
+    ('ecolaboratory', 'cleaning products'),
+    ('ecolatier', 'accessories'),
+    ('ecolight', 'electronics'),
+    ('ecolight', 'appliances'),
+    ('ecologystone', 'construction'),
+    ('ecologystone', 'country_yard'),
+    ('econair', 'appliances'),
+    ('econair', 'electronics'),
+    ('ecosoft', 'computers'),
+    ('ecosoft', 'electronics'),
+    ('ecoterm', 'appliances'),
+    ('ecotex', 'apparel'),
+    ('ecotex', 'textiles'),
+    ('ecs', 'electronics'),
+    ('edcon', 'apparel'),
+    ('edelform', 'appliances'),
+    ('edelman', 'accessories'),
+    ('edelvejs', 'apparel'),
+    ('edem', 'medicine'),
+    ('eden', 'furniture'),
+    ('eden', 'country_yard'),
+    ('edge', 'electronics'),
+    ('edifier', 'electronics'),
+    ('edon', 'appliances'),
+    ('edox', 'accessories');
+[2024-12-05T21:24:34.165+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ecobalance', 'appliances'),
+    ('ecocool', 'appliances'),
+    ('ecocool', 'electronics'),
+    ('ecocraft', 'construction'),
+    ('ecocraft', 'country_yard'),
+    ('ecoiffier', 'kids'),
+    ('ecoiffier', 'toys'),
+    ('ecolab', 'medicine'),
+    ('ecolab', 'cleaning products'),
+    ('ecolaboratorie', 'medicine'),
+    ('ecolaboratorie', 'cleaning products'),
+    ('ecolaboratory', 'medicine'),
+    ('ecolaboratory', 'cleaning products'),
+    ('ecolatier', 'accessories'),
+    ('ecolight', 'electronics'),
+    ('ecolight', 'appliances'),
+    ('ecologystone', 'construction'),
+    ('ecologystone', 'country_yard'),
+    ('econair', 'appliances'),
+    ('econair', 'electronics'),
+    ('ecosoft', 'computers'),
+    ('ecosoft', 'electronics'),
+    ('ecoterm', 'appliances'),
+    ('ecotex', 'apparel'),
+    ('ecotex', 'textiles'),
+    ('ecs', 'electronics'),
+    ('edcon', 'apparel'),
+    ('edelform', 'appliances'),
+    ('edelman', 'accessories'),
+    ('edelvejs', 'apparel'),
+    ('edem', 'medicine'),
+    ('eden', 'furniture'),
+    ('eden', 'country_yard'),
+    ('edge', 'electronics'),
+    ('edifier', 'electronics'),
+    ('edon', 'appliances'),
+    ('edox', 'accessories');
+[2024-12-05T21:24:34.184+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:24:34.185+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:24:11.005190+00:00, execution_date=20241205T212411, start_date=20241205T212433, end_date=20241205T212434
+[2024-12-05T21:24:34.238+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:24:34.258+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:24:34.261+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

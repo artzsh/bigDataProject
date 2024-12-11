@@ -1,0 +1,140 @@
+[2024-12-05T22:23:10.596+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:23:10.610+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:23:05.663669+00:00 [queued]>
+[2024-12-05T22:23:10.617+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:23:05.663669+00:00 [queued]>
+[2024-12-05T22:23:10.618+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:23:10.648+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:23:05.663669+00:00
+[2024-12-05T22:23:10.658+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:23:10.659+0000] {standard_task_runner.py:72} INFO - Started process 7199 to run task
+[2024-12-05T22:23:10.660+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:23:05.663669+00:00', '--job-id', '1566', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp998t7686']
+[2024-12-05T22:23:10.662+0000] {standard_task_runner.py:105} INFO - Job 1566: Subtask call_llm
+[2024-12-05T22:23:10.702+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:23:05.663669+00:00 [running]> on host c7780884450d
+[2024-12-05T22:23:10.777+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:23:05.663669+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:23:05.663669+00:00'
+[2024-12-05T22:23:10.779+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:23:10.797+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['rimax', 'riminiflash', 'rimmel', 'rimmellondon', 'rinascimento', 'rinax', 'ringway', 'rinnai', 'rino', 'riofiore', 'ripol', 'risoli', 'ristanskaakeramika', 'risujsvetom', 'ritmix', 'rituals', 'rivacase', 'rivakoch', 'rival', 'rivalli', 'rivertoys', 'riviera', 'rizmo', 'rline', 'rm'], 'next_index': 4275}
+[2024-12-05T22:23:10.798+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:23:11.217+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:23:29.895+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here is the mapping of brands to their respective categories based on the search results:
+
+1. **rimax**: electronics, appliances
+2. **riminiflash**: electronics
+3. **rimmel**: cosmetics (not in predefined categories, but closest is accessories)
+4. **rimmellondon**: cosmetics (not in predefined categories, but closest is accessories)
+5. **rinascimento**: apparel
+6. **rinax**: electronics
+7. **ringway**: auto
+8. **rinnai**: appliances
+9. **rino**: apparel
+10. **riofiore**: apparel
+11. **ripol**: electronics
+12. **risoli**: appliances
+13. **ristanskaakeramika**: appliances
+14. **risujsvetom**: stationery
+15. **ritmix**: electronics
+16. **rituals**: cosmetics (not in predefined categories, but closest is accessories)
+17. **rivacase**: accessories
+18. **rivakoch**: appliances
+19. **rival**: appliances
+20. **rivalli**: furniture
+21. **rivertoys**: kids
+22. **riviera**: apparel
+23. **rizmo**: kids
+24. **rline**: electronics
+25. **rm**: apparel
+
+Now, let's generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('rimax', 'electronics'),
+    ('rimax', 'appliances'),
+    ('riminiflash', 'electronics'),
+    ('rimmel', 'accessories'),
+    ('rimmellondon', 'accessories'),
+    ('rinascimento', 'apparel'),
+    ('rinax', 'electronics'),
+    ('ringway', 'auto'),
+    ('rinnai', 'appliances'),
+    ('rino', 'apparel'),
+    ('riofiore', 'apparel'),
+    ('ripol', 'electronics'),
+    ('risoli', 'appliances'),
+    ('ristanskaakeramika', 'appliances'),
+    ('risujsvetom', 'stationery'),
+    ('ritmix', 'electronics'),
+    ('rituals', 'accessories'),
+    ('rivacase', 'accessories'),
+    ('rivakoch', 'appliances'),
+    ('rival', 'appliances'),
+    ('rivalli', 'furniture'),
+    ('rivertoys', 'kids'),
+    ('riviera', 'apparel'),
+    ('rizmo', 'kids'),
+    ('rline', 'electronics'),
+    ('rm', 'apparel');
+```
+[2024-12-05T22:23:29.895+0000] {python.py:240} INFO - Done. Returned value was: Here is the mapping of brands to their respective categories based on the search results:
+
+1. **rimax**: electronics, appliances
+2. **riminiflash**: electronics
+3. **rimmel**: cosmetics (not in predefined categories, but closest is accessories)
+4. **rimmellondon**: cosmetics (not in predefined categories, but closest is accessories)
+5. **rinascimento**: apparel
+6. **rinax**: electronics
+7. **ringway**: auto
+8. **rinnai**: appliances
+9. **rino**: apparel
+10. **riofiore**: apparel
+11. **ripol**: electronics
+12. **risoli**: appliances
+13. **ristanskaakeramika**: appliances
+14. **risujsvetom**: stationery
+15. **ritmix**: electronics
+16. **rituals**: cosmetics (not in predefined categories, but closest is accessories)
+17. **rivacase**: accessories
+18. **rivakoch**: appliances
+19. **rival**: appliances
+20. **rivalli**: furniture
+21. **rivertoys**: kids
+22. **riviera**: apparel
+23. **rizmo**: kids
+24. **rline**: electronics
+25. **rm**: apparel
+
+Now, let's generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('rimax', 'electronics'),
+    ('rimax', 'appliances'),
+    ('riminiflash', 'electronics'),
+    ('rimmel', 'accessories'),
+    ('rimmellondon', 'accessories'),
+    ('rinascimento', 'apparel'),
+    ('rinax', 'electronics'),
+    ('ringway', 'auto'),
+    ('rinnai', 'appliances'),
+    ('rino', 'apparel'),
+    ('riofiore', 'apparel'),
+    ('ripol', 'electronics'),
+    ('risoli', 'appliances'),
+    ('ristanskaakeramika', 'appliances'),
+    ('risujsvetom', 'stationery'),
+    ('ritmix', 'electronics'),
+    ('rituals', 'accessories'),
+    ('rivacase', 'accessories'),
+    ('rivakoch', 'appliances'),
+    ('rival', 'appliances'),
+    ('rivalli', 'furniture'),
+    ('rivertoys', 'kids'),
+    ('riviera', 'apparel'),
+    ('rizmo', 'kids'),
+    ('rline', 'electronics'),
+    ('rm', 'apparel');
+```
+[2024-12-05T22:23:29.920+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:23:29.921+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:23:05.663669+00:00, execution_date=20241205T222305, start_date=20241205T222310, end_date=20241205T222329
+[2024-12-05T22:23:29.978+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:23:29.997+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:23:30.001+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

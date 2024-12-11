@@ -1,0 +1,162 @@
+[2024-12-05T22:34:59.094+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:34:59.110+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:34:34.548477+00:00 [queued]>
+[2024-12-05T22:34:59.117+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:34:34.548477+00:00 [queued]>
+[2024-12-05T22:34:59.118+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:34:59.132+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:34:34.548477+00:00
+[2024-12-05T22:34:59.138+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7797) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:34:59.140+0000] {standard_task_runner.py:72} INFO - Started process 7798 to run task
+[2024-12-05T22:34:59.140+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:34:34.548477+00:00', '--job-id', '1693', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmphnegcz55']
+[2024-12-05T22:34:59.142+0000] {standard_task_runner.py:105} INFO - Job 1693: Subtask extract_sql
+[2024-12-05T22:34:59.183+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:34:34.548477+00:00 [running]> on host c7780884450d
+[2024-12-05T22:34:59.329+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:34:34.548477+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:34:34.548477+00:00'
+[2024-12-05T22:34:59.331+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:34:59.361+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their appropriate categories based on the search results:
+
+1. **startradingabsvecia**: electronics
+2. **startul**: electronics, appliances
+3. **starwars**: kids, apparel, accessories
+4. **starway**: electronics
+5. **stationeryteam**: stationery
+6. **status**: electronics, appliances
+7. **staub**: appliances
+8. **stavia**: furniture
+9. **stavr**: construction
+10. **stayer**: auto
+11. **stealth**: electronics, accessories
+12. **steba**: appliances
+13. **steelflex**: construction, appliances
+14. **steelpower**: auto, appliances
+15. **steelseries**: electronics, accessories
+16. **steffilove**: apparel
+17. **steinberg**: electronics, appliances
+18. **stellar**: electronics
+19. **stellox**: auto
+20. **stels**: auto
+21. **stelz**: auto
+22. **stenders**: cosmetics (not in the provided categories; assign to 'accessories')
+23. **stendmebel**: furniture
+24. **step**: kids, stationery
+25. **steppuzzle**: kids
+
+Now, here is the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('startradingabsvecia', 'electronics'),
+    ('startul', 'electronics'),
+    ('startul', 'appliances'),
+    ('starwars', 'kids'),
+    ('starwars', 'apparel'),
+    ('starwars', 'accessories'),
+    ('starway', 'electronics'),
+    ('stationeryteam', 'stationery'),
+    ('status', 'electronics'),
+    ('status', 'appliances'),
+    ('staub', 'appliances'),
+    ('stavia', 'furniture'),
+    ('stavr', 'construction'),
+    ('stayer', 'auto'),
+    ('stealth', 'electronics'),
+    ('stealth', 'accessories'),
+    ('steba', 'appliances'),
+    ('steelflex', 'construction'),
+    ('steelflex', 'appliances'),
+    ('steelpower', 'auto'),
+    ('steelpower', 'appliances'),
+    ('steelseries', 'electronics'),
+    ('steelseries', 'accessories'),
+    ('steffilove', 'apparel'),
+    ('steinberg', 'electronics'),
+    ('steinberg', 'appliances'),
+    ('stellar', 'electronics'),
+    ('stellox', 'auto'),
+    ('stels', 'auto'),
+    ('stelz', 'auto'),
+    ('stenders', 'accessories'),
+    ('stendmebel', 'furniture'),
+    ('step', 'kids'),
+    ('step', 'stationery'),
+    ('steppuzzle', 'kids');
+```
+
+This SQL statement reflects the categorization of each brand according to the predefined categories.
+[2024-12-05T22:34:59.362+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('startradingabsvecia', 'electronics'),
+    ('startul', 'electronics'),
+    ('startul', 'appliances'),
+    ('starwars', 'kids'),
+    ('starwars', 'apparel'),
+    ('starwars', 'accessories'),
+    ('starway', 'electronics'),
+    ('stationeryteam', 'stationery'),
+    ('status', 'electronics'),
+    ('status', 'appliances'),
+    ('staub', 'appliances'),
+    ('stavia', 'furniture'),
+    ('stavr', 'construction'),
+    ('stayer', 'auto'),
+    ('stealth', 'electronics'),
+    ('stealth', 'accessories'),
+    ('steba', 'appliances'),
+    ('steelflex', 'construction'),
+    ('steelflex', 'appliances'),
+    ('steelpower', 'auto'),
+    ('steelpower', 'appliances'),
+    ('steelseries', 'electronics'),
+    ('steelseries', 'accessories'),
+    ('steffilove', 'apparel'),
+    ('steinberg', 'electronics'),
+    ('steinberg', 'appliances'),
+    ('stellar', 'electronics'),
+    ('stellox', 'auto'),
+    ('stels', 'auto'),
+    ('stelz', 'auto'),
+    ('stenders', 'accessories'),
+    ('stendmebel', 'furniture'),
+    ('step', 'kids'),
+    ('step', 'stationery'),
+    ('steppuzzle', 'kids');
+[2024-12-05T22:34:59.363+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('startradingabsvecia', 'electronics'),
+    ('startul', 'electronics'),
+    ('startul', 'appliances'),
+    ('starwars', 'kids'),
+    ('starwars', 'apparel'),
+    ('starwars', 'accessories'),
+    ('starway', 'electronics'),
+    ('stationeryteam', 'stationery'),
+    ('status', 'electronics'),
+    ('status', 'appliances'),
+    ('staub', 'appliances'),
+    ('stavia', 'furniture'),
+    ('stavr', 'construction'),
+    ('stayer', 'auto'),
+    ('stealth', 'electronics'),
+    ('stealth', 'accessories'),
+    ('steba', 'appliances'),
+    ('steelflex', 'construction'),
+    ('steelflex', 'appliances'),
+    ('steelpower', 'auto'),
+    ('steelpower', 'appliances'),
+    ('steelseries', 'electronics'),
+    ('steelseries', 'accessories'),
+    ('steffilove', 'apparel'),
+    ('steinberg', 'electronics'),
+    ('steinberg', 'appliances'),
+    ('stellar', 'electronics'),
+    ('stellox', 'auto'),
+    ('stels', 'auto'),
+    ('stelz', 'auto'),
+    ('stenders', 'accessories'),
+    ('stendmebel', 'furniture'),
+    ('step', 'kids'),
+    ('step', 'stationery'),
+    ('steppuzzle', 'kids');
+[2024-12-05T22:34:59.381+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:34:59.382+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:34:34.548477+00:00, execution_date=20241205T223434, start_date=20241205T223459, end_date=20241205T223459
+[2024-12-05T22:34:59.435+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:34:59.458+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:34:59.461+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

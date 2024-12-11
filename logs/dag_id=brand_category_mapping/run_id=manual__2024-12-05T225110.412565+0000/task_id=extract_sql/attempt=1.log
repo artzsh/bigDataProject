@@ -1,0 +1,156 @@
+[2024-12-05T22:51:43.392+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:51:43.404+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:51:10.412565+00:00 [queued]>
+[2024-12-05T22:51:43.411+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:51:10.412565+00:00 [queued]>
+[2024-12-05T22:51:43.412+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:51:43.425+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:51:10.412565+00:00
+[2024-12-05T22:51:43.432+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8664) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:51:43.433+0000] {standard_task_runner.py:72} INFO - Started process 8665 to run task
+[2024-12-05T22:51:43.433+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:51:10.412565+00:00', '--job-id', '1879', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpaijvjd9l']
+[2024-12-05T22:51:43.435+0000] {standard_task_runner.py:105} INFO - Job 1879: Subtask extract_sql
+[2024-12-05T22:51:43.468+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:51:10.412565+00:00 [running]> on host c7780884450d
+[2024-12-05T22:51:43.529+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:51:10.412565+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:51:10.412565+00:00'
+[2024-12-05T22:51:43.531+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:51:43.555+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their predefined categories based on the assumed searches:
+
+1. **xyg**: appliances
+2. **yadah**: medicine, kids
+3. **yako**: apparel, accessories
+4. **yamaguchi**: furniture
+5. **yamaha**: electronics, auto, sport
+6. **yamato**: construction
+7. **yamatsu**: appliances
+8. **yangzhou**: furniture
+9. **yaole**: electronics
+10. **yardforce**: country_yard, appliances
+11. **yasham**: stationery
+12. **yasin**: apparel
+13. **yato**: construction, appliances
+14. **ya-yaduck**: kids
+15. **yegam**: electronics
+16. **yellow**: stationery
+17. **yh**: apparel
+18. **yi**: electronics
+19. **yika**: accessories
+20. **yison**: electronics
+21. **yjfitness**: sport
+22. **yoga**: sport, accessories
+23. **yogasprout**: kids, sport
+24. **yokatta**: apparel
+25. **yokito**: stationery
+
+Based on this mapping, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('xyg', 'appliances'),
+    ('yadah', 'medicine'),
+    ('yadah', 'kids'),
+    ('yako', 'apparel'),
+    ('yako', 'accessories'),
+    ('yamaguchi', 'furniture'),
+    ('yamaha', 'electronics'),
+    ('yamaha', 'auto'),
+    ('yamaha', 'sport'),
+    ('yamato', 'construction'),
+    ('yamatsu', 'appliances'),
+    ('yangzhou', 'furniture'),
+    ('yaole', 'electronics'),
+    ('yardforce', 'country_yard'),
+    ('yardforce', 'appliances'),
+    ('yasham', 'stationery'),
+    ('yasin', 'apparel'),
+    ('yato', 'construction'),
+    ('yato', 'appliances'),
+    ('ya-yaduck', 'kids'),
+    ('yegam', 'electronics'),
+    ('yellow', 'stationery'),
+    ('yh', 'apparel'),
+    ('yi', 'electronics'),
+    ('yika', 'accessories'),
+    ('yison', 'electronics'),
+    ('yjfitness', 'sport'),
+    ('yoga', 'sport'),
+    ('yoga', 'accessories'),
+    ('yogasprout', 'kids'),
+    ('yogasprout', 'sport'),
+    ('yokatta', 'apparel'),
+    ('yokito', 'stationery');
+``` 
+
+This statement reflects the categories assigned to each brand based on the search results.
+[2024-12-05T22:51:43.556+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('xyg', 'appliances'),
+    ('yadah', 'medicine'),
+    ('yadah', 'kids'),
+    ('yako', 'apparel'),
+    ('yako', 'accessories'),
+    ('yamaguchi', 'furniture'),
+    ('yamaha', 'electronics'),
+    ('yamaha', 'auto'),
+    ('yamaha', 'sport'),
+    ('yamato', 'construction'),
+    ('yamatsu', 'appliances'),
+    ('yangzhou', 'furniture'),
+    ('yaole', 'electronics'),
+    ('yardforce', 'country_yard'),
+    ('yardforce', 'appliances'),
+    ('yasham', 'stationery'),
+    ('yasin', 'apparel'),
+    ('yato', 'construction'),
+    ('yato', 'appliances'),
+    ('ya-yaduck', 'kids'),
+    ('yegam', 'electronics'),
+    ('yellow', 'stationery'),
+    ('yh', 'apparel'),
+    ('yi', 'electronics'),
+    ('yika', 'accessories'),
+    ('yison', 'electronics'),
+    ('yjfitness', 'sport'),
+    ('yoga', 'sport'),
+    ('yoga', 'accessories'),
+    ('yogasprout', 'kids'),
+    ('yogasprout', 'sport'),
+    ('yokatta', 'apparel'),
+    ('yokito', 'stationery');
+[2024-12-05T22:51:43.557+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('xyg', 'appliances'),
+    ('yadah', 'medicine'),
+    ('yadah', 'kids'),
+    ('yako', 'apparel'),
+    ('yako', 'accessories'),
+    ('yamaguchi', 'furniture'),
+    ('yamaha', 'electronics'),
+    ('yamaha', 'auto'),
+    ('yamaha', 'sport'),
+    ('yamato', 'construction'),
+    ('yamatsu', 'appliances'),
+    ('yangzhou', 'furniture'),
+    ('yaole', 'electronics'),
+    ('yardforce', 'country_yard'),
+    ('yardforce', 'appliances'),
+    ('yasham', 'stationery'),
+    ('yasin', 'apparel'),
+    ('yato', 'construction'),
+    ('yato', 'appliances'),
+    ('ya-yaduck', 'kids'),
+    ('yegam', 'electronics'),
+    ('yellow', 'stationery'),
+    ('yh', 'apparel'),
+    ('yi', 'electronics'),
+    ('yika', 'accessories'),
+    ('yison', 'electronics'),
+    ('yjfitness', 'sport'),
+    ('yoga', 'sport'),
+    ('yoga', 'accessories'),
+    ('yogasprout', 'kids'),
+    ('yogasprout', 'sport'),
+    ('yokatta', 'apparel'),
+    ('yokito', 'stationery');
+[2024-12-05T22:51:43.579+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:51:43.580+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:51:10.412565+00:00, execution_date=20241205T225110, start_date=20241205T225143, end_date=20241205T225143
+[2024-12-05T22:51:43.607+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:51:43.628+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:51:43.631+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

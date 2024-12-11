@@ -1,0 +1,130 @@
+[2024-11-28T07:40:07.087+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-28T07:40:07.100+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.load_csv_to_postgres scheduled__2024-11-27T00:00:00+00:00 [queued]>
+[2024-11-28T07:40:07.107+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.load_csv_to_postgres scheduled__2024-11-27T00:00:00+00:00 [queued]>
+[2024-11-28T07:40:07.108+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-28T07:40:07.119+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): load_csv_to_postgres> on 2024-11-27 00:00:00+00:00
+[2024-11-28T07:40:07.125+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=83) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-28T07:40:07.127+0000] {standard_task_runner.py:72} INFO - Started process 89 to run task
+[2024-11-28T07:40:07.127+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'load_csv_to_postgres', 'scheduled__2024-11-27T00:00:00+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp948gn6uz']
+[2024-11-28T07:40:07.129+0000] {standard_task_runner.py:105} INFO - Job 56: Subtask load_csv_to_postgres
+[2024-11-28T07:40:07.172+0000] {task_command.py:467} INFO - Running <TaskInstance: ETL.load_csv_to_postgres scheduled__2024-11-27T00:00:00+00:00 [running]> on host b6d44e76794e
+[2024-11-28T07:40:07.235+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='load_csv_to_postgres' AIRFLOW_CTX_EXECUTION_DATE='2024-11-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-27T00:00:00+00:00'
+[2024-11-28T07:40:07.236+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-28T07:40:07.257+0000] {etl.py:52} INFO - Обрабатываем ключ: 4
+[2024-11-28T07:40:07.257+0000] {etl.py:53} INFO - Информация о таблице: {'1': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Oct.csv.gz', 'table_name': 'eCommerce_Oct', 'brands_table_name': 'brands_Oct', 'categories_table_name': 'categories_Oct'}, '2': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz', 'table_name': 'eCommerce_Nov', 'brands_table_name': 'brands_Nov', 'categories_table_name': 'categories_Nov'}, '3': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Dec.csv.gz', 'table_name': 'eCommerce_Dec', 'brands_table_name': 'brands_Dec', 'categories_table_name': 'categories_Dec'}, '4': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz', 'table_name': 'eCommerce_Jan', 'brands_table_name': 'brands_Jan', 'categories_table_name': 'categories_Jan'}, '5': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Feb.csv.gz', 'table_name': 'eCommerce_Feb', 'brands_table_name': 'brands_Feb', 'categories_table_name': 'categories_Feb'}, '6': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Mar.csv.gz', 'table_name': 'eCommerce_Mar', 'brands_table_name': 'brands_Mar', 'categories_table_name': 'categories_Mar'}, '7': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Apr.csv.gz', 'table_name': 'eCommerce_Apr', 'brands_table_name': 'brands_Apr', 'categories_table_name': 'categories_Apr'}}
+[2024-11-28T07:40:07.258+0000] {etl.py:67} INFO - URL датасета: https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz
+[2024-11-28T07:40:07.258+0000] {etl.py:68} INFO - Название таблицы: DDS-STG.eCommerce_Jan
+[2024-11-28T07:40:07.262+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-11-28T07:40:07.262+0000] {etl.py:85} INFO - Файл сжат: True
+[2024-11-28T07:40:07.262+0000] {etl.py:95} INFO - Скачивание CSV-файла с URL: https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz
+[2024-11-28T07:40:07.490+0000] {etl.py:98} INFO - Файл успешно скачан.
+[2024-11-28T07:40:07.491+0000] {etl.py:101} INFO - Начало чтения CSV-файла в чанках.
+[2024-11-28T07:40:07.589+0000] {etl.py:111} INFO - Установка соединения с PostgreSQL.
+[2024-11-28T07:40:28.645+0000] {etl.py:212} ERROR - Произошла ошибка: connection to server at "79.174.88.173", port 19063 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2024-11-28T07:40:28.646+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl.py", line 112, in load_csv_to_postgres
+    conn = psycopg2.connect(**postgres_conn_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "79.174.88.173", port 19063 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2024-11-28T07:40:28.661+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=ETL, task_id=load_csv_to_postgres, run_id=scheduled__2024-11-27T00:00:00+00:00, execution_date=20241127T000000, start_date=20241128T074007, end_date=20241128T074028
+[2024-11-28T07:40:28.670+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-28T07:40:28.671+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 56 for task load_csv_to_postgres (connection to server at "79.174.88.173", port 19063 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+; 89)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl.py", line 112, in load_csv_to_postgres
+    conn = psycopg2.connect(**postgres_conn_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "79.174.88.173", port 19063 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2024-11-28T07:40:28.683+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-11-28T07:40:28.695+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-28T07:40:28.699+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

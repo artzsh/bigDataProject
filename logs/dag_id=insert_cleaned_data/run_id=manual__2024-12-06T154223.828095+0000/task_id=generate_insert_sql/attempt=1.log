@@ -1,0 +1,47 @@
+[2024-12-06T15:42:26.673+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T15:42:26.684+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.generate_insert_sql manual__2024-12-06T15:42:23.828095+00:00 [queued]>
+[2024-12-06T15:42:26.690+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.generate_insert_sql manual__2024-12-06T15:42:23.828095+00:00 [queued]>
+[2024-12-06T15:42:26.691+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T15:42:26.701+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): generate_insert_sql> on 2024-12-06 15:42:23.828095+00:00
+[2024-12-06T15:42:26.706+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3167) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T15:42:26.707+0000] {standard_task_runner.py:72} INFO - Started process 3168 to run task
+[2024-12-06T15:42:26.707+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'generate_insert_sql', 'manual__2024-12-06T15:42:23.828095+00:00', '--job-id', '2020', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmp9r4zk459']
+[2024-12-06T15:42:26.708+0000] {standard_task_runner.py:105} INFO - Job 2020: Subtask generate_insert_sql
+[2024-12-06T15:42:26.738+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.generate_insert_sql manual__2024-12-06T15:42:23.828095+00:00 [running]> on host cb0074367deb
+[2024-12-06T15:42:26.795+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='generate_insert_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T15:42:23.828095+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T15:42:23.828095+00:00'
+[2024-12-06T15:42:26.796+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T15:42:26.816+0000] {insert_cleaned_data.py:91} INFO - Сгенерированный SQL-запрос для вставки: 
+        INSERT INTO "DDS"."final_table" (
+            event_time, 
+            event_type, 
+            product_id, 
+            category_id, 
+            category_code, 
+            brand, 
+            price, 
+            user_id, 
+            user_session
+        )
+        SELECT 
+            st.event_time, 
+            st.event_type, 
+            st.product_id, 
+            st.category_id, 
+            st.category_code, 
+            st.brand, 
+            st.price, 
+            st.user_id, 
+            st.user_session
+        FROM "DDS-STG"."eCommerce_Dec" st
+        JOIN "DDS"."brand_category_mapping_final" bcm
+          ON st.brand = bcm.brand
+         AND st.category_code = bcm.category_code;
+    
+[2024-12-06T15:42:26.825+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-06T15:42:26.831+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-06T15:42:26.831+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=insert_cleaned_data, task_id=generate_insert_sql, run_id=manual__2024-12-06T15:42:23.828095+00:00, execution_date=20241206T154223, start_date=20241206T154226, end_date=20241206T154226
+[2024-12-06T15:42:26.880+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-06T15:42:26.897+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-06T15:42:26.900+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

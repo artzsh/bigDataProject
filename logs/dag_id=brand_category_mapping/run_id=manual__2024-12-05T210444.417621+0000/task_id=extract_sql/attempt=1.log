@@ -1,0 +1,177 @@
+[2024-12-05T21:05:12.436+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:05:12.451+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:04:44.417621+00:00 [queued]>
+[2024-12-05T21:05:12.460+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:04:44.417621+00:00 [queued]>
+[2024-12-05T21:05:12.461+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:05:12.475+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:04:44.417621+00:00
+[2024-12-05T21:05:12.482+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3028) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:05:12.484+0000] {standard_task_runner.py:72} INFO - Started process 3029 to run task
+[2024-12-05T21:05:12.483+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:04:44.417621+00:00', '--job-id', '667', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpv7536_9d']
+[2024-12-05T21:05:12.486+0000] {standard_task_runner.py:105} INFO - Job 667: Subtask extract_sql
+[2024-12-05T21:05:12.526+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:04:44.417621+00:00 [running]> on host c7780884450d
+[2024-12-05T21:05:12.595+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:04:44.417621+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:04:44.417621+00:00'
+[2024-12-05T21:05:12.596+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:05:12.617+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the brands to their respective categories based on the search queries:
+
+1. **baige**: apparel
+2. **bair**: appliances
+3. **bakugan**: kids, toys
+4. **baldessarini**: apparel
+5. **balenciaga**: apparel, accessories
+6. **ballarini**: appliances, kitchenware
+7. **ballistix**: electronics, computer components
+8. **ballist-x**: electronics, computer components
+9. **ballu**: appliances, electronics
+10. **balmain**: apparel, accessories
+11. **balta**: construction, flooring
+12. **baltekstil**: apparel, textiles
+13. **balterio**: construction, flooring
+14. **bambi**: kids, toys
+15. **bambini**: kids, apparel
+16. **bambino**: kids, apparel
+17. **bambola**: kids, toys
+18. **bamboo**: accessories, home goods
+19. **bambuk-lev**: furniture
+20. **banbao**: kids, toys
+21. **bandai**: kids, toys
+22. **bandainamco**: kids, toys, electronics
+23. **bandainamcoentertainment**: electronics, games
+24. **banquet**: appliances, kitchenware
+25. **baobaohao**: apparel
+
+Now, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('baige', 'apparel'),
+    ('bair', 'appliances'),
+    ('bakugan', 'kids'),
+    ('baldessarini', 'apparel'),
+    ('balenciaga', 'apparel'),
+    ('balenciaga', 'accessories'),
+    ('ballarini', 'appliances'),
+    ('ballarini', 'kitchenware'),
+    ('ballistix', 'electronics'),
+    ('ballist-x', 'electronics'),
+    ('ballu', 'appliances'),
+    ('ballu', 'electronics'),
+    ('balmain', 'apparel'),
+    ('balmain', 'accessories'),
+    ('balta', 'construction'),
+    ('baltekstil', 'apparel'),
+    ('balterio', 'construction'),
+    ('balterio', 'flooring'),
+    ('bambi', 'kids'),
+    ('bambini', 'kids'),
+    ('bambini', 'apparel'),
+    ('bambino', 'kids'),
+    ('bambino', 'apparel'),
+    ('bambola', 'kids'),
+    ('bambola', 'toys'),
+    ('bamboo', 'accessories'),
+    ('bamboo', 'home goods'),
+    ('bambuk-lev', 'furniture'),
+    ('banbao', 'kids'),
+    ('banbao', 'toys'),
+    ('bandai', 'kids'),
+    ('bandai', 'toys'),
+    ('bandainamco', 'kids'),
+    ('bandainamco', 'toys'),
+    ('bandainamco', 'electronics'),
+    ('bandainamcoentertainment', 'electronics'),
+    ('bandainamcoentertainment', 'games'),
+    ('banquet', 'appliances'),
+    ('banquet', 'kitchenware'),
+    ('baobaohao', 'apparel');
+```
+
+This SQL statement includes all brands and their assigned categories based on the search results.
+[2024-12-05T21:05:12.618+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('baige', 'apparel'),
+    ('bair', 'appliances'),
+    ('bakugan', 'kids'),
+    ('baldessarini', 'apparel'),
+    ('balenciaga', 'apparel'),
+    ('balenciaga', 'accessories'),
+    ('ballarini', 'appliances'),
+    ('ballarini', 'kitchenware'),
+    ('ballistix', 'electronics'),
+    ('ballist-x', 'electronics'),
+    ('ballu', 'appliances'),
+    ('ballu', 'electronics'),
+    ('balmain', 'apparel'),
+    ('balmain', 'accessories'),
+    ('balta', 'construction'),
+    ('baltekstil', 'apparel'),
+    ('balterio', 'construction'),
+    ('balterio', 'flooring'),
+    ('bambi', 'kids'),
+    ('bambini', 'kids'),
+    ('bambini', 'apparel'),
+    ('bambino', 'kids'),
+    ('bambino', 'apparel'),
+    ('bambola', 'kids'),
+    ('bambola', 'toys'),
+    ('bamboo', 'accessories'),
+    ('bamboo', 'home goods'),
+    ('bambuk-lev', 'furniture'),
+    ('banbao', 'kids'),
+    ('banbao', 'toys'),
+    ('bandai', 'kids'),
+    ('bandai', 'toys'),
+    ('bandainamco', 'kids'),
+    ('bandainamco', 'toys'),
+    ('bandainamco', 'electronics'),
+    ('bandainamcoentertainment', 'electronics'),
+    ('bandainamcoentertainment', 'games'),
+    ('banquet', 'appliances'),
+    ('banquet', 'kitchenware'),
+    ('baobaohao', 'apparel');
+[2024-12-05T21:05:12.618+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('baige', 'apparel'),
+    ('bair', 'appliances'),
+    ('bakugan', 'kids'),
+    ('baldessarini', 'apparel'),
+    ('balenciaga', 'apparel'),
+    ('balenciaga', 'accessories'),
+    ('ballarini', 'appliances'),
+    ('ballarini', 'kitchenware'),
+    ('ballistix', 'electronics'),
+    ('ballist-x', 'electronics'),
+    ('ballu', 'appliances'),
+    ('ballu', 'electronics'),
+    ('balmain', 'apparel'),
+    ('balmain', 'accessories'),
+    ('balta', 'construction'),
+    ('baltekstil', 'apparel'),
+    ('balterio', 'construction'),
+    ('balterio', 'flooring'),
+    ('bambi', 'kids'),
+    ('bambini', 'kids'),
+    ('bambini', 'apparel'),
+    ('bambino', 'kids'),
+    ('bambino', 'apparel'),
+    ('bambola', 'kids'),
+    ('bambola', 'toys'),
+    ('bamboo', 'accessories'),
+    ('bamboo', 'home goods'),
+    ('bambuk-lev', 'furniture'),
+    ('banbao', 'kids'),
+    ('banbao', 'toys'),
+    ('bandai', 'kids'),
+    ('bandai', 'toys'),
+    ('bandainamco', 'kids'),
+    ('bandainamco', 'toys'),
+    ('bandainamco', 'electronics'),
+    ('bandainamcoentertainment', 'electronics'),
+    ('bandainamcoentertainment', 'games'),
+    ('banquet', 'appliances'),
+    ('banquet', 'kitchenware'),
+    ('baobaohao', 'apparel');
+[2024-12-05T21:05:12.636+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:05:12.637+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:04:44.417621+00:00, execution_date=20241205T210444, start_date=20241205T210512, end_date=20241205T210512
+[2024-12-05T21:05:12.658+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:05:12.682+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:05:12.685+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,78 @@
+[2024-12-06T15:22:35.214+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T15:22:35.224+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T15:22:28.598038+00:00 [queued]>
+[2024-12-06T15:22:35.230+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T15:22:28.598038+00:00 [queued]>
+[2024-12-06T15:22:35.230+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T15:22:35.240+0000] {taskinstance.py:2889} INFO - Executing <Task(PostgresOperator): insert_cleaned_data> on 2024-12-06 15:22:28.598038+00:00
+[2024-12-06T15:22:35.245+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2854) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T15:22:35.246+0000] {standard_task_runner.py:72} INFO - Started process 2855 to run task
+[2024-12-06T15:22:35.246+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'insert_cleaned_data', 'manual__2024-12-06T15:22:28.598038+00:00', '--job-id', '2005', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmpla2ss13e']
+[2024-12-06T15:22:35.247+0000] {standard_task_runner.py:105} INFO - Job 2005: Subtask insert_cleaned_data
+[2024-12-06T15:22:35.277+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T15:22:28.598038+00:00 [running]> on host cb0074367deb
+[2024-12-06T15:22:35.337+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='insert_cleaned_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T15:22:28.598038+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T15:22:28.598038+00:00'
+[2024-12-06T15:22:35.338+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T15:22:35.347+0000] {sql.py:278} INFO - Executing: 
+        INSERT INTO "DDS"."final_table" (
+            event_time, 
+            event_type, 
+            product_id, 
+            category_id, 
+            category_code, 
+            brand, 
+            price, 
+            user_id, 
+            user_session
+        )
+        SELECT 
+            st.event_time, 
+            st.event_type, 
+            st.product_id, 
+            st.category_id, 
+            st.category_code, 
+            st.brand, 
+            st.price, 
+            st.user_id, 
+            st.user_session
+        FROM "DDS-STG"."eCommerce_Nov" st
+        JOIN "DDS"."brand_category_mapping_final" bcm
+          ON st.brand = bcm.brand
+         AND st.category_code = bcm.category_code;
+    
+[2024-12-06T15:22:35.353+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-06T15:22:35.358+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-06T15:22:38.191+0000] {sql.py:544} INFO - Running statement: 
+        INSERT INTO "DDS"."final_table" (
+            event_time, 
+            event_type, 
+            product_id, 
+            category_id, 
+            category_code, 
+            brand, 
+            price, 
+            user_id, 
+            user_session
+        )
+        SELECT 
+            st.event_time, 
+            st.event_type, 
+            st.product_id, 
+            st.category_id, 
+            st.category_code, 
+            st.brand, 
+            st.price, 
+            st.user_id, 
+            st.user_session
+        FROM "DDS-STG"."eCommerce_Nov" st
+        JOIN "DDS"."brand_category_mapping_final" bcm
+          ON st.brand = bcm.brand
+         AND st.category_code = bcm.category_code;
+    , parameters: None
+[2024-12-06T15:24:00.943+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-12-06T15:24:00.944+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-12-06T15:24:00.945+0000] {process_utils.py:132} INFO - Sending 15 to group 2855. PIDs of all processes in the group: [2855]
+[2024-12-06T15:24:00.945+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 2855
+[2024-12-06T15:25:00.957+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2855, name='airflow task ru', status='sleeping', started='15:22:35') did not respond to SIGTERM. Trying SIGKILL
+[2024-12-06T15:25:00.959+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 2855
+[2024-12-06T15:25:00.967+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2855, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='15:22:35') (2855) terminated with exit code -9
+[2024-12-06T15:25:00.969+0000] {standard_task_runner.py:190} ERROR - ('Job 2005 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

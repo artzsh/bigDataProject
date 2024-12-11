@@ -1,0 +1,176 @@
+[2024-12-05T22:02:26.203+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:02:26.216+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:02:21.529631+00:00 [queued]>
+[2024-12-05T22:02:26.223+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:02:21.529631+00:00 [queued]>
+[2024-12-05T22:02:26.224+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:02:26.242+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:02:21.529631+00:00
+[2024-12-05T22:02:26.248+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6085) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:02:26.250+0000] {standard_task_runner.py:72} INFO - Started process 6086 to run task
+[2024-12-05T22:02:26.250+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:02:21.529631+00:00', '--job-id', '1326', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpd775m_vb']
+[2024-12-05T22:02:26.252+0000] {standard_task_runner.py:105} INFO - Job 1326: Subtask call_llm
+[2024-12-05T22:02:26.289+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:02:21.529631+00:00 [running]> on host c7780884450d
+[2024-12-05T22:02:26.355+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:02:21.529631+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:02:21.529631+00:00'
+[2024-12-05T22:02:26.356+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:02:26.373+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['merach', 'mercana', 'mercedes', 'mercedes-benz', 'mercedesbenz', 'merci', 'mercury', 'mercusys', 'merealni', 'merejbaspasy', 'merelani', 'merida', 'merkurij', 'merol', 'merrell', 'merries', 'merry', 'merrylock', 'mersco', 'mersedes-benz', 'merzuka', 'messer', 'metabo', 'metalac', 'metalions'], 'next_index': 3275}
+[2024-12-05T22:02:26.373+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:02:26.787+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:02:49.360+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the brands mapped to their respective categories based on the search queries:
+
+1. **merach**: appliances, construction
+2. **mercana**: furniture, home decor
+3. **mercedes**: auto, electronics
+4. **mercedes-benz**: auto, electronics
+5. **mercedesbenz**: auto, electronics
+6. **merci**: accessories, stationery
+7. **mercury**: electronics, auto
+8. **mercusys**: computers, electronics
+9. **merealni**: apparel
+10. **merejbaspasy**: apparel
+11. **merelani**: apparel
+12. **merida**: sport, bicycles
+13. **merkurij**: stationery, office supplies
+14. **merol**: appliances
+15. **merrell**: apparel, accessories, sport
+16. **merries**: kids, apparel
+17. **merry**: stationery, home decor
+18. **merrylock**: appliances, sewing
+19. **mersco**: electronics
+20. **mersedes-benz**: auto, electronics
+21. **merzuka**: apparel
+22. **messer**: appliances, tools
+23. **metabo**: construction, tools
+24. **metalac**: appliances, furniture
+25. **metalions**: electronics
+
+Now, here is the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('merach', 'appliances'),
+    ('merach', 'construction'),
+    ('mercana', 'furniture'),
+    ('mercana', 'home decor'),
+    ('mercedes', 'auto'),
+    ('mercedes', 'electronics'),
+    ('mercedes-benz', 'auto'),
+    ('mercedes-benz', 'electronics'),
+    ('mercedesbenz', 'auto'),
+    ('mercedesbenz', 'electronics'),
+    ('merci', 'accessories'),
+    ('merci', 'stationery'),
+    ('mercury', 'electronics'),
+    ('mercury', 'auto'),
+    ('mercusys', 'computers'),
+    ('mercusys', 'electronics'),
+    ('merealni', 'apparel'),
+    ('merejbaspasy', 'apparel'),
+    ('merelani', 'apparel'),
+    ('merida', 'sport'),
+    ('merida', 'bicycles'),
+    ('merkurij', 'stationery'),
+    ('merkurij', 'office supplies'),
+    ('merol', 'appliances'),
+    ('merrell', 'apparel'),
+    ('merrell', 'accessories'),
+    ('merrell', 'sport'),
+    ('merries', 'kids'),
+    ('merries', 'apparel'),
+    ('merry', 'stationery'),
+    ('merry', 'home decor'),
+    ('merrylock', 'appliances'),
+    ('merrylock', 'sewing'),
+    ('mersco', 'electronics'),
+    ('mersedes-benz', 'auto'),
+    ('mersedes-benz', 'electronics'),
+    ('merzuka', 'apparel'),
+    ('messer', 'appliances'),
+    ('messer', 'tools'),
+    ('metabo', 'construction'),
+    ('metabo', 'tools'),
+    ('metalac', 'appliances'),
+    ('metalac', 'furniture'),
+    ('metalions', 'electronics');
+```
+[2024-12-05T22:02:49.360+0000] {python.py:240} INFO - Done. Returned value was: Here are the brands mapped to their respective categories based on the search queries:
+
+1. **merach**: appliances, construction
+2. **mercana**: furniture, home decor
+3. **mercedes**: auto, electronics
+4. **mercedes-benz**: auto, electronics
+5. **mercedesbenz**: auto, electronics
+6. **merci**: accessories, stationery
+7. **mercury**: electronics, auto
+8. **mercusys**: computers, electronics
+9. **merealni**: apparel
+10. **merejbaspasy**: apparel
+11. **merelani**: apparel
+12. **merida**: sport, bicycles
+13. **merkurij**: stationery, office supplies
+14. **merol**: appliances
+15. **merrell**: apparel, accessories, sport
+16. **merries**: kids, apparel
+17. **merry**: stationery, home decor
+18. **merrylock**: appliances, sewing
+19. **mersco**: electronics
+20. **mersedes-benz**: auto, electronics
+21. **merzuka**: apparel
+22. **messer**: appliances, tools
+23. **metabo**: construction, tools
+24. **metalac**: appliances, furniture
+25. **metalions**: electronics
+
+Now, here is the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('merach', 'appliances'),
+    ('merach', 'construction'),
+    ('mercana', 'furniture'),
+    ('mercana', 'home decor'),
+    ('mercedes', 'auto'),
+    ('mercedes', 'electronics'),
+    ('mercedes-benz', 'auto'),
+    ('mercedes-benz', 'electronics'),
+    ('mercedesbenz', 'auto'),
+    ('mercedesbenz', 'electronics'),
+    ('merci', 'accessories'),
+    ('merci', 'stationery'),
+    ('mercury', 'electronics'),
+    ('mercury', 'auto'),
+    ('mercusys', 'computers'),
+    ('mercusys', 'electronics'),
+    ('merealni', 'apparel'),
+    ('merejbaspasy', 'apparel'),
+    ('merelani', 'apparel'),
+    ('merida', 'sport'),
+    ('merida', 'bicycles'),
+    ('merkurij', 'stationery'),
+    ('merkurij', 'office supplies'),
+    ('merol', 'appliances'),
+    ('merrell', 'apparel'),
+    ('merrell', 'accessories'),
+    ('merrell', 'sport'),
+    ('merries', 'kids'),
+    ('merries', 'apparel'),
+    ('merry', 'stationery'),
+    ('merry', 'home decor'),
+    ('merrylock', 'appliances'),
+    ('merrylock', 'sewing'),
+    ('mersco', 'electronics'),
+    ('mersedes-benz', 'auto'),
+    ('mersedes-benz', 'electronics'),
+    ('merzuka', 'apparel'),
+    ('messer', 'appliances'),
+    ('messer', 'tools'),
+    ('metabo', 'construction'),
+    ('metabo', 'tools'),
+    ('metalac', 'appliances'),
+    ('metalac', 'furniture'),
+    ('metalions', 'electronics');
+```
+[2024-12-05T22:02:49.381+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:02:49.382+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:02:21.529631+00:00, execution_date=20241205T220221, start_date=20241205T220226, end_date=20241205T220249
+[2024-12-05T22:02:49.402+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:02:49.422+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:02:49.425+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

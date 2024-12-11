@@ -1,0 +1,172 @@
+[2024-12-05T22:23:01.498+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:23:01.511+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:22:40.449620+00:00 [queued]>
+[2024-12-05T22:23:01.518+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:22:40.449620+00:00 [queued]>
+[2024-12-05T22:23:01.518+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:23:01.531+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:22:40.449620+00:00
+[2024-12-05T22:23:01.537+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7175) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:23:01.538+0000] {standard_task_runner.py:72} INFO - Started process 7176 to run task
+[2024-12-05T22:23:01.539+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:22:40.449620+00:00', '--job-id', '1561', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpw_4o15nt']
+[2024-12-05T22:23:01.541+0000] {standard_task_runner.py:105} INFO - Job 1561: Subtask extract_sql
+[2024-12-05T22:23:01.576+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:22:40.449620+00:00 [running]> on host c7780884450d
+[2024-12-05T22:23:01.643+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:22:40.449620+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:22:40.449620+00:00'
+[2024-12-05T22:23:01.644+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:23:01.666+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the provided brands to the predefined categories based on the search results and general knowledge about the brands:
+
+1. **rev** - apparel, accessories
+2. **revery** - apparel, accessories
+3. **revit** - computers, construction
+4. **revlon** - cosmetics, accessories
+5. **revolution** - electronics, appliances
+6. **revuele** - cosmetics, accessories
+7. **revyline** - stationery
+8. **rexco** - construction, appliances
+9. **rexona** - personal care, cosmetics
+10. **rextor** - electronics
+11. **rezult** - stationery
+12. **rhapsody** - apparel
+13. **rheinberger** - furniture
+14. **rhythm** - electronics
+15. **rial** - apparel
+16. **ricco** - apparel, accessories
+17. **riche** - apparel, accessories
+18. **ricoh** - computers, electronics
+19. **ride** - sport, apparel
+20. **ridian** - electronics
+21. **rieker** - footwear, apparel
+22. **rihanna** - apparel, accessories
+23. **rika** - apparel
+24. **riko** - electronics
+25. **riks** - apparel
+
+Now, I will generate the SQL INSERT statement based on the above mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('rev', 'apparel'),
+    ('rev', 'accessories'),
+    ('revery', 'apparel'),
+    ('revery', 'accessories'),
+    ('revit', 'computers'),
+    ('revit', 'construction'),
+    ('revlon', 'cosmetics'),
+    ('revlon', 'accessories'),
+    ('revolution', 'electronics'),
+    ('revolution', 'appliances'),
+    ('revuele', 'cosmetics'),
+    ('revuele', 'accessories'),
+    ('revyline', 'stationery'),
+    ('rexco', 'construction'),
+    ('rexco', 'appliances'),
+    ('rexona', 'personal care'),
+    ('rexona', 'cosmetics'),
+    ('rextor', 'electronics'),
+    ('rezult', 'stationery'),
+    ('rhapsody', 'apparel'),
+    ('rheinberger', 'furniture'),
+    ('rhythm', 'electronics'),
+    ('rial', 'apparel'),
+    ('ricco', 'apparel'),
+    ('ricco', 'accessories'),
+    ('riche', 'apparel'),
+    ('riche', 'accessories'),
+    ('ricoh', 'computers'),
+    ('ricoh', 'electronics'),
+    ('ride', 'sport'),
+    ('ride', 'apparel'),
+    ('ridian', 'electronics'),
+    ('rieker', 'footwear'),
+    ('rieker', 'apparel'),
+    ('rihanna', 'apparel'),
+    ('rihanna', 'accessories'),
+    ('rika', 'apparel'),
+    ('riko', 'electronics'),
+    ('riks', 'apparel');
+```
+[2024-12-05T22:23:01.667+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('rev', 'apparel'),
+    ('rev', 'accessories'),
+    ('revery', 'apparel'),
+    ('revery', 'accessories'),
+    ('revit', 'computers'),
+    ('revit', 'construction'),
+    ('revlon', 'cosmetics'),
+    ('revlon', 'accessories'),
+    ('revolution', 'electronics'),
+    ('revolution', 'appliances'),
+    ('revuele', 'cosmetics'),
+    ('revuele', 'accessories'),
+    ('revyline', 'stationery'),
+    ('rexco', 'construction'),
+    ('rexco', 'appliances'),
+    ('rexona', 'personal care'),
+    ('rexona', 'cosmetics'),
+    ('rextor', 'electronics'),
+    ('rezult', 'stationery'),
+    ('rhapsody', 'apparel'),
+    ('rheinberger', 'furniture'),
+    ('rhythm', 'electronics'),
+    ('rial', 'apparel'),
+    ('ricco', 'apparel'),
+    ('ricco', 'accessories'),
+    ('riche', 'apparel'),
+    ('riche', 'accessories'),
+    ('ricoh', 'computers'),
+    ('ricoh', 'electronics'),
+    ('ride', 'sport'),
+    ('ride', 'apparel'),
+    ('ridian', 'electronics'),
+    ('rieker', 'footwear'),
+    ('rieker', 'apparel'),
+    ('rihanna', 'apparel'),
+    ('rihanna', 'accessories'),
+    ('rika', 'apparel'),
+    ('riko', 'electronics'),
+    ('riks', 'apparel');
+[2024-12-05T22:23:01.668+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('rev', 'apparel'),
+    ('rev', 'accessories'),
+    ('revery', 'apparel'),
+    ('revery', 'accessories'),
+    ('revit', 'computers'),
+    ('revit', 'construction'),
+    ('revlon', 'cosmetics'),
+    ('revlon', 'accessories'),
+    ('revolution', 'electronics'),
+    ('revolution', 'appliances'),
+    ('revuele', 'cosmetics'),
+    ('revuele', 'accessories'),
+    ('revyline', 'stationery'),
+    ('rexco', 'construction'),
+    ('rexco', 'appliances'),
+    ('rexona', 'personal care'),
+    ('rexona', 'cosmetics'),
+    ('rextor', 'electronics'),
+    ('rezult', 'stationery'),
+    ('rhapsody', 'apparel'),
+    ('rheinberger', 'furniture'),
+    ('rhythm', 'electronics'),
+    ('rial', 'apparel'),
+    ('ricco', 'apparel'),
+    ('ricco', 'accessories'),
+    ('riche', 'apparel'),
+    ('riche', 'accessories'),
+    ('ricoh', 'computers'),
+    ('ricoh', 'electronics'),
+    ('ride', 'sport'),
+    ('ride', 'apparel'),
+    ('ridian', 'electronics'),
+    ('rieker', 'footwear'),
+    ('rieker', 'apparel'),
+    ('rihanna', 'apparel'),
+    ('rihanna', 'accessories'),
+    ('rika', 'apparel'),
+    ('riko', 'electronics'),
+    ('riks', 'apparel');
+[2024-12-05T22:23:01.689+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:23:01.690+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:22:40.449620+00:00, execution_date=20241205T222240, start_date=20241205T222301, end_date=20241205T222301
+[2024-12-05T22:23:01.713+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:23:01.738+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:23:01.741+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

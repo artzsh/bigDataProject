@@ -1,0 +1,192 @@
+[2024-12-05T21:30:35.549+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:30:35.562+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:30:31.173675+00:00 [queued]>
+[2024-12-05T21:30:35.568+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:30:31.173675+00:00 [queued]>
+[2024-12-05T21:30:35.569+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:30:35.583+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:30:31.173675+00:00
+[2024-12-05T21:30:35.589+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4405) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:30:35.591+0000] {standard_task_runner.py:72} INFO - Started process 4406 to run task
+[2024-12-05T21:30:35.591+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:30:31.173675+00:00', '--job-id', '966', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpaxwfp6cq']
+[2024-12-05T21:30:35.592+0000] {standard_task_runner.py:105} INFO - Job 966: Subtask call_llm
+[2024-12-05T21:30:35.630+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:30:31.173675+00:00 [running]> on host c7780884450d
+[2024-12-05T21:30:35.696+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:30:31.173675+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:30:31.173675+00:00'
+[2024-12-05T21:30:35.697+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:30:35.715+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['fisher-price', 'fisherprice', 'fiskars', 'fissler', 'fissman', 'fit', 'fitaqua', 'fitbit', 'fitchbaby', 'fitlux', 'fitnessbody', 'fitnex', 'fito', 'fitokosmetik', 'fitrider', 'fit-rx', 'fitstart', 'fitstudio', 'fitwell', 'five', 'fixsen', 'fizan', 'flagman', 'flama', 'flambeau'], 'next_index': 1775}
+[2024-12-05T21:30:35.715+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:30:36.217+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:30:59.173+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Based on the brands provided, here are the categories assigned to each brand after performing the necessary searches and analysis:
+
+1. **fisher-price**: kids, toys
+2. **fisherprice**: kids, toys
+3. **fiskars**: stationery, construction, appliances
+4. **fissler**: appliances, kitchen
+5. **fissman**: appliances, kitchen
+6. **fit**: sport, apparel
+7. **fitaqua**: medicine, health
+8. **fitbit**: electronics, health
+9. **fitchbaby**: kids, apparel
+10. **fitlux**: apparel, fitness
+11. **fitnessbody**: sport, fitness
+12. **fitnex**: sport, fitness
+13. **fito**: medicine, health
+14. **fitokosmetik**: medicine, health
+15. **fitrider**: sport, fitness
+16. **fit-rx**: medicine, health
+17. **fitstart**: sport, fitness
+18. **fitstudio**: sport, fitness
+19. **fitwell**: sport, fitness
+20. **five**: apparel
+21. **fixsen**: appliances, construction
+22. **fizan**: sport, accessories
+23. **flagman**: sport, accessories
+24. **flama**: appliances, kitchen
+25. **flambeau**: appliances, storage
+
+Now, let's generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fisher-price', 'kids'),
+    ('fisher-price', 'toys'),
+    ('fisherprice', 'kids'),
+    ('fisherprice', 'toys'),
+    ('fiskars', 'stationery'),
+    ('fiskars', 'construction'),
+    ('fiskars', 'appliances'),
+    ('fissler', 'appliances'),
+    ('fissler', 'kitchen'),
+    ('fissman', 'appliances'),
+    ('fissman', 'kitchen'),
+    ('fit', 'sport'),
+    ('fit', 'apparel'),
+    ('fitaqua', 'medicine'),
+    ('fitaqua', 'health'),
+    ('fitbit', 'electronics'),
+    ('fitbit', 'health'),
+    ('fitchbaby', 'kids'),
+    ('fitchbaby', 'apparel'),
+    ('fitlux', 'apparel'),
+    ('fitlux', 'fitness'),
+    ('fitnessbody', 'sport'),
+    ('fitnessbody', 'fitness'),
+    ('fitnex', 'sport'),
+    ('fitnex', 'fitness'),
+    ('fito', 'medicine'),
+    ('fito', 'health'),
+    ('fitokosmetik', 'medicine'),
+    ('fitokosmetik', 'health'),
+    ('fitrider', 'sport'),
+    ('fitrider', 'fitness'),
+    ('fit-rx', 'medicine'),
+    ('fit-rx', 'health'),
+    ('fitstart', 'sport'),
+    ('fitstart', 'fitness'),
+    ('fitstudio', 'sport'),
+    ('fitstudio', 'fitness'),
+    ('fitwell', 'sport'),
+    ('fitwell', 'fitness'),
+    ('five', 'apparel'),
+    ('fixsen', 'appliances'),
+    ('fixsen', 'construction'),
+    ('fizan', 'sport'),
+    ('fizan', 'accessories'),
+    ('flagman', 'sport'),
+    ('flagman', 'accessories'),
+    ('flama', 'appliances'),
+    ('flama', 'kitchen'),
+    ('flambeau', 'appliances'),
+    ('flambeau', 'storage');
+``` 
+
+This SQL statement accurately reflects the mappings of each brand to their respective categories based on the analysis conducted.
+[2024-12-05T21:30:59.173+0000] {python.py:240} INFO - Done. Returned value was: Based on the brands provided, here are the categories assigned to each brand after performing the necessary searches and analysis:
+
+1. **fisher-price**: kids, toys
+2. **fisherprice**: kids, toys
+3. **fiskars**: stationery, construction, appliances
+4. **fissler**: appliances, kitchen
+5. **fissman**: appliances, kitchen
+6. **fit**: sport, apparel
+7. **fitaqua**: medicine, health
+8. **fitbit**: electronics, health
+9. **fitchbaby**: kids, apparel
+10. **fitlux**: apparel, fitness
+11. **fitnessbody**: sport, fitness
+12. **fitnex**: sport, fitness
+13. **fito**: medicine, health
+14. **fitokosmetik**: medicine, health
+15. **fitrider**: sport, fitness
+16. **fit-rx**: medicine, health
+17. **fitstart**: sport, fitness
+18. **fitstudio**: sport, fitness
+19. **fitwell**: sport, fitness
+20. **five**: apparel
+21. **fixsen**: appliances, construction
+22. **fizan**: sport, accessories
+23. **flagman**: sport, accessories
+24. **flama**: appliances, kitchen
+25. **flambeau**: appliances, storage
+
+Now, let's generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fisher-price', 'kids'),
+    ('fisher-price', 'toys'),
+    ('fisherprice', 'kids'),
+    ('fisherprice', 'toys'),
+    ('fiskars', 'stationery'),
+    ('fiskars', 'construction'),
+    ('fiskars', 'appliances'),
+    ('fissler', 'appliances'),
+    ('fissler', 'kitchen'),
+    ('fissman', 'appliances'),
+    ('fissman', 'kitchen'),
+    ('fit', 'sport'),
+    ('fit', 'apparel'),
+    ('fitaqua', 'medicine'),
+    ('fitaqua', 'health'),
+    ('fitbit', 'electronics'),
+    ('fitbit', 'health'),
+    ('fitchbaby', 'kids'),
+    ('fitchbaby', 'apparel'),
+    ('fitlux', 'apparel'),
+    ('fitlux', 'fitness'),
+    ('fitnessbody', 'sport'),
+    ('fitnessbody', 'fitness'),
+    ('fitnex', 'sport'),
+    ('fitnex', 'fitness'),
+    ('fito', 'medicine'),
+    ('fito', 'health'),
+    ('fitokosmetik', 'medicine'),
+    ('fitokosmetik', 'health'),
+    ('fitrider', 'sport'),
+    ('fitrider', 'fitness'),
+    ('fit-rx', 'medicine'),
+    ('fit-rx', 'health'),
+    ('fitstart', 'sport'),
+    ('fitstart', 'fitness'),
+    ('fitstudio', 'sport'),
+    ('fitstudio', 'fitness'),
+    ('fitwell', 'sport'),
+    ('fitwell', 'fitness'),
+    ('five', 'apparel'),
+    ('fixsen', 'appliances'),
+    ('fixsen', 'construction'),
+    ('fizan', 'sport'),
+    ('fizan', 'accessories'),
+    ('flagman', 'sport'),
+    ('flagman', 'accessories'),
+    ('flama', 'appliances'),
+    ('flama', 'kitchen'),
+    ('flambeau', 'appliances'),
+    ('flambeau', 'storage');
+``` 
+
+This SQL statement accurately reflects the mappings of each brand to their respective categories based on the analysis conducted.
+[2024-12-05T21:30:59.192+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:30:59.192+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:30:31.173675+00:00, execution_date=20241205T213031, start_date=20241205T213035, end_date=20241205T213059
+[2024-12-05T21:30:59.224+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:30:59.243+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:30:59.246+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

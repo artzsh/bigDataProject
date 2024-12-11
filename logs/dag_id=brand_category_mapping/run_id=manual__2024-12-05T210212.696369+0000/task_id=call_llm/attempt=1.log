@@ -1,0 +1,150 @@
+[2024-12-05T21:02:17.822+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:02:17.835+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:02:12.696369+00:00 [queued]>
+[2024-12-05T21:02:17.842+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:02:12.696369+00:00 [queued]>
+[2024-12-05T21:02:17.843+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:02:17.857+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:02:12.696369+00:00
+[2024-12-05T21:02:17.863+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2882) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:02:17.864+0000] {standard_task_runner.py:72} INFO - Started process 2883 to run task
+[2024-12-05T21:02:17.865+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:02:12.696369+00:00', '--job-id', '636', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpe8ou2t6e']
+[2024-12-05T21:02:17.866+0000] {standard_task_runner.py:105} INFO - Job 636: Subtask call_llm
+[2024-12-05T21:02:17.903+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:02:12.696369+00:00 [running]> on host c7780884450d
+[2024-12-05T21:02:17.966+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:02:12.696369+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:02:12.696369+00:00'
+[2024-12-05T21:02:17.967+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:02:17.985+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['asics', 'asil', 'askona', 'asm', 'aspandau', 'aspekt', 'asrock', 'assorti', 'ast', 'astana', 'astell', 'aston', 'astrel', 'astrid', 'asus', 'asustor', 'atamra', 'atelier', 'ateliero', 'aten', 'ateox', 'atk', 'atkinsons', 'atlant', 'atlantic'], 'next_index': 400}
+[2024-12-05T21:02:17.986+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:02:18.420+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:02:39.011+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the assigned categories for each brand based on the search results:
+
+1. **asics**: sport
+2. **asil**: furniture
+3. **askona**: furniture, appliances
+4. **asm**: computers, electronics
+5. **aspandau**: appliances
+6. **aspekt**: stationery
+7. **asrock**: computers, electronics
+8. **assorti**: food (not in the provided categories, so I'll assign accessories)
+9. **ast**: electronics
+10. **astana**: furniture
+11. **astell**: electronics
+12. **aston**: auto
+13. **astrel**: electronics
+14. **astrid**: accessories
+15. **asus**: computers, electronics
+16. **asustor**: computers, electronics
+17. **atamra**: furniture
+18. **atelier**: apparel, accessories
+19. **ateliero**: furniture
+20. **aten**: electronics
+21. **ateox**: electronics
+22. **atk**: electronics
+23. **atkinsons**: accessories
+24. **atlant**: appliances
+25. **atlantic**: appliances
+
+Now, here’s the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('asics', 'sport'),
+    ('asil', 'furniture'),
+    ('askona', 'furniture'),
+    ('askona', 'appliances'),
+    ('asm', 'computers'),
+    ('asm', 'electronics'),
+    ('aspandau', 'appliances'),
+    ('aspekt', 'stationery'),
+    ('asrock', 'computers'),
+    ('asrock', 'electronics'),
+    ('assorti', 'accessories'),
+    ('ast', 'electronics'),
+    ('astana', 'furniture'),
+    ('astell', 'electronics'),
+    ('aston', 'auto'),
+    ('astrel', 'electronics'),
+    ('astrid', 'accessories'),
+    ('asus', 'computers'),
+    ('asus', 'electronics'),
+    ('asustor', 'computers'),
+    ('asustor', 'electronics'),
+    ('atamra', 'furniture'),
+    ('atelier', 'apparel'),
+    ('atelier', 'accessories'),
+    ('ateliero', 'furniture'),
+    ('aten', 'electronics'),
+    ('ateox', 'electronics'),
+    ('atk', 'electronics'),
+    ('atkinsons', 'accessories'),
+    ('atlant', 'appliances'),
+    ('atlantic', 'appliances');
+```
+[2024-12-05T21:02:39.012+0000] {python.py:240} INFO - Done. Returned value was: Here are the assigned categories for each brand based on the search results:
+
+1. **asics**: sport
+2. **asil**: furniture
+3. **askona**: furniture, appliances
+4. **asm**: computers, electronics
+5. **aspandau**: appliances
+6. **aspekt**: stationery
+7. **asrock**: computers, electronics
+8. **assorti**: food (not in the provided categories, so I'll assign accessories)
+9. **ast**: electronics
+10. **astana**: furniture
+11. **astell**: electronics
+12. **aston**: auto
+13. **astrel**: electronics
+14. **astrid**: accessories
+15. **asus**: computers, electronics
+16. **asustor**: computers, electronics
+17. **atamra**: furniture
+18. **atelier**: apparel, accessories
+19. **ateliero**: furniture
+20. **aten**: electronics
+21. **ateox**: electronics
+22. **atk**: electronics
+23. **atkinsons**: accessories
+24. **atlant**: appliances
+25. **atlantic**: appliances
+
+Now, here’s the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('asics', 'sport'),
+    ('asil', 'furniture'),
+    ('askona', 'furniture'),
+    ('askona', 'appliances'),
+    ('asm', 'computers'),
+    ('asm', 'electronics'),
+    ('aspandau', 'appliances'),
+    ('aspekt', 'stationery'),
+    ('asrock', 'computers'),
+    ('asrock', 'electronics'),
+    ('assorti', 'accessories'),
+    ('ast', 'electronics'),
+    ('astana', 'furniture'),
+    ('astell', 'electronics'),
+    ('aston', 'auto'),
+    ('astrel', 'electronics'),
+    ('astrid', 'accessories'),
+    ('asus', 'computers'),
+    ('asus', 'electronics'),
+    ('asustor', 'computers'),
+    ('asustor', 'electronics'),
+    ('atamra', 'furniture'),
+    ('atelier', 'apparel'),
+    ('atelier', 'accessories'),
+    ('ateliero', 'furniture'),
+    ('aten', 'electronics'),
+    ('ateox', 'electronics'),
+    ('atk', 'electronics'),
+    ('atkinsons', 'accessories'),
+    ('atlant', 'appliances'),
+    ('atlantic', 'appliances');
+```
+[2024-12-05T21:02:39.031+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:02:39.032+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:02:12.696369+00:00, execution_date=20241205T210212, start_date=20241205T210217, end_date=20241205T210239
+[2024-12-05T21:02:39.050+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:02:39.069+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:02:39.072+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,176 @@
+[2024-12-05T21:36:34.781+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:36:34.794+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:36:29.345645+00:00 [queued]>
+[2024-12-05T21:36:34.801+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:36:29.345645+00:00 [queued]>
+[2024-12-05T21:36:34.802+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:36:34.816+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:36:29.345645+00:00
+[2024-12-05T21:36:34.822+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4741) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:36:34.824+0000] {standard_task_runner.py:72} INFO - Started process 4742 to run task
+[2024-12-05T21:36:34.824+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:36:29.345645+00:00', '--job-id', '1038', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpf1x275_x']
+[2024-12-05T21:36:34.826+0000] {standard_task_runner.py:105} INFO - Job 1038: Subtask call_llm
+[2024-12-05T21:36:34.867+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:36:29.345645+00:00 [running]> on host c7780884450d
+[2024-12-05T21:36:34.939+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:36:29.345645+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:36:29.345645+00:00'
+[2024-12-05T21:36:34.940+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:36:34.962+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['greta', 'gretsch', 'greyder', 'greys', 'grillver', 'grinda', 'gripmax', 'grizzly', 'grohe', 'gross', 'grossman', 'groundzero', 'grovana', 'grownup', 'grow-with-me', 'grozz', 'grundfos', 'gs', 'g.skill', 'gskill', 'g-stone', 'gt', 'gtec', 'guangwei', 'guardo'], 'next_index': 2075}
+[2024-12-05T21:36:34.963+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:36:35.381+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:37:01.754+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of each brand to its predefined categories based on the search results:
+
+1. **greta** - apparel
+2. **gretsch** - instruments, accessories
+3. **greyder** - apparel, accessories
+4. **greys** - accessories, apparel
+5. **grillver** - appliances
+6. **grinda** - construction, appliances
+7. **gripmax** - auto, accessories
+8. **grizzly** - tools, construction
+9. **grohe** - appliances, construction
+10. **gross** - appliances
+11. **grossman** - appliances, construction
+12. **groundzero** - electronics
+13. **grovana** - accessories, apparel
+14. **grownup** - kids, apparel
+15. **grow-with-me** - kids, apparel
+16. **grozz** - electronics, appliances
+17. **grundfos** - appliances, construction
+18. **gs** - electronics, computers
+19. **g.skill** - computers, electronics
+20. **gskill** - computers, electronics
+21. **g-stone** - electronics
+22. **gt** - electronics, auto
+23. **gtec** - electronics, computers
+24. **guangwei** - electronics
+25. **guardo** - accessories, apparel
+
+Now, here’s the SQL INSERT statement based on the mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('greta', 'apparel'),
+    ('gretsch', 'accessories'),
+    ('gretsch', 'instruments'),
+    ('greyder', 'apparel'),
+    ('greyder', 'accessories'),
+    ('greys', 'accessories'),
+    ('greys', 'apparel'),
+    ('grillver', 'appliances'),
+    ('grinda', 'construction'),
+    ('grinda', 'appliances'),
+    ('gripmax', 'auto'),
+    ('gripmax', 'accessories'),
+    ('grizzly', 'tools'),
+    ('grizzly', 'construction'),
+    ('grohe', 'appliances'),
+    ('grohe', 'construction'),
+    ('gross', 'appliances'),
+    ('grossman', 'appliances'),
+    ('grossman', 'construction'),
+    ('groundzero', 'electronics'),
+    ('grovana', 'accessories'),
+    ('grovana', 'apparel'),
+    ('grownup', 'kids'),
+    ('grownup', 'apparel'),
+    ('grow-with-me', 'kids'),
+    ('grow-with-me', 'apparel'),
+    ('grozz', 'electronics'),
+    ('grozz', 'appliances'),
+    ('grundfos', 'appliances'),
+    ('grundfos', 'construction'),
+    ('gs', 'electronics'),
+    ('gs', 'computers'),
+    ('g.skill', 'computers'),
+    ('g.skill', 'electronics'),
+    ('gskill', 'computers'),
+    ('gskill', 'electronics'),
+    ('g-stone', 'electronics'),
+    ('gt', 'electronics'),
+    ('gt', 'auto'),
+    ('gtec', 'electronics'),
+    ('gtec', 'computers'),
+    ('guangwei', 'electronics'),
+    ('guardo', 'accessories'),
+    ('guardo', 'apparel');
+```
+[2024-12-05T21:37:01.755+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of each brand to its predefined categories based on the search results:
+
+1. **greta** - apparel
+2. **gretsch** - instruments, accessories
+3. **greyder** - apparel, accessories
+4. **greys** - accessories, apparel
+5. **grillver** - appliances
+6. **grinda** - construction, appliances
+7. **gripmax** - auto, accessories
+8. **grizzly** - tools, construction
+9. **grohe** - appliances, construction
+10. **gross** - appliances
+11. **grossman** - appliances, construction
+12. **groundzero** - electronics
+13. **grovana** - accessories, apparel
+14. **grownup** - kids, apparel
+15. **grow-with-me** - kids, apparel
+16. **grozz** - electronics, appliances
+17. **grundfos** - appliances, construction
+18. **gs** - electronics, computers
+19. **g.skill** - computers, electronics
+20. **gskill** - computers, electronics
+21. **g-stone** - electronics
+22. **gt** - electronics, auto
+23. **gtec** - electronics, computers
+24. **guangwei** - electronics
+25. **guardo** - accessories, apparel
+
+Now, here’s the SQL INSERT statement based on the mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('greta', 'apparel'),
+    ('gretsch', 'accessories'),
+    ('gretsch', 'instruments'),
+    ('greyder', 'apparel'),
+    ('greyder', 'accessories'),
+    ('greys', 'accessories'),
+    ('greys', 'apparel'),
+    ('grillver', 'appliances'),
+    ('grinda', 'construction'),
+    ('grinda', 'appliances'),
+    ('gripmax', 'auto'),
+    ('gripmax', 'accessories'),
+    ('grizzly', 'tools'),
+    ('grizzly', 'construction'),
+    ('grohe', 'appliances'),
+    ('grohe', 'construction'),
+    ('gross', 'appliances'),
+    ('grossman', 'appliances'),
+    ('grossman', 'construction'),
+    ('groundzero', 'electronics'),
+    ('grovana', 'accessories'),
+    ('grovana', 'apparel'),
+    ('grownup', 'kids'),
+    ('grownup', 'apparel'),
+    ('grow-with-me', 'kids'),
+    ('grow-with-me', 'apparel'),
+    ('grozz', 'electronics'),
+    ('grozz', 'appliances'),
+    ('grundfos', 'appliances'),
+    ('grundfos', 'construction'),
+    ('gs', 'electronics'),
+    ('gs', 'computers'),
+    ('g.skill', 'computers'),
+    ('g.skill', 'electronics'),
+    ('gskill', 'computers'),
+    ('gskill', 'electronics'),
+    ('g-stone', 'electronics'),
+    ('gt', 'electronics'),
+    ('gt', 'auto'),
+    ('gtec', 'electronics'),
+    ('gtec', 'computers'),
+    ('guangwei', 'electronics'),
+    ('guardo', 'accessories'),
+    ('guardo', 'apparel');
+```
+[2024-12-05T21:37:01.774+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:37:01.774+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:36:29.345645+00:00, execution_date=20241205T213629, start_date=20241205T213634, end_date=20241205T213701
+[2024-12-05T21:37:01.790+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:37:01.806+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:37:01.809+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

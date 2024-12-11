@@ -1,0 +1,160 @@
+[2024-12-05T21:35:36.854+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:35:36.866+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:35:32.127490+00:00 [queued]>
+[2024-12-05T21:35:36.872+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:35:32.127490+00:00 [queued]>
+[2024-12-05T21:35:36.873+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:35:36.885+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:35:32.127490+00:00
+[2024-12-05T21:35:36.891+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4685) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:35:36.892+0000] {standard_task_runner.py:72} INFO - Started process 4686 to run task
+[2024-12-05T21:35:36.892+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:35:32.127490+00:00', '--job-id', '1026', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp5v6keeqt']
+[2024-12-05T21:35:36.894+0000] {standard_task_runner.py:105} INFO - Job 1026: Subtask call_llm
+[2024-12-05T21:35:36.929+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:35:32.127490+00:00 [running]> on host c7780884450d
+[2024-12-05T21:35:36.990+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:35:32.127490+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:35:32.127490+00:00'
+[2024-12-05T21:35:36.991+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:35:37.008+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['gornica', 'gosh', 'go-sport', 'gotway', 'gourmet', 'gpo', 'gracecole', 'gracia', 'graco', 'graf', 'graff', 'graffiti', 'graffitisound', 'grafit', 'granat', 'granchio', 'grand', 'grandeco', 'grandm', 'grandmanar', 'grandstil', 'grandvictory', 'granfest', 'granhel', 'granicom'], 'next_index': 2025}
+[2024-12-05T21:35:37.008+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:35:37.441+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:35:57.322+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the provided brands to the predefined categories based on the search results and logical deductions:
+
+1. **gornica** - appliances
+2. **gosh** - apparel, accessories
+3. **go-sport** - sport, apparel
+4. **gotway** - auto, electronics
+5. **gourmet** - food, appliances
+6. **gpo** - electronics
+7. **gracecole** - kids, apparel
+8. **gracia** - apparel
+9. **graco** - kids, appliances
+10. **graf** - stationery, art supplies
+11. **graff** - stationery, art supplies
+12. **graffiti** - art supplies
+13. **graffitisound** - electronics
+14. **grafit** - stationery, art supplies
+15. **granat** - appliances
+16. **granchio** - food, appliances
+17. **grand** - furniture
+18. **grandeco** - furniture
+19. **grandm** - furniture
+20. **grandmanar** - furniture
+21. **grandstil** - furniture
+22. **grandvictory** - furniture
+23. **granfest** - appliances
+24. **granhel** - appliances
+25. **granicom** - electronics
+
+Now, here is the SQL INSERT statement based on the above mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gornica', 'appliances'),
+    ('gosh', 'apparel'),
+    ('gosh', 'accessories'),
+    ('go-sport', 'sport'),
+    ('go-sport', 'apparel'),
+    ('gotway', 'auto'),
+    ('gotway', 'electronics'),
+    ('gourmet', 'appliances'),
+    ('gpo', 'electronics'),
+    ('gracecole', 'kids'),
+    ('gracecole', 'apparel'),
+    ('gracia', 'apparel'),
+    ('graco', 'kids'),
+    ('graco', 'appliances'),
+    ('graf', 'stationery'),
+    ('graf', 'art supplies'),
+    ('graff', 'stationery'),
+    ('graff', 'art supplies'),
+    ('graffiti', 'art supplies'),
+    ('graffitisound', 'electronics'),
+    ('grafit', 'stationery'),
+    ('grafit', 'art supplies'),
+    ('granat', 'appliances'),
+    ('granchio', 'appliances'),
+    ('granchio', 'food'),
+    ('grand', 'furniture'),
+    ('grandeco', 'furniture'),
+    ('grandm', 'furniture'),
+    ('grandmanar', 'furniture'),
+    ('grandstil', 'furniture'),
+    ('grandvictory', 'furniture'),
+    ('granfest', 'appliances'),
+    ('granhel', 'appliances'),
+    ('granicom', 'electronics');
+```
+
+This SQL statement inserts the brand-category mappings into the specified table.
+[2024-12-05T21:35:57.322+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the provided brands to the predefined categories based on the search results and logical deductions:
+
+1. **gornica** - appliances
+2. **gosh** - apparel, accessories
+3. **go-sport** - sport, apparel
+4. **gotway** - auto, electronics
+5. **gourmet** - food, appliances
+6. **gpo** - electronics
+7. **gracecole** - kids, apparel
+8. **gracia** - apparel
+9. **graco** - kids, appliances
+10. **graf** - stationery, art supplies
+11. **graff** - stationery, art supplies
+12. **graffiti** - art supplies
+13. **graffitisound** - electronics
+14. **grafit** - stationery, art supplies
+15. **granat** - appliances
+16. **granchio** - food, appliances
+17. **grand** - furniture
+18. **grandeco** - furniture
+19. **grandm** - furniture
+20. **grandmanar** - furniture
+21. **grandstil** - furniture
+22. **grandvictory** - furniture
+23. **granfest** - appliances
+24. **granhel** - appliances
+25. **granicom** - electronics
+
+Now, here is the SQL INSERT statement based on the above mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gornica', 'appliances'),
+    ('gosh', 'apparel'),
+    ('gosh', 'accessories'),
+    ('go-sport', 'sport'),
+    ('go-sport', 'apparel'),
+    ('gotway', 'auto'),
+    ('gotway', 'electronics'),
+    ('gourmet', 'appliances'),
+    ('gpo', 'electronics'),
+    ('gracecole', 'kids'),
+    ('gracecole', 'apparel'),
+    ('gracia', 'apparel'),
+    ('graco', 'kids'),
+    ('graco', 'appliances'),
+    ('graf', 'stationery'),
+    ('graf', 'art supplies'),
+    ('graff', 'stationery'),
+    ('graff', 'art supplies'),
+    ('graffiti', 'art supplies'),
+    ('graffitisound', 'electronics'),
+    ('grafit', 'stationery'),
+    ('grafit', 'art supplies'),
+    ('granat', 'appliances'),
+    ('granchio', 'appliances'),
+    ('granchio', 'food'),
+    ('grand', 'furniture'),
+    ('grandeco', 'furniture'),
+    ('grandm', 'furniture'),
+    ('grandmanar', 'furniture'),
+    ('grandstil', 'furniture'),
+    ('grandvictory', 'furniture'),
+    ('granfest', 'appliances'),
+    ('granhel', 'appliances'),
+    ('granicom', 'electronics');
+```
+
+This SQL statement inserts the brand-category mappings into the specified table.
+[2024-12-05T21:35:57.342+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:35:57.342+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:35:32.127490+00:00, execution_date=20241205T213532, start_date=20241205T213536, end_date=20241205T213557
+[2024-12-05T21:35:57.363+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:35:57.381+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:35:57.383+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

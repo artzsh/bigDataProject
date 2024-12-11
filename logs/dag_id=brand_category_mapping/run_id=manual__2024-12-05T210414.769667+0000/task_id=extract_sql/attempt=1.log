@@ -1,0 +1,205 @@
+[2024-12-05T21:04:39.422+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:04:39.434+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:04:14.769667+00:00 [queued]>
+[2024-12-05T21:04:39.441+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:04:14.769667+00:00 [queued]>
+[2024-12-05T21:04:39.441+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:04:39.453+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:04:14.769667+00:00
+[2024-12-05T21:04:39.459+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2999) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:04:39.460+0000] {standard_task_runner.py:72} INFO - Started process 3000 to run task
+[2024-12-05T21:04:39.461+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:04:14.769667+00:00', '--job-id', '661', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpb1dvx5vy']
+[2024-12-05T21:04:39.462+0000] {standard_task_runner.py:105} INFO - Job 661: Subtask extract_sql
+[2024-12-05T21:04:39.496+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:04:14.769667+00:00 [running]> on host c7780884450d
+[2024-12-05T21:04:39.556+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:04:14.769667+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:04:14.769667+00:00'
+[2024-12-05T21:04:39.557+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:04:39.575+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the brands provided, here are the assigned categories for each brand after performing the necessary searches:
+
+1. **babycare** - kids, accessories
+2. **babycarrier** - kids, accessories
+3. **babygo** - kids, accessories
+4. **babygrace** - kids, accessories
+5. **babyhit** - kids, accessories
+6. **babykiss** - kids, accessories
+7. **babyline** - kids, accessories
+8. **babyliss** - electronics, accessories
+9. **babylisspro** - electronics, accessories
+10. **babylock** - appliances, accessories
+11. **babymoov** - kids, appliances
+12. **babyok** - kids, accessories
+13. **babyono** - kids, accessories
+14. **babys** - kids, accessories
+15. **babysing** - kids, accessories
+16. **babysinq** - kids, accessories
+17. **babyswing** - kids, appliances
+18. **babytime** - kids, accessories
+19. **babyzen** - kids, accessories
+20. **babyzz** - kids, accessories
+21. **badboy** - apparel, accessories
+22. **baden** - sport, accessories
+23. **badlandgames** - electronics, kids
+24. **bafang** - auto, electronics
+25. **bagdanoviceskijfarforyvyjzavod** - construction, appliances
+
+Now, generating the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('babycare', 'kids'),
+    ('babycare', 'accessories'),
+    ('babycarrier', 'kids'),
+    ('babycarrier', 'accessories'),
+    ('babygo', 'kids'),
+    ('babygo', 'accessories'),
+    ('babygrace', 'kids'),
+    ('babygrace', 'accessories'),
+    ('babyhit', 'kids'),
+    ('babyhit', 'accessories'),
+    ('babykiss', 'kids'),
+    ('babykiss', 'accessories'),
+    ('babyline', 'kids'),
+    ('babyline', 'accessories'),
+    ('babyliss', 'electronics'),
+    ('babyliss', 'accessories'),
+    ('babylisspro', 'electronics'),
+    ('babylisspro', 'accessories'),
+    ('babylock', 'appliances'),
+    ('babylock', 'accessories'),
+    ('babymoov', 'kids'),
+    ('babymoov', 'appliances'),
+    ('babyok', 'kids'),
+    ('babyok', 'accessories'),
+    ('babyono', 'kids'),
+    ('babyono', 'accessories'),
+    ('babys', 'kids'),
+    ('babys', 'accessories'),
+    ('babysing', 'kids'),
+    ('babysing', 'accessories'),
+    ('babysinq', 'kids'),
+    ('babysinq', 'accessories'),
+    ('babyswing', 'kids'),
+    ('babyswing', 'appliances'),
+    ('babytime', 'kids'),
+    ('babytime', 'accessories'),
+    ('babyzen', 'kids'),
+    ('babyzen', 'accessories'),
+    ('babyzz', 'kids'),
+    ('babyzz', 'accessories'),
+    ('badboy', 'apparel'),
+    ('badboy', 'accessories'),
+    ('baden', 'sport'),
+    ('baden', 'accessories'),
+    ('badlandgames', 'electronics'),
+    ('badlandgames', 'kids'),
+    ('bafang', 'auto'),
+    ('bafang', 'electronics'),
+    ('bagdanoviceskijfarforyvyjzavod', 'construction'),
+    ('bagdanoviceskijfarforyvyjzavod', 'appliances');
+```
+[2024-12-05T21:04:39.577+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('babycare', 'kids'),
+    ('babycare', 'accessories'),
+    ('babycarrier', 'kids'),
+    ('babycarrier', 'accessories'),
+    ('babygo', 'kids'),
+    ('babygo', 'accessories'),
+    ('babygrace', 'kids'),
+    ('babygrace', 'accessories'),
+    ('babyhit', 'kids'),
+    ('babyhit', 'accessories'),
+    ('babykiss', 'kids'),
+    ('babykiss', 'accessories'),
+    ('babyline', 'kids'),
+    ('babyline', 'accessories'),
+    ('babyliss', 'electronics'),
+    ('babyliss', 'accessories'),
+    ('babylisspro', 'electronics'),
+    ('babylisspro', 'accessories'),
+    ('babylock', 'appliances'),
+    ('babylock', 'accessories'),
+    ('babymoov', 'kids'),
+    ('babymoov', 'appliances'),
+    ('babyok', 'kids'),
+    ('babyok', 'accessories'),
+    ('babyono', 'kids'),
+    ('babyono', 'accessories'),
+    ('babys', 'kids'),
+    ('babys', 'accessories'),
+    ('babysing', 'kids'),
+    ('babysing', 'accessories'),
+    ('babysinq', 'kids'),
+    ('babysinq', 'accessories'),
+    ('babyswing', 'kids'),
+    ('babyswing', 'appliances'),
+    ('babytime', 'kids'),
+    ('babytime', 'accessories'),
+    ('babyzen', 'kids'),
+    ('babyzen', 'accessories'),
+    ('babyzz', 'kids'),
+    ('babyzz', 'accessories'),
+    ('badboy', 'apparel'),
+    ('badboy', 'accessories'),
+    ('baden', 'sport'),
+    ('baden', 'accessories'),
+    ('badlandgames', 'electronics'),
+    ('badlandgames', 'kids'),
+    ('bafang', 'auto'),
+    ('bafang', 'electronics'),
+    ('bagdanoviceskijfarforyvyjzavod', 'construction'),
+    ('bagdanoviceskijfarforyvyjzavod', 'appliances');
+[2024-12-05T21:04:39.577+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('babycare', 'kids'),
+    ('babycare', 'accessories'),
+    ('babycarrier', 'kids'),
+    ('babycarrier', 'accessories'),
+    ('babygo', 'kids'),
+    ('babygo', 'accessories'),
+    ('babygrace', 'kids'),
+    ('babygrace', 'accessories'),
+    ('babyhit', 'kids'),
+    ('babyhit', 'accessories'),
+    ('babykiss', 'kids'),
+    ('babykiss', 'accessories'),
+    ('babyline', 'kids'),
+    ('babyline', 'accessories'),
+    ('babyliss', 'electronics'),
+    ('babyliss', 'accessories'),
+    ('babylisspro', 'electronics'),
+    ('babylisspro', 'accessories'),
+    ('babylock', 'appliances'),
+    ('babylock', 'accessories'),
+    ('babymoov', 'kids'),
+    ('babymoov', 'appliances'),
+    ('babyok', 'kids'),
+    ('babyok', 'accessories'),
+    ('babyono', 'kids'),
+    ('babyono', 'accessories'),
+    ('babys', 'kids'),
+    ('babys', 'accessories'),
+    ('babysing', 'kids'),
+    ('babysing', 'accessories'),
+    ('babysinq', 'kids'),
+    ('babysinq', 'accessories'),
+    ('babyswing', 'kids'),
+    ('babyswing', 'appliances'),
+    ('babytime', 'kids'),
+    ('babytime', 'accessories'),
+    ('babyzen', 'kids'),
+    ('babyzen', 'accessories'),
+    ('babyzz', 'kids'),
+    ('babyzz', 'accessories'),
+    ('badboy', 'apparel'),
+    ('badboy', 'accessories'),
+    ('baden', 'sport'),
+    ('baden', 'accessories'),
+    ('badlandgames', 'electronics'),
+    ('badlandgames', 'kids'),
+    ('bafang', 'auto'),
+    ('bafang', 'electronics'),
+    ('bagdanoviceskijfarforyvyjzavod', 'construction'),
+    ('bagdanoviceskijfarforyvyjzavod', 'appliances');
+[2024-12-05T21:04:39.596+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:04:39.596+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:04:14.769667+00:00, execution_date=20241205T210414, start_date=20241205T210439, end_date=20241205T210439
+[2024-12-05T21:04:39.634+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:04:39.655+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:04:39.659+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

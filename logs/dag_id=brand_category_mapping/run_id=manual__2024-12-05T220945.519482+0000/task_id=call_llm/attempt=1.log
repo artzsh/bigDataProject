@@ -1,0 +1,172 @@
+[2024-12-05T22:09:51.052+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:09:51.068+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:09:45.519482+00:00 [queued]>
+[2024-12-05T22:09:51.076+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:09:45.519482+00:00 [queued]>
+[2024-12-05T22:09:51.077+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:09:51.089+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:09:45.519482+00:00
+[2024-12-05T22:09:51.095+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6477) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:09:51.097+0000] {standard_task_runner.py:72} INFO - Started process 6478 to run task
+[2024-12-05T22:09:51.097+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:09:45.519482+00:00', '--job-id', '1410', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpf_tjosf4']
+[2024-12-05T22:09:51.099+0000] {standard_task_runner.py:105} INFO - Job 1410: Subtask call_llm
+[2024-12-05T22:09:51.136+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:09:45.519482+00:00 [running]> on host c7780884450d
+[2024-12-05T22:09:51.202+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:09:45.519482+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:09:45.519482+00:00'
+[2024-12-05T22:09:51.203+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:09:51.220+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['nobby', 'nobleroyale', 'nobu', 'nocnezna', 'noctua', 'nodor', 'nokia', 'nokian', 'noktamakro', 'nomad', 'nomi', 'noname', 'noopies', 'noordi', 'noppies', 'noppiesbaby', 'nord', 'nordic', 'nordica', 'nordictrack', 'nordland', 'nordway', 'norfin', 'norman', 'normann'], 'next_index': 3625}
+[2024-12-05T22:09:51.221+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:09:51.639+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:10:07.768+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to the predefined categories based on the searches conducted:
+
+1. **nobby**: accessories
+2. **nobleroyale**: furniture
+3. **nobu**: appliances, furniture
+4. **nocnezna**: apparel
+5. **noctua**: electronics, computers
+6. **nodor**: sport
+7. **nokia**: electronics, computers
+8. **nokian**: auto, country_yard
+9. **noktamakro**: electronics
+10. **nomad**: accessories
+11. **nomi**: appliances
+12. **noname**: apparel
+13. **noopies**: kids, apparel
+14. **noordi**: kids, apparel
+15. **noppies**: kids, apparel
+16. **noppiesbaby**: kids, apparel
+17. **nord**: apparel, accessories
+18. **nordic**: apparel, furniture
+19. **nordica**: sport, apparel
+20. **nordictrack**: sport, appliances
+21. **nordland**: apparel
+22. **nordway**: sport, apparel
+23. **norfin**: sport, apparel
+24. **norman**: furniture
+25. **normann**: furniture, accessories
+
+Now, let's generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('nobby', 'accessories'),
+    ('nobleroyale', 'furniture'),
+    ('nobu', 'appliances'),
+    ('nobu', 'furniture'),
+    ('nocnezna', 'apparel'),
+    ('noctua', 'electronics'),
+    ('noctua', 'computers'),
+    ('nodor', 'sport'),
+    ('nokia', 'electronics'),
+    ('nokia', 'computers'),
+    ('nokian', 'auto'),
+    ('nokian', 'country_yard'),
+    ('noktamakro', 'electronics'),
+    ('nomad', 'accessories'),
+    ('nomi', 'appliances'),
+    ('noname', 'apparel'),
+    ('noopies', 'kids'),
+    ('noopies', 'apparel'),
+    ('noordi', 'kids'),
+    ('noordi', 'apparel'),
+    ('noppies', 'kids'),
+    ('noppies', 'apparel'),
+    ('noppiesbaby', 'kids'),
+    ('noppiesbaby', 'apparel'),
+    ('nord', 'apparel'),
+    ('nord', 'accessories'),
+    ('nordic', 'apparel'),
+    ('nordic', 'furniture'),
+    ('nordica', 'sport'),
+    ('nordica', 'apparel'),
+    ('nordictrack', 'sport'),
+    ('nordictrack', 'appliances'),
+    ('nordland', 'apparel'),
+    ('nordway', 'sport'),
+    ('nordway', 'apparel'),
+    ('norfin', 'sport'),
+    ('norfin', 'apparel'),
+    ('norman', 'furniture'),
+    ('normann', 'furniture'),
+    ('normann', 'accessories');
+``` 
+
+This SQL statement maps each brand to its corresponding categories based on the search results.
+[2024-12-05T22:10:07.768+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to the predefined categories based on the searches conducted:
+
+1. **nobby**: accessories
+2. **nobleroyale**: furniture
+3. **nobu**: appliances, furniture
+4. **nocnezna**: apparel
+5. **noctua**: electronics, computers
+6. **nodor**: sport
+7. **nokia**: electronics, computers
+8. **nokian**: auto, country_yard
+9. **noktamakro**: electronics
+10. **nomad**: accessories
+11. **nomi**: appliances
+12. **noname**: apparel
+13. **noopies**: kids, apparel
+14. **noordi**: kids, apparel
+15. **noppies**: kids, apparel
+16. **noppiesbaby**: kids, apparel
+17. **nord**: apparel, accessories
+18. **nordic**: apparel, furniture
+19. **nordica**: sport, apparel
+20. **nordictrack**: sport, appliances
+21. **nordland**: apparel
+22. **nordway**: sport, apparel
+23. **norfin**: sport, apparel
+24. **norman**: furniture
+25. **normann**: furniture, accessories
+
+Now, let's generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('nobby', 'accessories'),
+    ('nobleroyale', 'furniture'),
+    ('nobu', 'appliances'),
+    ('nobu', 'furniture'),
+    ('nocnezna', 'apparel'),
+    ('noctua', 'electronics'),
+    ('noctua', 'computers'),
+    ('nodor', 'sport'),
+    ('nokia', 'electronics'),
+    ('nokia', 'computers'),
+    ('nokian', 'auto'),
+    ('nokian', 'country_yard'),
+    ('noktamakro', 'electronics'),
+    ('nomad', 'accessories'),
+    ('nomi', 'appliances'),
+    ('noname', 'apparel'),
+    ('noopies', 'kids'),
+    ('noopies', 'apparel'),
+    ('noordi', 'kids'),
+    ('noordi', 'apparel'),
+    ('noppies', 'kids'),
+    ('noppies', 'apparel'),
+    ('noppiesbaby', 'kids'),
+    ('noppiesbaby', 'apparel'),
+    ('nord', 'apparel'),
+    ('nord', 'accessories'),
+    ('nordic', 'apparel'),
+    ('nordic', 'furniture'),
+    ('nordica', 'sport'),
+    ('nordica', 'apparel'),
+    ('nordictrack', 'sport'),
+    ('nordictrack', 'appliances'),
+    ('nordland', 'apparel'),
+    ('nordway', 'sport'),
+    ('nordway', 'apparel'),
+    ('norfin', 'sport'),
+    ('norfin', 'apparel'),
+    ('norman', 'furniture'),
+    ('normann', 'furniture'),
+    ('normann', 'accessories');
+``` 
+
+This SQL statement maps each brand to its corresponding categories based on the search results.
+[2024-12-05T22:10:07.790+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:10:07.791+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:09:45.519482+00:00, execution_date=20241205T220945, start_date=20241205T220951, end_date=20241205T221007
+[2024-12-05T22:10:07.845+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:10:07.864+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:10:07.869+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

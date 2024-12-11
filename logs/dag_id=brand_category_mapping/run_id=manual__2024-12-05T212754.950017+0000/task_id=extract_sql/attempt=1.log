@@ -1,0 +1,130 @@
+[2024-12-05T21:28:16.328+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:28:16.340+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:27:54.950017+00:00 [queued]>
+[2024-12-05T21:28:16.346+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:27:54.950017+00:00 [queued]>
+[2024-12-05T21:28:16.347+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:28:16.359+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:27:54.950017+00:00
+[2024-12-05T21:28:16.365+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4277) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:28:16.366+0000] {standard_task_runner.py:72} INFO - Started process 4278 to run task
+[2024-12-05T21:28:16.366+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:27:54.950017+00:00', '--job-id', '937', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpvlf_flew']
+[2024-12-05T21:28:16.368+0000] {standard_task_runner.py:105} INFO - Job 937: Subtask extract_sql
+[2024-12-05T21:28:16.402+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:27:54.950017+00:00 [running]> on host c7780884450d
+[2024-12-05T21:28:16.463+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:27:54.950017+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:27:54.950017+00:00'
+[2024-12-05T21:28:16.465+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:28:16.482+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the search queries and the information typically available for these brands, here are the assigned categories:
+
+1. **eureka** - appliances
+2. **euroboor** - construction
+3. **eurogold** - accessories
+4. **eurolight** - electronics
+5. **eurolux** - electronics
+6. **europafurs** - apparel
+7. **europrint** - stationery
+8. **europusk** - electronics
+9. **eurostek** - electronics
+10. **eurosvet** - electronics
+11. **eurotrading** - appliances
+12. **eva** - kids
+13. **evamosaic** - accessories
+14. **eveline** - medicine
+15. **evelinecosmetics** - medicine
+16. **evenflo** - kids
+17. **everest** - apparel
+18. **everflo** - appliances
+19. **everlast** - sport
+20. **everybot** - appliances
+21. **evga** - computers
+22. **evgo** - auto
+23. **evh** - accessories
+24. **eviza** - accessories
+25. **evo** - sport
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('eureka', 'appliances'),
+    ('euroboor', 'construction'),
+    ('eurogold', 'accessories'),
+    ('eurolight', 'electronics'),
+    ('eurolux', 'electronics'),
+    ('europafurs', 'apparel'),
+    ('europrint', 'stationery'),
+    ('europusk', 'electronics'),
+    ('eurostek', 'electronics'),
+    ('eurosvet', 'electronics'),
+    ('eurotrading', 'appliances'),
+    ('eva', 'kids'),
+    ('evamosaic', 'accessories'),
+    ('eveline', 'medicine'),
+    ('evelinecosmetics', 'medicine'),
+    ('evenflo', 'kids'),
+    ('everest', 'apparel'),
+    ('everflo', 'appliances'),
+    ('everlast', 'sport'),
+    ('everybot', 'appliances'),
+    ('evga', 'computers'),
+    ('evgo', 'auto'),
+    ('evh', 'accessories'),
+    ('eviza', 'accessories'),
+    ('evo', 'sport');
+```
+[2024-12-05T21:28:16.482+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('eureka', 'appliances'),
+    ('euroboor', 'construction'),
+    ('eurogold', 'accessories'),
+    ('eurolight', 'electronics'),
+    ('eurolux', 'electronics'),
+    ('europafurs', 'apparel'),
+    ('europrint', 'stationery'),
+    ('europusk', 'electronics'),
+    ('eurostek', 'electronics'),
+    ('eurosvet', 'electronics'),
+    ('eurotrading', 'appliances'),
+    ('eva', 'kids'),
+    ('evamosaic', 'accessories'),
+    ('eveline', 'medicine'),
+    ('evelinecosmetics', 'medicine'),
+    ('evenflo', 'kids'),
+    ('everest', 'apparel'),
+    ('everflo', 'appliances'),
+    ('everlast', 'sport'),
+    ('everybot', 'appliances'),
+    ('evga', 'computers'),
+    ('evgo', 'auto'),
+    ('evh', 'accessories'),
+    ('eviza', 'accessories'),
+    ('evo', 'sport');
+[2024-12-05T21:28:16.483+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('eureka', 'appliances'),
+    ('euroboor', 'construction'),
+    ('eurogold', 'accessories'),
+    ('eurolight', 'electronics'),
+    ('eurolux', 'electronics'),
+    ('europafurs', 'apparel'),
+    ('europrint', 'stationery'),
+    ('europusk', 'electronics'),
+    ('eurostek', 'electronics'),
+    ('eurosvet', 'electronics'),
+    ('eurotrading', 'appliances'),
+    ('eva', 'kids'),
+    ('evamosaic', 'accessories'),
+    ('eveline', 'medicine'),
+    ('evelinecosmetics', 'medicine'),
+    ('evenflo', 'kids'),
+    ('everest', 'apparel'),
+    ('everflo', 'appliances'),
+    ('everlast', 'sport'),
+    ('everybot', 'appliances'),
+    ('evga', 'computers'),
+    ('evgo', 'auto'),
+    ('evh', 'accessories'),
+    ('eviza', 'accessories'),
+    ('evo', 'sport');
+[2024-12-05T21:28:16.499+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:28:16.499+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:27:54.950017+00:00, execution_date=20241205T212754, start_date=20241205T212816, end_date=20241205T212816
+[2024-12-05T21:28:16.540+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:28:16.557+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:28:16.560+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

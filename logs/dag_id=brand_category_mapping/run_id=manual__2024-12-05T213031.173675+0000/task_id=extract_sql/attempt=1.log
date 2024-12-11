@@ -1,0 +1,207 @@
+[2024-12-05T21:31:00.196+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:31:00.209+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:30:31.173675+00:00 [queued]>
+[2024-12-05T21:31:00.216+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:30:31.173675+00:00 [queued]>
+[2024-12-05T21:31:00.217+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:31:00.230+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:30:31.173675+00:00
+[2024-12-05T21:31:00.238+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4417) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:31:00.239+0000] {standard_task_runner.py:72} INFO - Started process 4418 to run task
+[2024-12-05T21:31:00.239+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:30:31.173675+00:00', '--job-id', '967', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp9y_gt06f']
+[2024-12-05T21:31:00.242+0000] {standard_task_runner.py:105} INFO - Job 967: Subtask extract_sql
+[2024-12-05T21:31:00.282+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:30:31.173675+00:00 [running]> on host c7780884450d
+[2024-12-05T21:31:00.349+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:30:31.173675+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:30:31.173675+00:00'
+[2024-12-05T21:31:00.350+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:31:00.369+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the brands provided, here are the categories assigned to each brand after performing the necessary searches and analysis:
+
+1. **fisher-price**: kids, toys
+2. **fisherprice**: kids, toys
+3. **fiskars**: stationery, construction, appliances
+4. **fissler**: appliances, kitchen
+5. **fissman**: appliances, kitchen
+6. **fit**: sport, apparel
+7. **fitaqua**: medicine, health
+8. **fitbit**: electronics, health
+9. **fitchbaby**: kids, apparel
+10. **fitlux**: apparel, fitness
+11. **fitnessbody**: sport, fitness
+12. **fitnex**: sport, fitness
+13. **fito**: medicine, health
+14. **fitokosmetik**: medicine, health
+15. **fitrider**: sport, fitness
+16. **fit-rx**: medicine, health
+17. **fitstart**: sport, fitness
+18. **fitstudio**: sport, fitness
+19. **fitwell**: sport, fitness
+20. **five**: apparel
+21. **fixsen**: appliances, construction
+22. **fizan**: sport, accessories
+23. **flagman**: sport, accessories
+24. **flama**: appliances, kitchen
+25. **flambeau**: appliances, storage
+
+Now, let's generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fisher-price', 'kids'),
+    ('fisher-price', 'toys'),
+    ('fisherprice', 'kids'),
+    ('fisherprice', 'toys'),
+    ('fiskars', 'stationery'),
+    ('fiskars', 'construction'),
+    ('fiskars', 'appliances'),
+    ('fissler', 'appliances'),
+    ('fissler', 'kitchen'),
+    ('fissman', 'appliances'),
+    ('fissman', 'kitchen'),
+    ('fit', 'sport'),
+    ('fit', 'apparel'),
+    ('fitaqua', 'medicine'),
+    ('fitaqua', 'health'),
+    ('fitbit', 'electronics'),
+    ('fitbit', 'health'),
+    ('fitchbaby', 'kids'),
+    ('fitchbaby', 'apparel'),
+    ('fitlux', 'apparel'),
+    ('fitlux', 'fitness'),
+    ('fitnessbody', 'sport'),
+    ('fitnessbody', 'fitness'),
+    ('fitnex', 'sport'),
+    ('fitnex', 'fitness'),
+    ('fito', 'medicine'),
+    ('fito', 'health'),
+    ('fitokosmetik', 'medicine'),
+    ('fitokosmetik', 'health'),
+    ('fitrider', 'sport'),
+    ('fitrider', 'fitness'),
+    ('fit-rx', 'medicine'),
+    ('fit-rx', 'health'),
+    ('fitstart', 'sport'),
+    ('fitstart', 'fitness'),
+    ('fitstudio', 'sport'),
+    ('fitstudio', 'fitness'),
+    ('fitwell', 'sport'),
+    ('fitwell', 'fitness'),
+    ('five', 'apparel'),
+    ('fixsen', 'appliances'),
+    ('fixsen', 'construction'),
+    ('fizan', 'sport'),
+    ('fizan', 'accessories'),
+    ('flagman', 'sport'),
+    ('flagman', 'accessories'),
+    ('flama', 'appliances'),
+    ('flama', 'kitchen'),
+    ('flambeau', 'appliances'),
+    ('flambeau', 'storage');
+``` 
+
+This SQL statement accurately reflects the mappings of each brand to their respective categories based on the analysis conducted.
+[2024-12-05T21:31:00.370+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fisher-price', 'kids'),
+    ('fisher-price', 'toys'),
+    ('fisherprice', 'kids'),
+    ('fisherprice', 'toys'),
+    ('fiskars', 'stationery'),
+    ('fiskars', 'construction'),
+    ('fiskars', 'appliances'),
+    ('fissler', 'appliances'),
+    ('fissler', 'kitchen'),
+    ('fissman', 'appliances'),
+    ('fissman', 'kitchen'),
+    ('fit', 'sport'),
+    ('fit', 'apparel'),
+    ('fitaqua', 'medicine'),
+    ('fitaqua', 'health'),
+    ('fitbit', 'electronics'),
+    ('fitbit', 'health'),
+    ('fitchbaby', 'kids'),
+    ('fitchbaby', 'apparel'),
+    ('fitlux', 'apparel'),
+    ('fitlux', 'fitness'),
+    ('fitnessbody', 'sport'),
+    ('fitnessbody', 'fitness'),
+    ('fitnex', 'sport'),
+    ('fitnex', 'fitness'),
+    ('fito', 'medicine'),
+    ('fito', 'health'),
+    ('fitokosmetik', 'medicine'),
+    ('fitokosmetik', 'health'),
+    ('fitrider', 'sport'),
+    ('fitrider', 'fitness'),
+    ('fit-rx', 'medicine'),
+    ('fit-rx', 'health'),
+    ('fitstart', 'sport'),
+    ('fitstart', 'fitness'),
+    ('fitstudio', 'sport'),
+    ('fitstudio', 'fitness'),
+    ('fitwell', 'sport'),
+    ('fitwell', 'fitness'),
+    ('five', 'apparel'),
+    ('fixsen', 'appliances'),
+    ('fixsen', 'construction'),
+    ('fizan', 'sport'),
+    ('fizan', 'accessories'),
+    ('flagman', 'sport'),
+    ('flagman', 'accessories'),
+    ('flama', 'appliances'),
+    ('flama', 'kitchen'),
+    ('flambeau', 'appliances'),
+    ('flambeau', 'storage');
+[2024-12-05T21:31:00.370+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fisher-price', 'kids'),
+    ('fisher-price', 'toys'),
+    ('fisherprice', 'kids'),
+    ('fisherprice', 'toys'),
+    ('fiskars', 'stationery'),
+    ('fiskars', 'construction'),
+    ('fiskars', 'appliances'),
+    ('fissler', 'appliances'),
+    ('fissler', 'kitchen'),
+    ('fissman', 'appliances'),
+    ('fissman', 'kitchen'),
+    ('fit', 'sport'),
+    ('fit', 'apparel'),
+    ('fitaqua', 'medicine'),
+    ('fitaqua', 'health'),
+    ('fitbit', 'electronics'),
+    ('fitbit', 'health'),
+    ('fitchbaby', 'kids'),
+    ('fitchbaby', 'apparel'),
+    ('fitlux', 'apparel'),
+    ('fitlux', 'fitness'),
+    ('fitnessbody', 'sport'),
+    ('fitnessbody', 'fitness'),
+    ('fitnex', 'sport'),
+    ('fitnex', 'fitness'),
+    ('fito', 'medicine'),
+    ('fito', 'health'),
+    ('fitokosmetik', 'medicine'),
+    ('fitokosmetik', 'health'),
+    ('fitrider', 'sport'),
+    ('fitrider', 'fitness'),
+    ('fit-rx', 'medicine'),
+    ('fit-rx', 'health'),
+    ('fitstart', 'sport'),
+    ('fitstart', 'fitness'),
+    ('fitstudio', 'sport'),
+    ('fitstudio', 'fitness'),
+    ('fitwell', 'sport'),
+    ('fitwell', 'fitness'),
+    ('five', 'apparel'),
+    ('fixsen', 'appliances'),
+    ('fixsen', 'construction'),
+    ('fizan', 'sport'),
+    ('fizan', 'accessories'),
+    ('flagman', 'sport'),
+    ('flagman', 'accessories'),
+    ('flama', 'appliances'),
+    ('flama', 'kitchen'),
+    ('flambeau', 'appliances'),
+    ('flambeau', 'storage');
+[2024-12-05T21:31:00.387+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:31:00.388+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:30:31.173675+00:00, execution_date=20241205T213031, start_date=20241205T213100, end_date=20241205T213100
+[2024-12-05T21:31:00.413+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:31:00.432+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:31:00.435+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

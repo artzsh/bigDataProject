@@ -1,0 +1,19 @@
+[2024-12-05T18:38:14.723+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T18:38:14.733+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_recursion.trigger_dag_test manual__2024-12-05T18:38:12.084871+00:00 [queued]>
+[2024-12-05T18:38:14.738+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_recursion.trigger_dag_test manual__2024-12-05T18:38:12.084871+00:00 [queued]>
+[2024-12-05T18:38:14.738+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-12-05T18:38:14.747+0000] {taskinstance.py:2889} INFO - Executing <Task(TriggerDagRunOperator): trigger_dag_test> on 2024-12-05 18:38:12.084871+00:00
+[2024-12-05T18:38:14.752+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=199) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T18:38:14.753+0000] {standard_task_runner.py:72} INFO - Started process 201 to run task
+[2024-12-05T18:38:14.754+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'test_recursion', 'trigger_dag_test', 'manual__2024-12-05T18:38:12.084871+00:00', '--job-id', '399', '--raw', '--subdir', 'DAGS_FOLDER/test_recursion.py', '--cfg-path', '/tmp/tmpfwpmz4p2']
+[2024-12-05T18:38:14.755+0000] {standard_task_runner.py:105} INFO - Job 399: Subtask trigger_dag_test
+[2024-12-05T18:38:14.786+0000] {task_command.py:467} INFO - Running <TaskInstance: test_recursion.trigger_dag_test manual__2024-12-05T18:38:12.084871+00:00 [running]> on host c7780884450d
+[2024-12-05T18:38:14.960+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='test_recursion' AIRFLOW_CTX_TASK_ID='trigger_dag_test' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T18:38:12.084871+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T18:38:12.084871+00:00'
+[2024-12-05T18:38:14.961+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T18:38:15.756+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T18:38:15.756+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=test_recursion, task_id=trigger_dag_test, run_id=manual__2024-12-05T18:38:12.084871+00:00, execution_date=20241205T183812, start_date=20241205T183814, end_date=20241205T183815
+[2024-12-05T18:38:15.810+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T18:38:15.820+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T18:38:15.823+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

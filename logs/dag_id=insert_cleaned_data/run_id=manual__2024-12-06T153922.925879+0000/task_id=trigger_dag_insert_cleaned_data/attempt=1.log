@@ -1,0 +1,19 @@
+[2024-12-06T15:42:23.665+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T15:42:23.678+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.trigger_dag_insert_cleaned_data manual__2024-12-06T15:39:22.925879+00:00 [queued]>
+[2024-12-06T15:42:23.686+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.trigger_dag_insert_cleaned_data manual__2024-12-06T15:39:22.925879+00:00 [queued]>
+[2024-12-06T15:42:23.687+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T15:42:23.699+0000] {taskinstance.py:2889} INFO - Executing <Task(TriggerDagRunOperator): trigger_dag_insert_cleaned_data> on 2024-12-06 15:39:22.925879+00:00
+[2024-12-06T15:42:23.706+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3153) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T15:42:23.707+0000] {standard_task_runner.py:72} INFO - Started process 3154 to run task
+[2024-12-06T15:42:23.707+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'trigger_dag_insert_cleaned_data', 'manual__2024-12-06T15:39:22.925879+00:00', '--job-id', '2018', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmp2x42k4sg']
+[2024-12-06T15:42:23.708+0000] {standard_task_runner.py:105} INFO - Job 2018: Subtask trigger_dag_insert_cleaned_data
+[2024-12-06T15:42:23.749+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.trigger_dag_insert_cleaned_data manual__2024-12-06T15:39:22.925879+00:00 [running]> on host cb0074367deb
+[2024-12-06T15:42:23.816+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='trigger_dag_insert_cleaned_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T15:39:22.925879+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T15:39:22.925879+00:00'
+[2024-12-06T15:42:23.817+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T15:42:25.079+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-06T15:42:25.080+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=insert_cleaned_data, task_id=trigger_dag_insert_cleaned_data, run_id=manual__2024-12-06T15:39:22.925879+00:00, execution_date=20241206T153922, start_date=20241206T154223, end_date=20241206T154225
+[2024-12-06T15:42:25.126+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-06T15:42:25.137+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-06T15:42:25.140+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

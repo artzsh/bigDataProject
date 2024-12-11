@@ -1,0 +1,189 @@
+[2024-12-05T21:16:34.881+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:16:34.895+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:16:11.728250+00:00 [queued]>
+[2024-12-05T21:16:34.903+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:16:11.728250+00:00 [queued]>
+[2024-12-05T21:16:34.904+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:16:34.918+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:16:11.728250+00:00
+[2024-12-05T21:16:34.925+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3640) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:16:34.926+0000] {standard_task_runner.py:72} INFO - Started process 3641 to run task
+[2024-12-05T21:16:34.926+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:16:11.728250+00:00', '--job-id', '799', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpina_ox5s']
+[2024-12-05T21:16:34.928+0000] {standard_task_runner.py:105} INFO - Job 799: Subtask extract_sql
+[2024-12-05T21:16:34.966+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:16:11.728250+00:00 [running]> on host c7780884450d
+[2024-12-05T21:16:35.029+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:16:11.728250+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:16:11.728250+00:00'
+[2024-12-05T21:16:35.030+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:16:35.048+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here's the mapping of the brands to their respective categories based on the search results and the predefined category codes:
+
+1. **climadiff**: appliances
+2. **clinch**: accessories, apparel
+3. **clinique**: medicine, cosmetics
+4. **clippasafe**: kids, accessories
+5. **clipstudio**: stationery, computers
+6. **clomapharma**: medicine
+7. **clou**: furniture, home decor
+8. **clover**: stationery, kids
+9. **cmi**: appliances, electronics
+10. **cmt**: apparel
+11. **cnd**: cosmetics, accessories
+12. **coach**: accessories, apparel
+13. **coballe**: accessories
+14. **cobat**: appliances
+15. **cober**: electronics
+16. **cobi**: toys, kids
+17. **cobra**: auto, electronics
+18. **coca-cola**: beverages (not in provided categories)
+19. **coccinelle**: accessories, apparel
+20. **cocochoco**: cosmetics
+21. **codemasters**: computers, electronics, games
+22. **colab**: stationery, electronics
+23. **coleman**: outdoor, sport, appliances
+24. **colgate**: medicine, personal care
+25. **collagen**: medicine, cosmetics
+
+Now, let's generate the SQL INSERT statement based on the mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('climadiff', 'appliances'),
+    ('clinch', 'accessories'),
+    ('clinch', 'apparel'),
+    ('clinique', 'medicine'),
+    ('clinique', 'cosmetics'),
+    ('clippasafe', 'kids'),
+    ('clippasafe', 'accessories'),
+    ('clipstudio', 'stationery'),
+    ('clipstudio', 'computers'),
+    ('clomapharma', 'medicine'),
+    ('clou', 'furniture'),
+    ('clou', 'home decor'),
+    ('clover', 'stationery'),
+    ('clover', 'kids'),
+    ('cmi', 'appliances'),
+    ('cmi', 'electronics'),
+    ('cmt', 'apparel'),
+    ('cnd', 'cosmetics'),
+    ('cnd', 'accessories'),
+    ('coach', 'accessories'),
+    ('coach', 'apparel'),
+    ('coballe', 'accessories'),
+    ('cobat', 'appliances'),
+    ('cober', 'electronics'),
+    ('cobi', 'toys'),
+    ('cobi', 'kids'),
+    ('cobra', 'auto'),
+    ('cobra', 'electronics'),
+    ('coca-cola', 'beverages'),
+    ('coccinelle', 'accessories'),
+    ('coccinelle', 'apparel'),
+    ('cocochoco', 'cosmetics'),
+    ('codemasters', 'computers'),
+    ('codemasters', 'electronics'),
+    ('codemasters', 'games'),
+    ('colab', 'stationery'),
+    ('colab', 'electronics'),
+    ('coleman', 'outdoor'),
+    ('coleman', 'sport'),
+    ('coleman', 'appliances'),
+    ('colgate', 'medicine'),
+    ('colgate', 'personal care'),
+    ('collagen', 'medicine'),
+    ('collagen', 'cosmetics');
+``` 
+
+This SQL statement accurately reflects the categories assigned to each brand.
+[2024-12-05T21:16:35.049+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('climadiff', 'appliances'),
+    ('clinch', 'accessories'),
+    ('clinch', 'apparel'),
+    ('clinique', 'medicine'),
+    ('clinique', 'cosmetics'),
+    ('clippasafe', 'kids'),
+    ('clippasafe', 'accessories'),
+    ('clipstudio', 'stationery'),
+    ('clipstudio', 'computers'),
+    ('clomapharma', 'medicine'),
+    ('clou', 'furniture'),
+    ('clou', 'home decor'),
+    ('clover', 'stationery'),
+    ('clover', 'kids'),
+    ('cmi', 'appliances'),
+    ('cmi', 'electronics'),
+    ('cmt', 'apparel'),
+    ('cnd', 'cosmetics'),
+    ('cnd', 'accessories'),
+    ('coach', 'accessories'),
+    ('coach', 'apparel'),
+    ('coballe', 'accessories'),
+    ('cobat', 'appliances'),
+    ('cober', 'electronics'),
+    ('cobi', 'toys'),
+    ('cobi', 'kids'),
+    ('cobra', 'auto'),
+    ('cobra', 'electronics'),
+    ('coca-cola', 'beverages'),
+    ('coccinelle', 'accessories'),
+    ('coccinelle', 'apparel'),
+    ('cocochoco', 'cosmetics'),
+    ('codemasters', 'computers'),
+    ('codemasters', 'electronics'),
+    ('codemasters', 'games'),
+    ('colab', 'stationery'),
+    ('colab', 'electronics'),
+    ('coleman', 'outdoor'),
+    ('coleman', 'sport'),
+    ('coleman', 'appliances'),
+    ('colgate', 'medicine'),
+    ('colgate', 'personal care'),
+    ('collagen', 'medicine'),
+    ('collagen', 'cosmetics');
+[2024-12-05T21:16:35.049+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('climadiff', 'appliances'),
+    ('clinch', 'accessories'),
+    ('clinch', 'apparel'),
+    ('clinique', 'medicine'),
+    ('clinique', 'cosmetics'),
+    ('clippasafe', 'kids'),
+    ('clippasafe', 'accessories'),
+    ('clipstudio', 'stationery'),
+    ('clipstudio', 'computers'),
+    ('clomapharma', 'medicine'),
+    ('clou', 'furniture'),
+    ('clou', 'home decor'),
+    ('clover', 'stationery'),
+    ('clover', 'kids'),
+    ('cmi', 'appliances'),
+    ('cmi', 'electronics'),
+    ('cmt', 'apparel'),
+    ('cnd', 'cosmetics'),
+    ('cnd', 'accessories'),
+    ('coach', 'accessories'),
+    ('coach', 'apparel'),
+    ('coballe', 'accessories'),
+    ('cobat', 'appliances'),
+    ('cober', 'electronics'),
+    ('cobi', 'toys'),
+    ('cobi', 'kids'),
+    ('cobra', 'auto'),
+    ('cobra', 'electronics'),
+    ('coca-cola', 'beverages'),
+    ('coccinelle', 'accessories'),
+    ('coccinelle', 'apparel'),
+    ('cocochoco', 'cosmetics'),
+    ('codemasters', 'computers'),
+    ('codemasters', 'electronics'),
+    ('codemasters', 'games'),
+    ('colab', 'stationery'),
+    ('colab', 'electronics'),
+    ('coleman', 'outdoor'),
+    ('coleman', 'sport'),
+    ('coleman', 'appliances'),
+    ('colgate', 'medicine'),
+    ('colgate', 'personal care'),
+    ('collagen', 'medicine'),
+    ('collagen', 'cosmetics');
+[2024-12-05T21:16:35.066+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:16:35.066+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:16:11.728250+00:00, execution_date=20241205T211611, start_date=20241205T211634, end_date=20241205T211635
+[2024-12-05T21:16:35.100+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:16:35.119+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:16:35.122+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

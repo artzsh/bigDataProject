@@ -1,0 +1,187 @@
+[2024-12-05T21:37:02.974+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:37:02.986+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:36:29.345645+00:00 [queued]>
+[2024-12-05T21:37:02.992+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:36:29.345645+00:00 [queued]>
+[2024-12-05T21:37:02.993+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:37:03.004+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:36:29.345645+00:00
+[2024-12-05T21:37:03.010+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4753) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:37:03.011+0000] {standard_task_runner.py:72} INFO - Started process 4754 to run task
+[2024-12-05T21:37:03.011+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:36:29.345645+00:00', '--job-id', '1039', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpwm1i7ij9']
+[2024-12-05T21:37:03.014+0000] {standard_task_runner.py:105} INFO - Job 1039: Subtask extract_sql
+[2024-12-05T21:37:03.056+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:36:29.345645+00:00 [running]> on host c7780884450d
+[2024-12-05T21:37:03.120+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:36:29.345645+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:36:29.345645+00:00'
+[2024-12-05T21:37:03.121+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:37:03.141+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of each brand to its predefined categories based on the search results:
+
+1. **greta** - apparel
+2. **gretsch** - instruments, accessories
+3. **greyder** - apparel, accessories
+4. **greys** - accessories, apparel
+5. **grillver** - appliances
+6. **grinda** - construction, appliances
+7. **gripmax** - auto, accessories
+8. **grizzly** - tools, construction
+9. **grohe** - appliances, construction
+10. **gross** - appliances
+11. **grossman** - appliances, construction
+12. **groundzero** - electronics
+13. **grovana** - accessories, apparel
+14. **grownup** - kids, apparel
+15. **grow-with-me** - kids, apparel
+16. **grozz** - electronics, appliances
+17. **grundfos** - appliances, construction
+18. **gs** - electronics, computers
+19. **g.skill** - computers, electronics
+20. **gskill** - computers, electronics
+21. **g-stone** - electronics
+22. **gt** - electronics, auto
+23. **gtec** - electronics, computers
+24. **guangwei** - electronics
+25. **guardo** - accessories, apparel
+
+Now, here’s the SQL INSERT statement based on the mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('greta', 'apparel'),
+    ('gretsch', 'accessories'),
+    ('gretsch', 'instruments'),
+    ('greyder', 'apparel'),
+    ('greyder', 'accessories'),
+    ('greys', 'accessories'),
+    ('greys', 'apparel'),
+    ('grillver', 'appliances'),
+    ('grinda', 'construction'),
+    ('grinda', 'appliances'),
+    ('gripmax', 'auto'),
+    ('gripmax', 'accessories'),
+    ('grizzly', 'tools'),
+    ('grizzly', 'construction'),
+    ('grohe', 'appliances'),
+    ('grohe', 'construction'),
+    ('gross', 'appliances'),
+    ('grossman', 'appliances'),
+    ('grossman', 'construction'),
+    ('groundzero', 'electronics'),
+    ('grovana', 'accessories'),
+    ('grovana', 'apparel'),
+    ('grownup', 'kids'),
+    ('grownup', 'apparel'),
+    ('grow-with-me', 'kids'),
+    ('grow-with-me', 'apparel'),
+    ('grozz', 'electronics'),
+    ('grozz', 'appliances'),
+    ('grundfos', 'appliances'),
+    ('grundfos', 'construction'),
+    ('gs', 'electronics'),
+    ('gs', 'computers'),
+    ('g.skill', 'computers'),
+    ('g.skill', 'electronics'),
+    ('gskill', 'computers'),
+    ('gskill', 'electronics'),
+    ('g-stone', 'electronics'),
+    ('gt', 'electronics'),
+    ('gt', 'auto'),
+    ('gtec', 'electronics'),
+    ('gtec', 'computers'),
+    ('guangwei', 'electronics'),
+    ('guardo', 'accessories'),
+    ('guardo', 'apparel');
+```
+[2024-12-05T21:37:03.142+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('greta', 'apparel'),
+    ('gretsch', 'accessories'),
+    ('gretsch', 'instruments'),
+    ('greyder', 'apparel'),
+    ('greyder', 'accessories'),
+    ('greys', 'accessories'),
+    ('greys', 'apparel'),
+    ('grillver', 'appliances'),
+    ('grinda', 'construction'),
+    ('grinda', 'appliances'),
+    ('gripmax', 'auto'),
+    ('gripmax', 'accessories'),
+    ('grizzly', 'tools'),
+    ('grizzly', 'construction'),
+    ('grohe', 'appliances'),
+    ('grohe', 'construction'),
+    ('gross', 'appliances'),
+    ('grossman', 'appliances'),
+    ('grossman', 'construction'),
+    ('groundzero', 'electronics'),
+    ('grovana', 'accessories'),
+    ('grovana', 'apparel'),
+    ('grownup', 'kids'),
+    ('grownup', 'apparel'),
+    ('grow-with-me', 'kids'),
+    ('grow-with-me', 'apparel'),
+    ('grozz', 'electronics'),
+    ('grozz', 'appliances'),
+    ('grundfos', 'appliances'),
+    ('grundfos', 'construction'),
+    ('gs', 'electronics'),
+    ('gs', 'computers'),
+    ('g.skill', 'computers'),
+    ('g.skill', 'electronics'),
+    ('gskill', 'computers'),
+    ('gskill', 'electronics'),
+    ('g-stone', 'electronics'),
+    ('gt', 'electronics'),
+    ('gt', 'auto'),
+    ('gtec', 'electronics'),
+    ('gtec', 'computers'),
+    ('guangwei', 'electronics'),
+    ('guardo', 'accessories'),
+    ('guardo', 'apparel');
+[2024-12-05T21:37:03.142+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('greta', 'apparel'),
+    ('gretsch', 'accessories'),
+    ('gretsch', 'instruments'),
+    ('greyder', 'apparel'),
+    ('greyder', 'accessories'),
+    ('greys', 'accessories'),
+    ('greys', 'apparel'),
+    ('grillver', 'appliances'),
+    ('grinda', 'construction'),
+    ('grinda', 'appliances'),
+    ('gripmax', 'auto'),
+    ('gripmax', 'accessories'),
+    ('grizzly', 'tools'),
+    ('grizzly', 'construction'),
+    ('grohe', 'appliances'),
+    ('grohe', 'construction'),
+    ('gross', 'appliances'),
+    ('grossman', 'appliances'),
+    ('grossman', 'construction'),
+    ('groundzero', 'electronics'),
+    ('grovana', 'accessories'),
+    ('grovana', 'apparel'),
+    ('grownup', 'kids'),
+    ('grownup', 'apparel'),
+    ('grow-with-me', 'kids'),
+    ('grow-with-me', 'apparel'),
+    ('grozz', 'electronics'),
+    ('grozz', 'appliances'),
+    ('grundfos', 'appliances'),
+    ('grundfos', 'construction'),
+    ('gs', 'electronics'),
+    ('gs', 'computers'),
+    ('g.skill', 'computers'),
+    ('g.skill', 'electronics'),
+    ('gskill', 'computers'),
+    ('gskill', 'electronics'),
+    ('g-stone', 'electronics'),
+    ('gt', 'electronics'),
+    ('gt', 'auto'),
+    ('gtec', 'electronics'),
+    ('gtec', 'computers'),
+    ('guangwei', 'electronics'),
+    ('guardo', 'accessories'),
+    ('guardo', 'apparel');
+[2024-12-05T21:37:03.161+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:37:03.162+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:36:29.345645+00:00, execution_date=20241205T213629, start_date=20241205T213702, end_date=20241205T213703
+[2024-12-05T21:37:03.188+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:37:03.208+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:37:03.211+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,235 @@
+[2024-12-03T23:27:18.769+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-03T23:27:18.779+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_brands_batches.call_llm manual__2024-12-03T23:27:15.387121+00:00 [queued]>
+[2024-12-03T23:27:18.784+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_brands_batches.call_llm manual__2024-12-03T23:27:15.387121+00:00 [queued]>
+[2024-12-03T23:27:18.784+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-03T23:27:18.796+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-03 23:27:15.387121+00:00
+[2024-12-03T23:27:18.806+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=235) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-03T23:27:18.809+0000] {standard_task_runner.py:72} INFO - Started process 236 to run task
+[2024-12-03T23:27:18.809+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'process_brands_batches', 'call_llm', 'manual__2024-12-03T23:27:15.387121+00:00', '--job-id', '329', '--raw', '--subdir', 'DAGS_FOLDER/llm_test.py', '--cfg-path', '/tmp/tmp_58nicxf']
+[2024-12-03T23:27:18.813+0000] {standard_task_runner.py:105} INFO - Job 329: Subtask call_llm
+[2024-12-03T23:27:18.890+0000] {task_command.py:467} INFO - Running <TaskInstance: process_brands_batches.call_llm manual__2024-12-03T23:27:15.387121+00:00 [running]> on host 175560b3a058
+[2024-12-03T23:27:18.981+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='process_brands_batches' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-03T23:27:15.387121+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-03T23:27:15.387121+00:00'
+[2024-12-03T23:27:18.982+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-03T23:27:18.999+0000] {llm_test.py:148} INFO - Извлечён return_value: {'batch': ['a-case', 'a-derma', 'a-elita', 'a-mega', 'a-toys', 'aardwolf', 'abc', 'abhika', 'abk', 'absolutechampion', 'abtoys', 'academie', 'acana', 'acase', 'accesstyle', 'acd', 'acebeam', 'acer', 'achilles', 'acm', 'acme', 'acoola', 'acorp', 'acorsa', 'acqua'], 'next_index': 25}
+[2024-12-03T23:27:18.999+0000] {llm_test.py:123} INFO - Отправка запроса к LLM.
+[2024-12-03T23:27:19.459+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.1 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-03T23:27:41.788+0000] {llm_test.py:137} INFO - Получен ответ от LLM: Here are the assigned categories for each brand based on the search results:
+
+1. **a-case**: electronics, accessories
+2. **a-derma**: medicine, kids
+3. **a-elita**: apparel
+4. **a-mega**: electronics, appliances
+5. **a-toys**: kids, accessories
+6. **aardwolf**: construction
+7. **abc**: stationery, kids
+8. **abhika**: accessories
+9. **abk**: stationery
+10. **absolutechampion**: sport
+11. **abtoys**: kids, accessories
+12. **academie**: medicine, cosmetics
+13. **acana**: medicine, food (pet-related)
+14. **acase**: electronics, accessories
+15. **accesstyle**: accessories
+16. **acd**: electronics
+17. **acebeam**: electronics
+18. **acer**: computers, electronics
+19. **achilles**: sport, accessories
+20. **acm**: electronics
+21. **acme**: appliances
+22. **acoola**: apparel, kids
+23. **acorp**: electronics
+24. **acorsa**: electronics
+25. **acqua**: accessories, cosmetics
+
+Based on this categorization, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO brand_category_rules_1 (brand, category_prefix) VALUES
+    ('a-case', 'electronics'),
+    ('a-case', 'accessories'),
+    ('a-derma', 'medicine'),
+    ('a-derma', 'kids'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'electronics'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('a-toys', 'accessories'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abc', 'kids'),
+    ('abhika', 'accessories'),
+    ('abk', 'stationery'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('abtoys', 'accessories'),
+    ('academie', 'medicine'),
+    ('academie', 'cosmetics'),
+    ('acana', 'medicine'),
+    ('acana', 'food'),
+    ('acase', 'electronics'),
+    ('acase', 'accessories'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('acer', 'electronics'),
+    ('achilles', 'sport'),
+    ('achilles', 'accessories'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acoola', 'kids'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'electronics'),
+    ('acqua', 'accessories'),
+    ('acqua', 'cosmetics');
+```
+[2024-12-03T23:27:41.789+0000] {logging_mixin.py:190} INFO - Here are the assigned categories for each brand based on the search results:
+
+1. **a-case**: electronics, accessories
+2. **a-derma**: medicine, kids
+3. **a-elita**: apparel
+4. **a-mega**: electronics, appliances
+5. **a-toys**: kids, accessories
+6. **aardwolf**: construction
+7. **abc**: stationery, kids
+8. **abhika**: accessories
+9. **abk**: stationery
+10. **absolutechampion**: sport
+11. **abtoys**: kids, accessories
+12. **academie**: medicine, cosmetics
+13. **acana**: medicine, food (pet-related)
+14. **acase**: electronics, accessories
+15. **accesstyle**: accessories
+16. **acd**: electronics
+17. **acebeam**: electronics
+18. **acer**: computers, electronics
+19. **achilles**: sport, accessories
+20. **acm**: electronics
+21. **acme**: appliances
+22. **acoola**: apparel, kids
+23. **acorp**: electronics
+24. **acorsa**: electronics
+25. **acqua**: accessories, cosmetics
+
+Based on this categorization, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO brand_category_rules_1 (brand, category_prefix) VALUES
+    ('a-case', 'electronics'),
+    ('a-case', 'accessories'),
+    ('a-derma', 'medicine'),
+    ('a-derma', 'kids'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'electronics'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('a-toys', 'accessories'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abc', 'kids'),
+    ('abhika', 'accessories'),
+    ('abk', 'stationery'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('abtoys', 'accessories'),
+    ('academie', 'medicine'),
+    ('academie', 'cosmetics'),
+    ('acana', 'medicine'),
+    ('acana', 'food'),
+    ('acase', 'electronics'),
+    ('acase', 'accessories'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('acer', 'electronics'),
+    ('achilles', 'sport'),
+    ('achilles', 'accessories'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acoola', 'kids'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'electronics'),
+    ('acqua', 'accessories'),
+    ('acqua', 'cosmetics');
+```
+[2024-12-03T23:27:41.789+0000] {python.py:240} INFO - Done. Returned value was: Here are the assigned categories for each brand based on the search results:
+
+1. **a-case**: electronics, accessories
+2. **a-derma**: medicine, kids
+3. **a-elita**: apparel
+4. **a-mega**: electronics, appliances
+5. **a-toys**: kids, accessories
+6. **aardwolf**: construction
+7. **abc**: stationery, kids
+8. **abhika**: accessories
+9. **abk**: stationery
+10. **absolutechampion**: sport
+11. **abtoys**: kids, accessories
+12. **academie**: medicine, cosmetics
+13. **acana**: medicine, food (pet-related)
+14. **acase**: electronics, accessories
+15. **accesstyle**: accessories
+16. **acd**: electronics
+17. **acebeam**: electronics
+18. **acer**: computers, electronics
+19. **achilles**: sport, accessories
+20. **acm**: electronics
+21. **acme**: appliances
+22. **acoola**: apparel, kids
+23. **acorp**: electronics
+24. **acorsa**: electronics
+25. **acqua**: accessories, cosmetics
+
+Based on this categorization, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO brand_category_rules_1 (brand, category_prefix) VALUES
+    ('a-case', 'electronics'),
+    ('a-case', 'accessories'),
+    ('a-derma', 'medicine'),
+    ('a-derma', 'kids'),
+    ('a-elita', 'apparel'),
+    ('a-mega', 'electronics'),
+    ('a-mega', 'appliances'),
+    ('a-toys', 'kids'),
+    ('a-toys', 'accessories'),
+    ('aardwolf', 'construction'),
+    ('abc', 'stationery'),
+    ('abc', 'kids'),
+    ('abhika', 'accessories'),
+    ('abk', 'stationery'),
+    ('absolutechampion', 'sport'),
+    ('abtoys', 'kids'),
+    ('abtoys', 'accessories'),
+    ('academie', 'medicine'),
+    ('academie', 'cosmetics'),
+    ('acana', 'medicine'),
+    ('acana', 'food'),
+    ('acase', 'electronics'),
+    ('acase', 'accessories'),
+    ('accesstyle', 'accessories'),
+    ('acd', 'electronics'),
+    ('acebeam', 'electronics'),
+    ('acer', 'computers'),
+    ('acer', 'electronics'),
+    ('achilles', 'sport'),
+    ('achilles', 'accessories'),
+    ('acm', 'electronics'),
+    ('acme', 'appliances'),
+    ('acoola', 'apparel'),
+    ('acoola', 'kids'),
+    ('acorp', 'electronics'),
+    ('acorsa', 'electronics'),
+    ('acqua', 'accessories'),
+    ('acqua', 'cosmetics');
+```
+[2024-12-03T23:27:41.810+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-03T23:27:41.810+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=process_brands_batches, task_id=call_llm, run_id=manual__2024-12-03T23:27:15.387121+00:00, execution_date=20241203T232715, start_date=20241203T232718, end_date=20241203T232741
+[2024-12-03T23:27:41.849+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-03T23:27:41.869+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-03T23:27:41.872+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

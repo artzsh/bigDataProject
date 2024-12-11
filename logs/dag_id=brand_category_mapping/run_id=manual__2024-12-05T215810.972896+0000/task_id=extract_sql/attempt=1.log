@@ -1,0 +1,175 @@
+[2024-12-05T21:58:38.964+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:58:38.976+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:58:10.972896+00:00 [queued]>
+[2024-12-05T21:58:38.982+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:58:10.972896+00:00 [queued]>
+[2024-12-05T21:58:38.983+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:58:38.996+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:58:10.972896+00:00
+[2024-12-05T21:58:39.001+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5873) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:58:39.003+0000] {standard_task_runner.py:72} INFO - Started process 5874 to run task
+[2024-12-05T21:58:39.003+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:58:10.972896+00:00', '--job-id', '1279', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpn_ljzutk']
+[2024-12-05T21:58:39.005+0000] {standard_task_runner.py:105} INFO - Job 1279: Subtask extract_sql
+[2024-12-05T21:58:39.044+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:58:10.972896+00:00 [running]> on host c7780884450d
+[2024-12-05T21:58:39.114+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:58:10.972896+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:58:10.972896+00:00'
+[2024-12-05T21:58:39.115+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:58:39.134+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the categories assigned to each brand based on the search results:
+
+1. **mahaon**: stationery
+2. **maidou**: apparel
+3. **maison**: furniture, apparel
+4. **maisonfranciskurkdjian**: accessories, apparel
+5. **maisto**: auto, toys
+6. **maja**: stationery
+7. **majescogames**: kids, sport
+8. **mak**: construction, appliances
+9. **makarena**: apparel
+10. **makeblock**: computers, electronics, kids
+11. **makers**: electronics, computers
+12. **makerstreet**: electronics, computers
+13. **make-upatelier**: cosmetics, apparel
+14. **makita**: appliances, construction
+15. **makstton**: electronics
+16. **malamalama**: apparel
+17. **malitelle**: apparel
+18. **malka-zmalka**: kids
+19. **mallony**: apparel
+20. **maltex**: appliances
+21. **malva**: cosmetics, apparel
+22. **malvacosmetics**: cosmetics, apparel
+23. **malys**: kids
+24. **mam**: kids, apparel
+25. **mamadoma**: kids, apparel
+
+Now, here’s the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mahaon', 'stationery'),
+    ('maidou', 'apparel'),
+    ('maison', 'furniture'),
+    ('maison', 'apparel'),
+    ('maisonfranciskurkdjian', 'accessories'),
+    ('maisonfranciskurkdjian', 'apparel'),
+    ('maisto', 'auto'),
+    ('maisto', 'kids'),
+    ('maja', 'stationery'),
+    ('majescogames', 'kids'),
+    ('majescogames', 'sport'),
+    ('mak', 'construction'),
+    ('mak', 'appliances'),
+    ('makarena', 'apparel'),
+    ('makeblock', 'computers'),
+    ('makeblock', 'electronics'),
+    ('makeblock', 'kids'),
+    ('makers', 'electronics'),
+    ('makers', 'computers'),
+    ('makerstreet', 'electronics'),
+    ('makerstreet', 'computers'),
+    ('make-upatelier', 'cosmetics'),
+    ('make-upatelier', 'apparel'),
+    ('makita', 'appliances'),
+    ('makita', 'construction'),
+    ('makstton', 'electronics'),
+    ('malamalama', 'apparel'),
+    ('malitelle', 'apparel'),
+    ('malka-zmalka', 'kids'),
+    ('mallony', 'apparel'),
+    ('maltex', 'appliances'),
+    ('malva', 'cosmetics'),
+    ('malva', 'apparel'),
+    ('malvacosmetics', 'cosmetics'),
+    ('malvacosmetics', 'apparel'),
+    ('malys', 'kids'),
+    ('mam', 'kids'),
+    ('mam', 'apparel'),
+    ('mamadoma', 'kids'),
+    ('mamadoma', 'apparel');
+```
+[2024-12-05T21:58:39.135+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mahaon', 'stationery'),
+    ('maidou', 'apparel'),
+    ('maison', 'furniture'),
+    ('maison', 'apparel'),
+    ('maisonfranciskurkdjian', 'accessories'),
+    ('maisonfranciskurkdjian', 'apparel'),
+    ('maisto', 'auto'),
+    ('maisto', 'kids'),
+    ('maja', 'stationery'),
+    ('majescogames', 'kids'),
+    ('majescogames', 'sport'),
+    ('mak', 'construction'),
+    ('mak', 'appliances'),
+    ('makarena', 'apparel'),
+    ('makeblock', 'computers'),
+    ('makeblock', 'electronics'),
+    ('makeblock', 'kids'),
+    ('makers', 'electronics'),
+    ('makers', 'computers'),
+    ('makerstreet', 'electronics'),
+    ('makerstreet', 'computers'),
+    ('make-upatelier', 'cosmetics'),
+    ('make-upatelier', 'apparel'),
+    ('makita', 'appliances'),
+    ('makita', 'construction'),
+    ('makstton', 'electronics'),
+    ('malamalama', 'apparel'),
+    ('malitelle', 'apparel'),
+    ('malka-zmalka', 'kids'),
+    ('mallony', 'apparel'),
+    ('maltex', 'appliances'),
+    ('malva', 'cosmetics'),
+    ('malva', 'apparel'),
+    ('malvacosmetics', 'cosmetics'),
+    ('malvacosmetics', 'apparel'),
+    ('malys', 'kids'),
+    ('mam', 'kids'),
+    ('mam', 'apparel'),
+    ('mamadoma', 'kids'),
+    ('mamadoma', 'apparel');
+[2024-12-05T21:58:39.136+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mahaon', 'stationery'),
+    ('maidou', 'apparel'),
+    ('maison', 'furniture'),
+    ('maison', 'apparel'),
+    ('maisonfranciskurkdjian', 'accessories'),
+    ('maisonfranciskurkdjian', 'apparel'),
+    ('maisto', 'auto'),
+    ('maisto', 'kids'),
+    ('maja', 'stationery'),
+    ('majescogames', 'kids'),
+    ('majescogames', 'sport'),
+    ('mak', 'construction'),
+    ('mak', 'appliances'),
+    ('makarena', 'apparel'),
+    ('makeblock', 'computers'),
+    ('makeblock', 'electronics'),
+    ('makeblock', 'kids'),
+    ('makers', 'electronics'),
+    ('makers', 'computers'),
+    ('makerstreet', 'electronics'),
+    ('makerstreet', 'computers'),
+    ('make-upatelier', 'cosmetics'),
+    ('make-upatelier', 'apparel'),
+    ('makita', 'appliances'),
+    ('makita', 'construction'),
+    ('makstton', 'electronics'),
+    ('malamalama', 'apparel'),
+    ('malitelle', 'apparel'),
+    ('malka-zmalka', 'kids'),
+    ('mallony', 'apparel'),
+    ('maltex', 'appliances'),
+    ('malva', 'cosmetics'),
+    ('malva', 'apparel'),
+    ('malvacosmetics', 'cosmetics'),
+    ('malvacosmetics', 'apparel'),
+    ('malys', 'kids'),
+    ('mam', 'kids'),
+    ('mam', 'apparel'),
+    ('mamadoma', 'kids'),
+    ('mamadoma', 'apparel');
+[2024-12-05T21:58:39.154+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:58:39.155+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:58:10.972896+00:00, execution_date=20241205T215810, start_date=20241205T215838, end_date=20241205T215839
+[2024-12-05T21:58:39.177+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:58:39.195+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:58:39.198+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

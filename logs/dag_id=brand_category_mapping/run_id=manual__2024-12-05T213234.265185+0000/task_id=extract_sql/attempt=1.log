@@ -1,0 +1,205 @@
+[2024-12-05T21:33:01.403+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:33:01.416+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:32:34.265185+00:00 [queued]>
+[2024-12-05T21:33:01.422+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:32:34.265185+00:00 [queued]>
+[2024-12-05T21:33:01.422+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:33:01.433+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:32:34.265185+00:00
+[2024-12-05T21:33:01.440+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4529) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:33:01.442+0000] {standard_task_runner.py:72} INFO - Started process 4530 to run task
+[2024-12-05T21:33:01.441+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:32:34.265185+00:00', '--job-id', '991', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpyzz19teu']
+[2024-12-05T21:33:01.444+0000] {standard_task_runner.py:105} INFO - Job 991: Subtask extract_sql
+[2024-12-05T21:33:01.479+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:32:34.265185+00:00 [running]> on host c7780884450d
+[2024-12-05T21:33:01.536+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:32:34.265185+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:32:34.265185+00:00'
+[2024-12-05T21:33:01.537+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:33:01.554+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results and my knowledge:
+
+1. **fujifilm**: electronics, appliances
+2. **fundesk**: furniture, stationery
+3. **funred**: kids, toys
+4. **funtzio**: kids, toys
+5. **funville**: kids, toys
+6. **furreal**: kids, toys
+7. **furutech**: electronics, accessories
+8. **futura**: appliances, electronics
+9. **fxn**: sport, accessories
+10. **gabolparadise**: accessories, luggage
+11. **gabor**: apparel, accessories
+12. **gad**: electronics, accessories
+13. **ga-de**: cosmetics, accessories
+14. **gadkija**: apparel, accessories
+15. **gaga**: apparel, accessories
+16. **gaggia**: appliances, electronics
+17. **gaint**: electronics, appliances
+18. **gainward**: electronics, computers
+19. **gaissina**: apparel, accessories
+20. **galacticos**: apparel, sport
+21. **galantcosmetic**: cosmetics, accessories
+22. **galanz**: appliances, electronics
+23. **galaxy**: electronics, appliances
+24. **galobaby**: kids, apparel
+25. **gamdias**: electronics, computers
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fujifilm', 'electronics'),
+    ('fujifilm', 'appliances'),
+    ('fundesk', 'furniture'),
+    ('fundesk', 'stationery'),
+    ('funred', 'kids'),
+    ('funred', 'toys'),
+    ('funtzio', 'kids'),
+    ('funtzio', 'toys'),
+    ('funville', 'kids'),
+    ('funville', 'toys'),
+    ('furreal', 'kids'),
+    ('furreal', 'toys'),
+    ('furutech', 'electronics'),
+    ('furutech', 'accessories'),
+    ('futura', 'appliances'),
+    ('futura', 'electronics'),
+    ('fxn', 'sport'),
+    ('fxn', 'accessories'),
+    ('gabolparadise', 'accessories'),
+    ('gabolparadise', 'luggage'),
+    ('gabor', 'apparel'),
+    ('gabor', 'accessories'),
+    ('gad', 'electronics'),
+    ('gad', 'accessories'),
+    ('ga-de', 'cosmetics'),
+    ('ga-de', 'accessories'),
+    ('gadkija', 'apparel'),
+    ('gadkija', 'accessories'),
+    ('gaga', 'apparel'),
+    ('gaga', 'accessories'),
+    ('gaggia', 'appliances'),
+    ('gaggia', 'electronics'),
+    ('gaint', 'electronics'),
+    ('gaint', 'appliances'),
+    ('gainward', 'electronics'),
+    ('gainward', 'computers'),
+    ('gaissina', 'apparel'),
+    ('gaissina', 'accessories'),
+    ('galacticos', 'apparel'),
+    ('galacticos', 'sport'),
+    ('galantcosmetic', 'cosmetics'),
+    ('galantcosmetic', 'accessories'),
+    ('galanz', 'appliances'),
+    ('galanz', 'electronics'),
+    ('galaxy', 'electronics'),
+    ('galaxy', 'appliances'),
+    ('galobaby', 'kids'),
+    ('galobaby', 'apparel'),
+    ('gamdias', 'electronics'),
+    ('gamdias', 'computers');
+```
+[2024-12-05T21:33:01.555+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fujifilm', 'electronics'),
+    ('fujifilm', 'appliances'),
+    ('fundesk', 'furniture'),
+    ('fundesk', 'stationery'),
+    ('funred', 'kids'),
+    ('funred', 'toys'),
+    ('funtzio', 'kids'),
+    ('funtzio', 'toys'),
+    ('funville', 'kids'),
+    ('funville', 'toys'),
+    ('furreal', 'kids'),
+    ('furreal', 'toys'),
+    ('furutech', 'electronics'),
+    ('furutech', 'accessories'),
+    ('futura', 'appliances'),
+    ('futura', 'electronics'),
+    ('fxn', 'sport'),
+    ('fxn', 'accessories'),
+    ('gabolparadise', 'accessories'),
+    ('gabolparadise', 'luggage'),
+    ('gabor', 'apparel'),
+    ('gabor', 'accessories'),
+    ('gad', 'electronics'),
+    ('gad', 'accessories'),
+    ('ga-de', 'cosmetics'),
+    ('ga-de', 'accessories'),
+    ('gadkija', 'apparel'),
+    ('gadkija', 'accessories'),
+    ('gaga', 'apparel'),
+    ('gaga', 'accessories'),
+    ('gaggia', 'appliances'),
+    ('gaggia', 'electronics'),
+    ('gaint', 'electronics'),
+    ('gaint', 'appliances'),
+    ('gainward', 'electronics'),
+    ('gainward', 'computers'),
+    ('gaissina', 'apparel'),
+    ('gaissina', 'accessories'),
+    ('galacticos', 'apparel'),
+    ('galacticos', 'sport'),
+    ('galantcosmetic', 'cosmetics'),
+    ('galantcosmetic', 'accessories'),
+    ('galanz', 'appliances'),
+    ('galanz', 'electronics'),
+    ('galaxy', 'electronics'),
+    ('galaxy', 'appliances'),
+    ('galobaby', 'kids'),
+    ('galobaby', 'apparel'),
+    ('gamdias', 'electronics'),
+    ('gamdias', 'computers');
+[2024-12-05T21:33:01.556+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('fujifilm', 'electronics'),
+    ('fujifilm', 'appliances'),
+    ('fundesk', 'furniture'),
+    ('fundesk', 'stationery'),
+    ('funred', 'kids'),
+    ('funred', 'toys'),
+    ('funtzio', 'kids'),
+    ('funtzio', 'toys'),
+    ('funville', 'kids'),
+    ('funville', 'toys'),
+    ('furreal', 'kids'),
+    ('furreal', 'toys'),
+    ('furutech', 'electronics'),
+    ('furutech', 'accessories'),
+    ('futura', 'appliances'),
+    ('futura', 'electronics'),
+    ('fxn', 'sport'),
+    ('fxn', 'accessories'),
+    ('gabolparadise', 'accessories'),
+    ('gabolparadise', 'luggage'),
+    ('gabor', 'apparel'),
+    ('gabor', 'accessories'),
+    ('gad', 'electronics'),
+    ('gad', 'accessories'),
+    ('ga-de', 'cosmetics'),
+    ('ga-de', 'accessories'),
+    ('gadkija', 'apparel'),
+    ('gadkija', 'accessories'),
+    ('gaga', 'apparel'),
+    ('gaga', 'accessories'),
+    ('gaggia', 'appliances'),
+    ('gaggia', 'electronics'),
+    ('gaint', 'electronics'),
+    ('gaint', 'appliances'),
+    ('gainward', 'electronics'),
+    ('gainward', 'computers'),
+    ('gaissina', 'apparel'),
+    ('gaissina', 'accessories'),
+    ('galacticos', 'apparel'),
+    ('galacticos', 'sport'),
+    ('galantcosmetic', 'cosmetics'),
+    ('galantcosmetic', 'accessories'),
+    ('galanz', 'appliances'),
+    ('galanz', 'electronics'),
+    ('galaxy', 'electronics'),
+    ('galaxy', 'appliances'),
+    ('galobaby', 'kids'),
+    ('galobaby', 'apparel'),
+    ('gamdias', 'electronics'),
+    ('gamdias', 'computers');
+[2024-12-05T21:33:01.571+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:33:01.572+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:32:34.265185+00:00, execution_date=20241205T213234, start_date=20241205T213301, end_date=20241205T213301
+[2024-12-05T21:33:01.616+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:33:01.636+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:33:01.639+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

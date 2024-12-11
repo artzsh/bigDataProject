@@ -1,0 +1,147 @@
+[2024-12-05T21:30:26.751+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:30:26.763+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:30:03.660865+00:00 [queued]>
+[2024-12-05T21:30:26.770+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:30:03.660865+00:00 [queued]>
+[2024-12-05T21:30:26.771+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:30:26.783+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:30:03.660865+00:00
+[2024-12-05T21:30:26.790+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4389) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:30:26.791+0000] {standard_task_runner.py:72} INFO - Started process 4390 to run task
+[2024-12-05T21:30:26.791+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:30:03.660865+00:00', '--job-id', '961', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpb6iw6qgb']
+[2024-12-05T21:30:26.793+0000] {standard_task_runner.py:105} INFO - Job 961: Subtask extract_sql
+[2024-12-05T21:30:26.831+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:30:03.660865+00:00 [running]> on host c7780884450d
+[2024-12-05T21:30:26.896+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:30:03.660865+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:30:03.660865+00:00'
+[2024-12-05T21:30:26.897+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:30:26.915+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Sure! Based on the brands you provided, I will categorize them according to their products. Here’s the mapping I came up with:
+
+1. **ferre** - apparel
+2. **ferrino** - apparel, accessories
+3. **festina** - accessories
+4. **festool** - construction, appliances
+5. **fibos** - electronics
+6. **ficopro** - appliances
+7. **fidan** - construction
+8. **fiesta** - appliances
+9. **fiio** - electronics
+10. **fila** - apparel, accessories
+11. **filly** - kids
+12. **filodoro** - apparel
+13. **fini** - construction
+14. **finish** - appliances
+15. **finland** - country_yard
+16. **fiorenza** - furniture
+17. **fipar** - construction
+18. **fireball** - auto
+19. **firepower** - auto
+20. **firestone** - auto
+21. **firman** - appliances, auto
+22. **first** - stationery
+23. **fischer** - construction, appliances
+24. **fisher** - electronics
+25. **fisherman** - sport
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ferre', 'apparel'),
+    ('ferrino', 'apparel'),
+    ('ferrino', 'accessories'),
+    ('festina', 'accessories'),
+    ('festool', 'construction'),
+    ('festool', 'appliances'),
+    ('fibos', 'electronics'),
+    ('ficopro', 'appliances'),
+    ('fidan', 'construction'),
+    ('fiesta', 'appliances'),
+    ('fiio', 'electronics'),
+    ('fila', 'apparel'),
+    ('fila', 'accessories'),
+    ('filly', 'kids'),
+    ('filodoro', 'apparel'),
+    ('fini', 'construction'),
+    ('finish', 'appliances'),
+    ('finland', 'country_yard'),
+    ('fiorenza', 'furniture'),
+    ('fipar', 'construction'),
+    ('fireball', 'auto'),
+    ('firepower', 'auto'),
+    ('firestone', 'auto'),
+    ('firman', 'appliances'),
+    ('firman', 'auto'),
+    ('first', 'stationery'),
+    ('fischer', 'construction'),
+    ('fischer', 'appliances'),
+    ('fisher', 'electronics'),
+    ('fisherman', 'sport');
+```
+
+This statement includes all the brands and their corresponding categories as identified.
+[2024-12-05T21:30:26.916+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ferre', 'apparel'),
+    ('ferrino', 'apparel'),
+    ('ferrino', 'accessories'),
+    ('festina', 'accessories'),
+    ('festool', 'construction'),
+    ('festool', 'appliances'),
+    ('fibos', 'electronics'),
+    ('ficopro', 'appliances'),
+    ('fidan', 'construction'),
+    ('fiesta', 'appliances'),
+    ('fiio', 'electronics'),
+    ('fila', 'apparel'),
+    ('fila', 'accessories'),
+    ('filly', 'kids'),
+    ('filodoro', 'apparel'),
+    ('fini', 'construction'),
+    ('finish', 'appliances'),
+    ('finland', 'country_yard'),
+    ('fiorenza', 'furniture'),
+    ('fipar', 'construction'),
+    ('fireball', 'auto'),
+    ('firepower', 'auto'),
+    ('firestone', 'auto'),
+    ('firman', 'appliances'),
+    ('firman', 'auto'),
+    ('first', 'stationery'),
+    ('fischer', 'construction'),
+    ('fischer', 'appliances'),
+    ('fisher', 'electronics'),
+    ('fisherman', 'sport');
+[2024-12-05T21:30:26.916+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('ferre', 'apparel'),
+    ('ferrino', 'apparel'),
+    ('ferrino', 'accessories'),
+    ('festina', 'accessories'),
+    ('festool', 'construction'),
+    ('festool', 'appliances'),
+    ('fibos', 'electronics'),
+    ('ficopro', 'appliances'),
+    ('fidan', 'construction'),
+    ('fiesta', 'appliances'),
+    ('fiio', 'electronics'),
+    ('fila', 'apparel'),
+    ('fila', 'accessories'),
+    ('filly', 'kids'),
+    ('filodoro', 'apparel'),
+    ('fini', 'construction'),
+    ('finish', 'appliances'),
+    ('finland', 'country_yard'),
+    ('fiorenza', 'furniture'),
+    ('fipar', 'construction'),
+    ('fireball', 'auto'),
+    ('firepower', 'auto'),
+    ('firestone', 'auto'),
+    ('firman', 'appliances'),
+    ('firman', 'auto'),
+    ('first', 'stationery'),
+    ('fischer', 'construction'),
+    ('fischer', 'appliances'),
+    ('fisher', 'electronics'),
+    ('fisherman', 'sport');
+[2024-12-05T21:30:26.934+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:30:26.935+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:30:03.660865+00:00, execution_date=20241205T213003, start_date=20241205T213026, end_date=20241205T213026
+[2024-12-05T21:30:26.965+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:30:26.986+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:30:26.989+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

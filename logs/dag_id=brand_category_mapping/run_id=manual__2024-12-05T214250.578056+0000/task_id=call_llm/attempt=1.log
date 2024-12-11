@@ -1,0 +1,170 @@
+[2024-12-05T21:42:55.455+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:42:55.468+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:42:50.578056+00:00 [queued]>
+[2024-12-05T21:42:55.475+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:42:50.578056+00:00 [queued]>
+[2024-12-05T21:42:55.476+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:42:55.490+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:42:50.578056+00:00
+[2024-12-05T21:42:55.496+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5049) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:42:55.498+0000] {standard_task_runner.py:72} INFO - Started process 5057 to run task
+[2024-12-05T21:42:55.497+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:42:50.578056+00:00', '--job-id', '1104', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp6op3klbg']
+[2024-12-05T21:42:55.499+0000] {standard_task_runner.py:105} INFO - Job 1104: Subtask call_llm
+[2024-12-05T21:42:55.536+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:42:50.578056+00:00 [running]> on host c7780884450d
+[2024-12-05T21:42:55.600+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:42:50.578056+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:42:50.578056+00:00'
+[2024-12-05T21:42:55.601+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:42:55.619+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['incase', 'inci', 'incipio', 'indesit', 'indiana', 'indigo', 'individuum', 'individuumpablising', 'individuumprint', 'industria', 'inebrya', 'infantino', 'infinity', 'infinitynado', 'inflame', 'info', 'ingersoll', 'inglesina', 'inhouse', 'initioparfumsprives', 'inkax', 'inmotion', 'innerarmour', 'innisfree', 'innovation'], 'next_index': 2350}
+[2024-12-05T21:42:55.619+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:42:56.037+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:43:11.929+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the processed mapping of brands to their respective categories based on the search queries:
+
+1. **incase** - electronics, accessories
+2. **inci** - cosmetics, medicine
+3. **incipio** - electronics, accessories
+4. **indesit** - appliances
+5. **indiana** - furniture, country_yard
+6. **indigo** - stationery, kids
+7. **individuum** - stationery, accessories
+8. **individuumpublishing** - stationery
+9. **individuumprint** - stationery
+10. **industria** - construction
+11. **inebrya** - cosmetics, medicine
+12. **infantino** - kids, accessories
+13. **infinity** - electronics, accessories
+14. **infinitynado** - electronics
+15. **inflame** - electronics, appliances
+16. **info** - computers, electronics
+17. **ingersoll** - accessories
+18. **inglesina** - kids, furniture
+19. **inhouse** - furniture
+20. **initioparfumsprives** - accessories, cosmetics
+21. **inkax** - electronics, accessories
+22. **inmotion** - electronics, sport
+23. **innerarmour** - sport, medicine
+24. **innisfree** - cosmetics, medicine
+25. **innovation** - electronics
+
+Now, here’s the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('incase', 'electronics'),
+    ('incase', 'accessories'),
+    ('inci', 'medicine'),
+    ('incipio', 'electronics'),
+    ('incipio', 'accessories'),
+    ('indesit', 'appliances'),
+    ('indiana', 'furniture'),
+    ('indiana', 'country_yard'),
+    ('indigo', 'stationery'),
+    ('indigo', 'kids'),
+    ('individuum', 'stationery'),
+    ('individuum', 'accessories'),
+    ('individuumpublishing', 'stationery'),
+    ('individuumprint', 'stationery'),
+    ('industria', 'construction'),
+    ('inebrya', 'medicine'),
+    ('inebrya', 'cosmetics'),
+    ('infantino', 'kids'),
+    ('infantino', 'accessories'),
+    ('infinity', 'electronics'),
+    ('infinity', 'accessories'),
+    ('infinitynado', 'electronics'),
+    ('inflame', 'electronics'),
+    ('inflame', 'appliances'),
+    ('info', 'computers'),
+    ('info', 'electronics'),
+    ('ingersoll', 'accessories'),
+    ('inglesina', 'kids'),
+    ('inglesina', 'furniture'),
+    ('inhouse', 'furniture'),
+    ('initioparfumsprives', 'accessories'),
+    ('initioparfumsprives', 'cosmetics'),
+    ('inkax', 'electronics'),
+    ('inkax', 'accessories'),
+    ('inmotion', 'electronics'),
+    ('inmotion', 'sport'),
+    ('innerarmour', 'sport'),
+    ('innerarmour', 'medicine'),
+    ('innisfree', 'cosmetics'),
+    ('innisfree', 'medicine'),
+    ('innovation', 'electronics');
+```
+[2024-12-05T21:43:11.929+0000] {python.py:240} INFO - Done. Returned value was: Here’s the processed mapping of brands to their respective categories based on the search queries:
+
+1. **incase** - electronics, accessories
+2. **inci** - cosmetics, medicine
+3. **incipio** - electronics, accessories
+4. **indesit** - appliances
+5. **indiana** - furniture, country_yard
+6. **indigo** - stationery, kids
+7. **individuum** - stationery, accessories
+8. **individuumpublishing** - stationery
+9. **individuumprint** - stationery
+10. **industria** - construction
+11. **inebrya** - cosmetics, medicine
+12. **infantino** - kids, accessories
+13. **infinity** - electronics, accessories
+14. **infinitynado** - electronics
+15. **inflame** - electronics, appliances
+16. **info** - computers, electronics
+17. **ingersoll** - accessories
+18. **inglesina** - kids, furniture
+19. **inhouse** - furniture
+20. **initioparfumsprives** - accessories, cosmetics
+21. **inkax** - electronics, accessories
+22. **inmotion** - electronics, sport
+23. **innerarmour** - sport, medicine
+24. **innisfree** - cosmetics, medicine
+25. **innovation** - electronics
+
+Now, here’s the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('incase', 'electronics'),
+    ('incase', 'accessories'),
+    ('inci', 'medicine'),
+    ('incipio', 'electronics'),
+    ('incipio', 'accessories'),
+    ('indesit', 'appliances'),
+    ('indiana', 'furniture'),
+    ('indiana', 'country_yard'),
+    ('indigo', 'stationery'),
+    ('indigo', 'kids'),
+    ('individuum', 'stationery'),
+    ('individuum', 'accessories'),
+    ('individuumpublishing', 'stationery'),
+    ('individuumprint', 'stationery'),
+    ('industria', 'construction'),
+    ('inebrya', 'medicine'),
+    ('inebrya', 'cosmetics'),
+    ('infantino', 'kids'),
+    ('infantino', 'accessories'),
+    ('infinity', 'electronics'),
+    ('infinity', 'accessories'),
+    ('infinitynado', 'electronics'),
+    ('inflame', 'electronics'),
+    ('inflame', 'appliances'),
+    ('info', 'computers'),
+    ('info', 'electronics'),
+    ('ingersoll', 'accessories'),
+    ('inglesina', 'kids'),
+    ('inglesina', 'furniture'),
+    ('inhouse', 'furniture'),
+    ('initioparfumsprives', 'accessories'),
+    ('initioparfumsprives', 'cosmetics'),
+    ('inkax', 'electronics'),
+    ('inkax', 'accessories'),
+    ('inmotion', 'electronics'),
+    ('inmotion', 'sport'),
+    ('innerarmour', 'sport'),
+    ('innerarmour', 'medicine'),
+    ('innisfree', 'cosmetics'),
+    ('innisfree', 'medicine'),
+    ('innovation', 'electronics');
+```
+[2024-12-05T21:43:11.949+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:43:11.950+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:42:50.578056+00:00, execution_date=20241205T214250, start_date=20241205T214255, end_date=20241205T214311
+[2024-12-05T21:43:12.004+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:43:12.021+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:43:12.026+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

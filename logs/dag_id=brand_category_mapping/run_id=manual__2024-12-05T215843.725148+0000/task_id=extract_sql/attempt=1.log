@@ -1,0 +1,159 @@
+[2024-12-05T21:59:08.486+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:59:08.499+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:58:43.725148+00:00 [queued]>
+[2024-12-05T21:59:08.505+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:58:43.725148+00:00 [queued]>
+[2024-12-05T21:59:08.505+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:59:08.517+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:58:43.725148+00:00
+[2024-12-05T21:59:08.523+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5901) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:59:08.524+0000] {standard_task_runner.py:72} INFO - Started process 5902 to run task
+[2024-12-05T21:59:08.524+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:58:43.725148+00:00', '--job-id', '1285', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp312aq07a']
+[2024-12-05T21:59:08.526+0000] {standard_task_runner.py:105} INFO - Job 1285: Subtask extract_sql
+[2024-12-05T21:59:08.562+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:58:43.725148+00:00 [running]> on host c7780884450d
+[2024-12-05T21:59:08.621+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:58:43.725148+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:58:43.725148+00:00'
+[2024-12-05T21:59:08.622+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:59:08.639+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of each brand to its appropriate categories based on the search results and some logical deductions:
+
+1. **mamako** - kids
+2. **mamalove** - kids, apparel
+3. **maman** - kids, apparel
+4. **mamaspapas** - kids, furniture
+5. **mammie** - kids
+6. **mammut** - sport, apparel
+7. **mamut** - sport, apparel
+8. **manacas** - apparel
+9. **mancera** - accessories
+10. **manfrotto** - electronics, accessories
+11. **mangokids** - kids, apparel
+12. **manhattan** - stationery, accessories
+13. **manke** - appliances
+14. **mann-filter** - auto
+15. **mantra** - apparel
+16. **manuelrodriguez** - accessories
+17. **manuoki** - electronics
+18. **manzari** - apparel
+19. **maomaoku** - electronics
+20. **maono** - electronics
+21. **mapei** - construction
+22. **mapex** - instruments, accessories
+23. **marantz** - electronics
+24. **marathon** - sport, apparel
+25. **marcella** - apparel
+
+Now, here’s the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mamako', 'kids'),
+    ('mamalove', 'kids'),
+    ('mamalove', 'apparel'),
+    ('maman', 'kids'),
+    ('maman', 'apparel'),
+    ('mamaspapas', 'kids'),
+    ('mamaspapas', 'furniture'),
+    ('mammie', 'kids'),
+    ('mammut', 'sport'),
+    ('mammut', 'apparel'),
+    ('mamut', 'sport'),
+    ('mamut', 'apparel'),
+    ('manacas', 'apparel'),
+    ('mancera', 'accessories'),
+    ('manfrotto', 'electronics'),
+    ('manfrotto', 'accessories'),
+    ('mangokids', 'kids'),
+    ('mangokids', 'apparel'),
+    ('manhattan', 'stationery'),
+    ('manhattan', 'accessories'),
+    ('manke', 'appliances'),
+    ('mann-filter', 'auto'),
+    ('mantra', 'apparel'),
+    ('manuelrodriguez', 'accessories'),
+    ('manuoki', 'electronics'),
+    ('manzari', 'apparel'),
+    ('maomaoku', 'electronics'),
+    ('maono', 'electronics'),
+    ('mapei', 'construction'),
+    ('mapex', 'accessories'),
+    ('marantz', 'electronics'),
+    ('marathon', 'sport'),
+    ('marathon', 'apparel'),
+    ('marcella', 'apparel');
+```
+
+This statement includes all the brands and their respective categories based on the findings.
+[2024-12-05T21:59:08.640+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mamako', 'kids'),
+    ('mamalove', 'kids'),
+    ('mamalove', 'apparel'),
+    ('maman', 'kids'),
+    ('maman', 'apparel'),
+    ('mamaspapas', 'kids'),
+    ('mamaspapas', 'furniture'),
+    ('mammie', 'kids'),
+    ('mammut', 'sport'),
+    ('mammut', 'apparel'),
+    ('mamut', 'sport'),
+    ('mamut', 'apparel'),
+    ('manacas', 'apparel'),
+    ('mancera', 'accessories'),
+    ('manfrotto', 'electronics'),
+    ('manfrotto', 'accessories'),
+    ('mangokids', 'kids'),
+    ('mangokids', 'apparel'),
+    ('manhattan', 'stationery'),
+    ('manhattan', 'accessories'),
+    ('manke', 'appliances'),
+    ('mann-filter', 'auto'),
+    ('mantra', 'apparel'),
+    ('manuelrodriguez', 'accessories'),
+    ('manuoki', 'electronics'),
+    ('manzari', 'apparel'),
+    ('maomaoku', 'electronics'),
+    ('maono', 'electronics'),
+    ('mapei', 'construction'),
+    ('mapex', 'accessories'),
+    ('marantz', 'electronics'),
+    ('marathon', 'sport'),
+    ('marathon', 'apparel'),
+    ('marcella', 'apparel');
+[2024-12-05T21:59:08.640+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mamako', 'kids'),
+    ('mamalove', 'kids'),
+    ('mamalove', 'apparel'),
+    ('maman', 'kids'),
+    ('maman', 'apparel'),
+    ('mamaspapas', 'kids'),
+    ('mamaspapas', 'furniture'),
+    ('mammie', 'kids'),
+    ('mammut', 'sport'),
+    ('mammut', 'apparel'),
+    ('mamut', 'sport'),
+    ('mamut', 'apparel'),
+    ('manacas', 'apparel'),
+    ('mancera', 'accessories'),
+    ('manfrotto', 'electronics'),
+    ('manfrotto', 'accessories'),
+    ('mangokids', 'kids'),
+    ('mangokids', 'apparel'),
+    ('manhattan', 'stationery'),
+    ('manhattan', 'accessories'),
+    ('manke', 'appliances'),
+    ('mann-filter', 'auto'),
+    ('mantra', 'apparel'),
+    ('manuelrodriguez', 'accessories'),
+    ('manuoki', 'electronics'),
+    ('manzari', 'apparel'),
+    ('maomaoku', 'electronics'),
+    ('maono', 'electronics'),
+    ('mapei', 'construction'),
+    ('mapex', 'accessories'),
+    ('marantz', 'electronics'),
+    ('marathon', 'sport'),
+    ('marathon', 'apparel'),
+    ('marcella', 'apparel');
+[2024-12-05T21:59:08.657+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:59:08.657+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:58:43.725148+00:00, execution_date=20241205T215843, start_date=20241205T215908, end_date=20241205T215908
+[2024-12-05T21:59:08.699+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:59:08.718+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:59:08.722+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

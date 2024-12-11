@@ -1,0 +1,130 @@
+[2024-12-05T21:51:42.354+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:51:42.365+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:51:19.301942+00:00 [queued]>
+[2024-12-05T21:51:42.371+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:51:19.301942+00:00 [queued]>
+[2024-12-05T21:51:42.372+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:51:42.384+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:51:19.301942+00:00
+[2024-12-05T21:51:42.390+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5509) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:51:42.391+0000] {standard_task_runner.py:72} INFO - Started process 5510 to run task
+[2024-12-05T21:51:42.391+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:51:19.301942+00:00', '--job-id', '1201', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpt9txn7r_']
+[2024-12-05T21:51:42.393+0000] {standard_task_runner.py:105} INFO - Job 1201: Subtask extract_sql
+[2024-12-05T21:51:42.431+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:51:19.301942+00:00 [running]> on host c7780884450d
+[2024-12-05T21:51:42.494+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:51:19.301942+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:51:19.301942+00:00'
+[2024-12-05T21:51:42.495+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:51:42.512+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **kristall-auto** - auto
+2. **krk** - electronics
+3. **kroft** - furniture
+4. **kromax** - electronics
+5. **kron** - electronics
+6. **krona** - electronics
+7. **kronasteel** - construction
+8. **kronopol** - furniture
+9. **kronospan** - construction
+10. **kronostar** - construction
+11. **kronotex** - construction
+12. **kronwerk** - construction
+13. **kroskaa** - kids
+14. **kroskindom** - kids
+15. **krosno** - appliances
+16. **krups** - appliances
+17. **kskids** - kids
+18. **kubanfarfor** - furniture
+19. **kuchendorf** - furniture
+20. **kuchenprofi** - appliances
+21. **kudu** - apparel
+22. **kugoo** - electronics
+23. **kuhar** - appliances
+24. **kukbuks** - stationery
+25. **kukmara** - appliances
+
+Now, here’s the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('kristall-auto', 'auto'),
+    ('krk', 'electronics'),
+    ('kroft', 'furniture'),
+    ('kromax', 'electronics'),
+    ('kron', 'electronics'),
+    ('krona', 'electronics'),
+    ('kronasteel', 'construction'),
+    ('kronopol', 'furniture'),
+    ('kronospan', 'construction'),
+    ('kronostar', 'construction'),
+    ('kronotex', 'construction'),
+    ('kronwerk', 'construction'),
+    ('kroskaa', 'kids'),
+    ('kroskindom', 'kids'),
+    ('krosno', 'appliances'),
+    ('krups', 'appliances'),
+    ('kskids', 'kids'),
+    ('kubanfarfor', 'furniture'),
+    ('kuchendorf', 'furniture'),
+    ('kuchenprofi', 'appliances'),
+    ('kudu', 'apparel'),
+    ('kugoo', 'electronics'),
+    ('kuhar', 'appliances'),
+    ('kukbuks', 'stationery'),
+    ('kukmara', 'appliances');
+```
+[2024-12-05T21:51:42.513+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('kristall-auto', 'auto'),
+    ('krk', 'electronics'),
+    ('kroft', 'furniture'),
+    ('kromax', 'electronics'),
+    ('kron', 'electronics'),
+    ('krona', 'electronics'),
+    ('kronasteel', 'construction'),
+    ('kronopol', 'furniture'),
+    ('kronospan', 'construction'),
+    ('kronostar', 'construction'),
+    ('kronotex', 'construction'),
+    ('kronwerk', 'construction'),
+    ('kroskaa', 'kids'),
+    ('kroskindom', 'kids'),
+    ('krosno', 'appliances'),
+    ('krups', 'appliances'),
+    ('kskids', 'kids'),
+    ('kubanfarfor', 'furniture'),
+    ('kuchendorf', 'furniture'),
+    ('kuchenprofi', 'appliances'),
+    ('kudu', 'apparel'),
+    ('kugoo', 'electronics'),
+    ('kuhar', 'appliances'),
+    ('kukbuks', 'stationery'),
+    ('kukmara', 'appliances');
+[2024-12-05T21:51:42.513+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('kristall-auto', 'auto'),
+    ('krk', 'electronics'),
+    ('kroft', 'furniture'),
+    ('kromax', 'electronics'),
+    ('kron', 'electronics'),
+    ('krona', 'electronics'),
+    ('kronasteel', 'construction'),
+    ('kronopol', 'furniture'),
+    ('kronospan', 'construction'),
+    ('kronostar', 'construction'),
+    ('kronotex', 'construction'),
+    ('kronwerk', 'construction'),
+    ('kroskaa', 'kids'),
+    ('kroskindom', 'kids'),
+    ('krosno', 'appliances'),
+    ('krups', 'appliances'),
+    ('kskids', 'kids'),
+    ('kubanfarfor', 'furniture'),
+    ('kuchendorf', 'furniture'),
+    ('kuchenprofi', 'appliances'),
+    ('kudu', 'apparel'),
+    ('kugoo', 'electronics'),
+    ('kuhar', 'appliances'),
+    ('kukbuks', 'stationery'),
+    ('kukmara', 'appliances');
+[2024-12-05T21:51:42.529+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:51:42.529+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:51:19.301942+00:00, execution_date=20241205T215119, start_date=20241205T215142, end_date=20241205T215142
+[2024-12-05T21:51:42.566+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:51:42.586+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:51:42.589+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

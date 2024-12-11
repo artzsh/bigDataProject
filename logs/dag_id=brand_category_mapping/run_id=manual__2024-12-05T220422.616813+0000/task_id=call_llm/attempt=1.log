@@ -1,0 +1,152 @@
+[2024-12-05T22:04:28.680+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:04:28.691+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:04:22.616813+00:00 [queued]>
+[2024-12-05T22:04:28.698+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:04:22.616813+00:00 [queued]>
+[2024-12-05T22:04:28.698+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:04:28.710+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:04:22.616813+00:00
+[2024-12-05T22:04:28.715+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6197) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:04:28.716+0000] {standard_task_runner.py:72} INFO - Started process 6198 to run task
+[2024-12-05T22:04:28.717+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:04:22.616813+00:00', '--job-id', '1350', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp_6t_fx7a']
+[2024-12-05T22:04:28.719+0000] {standard_task_runner.py:105} INFO - Job 1350: Subtask call_llm
+[2024-12-05T22:04:28.751+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:04:22.616813+00:00 [running]> on host c7780884450d
+[2024-12-05T22:04:28.810+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:04:22.616813+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:04:22.616813+00:00'
+[2024-12-05T22:04:28.811+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:04:28.827+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['mioshi', 'mipow', 'mir', 'miracase', 'miracle', 'miraculous', 'mirax', 'mirex', 'mirinda', 'mirodel', 'miromaks', 'miromax', 'mirra', 'misfit', 'missha', 'missoni', 'misstais', 'misty', 'mitasu', 'mitre', 'mitsuji', 'mitte', 'miumiu', 'miwen', 'mizon'], 'next_index': 3375}
+[2024-12-05T22:04:28.828+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:04:29.282+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:04:51.358+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to their respective categories based on the search queries:
+
+1. **mioshi** - electronics
+2. **mipow** - electronics, accessories
+3. **mir** - appliances, electronics
+4. **miracase** - accessories
+5. **miracle** - medicine, health
+6. **miraculous** - kids, apparel (related to the animated series)
+7. **mirax** - electronics
+8. **mirex** - electronics
+9. **mirinda** - beverages (not fitting in the given categories, but could be loosely associated with kids)
+10. **mirodel** - furniture
+11. **miromaks** - electronics
+12. **miromax** - electronics
+13. **mirra** - furniture
+14. **misfit** - electronics, sport
+15. **missha** - cosmetics (not fitting in the given categories, but could be loosely associated with medicine)
+16. **missoni** - apparel, accessories
+17. **misstais** - apparel
+18. **misty** - apparel
+19. **mitasu** - auto, appliances
+20. **mitre** - sport
+21. **mitsuji** - electronics
+22. **mitte** - apparel
+23. **miumiu** - apparel, accessories
+24. **miwen** - stationery
+25. **mizon** - cosmetics (not fitting in the given categories, but could be loosely associated with medicine)
+
+Now, I'll generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mioshi', 'electronics'),
+    ('mipow', 'electronics'),
+    ('mipow', 'accessories'),
+    ('mir', 'appliances'),
+    ('mir', 'electronics'),
+    ('miracase', 'accessories'),
+    ('miracle', 'medicine'),
+    ('miraculous', 'kids'),
+    ('miraculous', 'apparel'),
+    ('mirax', 'electronics'),
+    ('mirex', 'electronics'),
+    ('mirinda', 'kids'),
+    ('mirodel', 'furniture'),
+    ('miromaks', 'electronics'),
+    ('miromax', 'electronics'),
+    ('mirra', 'furniture'),
+    ('misfit', 'electronics'),
+    ('misfit', 'sport'),
+    ('missha', 'medicine'),
+    ('missoni', 'apparel'),
+    ('missoni', 'accessories'),
+    ('misstais', 'apparel'),
+    ('misty', 'apparel'),
+    ('mitasu', 'auto'),
+    ('mitasu', 'appliances'),
+    ('mitre', 'sport'),
+    ('mitsuji', 'electronics'),
+    ('mitte', 'apparel'),
+    ('miumiu', 'apparel'),
+    ('miumiu', 'accessories'),
+    ('miwen', 'stationery'),
+    ('mizon', 'medicine');
+```
+[2024-12-05T22:04:51.358+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to their respective categories based on the search queries:
+
+1. **mioshi** - electronics
+2. **mipow** - electronics, accessories
+3. **mir** - appliances, electronics
+4. **miracase** - accessories
+5. **miracle** - medicine, health
+6. **miraculous** - kids, apparel (related to the animated series)
+7. **mirax** - electronics
+8. **mirex** - electronics
+9. **mirinda** - beverages (not fitting in the given categories, but could be loosely associated with kids)
+10. **mirodel** - furniture
+11. **miromaks** - electronics
+12. **miromax** - electronics
+13. **mirra** - furniture
+14. **misfit** - electronics, sport
+15. **missha** - cosmetics (not fitting in the given categories, but could be loosely associated with medicine)
+16. **missoni** - apparel, accessories
+17. **misstais** - apparel
+18. **misty** - apparel
+19. **mitasu** - auto, appliances
+20. **mitre** - sport
+21. **mitsuji** - electronics
+22. **mitte** - apparel
+23. **miumiu** - apparel, accessories
+24. **miwen** - stationery
+25. **mizon** - cosmetics (not fitting in the given categories, but could be loosely associated with medicine)
+
+Now, I'll generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mioshi', 'electronics'),
+    ('mipow', 'electronics'),
+    ('mipow', 'accessories'),
+    ('mir', 'appliances'),
+    ('mir', 'electronics'),
+    ('miracase', 'accessories'),
+    ('miracle', 'medicine'),
+    ('miraculous', 'kids'),
+    ('miraculous', 'apparel'),
+    ('mirax', 'electronics'),
+    ('mirex', 'electronics'),
+    ('mirinda', 'kids'),
+    ('mirodel', 'furniture'),
+    ('miromaks', 'electronics'),
+    ('miromax', 'electronics'),
+    ('mirra', 'furniture'),
+    ('misfit', 'electronics'),
+    ('misfit', 'sport'),
+    ('missha', 'medicine'),
+    ('missoni', 'apparel'),
+    ('missoni', 'accessories'),
+    ('misstais', 'apparel'),
+    ('misty', 'apparel'),
+    ('mitasu', 'auto'),
+    ('mitasu', 'appliances'),
+    ('mitre', 'sport'),
+    ('mitsuji', 'electronics'),
+    ('mitte', 'apparel'),
+    ('miumiu', 'apparel'),
+    ('miumiu', 'accessories'),
+    ('miwen', 'stationery'),
+    ('mizon', 'medicine');
+```
+[2024-12-05T22:04:51.380+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:04:51.381+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:04:22.616813+00:00, execution_date=20241205T220422, start_date=20241205T220428, end_date=20241205T220451
+[2024-12-05T22:04:51.431+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:04:51.451+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:04:51.454+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

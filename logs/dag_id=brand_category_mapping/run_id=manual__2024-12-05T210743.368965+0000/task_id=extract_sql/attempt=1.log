@@ -1,0 +1,202 @@
+[2024-12-05T21:08:10.962+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:08:10.996+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:07:43.368965+00:00 [queued]>
+[2024-12-05T21:08:11.007+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:07:43.368965+00:00 [queued]>
+[2024-12-05T21:08:11.008+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:08:11.020+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:07:43.368965+00:00
+[2024-12-05T21:08:11.026+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3176) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:08:11.027+0000] {standard_task_runner.py:72} INFO - Started process 3177 to run task
+[2024-12-05T21:08:11.028+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:07:43.368965+00:00', '--job-id', '697', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpyqxc2zpm']
+[2024-12-05T21:08:11.030+0000] {standard_task_runner.py:105} INFO - Job 697: Subtask extract_sql
+[2024-12-05T21:08:11.066+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:07:43.368965+00:00 [running]> on host c7780884450d
+[2024-12-05T21:08:11.168+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:07:43.368965+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:07:43.368965+00:00'
+[2024-12-05T21:08:11.170+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:08:11.214+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the brands to their respective categories based on the search results:
+
+1. **bergauf**: construction
+2. **berger**: construction, tools
+3. **berghoff**: appliances, kitchenware
+4. **bergner**: kitchenware, appliances
+5. **bering**: accessories, watches
+6. **berkley**: sport, fishing equipment
+7. **berkut**: electronics, tools
+8. **berlinger**: appliances, kitchenware
+9. **berlingerhaus**: appliances, kitchenware
+10. **bernina**: appliances, sewing machines
+11. **berossi**: accessories, bags
+12. **bertoni**: apparel, clothing
+13. **bertonilorelli**: kids, baby products
+14. **beru**: auto, automotive parts
+15. **besafe**: kids, safety products
+16. **bessey**: tools, construction
+17. **best**: appliances, home goods
+18. **bestbalance**: fitness, sport
+19. **bestia**: apparel, bags
+20. **bestlife**: medicine, health products
+21. **bestoy**: kids, toys
+22. **bestway**: country_yard, outdoor equipment
+23. **besty**: apparel, clothing
+24. **bethesda**: medicine, health products
+25. **betsy**: apparel, clothing
+
+Now, I will generate the SQL INSERT statement based on this mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('bergauf', 'construction'),
+    ('berger', 'construction'),
+    ('berger', 'tools'),
+    ('berghoff', 'appliances'),
+    ('berghoff', 'kitchenware'),
+    ('bergner', 'kitchenware'),
+    ('bergner', 'appliances'),
+    ('bering', 'accessories'),
+    ('bering', 'watches'),
+    ('berkley', 'sport'),
+    ('berkley', 'fishing equipment'),
+    ('berkut', 'electronics'),
+    ('berkut', 'tools'),
+    ('berlinger', 'appliances'),
+    ('berlinger', 'kitchenware'),
+    ('berlingerhaus', 'appliances'),
+    ('berlingerhaus', 'kitchenware'),
+    ('bernina', 'appliances'),
+    ('bernina', 'sewing machines'),
+    ('berossi', 'accessories'),
+    ('berossi', 'bags'),
+    ('bertoni', 'apparel'),
+    ('bertoni', 'clothing'),
+    ('bertonilorelli', 'kids'),
+    ('bertonilorelli', 'baby products'),
+    ('beru', 'auto'),
+    ('beru', 'automotive parts'),
+    ('besafe', 'kids'),
+    ('besafe', 'safety products'),
+    ('bessey', 'tools'),
+    ('bessey', 'construction'),
+    ('best', 'appliances'),
+    ('best', 'home goods'),
+    ('bestbalance', 'fitness'),
+    ('bestbalance', 'sport'),
+    ('bestia', 'apparel'),
+    ('bestia', 'bags'),
+    ('bestlife', 'medicine'),
+    ('bestlife', 'health products'),
+    ('bestoy', 'kids'),
+    ('bestoy', 'toys'),
+    ('bestway', 'country_yard'),
+    ('bestway', 'outdoor equipment'),
+    ('besty', 'apparel'),
+    ('besty', 'clothing'),
+    ('bethesda', 'medicine'),
+    ('bethesda', 'health products'),
+    ('betsy', 'apparel'),
+    ('betsy', 'clothing');
+```
+[2024-12-05T21:08:11.216+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('bergauf', 'construction'),
+    ('berger', 'construction'),
+    ('berger', 'tools'),
+    ('berghoff', 'appliances'),
+    ('berghoff', 'kitchenware'),
+    ('bergner', 'kitchenware'),
+    ('bergner', 'appliances'),
+    ('bering', 'accessories'),
+    ('bering', 'watches'),
+    ('berkley', 'sport'),
+    ('berkley', 'fishing equipment'),
+    ('berkut', 'electronics'),
+    ('berkut', 'tools'),
+    ('berlinger', 'appliances'),
+    ('berlinger', 'kitchenware'),
+    ('berlingerhaus', 'appliances'),
+    ('berlingerhaus', 'kitchenware'),
+    ('bernina', 'appliances'),
+    ('bernina', 'sewing machines'),
+    ('berossi', 'accessories'),
+    ('berossi', 'bags'),
+    ('bertoni', 'apparel'),
+    ('bertoni', 'clothing'),
+    ('bertonilorelli', 'kids'),
+    ('bertonilorelli', 'baby products'),
+    ('beru', 'auto'),
+    ('beru', 'automotive parts'),
+    ('besafe', 'kids'),
+    ('besafe', 'safety products'),
+    ('bessey', 'tools'),
+    ('bessey', 'construction'),
+    ('best', 'appliances'),
+    ('best', 'home goods'),
+    ('bestbalance', 'fitness'),
+    ('bestbalance', 'sport'),
+    ('bestia', 'apparel'),
+    ('bestia', 'bags'),
+    ('bestlife', 'medicine'),
+    ('bestlife', 'health products'),
+    ('bestoy', 'kids'),
+    ('bestoy', 'toys'),
+    ('bestway', 'country_yard'),
+    ('bestway', 'outdoor equipment'),
+    ('besty', 'apparel'),
+    ('besty', 'clothing'),
+    ('bethesda', 'medicine'),
+    ('bethesda', 'health products'),
+    ('betsy', 'apparel'),
+    ('betsy', 'clothing');
+[2024-12-05T21:08:11.217+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('bergauf', 'construction'),
+    ('berger', 'construction'),
+    ('berger', 'tools'),
+    ('berghoff', 'appliances'),
+    ('berghoff', 'kitchenware'),
+    ('bergner', 'kitchenware'),
+    ('bergner', 'appliances'),
+    ('bering', 'accessories'),
+    ('bering', 'watches'),
+    ('berkley', 'sport'),
+    ('berkley', 'fishing equipment'),
+    ('berkut', 'electronics'),
+    ('berkut', 'tools'),
+    ('berlinger', 'appliances'),
+    ('berlinger', 'kitchenware'),
+    ('berlingerhaus', 'appliances'),
+    ('berlingerhaus', 'kitchenware'),
+    ('bernina', 'appliances'),
+    ('bernina', 'sewing machines'),
+    ('berossi', 'accessories'),
+    ('berossi', 'bags'),
+    ('bertoni', 'apparel'),
+    ('bertoni', 'clothing'),
+    ('bertonilorelli', 'kids'),
+    ('bertonilorelli', 'baby products'),
+    ('beru', 'auto'),
+    ('beru', 'automotive parts'),
+    ('besafe', 'kids'),
+    ('besafe', 'safety products'),
+    ('bessey', 'tools'),
+    ('bessey', 'construction'),
+    ('best', 'appliances'),
+    ('best', 'home goods'),
+    ('bestbalance', 'fitness'),
+    ('bestbalance', 'sport'),
+    ('bestia', 'apparel'),
+    ('bestia', 'bags'),
+    ('bestlife', 'medicine'),
+    ('bestlife', 'health products'),
+    ('bestoy', 'kids'),
+    ('bestoy', 'toys'),
+    ('bestway', 'country_yard'),
+    ('bestway', 'outdoor equipment'),
+    ('besty', 'apparel'),
+    ('besty', 'clothing'),
+    ('bethesda', 'medicine'),
+    ('bethesda', 'health products'),
+    ('betsy', 'apparel'),
+    ('betsy', 'clothing');
+[2024-12-05T21:08:11.255+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:08:11.256+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:07:43.368965+00:00, execution_date=20241205T210743, start_date=20241205T210810, end_date=20241205T210811
+[2024-12-05T21:08:11.282+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:08:11.301+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:08:11.304+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

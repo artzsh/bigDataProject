@@ -1,0 +1,133 @@
+[2024-12-05T21:54:27.408+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:54:27.420+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:53:59.397585+00:00 [queued]>
+[2024-12-05T21:54:27.427+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:53:59.397585+00:00 [queued]>
+[2024-12-05T21:54:27.428+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:54:27.440+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:53:59.397585+00:00
+[2024-12-05T21:54:27.446+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5649) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:54:27.448+0000] {standard_task_runner.py:72} INFO - Started process 5650 to run task
+[2024-12-05T21:54:27.448+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:53:59.397585+00:00', '--job-id', '1231', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmphmykwjtx']
+[2024-12-05T21:54:27.450+0000] {standard_task_runner.py:105} INFO - Job 1231: Subtask extract_sql
+[2024-12-05T21:54:27.499+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:53:59.397585+00:00 [running]> on host c7780884450d
+[2024-12-05T21:54:27.568+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:53:59.397585+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:53:59.397585+00:00'
+[2024-12-05T21:54:27.569+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:54:27.589+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the provided brands to the predefined categories based on the searches:
+
+1. **leicosleiya** - no specific category found; assigned **apparel**.
+2. **leilieve** - no specific category found; assigned **apparel**.
+3. **leiya** - no specific category found; assigned **apparel**.
+4. **leki** - primarily known for outdoor and sports equipment; assigned **sport**.
+5. **lel** - no specific category found; assigned **apparel**.
+6. **lelabo** - known for perfumes; assigned **accessories**.
+7. **lele** - no specific category found; assigned **apparel**.
+8. **lem** - no specific category found; assigned **appliances**.
+9. **lemark** - primarily known for home appliances; assigned **appliances**.
+10. **lembu** - no specific category found; assigned **apparel**.
+11. **lemonadoff** - no specific category found; assigned **apparel**.
+12. **lenizdat** - no specific category found; assigned **stationery**.
+13. **lenor** - known for fabric softeners; assigned **appliances**.
+14. **lenovo** - known for computers and electronics; assigned **computers, electronics**.
+15. **lenta** - primarily a supermarket chain; assigned **country_yard**.
+16. **leo** - no specific category found; assigned **apparel**.
+17. **leonardo** - no specific category found; assigned **furniture**.
+18. **leone** - no specific category found; assigned **apparel**.
+19. **leosco** - no specific category found; assigned **appliances**.
+20. **lepota** - no specific category found; assigned **apparel**.
+21. **leran** - primarily known for home appliances; assigned **appliances**.
+22. **leset** - no specific category found; assigned **stationery**.
+23. **lesozavod** - no specific category found; assigned **construction**.
+24. **lesparfumsderosine** - known for perfumes; assigned **accessories**.
+25. **lessar** - primarily known for electronics; assigned **electronics**.
+
+Now, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('leicosleiya', 'apparel'),
+    ('leilieve', 'apparel'),
+    ('leiya', 'apparel'),
+    ('leki', 'sport'),
+    ('lel', 'apparel'),
+    ('lelabo', 'accessories'),
+    ('lele', 'apparel'),
+    ('lem', 'appliances'),
+    ('lemark', 'appliances'),
+    ('lembu', 'apparel'),
+    ('lemonadoff', 'apparel'),
+    ('lenizdat', 'stationery'),
+    ('lenor', 'appliances'),
+    ('lenovo', 'computers'),
+    ('lenovo', 'electronics'),
+    ('lenta', 'country_yard'),
+    ('leo', 'apparel'),
+    ('leonardo', 'furniture'),
+    ('leone', 'apparel'),
+    ('leosco', 'appliances'),
+    ('lepota', 'apparel'),
+    ('leran', 'appliances'),
+    ('leset', 'stationery'),
+    ('lesozavod', 'construction'),
+    ('lesparfumsderosine', 'accessories'),
+    ('lessar', 'electronics');
+```
+[2024-12-05T21:54:27.590+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('leicosleiya', 'apparel'),
+    ('leilieve', 'apparel'),
+    ('leiya', 'apparel'),
+    ('leki', 'sport'),
+    ('lel', 'apparel'),
+    ('lelabo', 'accessories'),
+    ('lele', 'apparel'),
+    ('lem', 'appliances'),
+    ('lemark', 'appliances'),
+    ('lembu', 'apparel'),
+    ('lemonadoff', 'apparel'),
+    ('lenizdat', 'stationery'),
+    ('lenor', 'appliances'),
+    ('lenovo', 'computers'),
+    ('lenovo', 'electronics'),
+    ('lenta', 'country_yard'),
+    ('leo', 'apparel'),
+    ('leonardo', 'furniture'),
+    ('leone', 'apparel'),
+    ('leosco', 'appliances'),
+    ('lepota', 'apparel'),
+    ('leran', 'appliances'),
+    ('leset', 'stationery'),
+    ('lesozavod', 'construction'),
+    ('lesparfumsderosine', 'accessories'),
+    ('lessar', 'electronics');
+[2024-12-05T21:54:27.590+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('leicosleiya', 'apparel'),
+    ('leilieve', 'apparel'),
+    ('leiya', 'apparel'),
+    ('leki', 'sport'),
+    ('lel', 'apparel'),
+    ('lelabo', 'accessories'),
+    ('lele', 'apparel'),
+    ('lem', 'appliances'),
+    ('lemark', 'appliances'),
+    ('lembu', 'apparel'),
+    ('lemonadoff', 'apparel'),
+    ('lenizdat', 'stationery'),
+    ('lenor', 'appliances'),
+    ('lenovo', 'computers'),
+    ('lenovo', 'electronics'),
+    ('lenta', 'country_yard'),
+    ('leo', 'apparel'),
+    ('leonardo', 'furniture'),
+    ('leone', 'apparel'),
+    ('leosco', 'appliances'),
+    ('lepota', 'apparel'),
+    ('leran', 'appliances'),
+    ('leset', 'stationery'),
+    ('lesozavod', 'construction'),
+    ('lesparfumsderosine', 'accessories'),
+    ('lessar', 'electronics');
+[2024-12-05T21:54:27.606+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:54:27.607+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:53:59.397585+00:00, execution_date=20241205T215359, start_date=20241205T215427, end_date=20241205T215427
+[2024-12-05T21:54:27.622+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:54:27.640+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:54:27.642+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

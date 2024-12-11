@@ -1,0 +1,174 @@
+[2024-12-05T22:33:24.625+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:33:24.639+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:33:20.098753+00:00 [queued]>
+[2024-12-05T22:33:24.647+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:33:20.098753+00:00 [queued]>
+[2024-12-05T22:33:24.647+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:33:24.659+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:33:20.098753+00:00
+[2024-12-05T22:33:24.666+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7729) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:33:24.667+0000] {standard_task_runner.py:72} INFO - Started process 7730 to run task
+[2024-12-05T22:33:24.667+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:33:20.098753+00:00', '--job-id', '1680', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpbmfwamh0']
+[2024-12-05T22:33:24.669+0000] {standard_task_runner.py:105} INFO - Job 1680: Subtask call_llm
+[2024-12-05T22:33:24.709+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:33:20.098753+00:00 [running]> on host c7780884450d
+[2024-12-05T22:33:24.774+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:33:20.098753+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:33:20.098753+00:00'
+[2024-12-05T22:33:24.775+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:33:24.792+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['spectra', 'speedlink', 'spektr-pribor', 'spektrsport', 'speroni', 'sphero', 'spider-man', 'spiegelau', 'spinbike', 'spinmaster', 'spinmasters', 'spinmop', 'splashlings', 'splat', 'sp.lion', 'sportelite', 'sportop', 'spotter', 'springfree', 'sprint', 'sprite', 'spur', 'spurschuhwerk', 'spyder', 'squier'], 'next_index': 4750}
+[2024-12-05T22:33:24.793+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:33:25.226+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:33:46.209+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the assigned categories for the provided brands based on the search queries:
+
+1. **spectra** - electronics
+2. **speedlink** - electronics, accessories
+3. **spektr-pribor** - electronics, appliances
+4. **spektrsport** - sport, apparel
+5. **speroni** - appliances
+6. **sphero** - electronics, kids
+7. **spider-man** - kids, apparel
+8. **spiegelau** - appliances, furniture
+9. **spinbike** - sport, appliances
+10. **spinmaster** - kids, toys
+11. **spinmasters** - kids, toys
+12. **spinmop** - appliances
+13. **splashlings** - kids, toys
+14. **splat** - kids, stationery
+15. **sp.lion** - kids, toys
+16. **sportelite** - sport, apparel
+17. **sportop** - sport, appliances
+18. **spotter** - sport, apparel
+19. **springfree** - country_yard, appliances
+20. **sprint** - electronics
+21. **sprite** - beverages (not in the provided categories)
+22. **spur** - apparel, accessories
+23. **spurschuhwerk** - apparel, accessories
+24. **spyder** - apparel, sport
+25. **squier** - instruments (not in the provided categories)
+
+Now, generating the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('spectra', 'electronics'),
+    ('speedlink', 'electronics'),
+    ('speedlink', 'accessories'),
+    ('spektr-pribor', 'electronics'),
+    ('spektr-pribor', 'appliances'),
+    ('spektrsport', 'sport'),
+    ('spektrsport', 'apparel'),
+    ('speroni', 'appliances'),
+    ('sphero', 'electronics'),
+    ('sphero', 'kids'),
+    ('spider-man', 'kids'),
+    ('spider-man', 'apparel'),
+    ('spiegelau', 'appliances'),
+    ('spiegelau', 'furniture'),
+    ('spinbike', 'sport'),
+    ('spinbike', 'appliances'),
+    ('spinmaster', 'kids'),
+    ('spinmasters', 'kids'),
+    ('spinmop', 'appliances'),
+    ('splashlings', 'kids'),
+    ('splat', 'kids'),
+    ('splat', 'stationery'),
+    ('sp.lion', 'kids'),
+    ('sp.lion', 'toys'),
+    ('sportelite', 'sport'),
+    ('sportelite', 'apparel'),
+    ('sportop', 'sport'),
+    ('sportop', 'appliances'),
+    ('spotter', 'sport'),
+    ('spotter', 'apparel'),
+    ('springfree', 'country_yard'),
+    ('springfree', 'appliances'),
+    ('sprint', 'electronics'),
+    ('sprite', 'beverages'),
+    ('spur', 'apparel'),
+    ('spur', 'accessories'),
+    ('spurschuhwerk', 'apparel'),
+    ('spurschuhwerk', 'accessories'),
+    ('spyder', 'apparel'),
+    ('spyder', 'sport'),
+    ('squier', 'instruments');
+```
+
+Note: The brands 'sprite' and 'squier' do not fit into any of the predefined categories, so I've included them as well, but they may need to be handled separately based on your requirements.
+[2024-12-05T22:33:46.210+0000] {python.py:240} INFO - Done. Returned value was: Here are the assigned categories for the provided brands based on the search queries:
+
+1. **spectra** - electronics
+2. **speedlink** - electronics, accessories
+3. **spektr-pribor** - electronics, appliances
+4. **spektrsport** - sport, apparel
+5. **speroni** - appliances
+6. **sphero** - electronics, kids
+7. **spider-man** - kids, apparel
+8. **spiegelau** - appliances, furniture
+9. **spinbike** - sport, appliances
+10. **spinmaster** - kids, toys
+11. **spinmasters** - kids, toys
+12. **spinmop** - appliances
+13. **splashlings** - kids, toys
+14. **splat** - kids, stationery
+15. **sp.lion** - kids, toys
+16. **sportelite** - sport, apparel
+17. **sportop** - sport, appliances
+18. **spotter** - sport, apparel
+19. **springfree** - country_yard, appliances
+20. **sprint** - electronics
+21. **sprite** - beverages (not in the provided categories)
+22. **spur** - apparel, accessories
+23. **spurschuhwerk** - apparel, accessories
+24. **spyder** - apparel, sport
+25. **squier** - instruments (not in the provided categories)
+
+Now, generating the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('spectra', 'electronics'),
+    ('speedlink', 'electronics'),
+    ('speedlink', 'accessories'),
+    ('spektr-pribor', 'electronics'),
+    ('spektr-pribor', 'appliances'),
+    ('spektrsport', 'sport'),
+    ('spektrsport', 'apparel'),
+    ('speroni', 'appliances'),
+    ('sphero', 'electronics'),
+    ('sphero', 'kids'),
+    ('spider-man', 'kids'),
+    ('spider-man', 'apparel'),
+    ('spiegelau', 'appliances'),
+    ('spiegelau', 'furniture'),
+    ('spinbike', 'sport'),
+    ('spinbike', 'appliances'),
+    ('spinmaster', 'kids'),
+    ('spinmasters', 'kids'),
+    ('spinmop', 'appliances'),
+    ('splashlings', 'kids'),
+    ('splat', 'kids'),
+    ('splat', 'stationery'),
+    ('sp.lion', 'kids'),
+    ('sp.lion', 'toys'),
+    ('sportelite', 'sport'),
+    ('sportelite', 'apparel'),
+    ('sportop', 'sport'),
+    ('sportop', 'appliances'),
+    ('spotter', 'sport'),
+    ('spotter', 'apparel'),
+    ('springfree', 'country_yard'),
+    ('springfree', 'appliances'),
+    ('sprint', 'electronics'),
+    ('sprite', 'beverages'),
+    ('spur', 'apparel'),
+    ('spur', 'accessories'),
+    ('spurschuhwerk', 'apparel'),
+    ('spurschuhwerk', 'accessories'),
+    ('spyder', 'apparel'),
+    ('spyder', 'sport'),
+    ('squier', 'instruments');
+```
+
+Note: The brands 'sprite' and 'squier' do not fit into any of the predefined categories, so I've included them as well, but they may need to be handled separately based on your requirements.
+[2024-12-05T22:33:46.229+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:33:46.230+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:33:20.098753+00:00, execution_date=20241205T223320, start_date=20241205T223324, end_date=20241205T223346
+[2024-12-05T22:33:46.256+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:33:46.275+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:33:46.279+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

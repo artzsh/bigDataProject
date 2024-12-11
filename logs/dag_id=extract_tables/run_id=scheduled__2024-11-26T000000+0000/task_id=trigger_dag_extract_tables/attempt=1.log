@@ -1,0 +1,955 @@
+[2024-11-27T18:38:04.118+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-27T18:38:04.130+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_tables.trigger_dag_extract_tables scheduled__2024-11-26T00:00:00+00:00 [queued]>
+[2024-11-27T18:38:04.136+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_tables.trigger_dag_extract_tables scheduled__2024-11-26T00:00:00+00:00 [queued]>
+[2024-11-27T18:38:04.136+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-27T18:38:04.146+0000] {taskinstance.py:2889} INFO - Executing <Task(TriggerDagRunOperator): trigger_dag_extract_tables> on 2024-11-26 00:00:00+00:00
+[2024-11-27T18:38:04.151+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=127) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-27T18:38:04.152+0000] {standard_task_runner.py:72} INFO - Started process 129 to run task
+[2024-11-27T18:38:04.152+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_tables', 'trigger_dag_extract_tables', 'scheduled__2024-11-26T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/extract_tables.py', '--cfg-path', '/tmp/tmpp16ugf6y']
+[2024-11-27T18:38:04.154+0000] {standard_task_runner.py:105} INFO - Job 15: Subtask trigger_dag_extract_tables
+[2024-11-27T18:38:04.189+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_tables.trigger_dag_extract_tables scheduled__2024-11-26T00:00:00+00:00 [running]> on host b6d44e76794e
+[2024-11-27T18:38:04.380+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_tables' AIRFLOW_CTX_TASK_ID='trigger_dag_extract_tables' AIRFLOW_CTX_EXECUTION_DATE='2024-11-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-26T00:00:00+00:00'
+[2024-11-27T18:38:04.381+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-27T18:38:07.244+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:175: SyntaxWarning: invalid escape sequence '\d'
+  """Execution policy for an activity.
+
+[2024-11-27T18:38:07.244+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:222: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.247+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1151: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source.
+
+[2024-11-27T18:38:07.247+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1248: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.248+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1271: SyntaxWarning: invalid escape sequence '\d'
+  """Copy activity sources of tabular type.
+
+[2024-11-27T18:38:07.249+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1406: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.249+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1439: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Amazon Marketplace Web Service source.
+
+[2024-11-27T18:38:07.250+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1495: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.250+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1683: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity AmazonRdsForOracle source.
+
+[2024-11-27T18:38:07.251+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:1750: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.253+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:2025: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Amazon RDS for SQL Server source.
+
+[2024-11-27T18:38:07.254+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:2110: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.255+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:2407: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for Amazon Redshift Source.
+
+[2024-11-27T18:38:07.256+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:2468: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.263+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:3987: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity sink.
+
+[2024-11-27T18:38:07.264+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:4096: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.265+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:4127: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Avro sink.
+
+[2024-11-27T18:38:07.266+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:4186: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.266+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:4225: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Avro source.
+
+[2024-11-27T18:38:07.267+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:4275: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.269+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:5209: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Data Lake Storage Gen2 sink.
+
+[2024-11-27T18:38:07.273+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:5265: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.274+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:5302: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure BlobFS source.
+
+[2024-11-27T18:38:07.275+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:5358: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.277+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:6437: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Databricks Delta Lake sink.
+
+[2024-11-27T18:38:07.278+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:6497: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.279+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:6538: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Databricks Delta Lake source.
+
+[2024-11-27T18:38:07.279+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:6588: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.280+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:7023: SyntaxWarning: invalid escape sequence '\d'
+  """Azure Data Explorer command activity.
+
+[2024-11-27T18:38:07.281+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:7096: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.282+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:7267: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Data Explorer sink.
+
+[2024-11-27T18:38:07.283+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:7333: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.283+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:7378: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Data Explorer (Kusto) source.
+
+[2024-11-27T18:38:07.284+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:7440: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.285+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:8222: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Data Lake Store sink.
+
+[2024-11-27T18:38:07.286+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:8282: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.286+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:8322: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Data Lake source.
+
+[2024-11-27T18:38:07.286+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:8368: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.288+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:9475: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure MariaDB source.
+
+[2024-11-27T18:38:07.289+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:9531: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.291+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:10532: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure MySql sink.
+
+[2024-11-27T18:38:07.292+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:10588: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.292+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:10625: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure MySQL source.
+
+[2024-11-27T18:38:07.292+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:10680: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.301+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:10923: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure PostgreSQL sink.
+
+[2024-11-27T18:38:07.304+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:10979: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.304+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:11016: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure PostgreSQL source.
+
+[2024-11-27T18:38:07.305+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:11072: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.305+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:11231: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Queue sink.
+
+[2024-11-27T18:38:07.306+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:11282: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.306+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:11420: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Search Index sink.
+
+[2024-11-27T18:38:07.307+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:11477: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.309+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:12300: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure SQL sink.
+
+[2024-11-27T18:38:07.309+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:12383: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.310+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:12439: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure SQL source.
+
+[2024-11-27T18:38:07.310+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:12524: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.311+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:13019: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Table sink.
+
+[2024-11-27T18:38:07.312+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:13090: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.312+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:13139: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Table source.
+
+[2024-11-27T18:38:07.312+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:13200: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.314+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:13886: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Binary sink.
+
+[2024-11-27T18:38:07.314+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:13941: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.315+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:13977: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Binary source.
+
+[2024-11-27T18:38:07.315+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:14026: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.318+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:14318: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Blob sink.
+
+[2024-11-27T18:38:07.319+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:14388: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.319+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:14436: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure Blob source.
+
+[2024-11-27T18:38:07.320+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:14492: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.320+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:14744: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for a Cassandra database.
+
+[2024-11-27T18:38:07.321+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:14810: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.323+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:15415: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Common Data Service for Apps sink.
+
+[2024-11-27T18:38:07.324+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:15482: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.325+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:15527: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Common Data Service for Apps source.
+
+[2024-11-27T18:38:07.326+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:15578: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.327+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:15897: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Concur Service source.
+
+[2024-11-27T18:38:07.328+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:15953: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.330+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:16617: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity sink for a CosmosDB (MongoDB API) database.
+
+[2024-11-27T18:38:07.331+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:16674: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.331+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:16712: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for a CosmosDB (MongoDB API) database.
+
+[2024-11-27T18:38:07.332+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:16780: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.333+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:16932: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure CosmosDB (SQL API) Collection sink.
+
+[2024-11-27T18:38:07.333+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:16988: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.334+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:17025: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure CosmosDB (SQL API) Collection source.
+
+[2024-11-27T18:38:07.334+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:17090: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.335+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:17228: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Couchbase server source.
+
+[2024-11-27T18:38:07.335+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:17284: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.342+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:20234: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for Db2 databases.
+
+[2024-11-27T18:38:07.343+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:20289: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.345+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:20862: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity DelimitedText sink.
+
+[2024-11-27T18:38:07.345+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:20921: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.346+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:20960: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity DelimitedText source.
+
+[2024-11-27T18:38:07.346+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:21014: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.358+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:21316: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Document Database Collection sink.
+
+[2024-11-27T18:38:07.359+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:21377: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.359+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:21418: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Document Database Collection source.
+
+[2024-11-27T18:38:07.360+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:21478: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.360+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:21612: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Drill server source.
+
+[2024-11-27T18:38:07.361+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:21668: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.365+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:22155: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Dynamics AX source.
+
+[2024-11-27T18:38:07.366+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:22218: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.367+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:22559: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Dynamics CRM sink.
+
+[2024-11-27T18:38:07.367+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:22626: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.368+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:22671: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Dynamics CRM source.
+
+[2024-11-27T18:38:07.368+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:22722: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.369+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:23061: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Dynamics sink.
+
+[2024-11-27T18:38:07.370+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:23128: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.370+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:23173: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Dynamics source.
+
+[2024-11-27T18:38:07.370+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:23224: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.371+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:23511: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Eloqua server source.
+
+[2024-11-27T18:38:07.372+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:23567: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.373+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:23968: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity excel source.
+
+[2024-11-27T18:38:07.374+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:24018: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.377+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:25343: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity file system sink.
+
+[2024-11-27T18:38:07.378+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:25398: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.378+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:25434: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity file system source.
+
+[2024-11-27T18:38:07.379+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:25485: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.381+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:26723: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Google AdWords service source.
+
+[2024-11-27T18:38:07.381+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:26779: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.382+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:27121: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Google BigQuery service source.
+
+[2024-11-27T18:38:07.382+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:27177: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.383+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:27461: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Google BigQuery service source.
+
+[2024-11-27T18:38:07.383+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:27517: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.385+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:28053: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Greenplum Database source.
+
+[2024-11-27T18:38:07.386+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:28109: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.387+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:28536: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity HBase server source.
+
+[2024-11-27T18:38:07.387+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:28592: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.388+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:28932: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity HDFS source.
+
+[2024-11-27T18:38:07.388+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:28982: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.391+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:30727: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Hive Server source.
+
+[2024-11-27T18:38:07.391+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:30783: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.392+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:31296: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for an HTTP file.
+
+[2024-11-27T18:38:07.393+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:31344: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.393+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:31617: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Hubspot Service source.
+
+[2024-11-27T18:38:07.394+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:31673: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.394+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:32120: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Impala server source.
+
+[2024-11-27T18:38:07.395+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:32176: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.395+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:32339: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Informix sink.
+
+[2024-11-27T18:38:07.396+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:32395: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.396+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:32432: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for Informix.
+
+[2024-11-27T18:38:07.397+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:32487: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.398+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:33502: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Jira Service source.
+
+[2024-11-27T18:38:07.399+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:33558: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.399+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:33869: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Json sink.
+
+[2024-11-27T18:38:07.400+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:33928: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.400+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:33967: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Json source.
+
+[2024-11-27T18:38:07.400+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:34021: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.401+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:34739: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity for Microsoft Fabric LakeHouse Table sink.
+
+[2024-11-27T18:38:07.402+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:34806: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.402+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:34852: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for Microsoft Fabric LakeHouse Table.
+
+[2024-11-27T18:38:07.402+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:34908: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.406+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:36915: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Magento server source.
+
+[2024-11-27T18:38:07.406+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:36971: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.407+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:37417: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity MariaDB server source.
+
+[2024-11-27T18:38:07.408+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:37473: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.408+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:37845: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Marketo server source.
+
+[2024-11-27T18:38:07.409+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:37901: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.410+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:38208: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Microsoft Access sink.
+
+[2024-11-27T18:38:07.410+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:38264: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.410+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:38301: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for Microsoft Access.
+
+[2024-11-27T18:38:07.411+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:38351: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.412+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:38690: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for a MongoDB Atlas database.
+
+[2024-11-27T18:38:07.412+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:38758: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.413+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:39141: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for a MongoDB database.
+
+[2024-11-27T18:38:07.413+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:39192: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.414+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:39419: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for a MongoDB database.
+
+[2024-11-27T18:38:07.414+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:39487: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.415+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:39683: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for MySQL databases.
+
+[2024-11-27T18:38:07.416+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:39738: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.418+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:40019: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Netezza source.
+
+[2024-11-27T18:38:07.418+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:40084: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.420+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41138: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for OData source.
+
+[2024-11-27T18:38:07.421+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41196: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.421+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41359: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity ODBC sink.
+
+[2024-11-27T18:38:07.421+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41415: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.422+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41452: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for ODBC databases.
+
+[2024-11-27T18:38:07.422+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41507: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.423+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41875: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for an Office 365 service.
+
+[2024-11-27T18:38:07.424+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:41947: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.454+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:42441: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Oracle Service Cloud source.
+
+[2024-11-27T18:38:07.455+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:42497: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.455+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:42534: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Oracle sink.
+
+[2024-11-27T18:38:07.455+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:42590: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.456+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:42627: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Oracle source.
+
+[2024-11-27T18:38:07.456+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:42692: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.457+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43020: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity ORC sink.
+
+[2024-11-27T18:38:07.457+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43079: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.457+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43118: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity ORC source.
+
+[2024-11-27T18:38:07.458+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43168: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.459+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43514: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Parquet sink.
+
+[2024-11-27T18:38:07.459+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43573: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.460+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43612: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Parquet source.
+
+[2024-11-27T18:38:07.460+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43666: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.461+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:43989: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Paypal Service source.
+
+[2024-11-27T18:38:07.461+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:44045: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.462+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:44386: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Phoenix server source.
+
+[2024-11-27T18:38:07.462+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:44442: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.469+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:45003: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for PostgreSQL databases.
+
+[2024-11-27T18:38:07.469+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:45058: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.470+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:45444: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for PostgreSQL databases.
+
+[2024-11-27T18:38:07.471+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:45499: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.472+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:46042: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Presto server source.
+
+[2024-11-27T18:38:07.472+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:46098: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.473+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:46702: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity QuickBooks server source.
+
+[2024-11-27T18:38:07.474+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:46758: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.474+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:47000: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for various relational databases.
+
+[2024-11-27T18:38:07.475+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:47050: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.476+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:47648: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Responsys source.
+
+[2024-11-27T18:38:07.477+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:47704: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.478+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:48113: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Rest service Sink.
+
+[2024-11-27T18:38:07.479+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:48190: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.479+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:48244: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Rest service source.
+
+[2024-11-27T18:38:07.480+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:48321: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.482+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:49499: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce Marketing Cloud source.
+
+[2024-11-27T18:38:07.483+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:49555: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.484+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:49932: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce Service Cloud sink.
+
+[2024-11-27T18:38:07.485+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50002: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.485+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50052: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce Service Cloud source.
+
+[2024-11-27T18:38:07.486+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50107: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.487+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50379: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce Service Cloud V2 sink.
+
+[2024-11-27T18:38:07.487+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50449: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.488+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50499: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce Service Cloud V2 source.
+
+[2024-11-27T18:38:07.488+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50554: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.489+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50590: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce sink.
+
+[2024-11-27T18:38:07.489+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50660: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.489+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50710: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce source.
+
+[2024-11-27T18:38:07.490+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:50770: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.491+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51046: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce V2 sink.
+
+[2024-11-27T18:38:07.491+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51116: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.492+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51166: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Salesforce V2 source.
+
+[2024-11-27T18:38:07.492+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51226: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.493+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51485: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for SapBW server via MDX.
+
+[2024-11-27T18:38:07.493+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51540: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.494+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51787: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity SAP Cloud for Customer sink.
+
+[2024-11-27T18:38:07.494+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51851: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.495+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51895: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for SAP Cloud for Customer source.
+
+[2024-11-27T18:38:07.495+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:51958: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.496+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:52212: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for SAP ECC source.
+
+[2024-11-27T18:38:07.496+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:52275: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.497+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:52463: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for SAP HANA source.
+
+[2024-11-27T18:38:07.498+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:52532: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.499+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:53040: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for SAP ODP source.
+
+[2024-11-27T18:38:07.499+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:53111: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.500+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:53334: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for SAP Business Warehouse Open Hub Destination source.
+
+[2024-11-27T18:38:07.500+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:53407: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.501+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:53961: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for SAP Table source.
+
+[2024-11-27T18:38:07.502+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:54059: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.503+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:54322: SyntaxWarning: invalid escape sequence '\d'
+  """Script activity type.
+
+[2024-11-27T18:38:07.503+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:54398: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.505+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:55022: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity ServiceNow server source.
+
+[2024-11-27T18:38:07.505+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:55078: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.506+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:55310: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity ServiceNowV2 server source.
+
+[2024-11-27T18:38:07.506+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:55365: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.508+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:56196: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for sharePoint online list source.
+
+[2024-11-27T18:38:07.508+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:56248: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.509+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:56508: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Shopify Service source.
+
+[2024-11-27T18:38:07.509+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:56564: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.511+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57087: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity snowflake sink.
+
+[2024-11-27T18:38:07.511+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57147: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.512+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57187: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity snowflake source.
+
+[2024-11-27T18:38:07.512+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57237: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.513+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57560: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity snowflake sink.
+
+[2024-11-27T18:38:07.514+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57620: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.514+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57660: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity snowflake source.
+
+[2024-11-27T18:38:07.514+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:57710: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.517+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59106: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Spark Server source.
+
+[2024-11-27T18:38:07.518+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59162: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.518+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59316: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity SQL Data Warehouse sink.
+
+[2024-11-27T18:38:07.518+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59396: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.519+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59452: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity SQL Data Warehouse source.
+
+[2024-11-27T18:38:07.519+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59535: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.519+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59594: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure SQL Managed Instance sink.
+
+[2024-11-27T18:38:07.520+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59677: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.520+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59733: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Azure SQL Managed Instance source.
+
+[2024-11-27T18:38:07.520+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:59818: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.522+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:60639: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity SQL server sink.
+
+[2024-11-27T18:38:07.523+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:60722: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.523+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:60778: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity SQL server source.
+
+[2024-11-27T18:38:07.524+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:60863: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.524+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61167: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity SQL sink.
+
+[2024-11-27T18:38:07.525+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61250: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.525+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61306: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity SQL source.
+
+[2024-11-27T18:38:07.526+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61387: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.526+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61696: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Square Service source.
+
+[2024-11-27T18:38:07.527+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61752: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.527+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61954: SyntaxWarning: invalid escape sequence '\d'
+  """SSIS package execution log location.
+
+[2024-11-27T18:38:07.528+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:61992: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.529+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:62660: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for Sybase databases.
+
+[2024-11-27T18:38:07.530+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:62715: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.533+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:63882: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Teradata source.
+
+[2024-11-27T18:38:07.533+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:63946: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.535+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:64582: SyntaxWarning: invalid escape sequence '\d'
+  """Trigger that schedules pipeline runs for all fixed time interval windows from a start time
+
+[2024-11-27T18:38:07.536+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:64674: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.536+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:64940: SyntaxWarning: invalid escape sequence '\d'
+  """This activity executes inner activities until the specified boolean expression results to true
+
+[2024-11-27T18:38:07.537+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:65014: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.538+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:65117: SyntaxWarning: invalid escape sequence '\d'
+  """This activity verifies that an external resource exists.
+
+[2024-11-27T18:38:07.538+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:65199: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.539+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:65385: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Vertica source.
+
+[2024-11-27T18:38:07.540+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:65441: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.541+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:65874: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Microsoft Fabric Warehouse sink.
+
+[2024-11-27T18:38:07.541+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:65950: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.542+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:66003: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Microsoft Fabric Warehouse source.
+
+[2024-11-27T18:38:07.542+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:66087: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.544+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:66686: SyntaxWarning: invalid escape sequence '\d'
+  """WebHook activity.
+
+[2024-11-27T18:38:07.546+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:66779: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.548+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:66918: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity source for web page table.
+
+[2024-11-27T18:38:07.550+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:66964: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.552+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:67735: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Xero Service source.
+
+[2024-11-27T18:38:07.554+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:67791: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.556+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:68043: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Xml source.
+
+[2024-11-27T18:38:07.557+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:68097: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:07.559+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:68532: SyntaxWarning: invalid escape sequence '\d'
+  """A copy activity Zoho server source.
+
+[2024-11-27T18:38:07.560+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/azure/synapse/artifacts/models/_models_py3.py:68588: SyntaxWarning: invalid escape sequence '\d'
+  """
+
+[2024-11-27T18:38:08.283+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-27T18:38:08.283+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extract_tables, task_id=trigger_dag_extract_tables, run_id=scheduled__2024-11-26T00:00:00+00:00, execution_date=20241126T000000, start_date=20241127T183804, end_date=20241127T183808
+[2024-11-27T18:38:08.339+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-27T18:38:08.352+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-27T18:38:08.355+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

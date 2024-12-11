@@ -1,0 +1,160 @@
+[2024-12-05T21:41:38.529+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:41:38.545+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:41:12.111416+00:00 [queued]>
+[2024-12-05T21:41:38.553+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:41:12.111416+00:00 [queued]>
+[2024-12-05T21:41:38.554+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:41:38.569+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:41:12.111416+00:00
+[2024-12-05T21:41:38.576+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4977) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:41:38.578+0000] {standard_task_runner.py:72} INFO - Started process 4978 to run task
+[2024-12-05T21:41:38.577+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:41:12.111416+00:00', '--job-id', '1087', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp_xxue9so']
+[2024-12-05T21:41:38.579+0000] {standard_task_runner.py:105} INFO - Job 1087: Subtask extract_sql
+[2024-12-05T21:41:38.621+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:41:12.111416+00:00 [running]> on host c7780884450d
+[2024-12-05T21:41:38.687+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:41:12.111416+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:41:12.111416+00:00'
+[2024-12-05T21:41:38.688+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:41:38.707+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the provided brands to their respective categories based on the searches:
+
+1. **huawang** - construction
+2. **huawei** - electronics, computers
+3. **hubeiindustrialaimiletrading** - construction
+4. **hubert** - appliances, furniture
+5. **hubsan** - electronics
+6. **hubster** - apparel, accessories
+7. **hudsonbaby** - kids, apparel
+8. **huggies** - kids, medicine
+9. **hugoboss** - apparel, accessories
+10. **huile** - appliances
+11. **huion** - electronics
+12. **humana** - medicine
+13. **humidifier** - appliances
+14. **hummer** - auto
+15. **humminbird** - electronics
+16. **hunter** - apparel, accessories
+17. **huntkey** - electronics
+18. **huntsman** - construction
+19. **huochu** - appliances
+20. **huppe** - furniture
+21. **hurakan** - auto
+22. **hurom** - appliances
+23. **husky** - appliances, auto
+24. **husqvarna** - auto, construction
+25. **huter** - appliances, construction
+
+Now, I'll generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('huawang', 'construction'),
+    ('huawei', 'electronics'),
+    ('huawei', 'computers'),
+    ('hubeiindustrialaimiletrading', 'construction'),
+    ('hubert', 'appliances'),
+    ('hubert', 'furniture'),
+    ('hubsan', 'electronics'),
+    ('hubster', 'apparel'),
+    ('hubster', 'accessories'),
+    ('hudsonbaby', 'kids'),
+    ('hudsonbaby', 'apparel'),
+    ('huggies', 'kids'),
+    ('huggies', 'medicine'),
+    ('hugoboss', 'apparel'),
+    ('hugoboss', 'accessories'),
+    ('huile', 'appliances'),
+    ('huion', 'electronics'),
+    ('humana', 'medicine'),
+    ('humidifier', 'appliances'),
+    ('hummer', 'auto'),
+    ('humminbird', 'electronics'),
+    ('hunter', 'apparel'),
+    ('hunter', 'accessories'),
+    ('huntkey', 'electronics'),
+    ('huntsman', 'construction'),
+    ('huochu', 'appliances'),
+    ('huppe', 'furniture'),
+    ('hurakan', 'auto'),
+    ('hurom', 'appliances'),
+    ('husky', 'appliances'),
+    ('husky', 'auto'),
+    ('husqvarna', 'auto'),
+    ('husqvarna', 'construction'),
+    ('huter', 'appliances'),
+    ('huter', 'construction');
+```
+[2024-12-05T21:41:38.707+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('huawang', 'construction'),
+    ('huawei', 'electronics'),
+    ('huawei', 'computers'),
+    ('hubeiindustrialaimiletrading', 'construction'),
+    ('hubert', 'appliances'),
+    ('hubert', 'furniture'),
+    ('hubsan', 'electronics'),
+    ('hubster', 'apparel'),
+    ('hubster', 'accessories'),
+    ('hudsonbaby', 'kids'),
+    ('hudsonbaby', 'apparel'),
+    ('huggies', 'kids'),
+    ('huggies', 'medicine'),
+    ('hugoboss', 'apparel'),
+    ('hugoboss', 'accessories'),
+    ('huile', 'appliances'),
+    ('huion', 'electronics'),
+    ('humana', 'medicine'),
+    ('humidifier', 'appliances'),
+    ('hummer', 'auto'),
+    ('humminbird', 'electronics'),
+    ('hunter', 'apparel'),
+    ('hunter', 'accessories'),
+    ('huntkey', 'electronics'),
+    ('huntsman', 'construction'),
+    ('huochu', 'appliances'),
+    ('huppe', 'furniture'),
+    ('hurakan', 'auto'),
+    ('hurom', 'appliances'),
+    ('husky', 'appliances'),
+    ('husky', 'auto'),
+    ('husqvarna', 'auto'),
+    ('husqvarna', 'construction'),
+    ('huter', 'appliances'),
+    ('huter', 'construction');
+[2024-12-05T21:41:38.708+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('huawang', 'construction'),
+    ('huawei', 'electronics'),
+    ('huawei', 'computers'),
+    ('hubeiindustrialaimiletrading', 'construction'),
+    ('hubert', 'appliances'),
+    ('hubert', 'furniture'),
+    ('hubsan', 'electronics'),
+    ('hubster', 'apparel'),
+    ('hubster', 'accessories'),
+    ('hudsonbaby', 'kids'),
+    ('hudsonbaby', 'apparel'),
+    ('huggies', 'kids'),
+    ('huggies', 'medicine'),
+    ('hugoboss', 'apparel'),
+    ('hugoboss', 'accessories'),
+    ('huile', 'appliances'),
+    ('huion', 'electronics'),
+    ('humana', 'medicine'),
+    ('humidifier', 'appliances'),
+    ('hummer', 'auto'),
+    ('humminbird', 'electronics'),
+    ('hunter', 'apparel'),
+    ('hunter', 'accessories'),
+    ('huntkey', 'electronics'),
+    ('huntsman', 'construction'),
+    ('huochu', 'appliances'),
+    ('huppe', 'furniture'),
+    ('hurakan', 'auto'),
+    ('hurom', 'appliances'),
+    ('husky', 'appliances'),
+    ('husky', 'auto'),
+    ('husqvarna', 'auto'),
+    ('husqvarna', 'construction'),
+    ('huter', 'appliances'),
+    ('huter', 'construction');
+[2024-12-05T21:41:38.726+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:41:38.726+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:41:12.111416+00:00, execution_date=20241205T214112, start_date=20241205T214138, end_date=20241205T214138
+[2024-12-05T21:41:38.752+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:41:38.772+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:41:38.775+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

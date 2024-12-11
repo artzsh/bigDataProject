@@ -1,0 +1,158 @@
+[2024-12-05T22:03:29.092+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:03:29.104+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:03:24.285059+00:00 [queued]>
+[2024-12-05T22:03:29.111+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:03:24.285059+00:00 [queued]>
+[2024-12-05T22:03:29.112+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:03:29.126+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:03:24.285059+00:00
+[2024-12-05T22:03:29.131+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6141) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:03:29.132+0000] {standard_task_runner.py:72} INFO - Started process 6142 to run task
+[2024-12-05T22:03:29.133+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:03:24.285059+00:00', '--job-id', '1338', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpijbfy7w5']
+[2024-12-05T22:03:29.135+0000] {standard_task_runner.py:105} INFO - Job 1338: Subtask call_llm
+[2024-12-05T22:03:29.167+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:03:24.285059+00:00 [running]> on host c7780884450d
+[2024-12-05T22:03:29.226+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:03:24.285059+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:03:24.285059+00:00'
+[2024-12-05T22:03:29.227+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:03:29.243+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['microsoft', 'microsoftxboxone', 'microtech', 'micuna', 'midea', 'mideer', 'mido', 'midori', 'midou', 'midwest', 'miele', 'miescarpe', 'mif', 'mifold', 'mig', 'miif', 'mijia', 'mikasa', 'mikma', 'mikrotik', 'milan', 'milanicosmetics', 'milano', 'milardo', 'milat'], 'next_index': 3325}
+[2024-12-05T22:03:29.244+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:03:29.659+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:03:44.861+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Based on the task, I've processed the brands and assigned categories accordingly. Here are the results of the search and the assigned categories:
+
+1. **microsoft**: electronics, computers
+2. **microsoftxboxone**: electronics, sport
+3. **microtech**: electronics, appliances
+4. **micuna**: kids, furniture
+5. **midea**: appliances
+6. **mideer**: kids, stationery
+7. **mido**: accessories
+8. **midori**: stationery
+9. **midou**: apparel
+10. **midwest**: construction
+11. **miele**: appliances
+12. **miescarpe**: apparel, accessories
+13. **mif**: appliances
+14. **mifold**: kids, accessories
+15. **mig**: auto
+16. **miif**: apparel
+17. **mijia**: electronics
+18. **mikasa**: accessories, sport
+19. **mikma**: apparel
+20. **mikrotik**: electronics
+21. **milan**: apparel
+22. **milanicosmetics**: accessories
+23. **milano**: apparel
+24. **milardo**: apparel
+25. **milat**: auto
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('microsoft', 'electronics'),
+    ('microsoft', 'computers'),
+    ('microsoftxboxone', 'electronics'),
+    ('microsoftxboxone', 'sport'),
+    ('microtech', 'electronics'),
+    ('microtech', 'appliances'),
+    ('micuna', 'kids'),
+    ('micuna', 'furniture'),
+    ('midea', 'appliances'),
+    ('mideer', 'kids'),
+    ('mideer', 'stationery'),
+    ('mido', 'accessories'),
+    ('midori', 'stationery'),
+    ('midou', 'apparel'),
+    ('midwest', 'construction'),
+    ('miele', 'appliances'),
+    ('miescarpe', 'apparel'),
+    ('miescarpe', 'accessories'),
+    ('mif', 'appliances'),
+    ('mifold', 'kids'),
+    ('mifold', 'accessories'),
+    ('mig', 'auto'),
+    ('miif', 'apparel'),
+    ('mijia', 'electronics'),
+    ('mikasa', 'accessories'),
+    ('mikasa', 'sport'),
+    ('mikma', 'apparel'),
+    ('mikrotik', 'electronics'),
+    ('milan', 'apparel'),
+    ('milanicosmetics', 'accessories'),
+    ('milano', 'apparel'),
+    ('milardo', 'apparel'),
+    ('milat', 'auto');
+``` 
+
+This SQL statement reflects the mapping of each brand to its respective categories based on the information gathered.
+[2024-12-05T22:03:44.861+0000] {python.py:240} INFO - Done. Returned value was: Based on the task, I've processed the brands and assigned categories accordingly. Here are the results of the search and the assigned categories:
+
+1. **microsoft**: electronics, computers
+2. **microsoftxboxone**: electronics, sport
+3. **microtech**: electronics, appliances
+4. **micuna**: kids, furniture
+5. **midea**: appliances
+6. **mideer**: kids, stationery
+7. **mido**: accessories
+8. **midori**: stationery
+9. **midou**: apparel
+10. **midwest**: construction
+11. **miele**: appliances
+12. **miescarpe**: apparel, accessories
+13. **mif**: appliances
+14. **mifold**: kids, accessories
+15. **mig**: auto
+16. **miif**: apparel
+17. **mijia**: electronics
+18. **mikasa**: accessories, sport
+19. **mikma**: apparel
+20. **mikrotik**: electronics
+21. **milan**: apparel
+22. **milanicosmetics**: accessories
+23. **milano**: apparel
+24. **milardo**: apparel
+25. **milat**: auto
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('microsoft', 'electronics'),
+    ('microsoft', 'computers'),
+    ('microsoftxboxone', 'electronics'),
+    ('microsoftxboxone', 'sport'),
+    ('microtech', 'electronics'),
+    ('microtech', 'appliances'),
+    ('micuna', 'kids'),
+    ('micuna', 'furniture'),
+    ('midea', 'appliances'),
+    ('mideer', 'kids'),
+    ('mideer', 'stationery'),
+    ('mido', 'accessories'),
+    ('midori', 'stationery'),
+    ('midou', 'apparel'),
+    ('midwest', 'construction'),
+    ('miele', 'appliances'),
+    ('miescarpe', 'apparel'),
+    ('miescarpe', 'accessories'),
+    ('mif', 'appliances'),
+    ('mifold', 'kids'),
+    ('mifold', 'accessories'),
+    ('mig', 'auto'),
+    ('miif', 'apparel'),
+    ('mijia', 'electronics'),
+    ('mikasa', 'accessories'),
+    ('mikasa', 'sport'),
+    ('mikma', 'apparel'),
+    ('mikrotik', 'electronics'),
+    ('milan', 'apparel'),
+    ('milanicosmetics', 'accessories'),
+    ('milano', 'apparel'),
+    ('milardo', 'apparel'),
+    ('milat', 'auto');
+``` 
+
+This SQL statement reflects the mapping of each brand to its respective categories based on the information gathered.
+[2024-12-05T22:03:44.880+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:03:44.880+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:03:24.285059+00:00, execution_date=20241205T220324, start_date=20241205T220329, end_date=20241205T220344
+[2024-12-05T22:03:44.915+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:03:44.931+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:03:44.936+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

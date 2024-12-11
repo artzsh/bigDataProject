@@ -1,0 +1,178 @@
+[2024-12-05T22:37:42.536+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:37:42.550+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:37:15.408436+00:00 [queued]>
+[2024-12-05T22:37:42.556+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:37:15.408436+00:00 [queued]>
+[2024-12-05T22:37:42.557+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:37:42.569+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:37:15.408436+00:00
+[2024-12-05T22:37:42.576+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7936) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:37:42.578+0000] {standard_task_runner.py:72} INFO - Started process 7937 to run task
+[2024-12-05T22:37:42.577+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:37:15.408436+00:00', '--job-id', '1723', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp5adg2axj']
+[2024-12-05T22:37:42.579+0000] {standard_task_runner.py:105} INFO - Job 1723: Subtask extract_sql
+[2024-12-05T22:37:42.616+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:37:15.408436+00:00 [running]> on host c7780884450d
+[2024-12-05T22:37:42.681+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:37:15.408436+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:37:15.408436+00:00'
+[2024-12-05T22:37:42.682+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:37:42.701+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the brands mapped to their respective categories based on the searches:
+
+1. **tactic**: sport
+2. **tacx**: sport, accessories
+3. **taftoys**: kids, accessories
+4. **tagheuer**: accessories, apparel
+5. **tailg**: electronics, appliances
+6. **taitong**: electronics
+7. **taiwan**: country_yard (general category, as it refers to a location)
+8. **takamine**: instruments (music), accessories
+9. **takeit**: electronics, accessories
+10. **tako**: appliances
+11. **takstar**: electronics, accessories
+12. **talaris**: appliances
+13. **taller**: furniture
+14. **tamaris**: apparel, accessories
+15. **tamina**: apparel
+16. **tamish**: electronics
+17. **tamiteks**: apparel
+18. **tamron**: electronics, accessories
+19. **tangleteezer**: accessories, hair care
+20. **tanglewood**: instruments (music), accessories
+21. **tanix**: electronics
+22. **tannoy**: electronics
+23. **tao-tao**: auto, kids (specifically for toys)
+24. **taramps**: electronics
+25. **target**: apparel, electronics, furniture, kids, appliances, stationery
+
+Based on the mappings, here is the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('tactic', 'sport'),
+    ('tacx', 'sport'),
+    ('tacx', 'accessories'),
+    ('taftoys', 'kids'),
+    ('taftoys', 'accessories'),
+    ('tagheuer', 'accessories'),
+    ('tagheuer', 'apparel'),
+    ('tailg', 'electronics'),
+    ('tailg', 'appliances'),
+    ('taitong', 'electronics'),
+    ('taiwan', 'country_yard'),
+    ('takamine', 'accessories'),
+    ('takeit', 'electronics'),
+    ('takeit', 'accessories'),
+    ('tako', 'appliances'),
+    ('takstar', 'electronics'),
+    ('takstar', 'accessories'),
+    ('talaris', 'appliances'),
+    ('taller', 'furniture'),
+    ('tamaris', 'apparel'),
+    ('tamaris', 'accessories'),
+    ('tamina', 'apparel'),
+    ('tamish', 'electronics'),
+    ('tamiteks', 'apparel'),
+    ('tamron', 'electronics'),
+    ('tamron', 'accessories'),
+    ('tangleteezer', 'accessories'),
+    ('tangleteezer', 'hair care'),
+    ('tanglewood', 'accessories'),
+    ('tanglewood', 'instruments'),
+    ('tanix', 'electronics'),
+    ('tannoy', 'electronics'),
+    ('tao-tao', 'auto'),
+    ('tao-tao', 'kids'),
+    ('taramps', 'electronics'),
+    ('target', 'apparel'),
+    ('target', 'electronics'),
+    ('target', 'furniture'),
+    ('target', 'kids'),
+    ('target', 'appliances'),
+    ('target', 'stationery');
+```
+[2024-12-05T22:37:42.702+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('tactic', 'sport'),
+    ('tacx', 'sport'),
+    ('tacx', 'accessories'),
+    ('taftoys', 'kids'),
+    ('taftoys', 'accessories'),
+    ('tagheuer', 'accessories'),
+    ('tagheuer', 'apparel'),
+    ('tailg', 'electronics'),
+    ('tailg', 'appliances'),
+    ('taitong', 'electronics'),
+    ('taiwan', 'country_yard'),
+    ('takamine', 'accessories'),
+    ('takeit', 'electronics'),
+    ('takeit', 'accessories'),
+    ('tako', 'appliances'),
+    ('takstar', 'electronics'),
+    ('takstar', 'accessories'),
+    ('talaris', 'appliances'),
+    ('taller', 'furniture'),
+    ('tamaris', 'apparel'),
+    ('tamaris', 'accessories'),
+    ('tamina', 'apparel'),
+    ('tamish', 'electronics'),
+    ('tamiteks', 'apparel'),
+    ('tamron', 'electronics'),
+    ('tamron', 'accessories'),
+    ('tangleteezer', 'accessories'),
+    ('tangleteezer', 'hair care'),
+    ('tanglewood', 'accessories'),
+    ('tanglewood', 'instruments'),
+    ('tanix', 'electronics'),
+    ('tannoy', 'electronics'),
+    ('tao-tao', 'auto'),
+    ('tao-tao', 'kids'),
+    ('taramps', 'electronics'),
+    ('target', 'apparel'),
+    ('target', 'electronics'),
+    ('target', 'furniture'),
+    ('target', 'kids'),
+    ('target', 'appliances'),
+    ('target', 'stationery');
+[2024-12-05T22:37:42.703+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('tactic', 'sport'),
+    ('tacx', 'sport'),
+    ('tacx', 'accessories'),
+    ('taftoys', 'kids'),
+    ('taftoys', 'accessories'),
+    ('tagheuer', 'accessories'),
+    ('tagheuer', 'apparel'),
+    ('tailg', 'electronics'),
+    ('tailg', 'appliances'),
+    ('taitong', 'electronics'),
+    ('taiwan', 'country_yard'),
+    ('takamine', 'accessories'),
+    ('takeit', 'electronics'),
+    ('takeit', 'accessories'),
+    ('tako', 'appliances'),
+    ('takstar', 'electronics'),
+    ('takstar', 'accessories'),
+    ('talaris', 'appliances'),
+    ('taller', 'furniture'),
+    ('tamaris', 'apparel'),
+    ('tamaris', 'accessories'),
+    ('tamina', 'apparel'),
+    ('tamish', 'electronics'),
+    ('tamiteks', 'apparel'),
+    ('tamron', 'electronics'),
+    ('tamron', 'accessories'),
+    ('tangleteezer', 'accessories'),
+    ('tangleteezer', 'hair care'),
+    ('tanglewood', 'accessories'),
+    ('tanglewood', 'instruments'),
+    ('tanix', 'electronics'),
+    ('tannoy', 'electronics'),
+    ('tao-tao', 'auto'),
+    ('tao-tao', 'kids'),
+    ('taramps', 'electronics'),
+    ('target', 'apparel'),
+    ('target', 'electronics'),
+    ('target', 'furniture'),
+    ('target', 'kids'),
+    ('target', 'appliances'),
+    ('target', 'stationery');
+[2024-12-05T22:37:42.721+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:37:42.721+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:37:15.408436+00:00, execution_date=20241205T223715, start_date=20241205T223742, end_date=20241205T223742
+[2024-12-05T22:37:42.752+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:37:42.772+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:37:42.775+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

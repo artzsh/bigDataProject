@@ -1,0 +1,166 @@
+[2024-12-05T21:26:04.871+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:26:04.883+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:25:38.752260+00:00 [queued]>
+[2024-12-05T21:26:04.890+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:25:38.752260+00:00 [queued]>
+[2024-12-05T21:26:04.890+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:26:04.902+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:25:38.752260+00:00
+[2024-12-05T21:26:04.909+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4165) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:26:04.910+0000] {standard_task_runner.py:72} INFO - Started process 4166 to run task
+[2024-12-05T21:26:04.910+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:25:38.752260+00:00', '--job-id', '913', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp988tue92']
+[2024-12-05T21:26:04.912+0000] {standard_task_runner.py:105} INFO - Job 913: Subtask extract_sql
+[2024-12-05T21:26:04.945+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:25:38.752260+00:00 [running]> on host c7780884450d
+[2024-12-05T21:26:05.005+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:25:38.752260+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:25:38.752260+00:00'
+[2024-12-05T21:26:05.006+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:26:05.024+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their respective categories based on the provided guidelines:
+
+1. **elikor** - appliances
+2. **elite** - apparel, accessories
+3. **elitebohemia** - apparel, accessories
+4. **elitech** - electronics, appliances
+5. **elizavecca** - medicine, cosmetics
+6. **elleci** - appliances, electronics
+7. **elna** - appliances
+8. **elp** - electronics
+9. **elpaza** - apparel
+10. **elpumps** - appliances
+11. **elskin** - medicine, cosmetics
+12. **eltempo** - electronics
+13. **eltex** - electronics
+14. **eltreco** - electronics, appliances
+15. **eltron** - electronics
+16. **elvin** - furniture
+17. **elysium** - medicine, cosmetics
+18. **emal** - appliances
+19. **emanuelungaro** - apparel, accessories
+20. **emar** - furniture
+21. **embawood** - furniture
+22. **embryolisse** - medicine, cosmetics
+23. **emer** - apparel, accessories
+24. **emil** - apparel
+25. **emiliopucci** - apparel, accessories
+
+Now, here is the SQL INSERT statement based on the mappings above:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('elikor', 'appliances'),
+    ('elite', 'apparel'),
+    ('elite', 'accessories'),
+    ('elitebohemia', 'apparel'),
+    ('elitebohemia', 'accessories'),
+    ('elitech', 'electronics'),
+    ('elitech', 'appliances'),
+    ('elizavecca', 'medicine'),
+    ('elizavecca', 'cosmetics'),
+    ('elleci', 'appliances'),
+    ('elleci', 'electronics'),
+    ('elna', 'appliances'),
+    ('elp', 'electronics'),
+    ('elpaza', 'apparel'),
+    ('elpumps', 'appliances'),
+    ('elskin', 'medicine'),
+    ('elskin', 'cosmetics'),
+    ('eltempo', 'electronics'),
+    ('eltex', 'electronics'),
+    ('eltreco', 'electronics'),
+    ('eltreco', 'appliances'),
+    ('eltron', 'electronics'),
+    ('elvin', 'furniture'),
+    ('elysium', 'medicine'),
+    ('elysium', 'cosmetics'),
+    ('emal', 'appliances'),
+    ('emanuelungaro', 'apparel'),
+    ('emanuelungaro', 'accessories'),
+    ('emar', 'furniture'),
+    ('embawood', 'furniture'),
+    ('embryolisse', 'medicine'),
+    ('embryolisse', 'cosmetics'),
+    ('emer', 'apparel'),
+    ('emer', 'accessories'),
+    ('emil', 'apparel'),
+    ('emiliopucci', 'apparel'),
+    ('emiliopucci', 'accessories');
+```
+[2024-12-05T21:26:05.025+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('elikor', 'appliances'),
+    ('elite', 'apparel'),
+    ('elite', 'accessories'),
+    ('elitebohemia', 'apparel'),
+    ('elitebohemia', 'accessories'),
+    ('elitech', 'electronics'),
+    ('elitech', 'appliances'),
+    ('elizavecca', 'medicine'),
+    ('elizavecca', 'cosmetics'),
+    ('elleci', 'appliances'),
+    ('elleci', 'electronics'),
+    ('elna', 'appliances'),
+    ('elp', 'electronics'),
+    ('elpaza', 'apparel'),
+    ('elpumps', 'appliances'),
+    ('elskin', 'medicine'),
+    ('elskin', 'cosmetics'),
+    ('eltempo', 'electronics'),
+    ('eltex', 'electronics'),
+    ('eltreco', 'electronics'),
+    ('eltreco', 'appliances'),
+    ('eltron', 'electronics'),
+    ('elvin', 'furniture'),
+    ('elysium', 'medicine'),
+    ('elysium', 'cosmetics'),
+    ('emal', 'appliances'),
+    ('emanuelungaro', 'apparel'),
+    ('emanuelungaro', 'accessories'),
+    ('emar', 'furniture'),
+    ('embawood', 'furniture'),
+    ('embryolisse', 'medicine'),
+    ('embryolisse', 'cosmetics'),
+    ('emer', 'apparel'),
+    ('emer', 'accessories'),
+    ('emil', 'apparel'),
+    ('emiliopucci', 'apparel'),
+    ('emiliopucci', 'accessories');
+[2024-12-05T21:26:05.025+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('elikor', 'appliances'),
+    ('elite', 'apparel'),
+    ('elite', 'accessories'),
+    ('elitebohemia', 'apparel'),
+    ('elitebohemia', 'accessories'),
+    ('elitech', 'electronics'),
+    ('elitech', 'appliances'),
+    ('elizavecca', 'medicine'),
+    ('elizavecca', 'cosmetics'),
+    ('elleci', 'appliances'),
+    ('elleci', 'electronics'),
+    ('elna', 'appliances'),
+    ('elp', 'electronics'),
+    ('elpaza', 'apparel'),
+    ('elpumps', 'appliances'),
+    ('elskin', 'medicine'),
+    ('elskin', 'cosmetics'),
+    ('eltempo', 'electronics'),
+    ('eltex', 'electronics'),
+    ('eltreco', 'electronics'),
+    ('eltreco', 'appliances'),
+    ('eltron', 'electronics'),
+    ('elvin', 'furniture'),
+    ('elysium', 'medicine'),
+    ('elysium', 'cosmetics'),
+    ('emal', 'appliances'),
+    ('emanuelungaro', 'apparel'),
+    ('emanuelungaro', 'accessories'),
+    ('emar', 'furniture'),
+    ('embawood', 'furniture'),
+    ('embryolisse', 'medicine'),
+    ('embryolisse', 'cosmetics'),
+    ('emer', 'apparel'),
+    ('emer', 'accessories'),
+    ('emil', 'apparel'),
+    ('emiliopucci', 'apparel'),
+    ('emiliopucci', 'accessories');
+[2024-12-05T21:26:05.041+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:26:05.041+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:25:38.752260+00:00, execution_date=20241205T212538, start_date=20241205T212604, end_date=20241205T212605
+[2024-12-05T21:26:05.084+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:26:05.103+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:26:05.107+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

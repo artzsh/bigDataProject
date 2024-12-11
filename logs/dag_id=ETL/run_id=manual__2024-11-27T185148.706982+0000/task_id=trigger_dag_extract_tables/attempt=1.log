@@ -1,0 +1,18 @@
+[2024-11-27T19:09:05.074+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-27T19:09:05.083+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.trigger_dag_extract_tables manual__2024-11-27T18:51:48.706982+00:00 [queued]>
+[2024-11-27T19:09:05.088+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.trigger_dag_extract_tables manual__2024-11-27T18:51:48.706982+00:00 [queued]>
+[2024-11-27T19:09:05.089+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-27T19:09:05.098+0000] {taskinstance.py:2889} INFO - Executing <Task(TriggerDagRunOperator): trigger_dag_extract_tables> on 2024-11-27 18:51:48.706982+00:00
+[2024-11-27T19:09:05.104+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=583) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-27T19:09:05.105+0000] {standard_task_runner.py:72} INFO - Started process 585 to run task
+[2024-11-27T19:09:05.106+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'trigger_dag_extract_tables', 'manual__2024-11-27T18:51:48.706982+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp3lvbnxii']
+[2024-11-27T19:09:05.107+0000] {standard_task_runner.py:105} INFO - Job 30: Subtask trigger_dag_extract_tables
+[2024-11-27T19:09:05.141+0000] {task_command.py:467} INFO - Running <TaskInstance: ETL.trigger_dag_extract_tables manual__2024-11-27T18:51:48.706982+00:00 [running]> on host b6d44e76794e
+[2024-11-27T19:09:05.199+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='trigger_dag_extract_tables' AIRFLOW_CTX_EXECUTION_DATE='2024-11-27T18:51:48.706982+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-27T18:51:48.706982+00:00'
+[2024-11-27T19:09:05.200+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-27T19:09:06.035+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-27T19:09:06.035+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ETL, task_id=trigger_dag_extract_tables, run_id=manual__2024-11-27T18:51:48.706982+00:00, execution_date=20241127T185148, start_date=20241127T190905, end_date=20241127T190906
+[2024-11-27T19:09:06.081+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-27T19:09:06.087+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

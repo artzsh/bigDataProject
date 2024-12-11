@@ -1,0 +1,130 @@
+[2024-12-05T22:39:14.449+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:39:14.462+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:38:50.387779+00:00 [queued]>
+[2024-12-05T22:39:14.469+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:38:50.387779+00:00 [queued]>
+[2024-12-05T22:39:14.469+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:39:14.481+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:38:50.387779+00:00
+[2024-12-05T22:39:14.487+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8020) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:39:14.488+0000] {standard_task_runner.py:72} INFO - Started process 8021 to run task
+[2024-12-05T22:39:14.488+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:38:50.387779+00:00', '--job-id', '1741', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp05v3eqlm']
+[2024-12-05T22:39:14.490+0000] {standard_task_runner.py:105} INFO - Job 1741: Subtask extract_sql
+[2024-12-05T22:39:14.527+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:38:50.387779+00:00 [running]> on host c7780884450d
+[2024-12-05T22:39:14.589+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:38:50.387779+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:38:50.387779+00:00'
+[2024-12-05T22:39:14.590+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:39:14.607+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the provided brands to the predefined categories based on the search results:
+
+1. **teorema** - electronics
+2. **teosa** - construction
+3. **teplokryma** - appliances
+4. **teploross** - appliances
+5. **teploteh** - appliances
+6. **tera** - electronics
+7. **terleckikomiks** - kids
+8. **termia** - appliances
+9. **terminus** - electronics
+10. **termit** - construction
+11. **terra** - electronics
+12. **terris** - furniture
+13. **tescoma** - appliances
+14. **tesla** - electronics
+15. **teslastyle** - accessories
+16. **tesler** - electronics
+17. **tesma** - appliances
+18. **tesoro** - accessories
+19. **tesy** - appliances
+20. **teta** - furniture
+21. **tetchair** - furniture
+22. **tetra** - electronics
+23. **texa** - electronics
+24. **texet** - electronics
+25. **textar** - auto
+
+Now, here is the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('teorema', 'electronics'),
+    ('teosa', 'construction'),
+    ('teplokryma', 'appliances'),
+    ('teploross', 'appliances'),
+    ('teploteh', 'appliances'),
+    ('tera', 'electronics'),
+    ('terleckikomiks', 'kids'),
+    ('termia', 'appliances'),
+    ('terminus', 'electronics'),
+    ('termit', 'construction'),
+    ('terra', 'electronics'),
+    ('terris', 'furniture'),
+    ('tescoma', 'appliances'),
+    ('tesla', 'electronics'),
+    ('teslastyle', 'accessories'),
+    ('tesler', 'electronics'),
+    ('tesma', 'appliances'),
+    ('tesoro', 'accessories'),
+    ('tesy', 'appliances'),
+    ('teta', 'furniture'),
+    ('tetchair', 'furniture'),
+    ('tetra', 'electronics'),
+    ('texa', 'electronics'),
+    ('texet', 'electronics'),
+    ('textar', 'auto');
+```
+[2024-12-05T22:39:14.607+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('teorema', 'electronics'),
+    ('teosa', 'construction'),
+    ('teplokryma', 'appliances'),
+    ('teploross', 'appliances'),
+    ('teploteh', 'appliances'),
+    ('tera', 'electronics'),
+    ('terleckikomiks', 'kids'),
+    ('termia', 'appliances'),
+    ('terminus', 'electronics'),
+    ('termit', 'construction'),
+    ('terra', 'electronics'),
+    ('terris', 'furniture'),
+    ('tescoma', 'appliances'),
+    ('tesla', 'electronics'),
+    ('teslastyle', 'accessories'),
+    ('tesler', 'electronics'),
+    ('tesma', 'appliances'),
+    ('tesoro', 'accessories'),
+    ('tesy', 'appliances'),
+    ('teta', 'furniture'),
+    ('tetchair', 'furniture'),
+    ('tetra', 'electronics'),
+    ('texa', 'electronics'),
+    ('texet', 'electronics'),
+    ('textar', 'auto');
+[2024-12-05T22:39:14.608+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('teorema', 'electronics'),
+    ('teosa', 'construction'),
+    ('teplokryma', 'appliances'),
+    ('teploross', 'appliances'),
+    ('teploteh', 'appliances'),
+    ('tera', 'electronics'),
+    ('terleckikomiks', 'kids'),
+    ('termia', 'appliances'),
+    ('terminus', 'electronics'),
+    ('termit', 'construction'),
+    ('terra', 'electronics'),
+    ('terris', 'furniture'),
+    ('tescoma', 'appliances'),
+    ('tesla', 'electronics'),
+    ('teslastyle', 'accessories'),
+    ('tesler', 'electronics'),
+    ('tesma', 'appliances'),
+    ('tesoro', 'accessories'),
+    ('tesy', 'appliances'),
+    ('teta', 'furniture'),
+    ('tetchair', 'furniture'),
+    ('tetra', 'electronics'),
+    ('texa', 'electronics'),
+    ('texet', 'electronics'),
+    ('textar', 'auto');
+[2024-12-05T22:39:14.624+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:39:14.625+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:38:50.387779+00:00, execution_date=20241205T223850, start_date=20241205T223914, end_date=20241205T223914
+[2024-12-05T22:39:14.662+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:39:14.680+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:39:14.683+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

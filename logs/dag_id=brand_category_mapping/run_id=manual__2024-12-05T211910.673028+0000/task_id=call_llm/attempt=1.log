@@ -1,0 +1,146 @@
+[2024-12-05T21:19:16.706+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:19:16.718+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:19:10.673028+00:00 [queued]>
+[2024-12-05T21:19:16.725+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:19:10.673028+00:00 [queued]>
+[2024-12-05T21:19:16.726+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:19:16.737+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:19:10.673028+00:00
+[2024-12-05T21:19:16.744+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3796) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:19:16.745+0000] {standard_task_runner.py:72} INFO - Started process 3797 to run task
+[2024-12-05T21:19:16.746+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:19:10.673028+00:00', '--job-id', '834', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpjdpfry0e']
+[2024-12-05T21:19:16.748+0000] {standard_task_runner.py:105} INFO - Job 834: Subtask call_llm
+[2024-12-05T21:19:16.783+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:19:10.673028+00:00 [running]> on host c7780884450d
+[2024-12-05T21:19:16.845+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:19:10.673028+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:19:10.673028+00:00'
+[2024-12-05T21:19:16.846+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:19:16.864+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['daniel', 'danielklein', 'danke', 'danko-tojs', 'dara', 'dardav', 'darina', 'darina-rus', 'dariush', 'darkproject', 'darling', 'dasch', 'dauscher', 'davidoff', 'davinci', 'davita', 'daye', 'dbpower', 'd-clinic', 'dcshoes', 'dda', 'dds', 'ddstyle', 'deamia', 'dearest'], 'next_index': 1225}
+[2024-12-05T21:19:16.865+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:19:17.299+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:19:37.720+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to their respective categories based on the search results and available information:
+
+1. **daniel** - apparel
+2. **danielklein** - accessories, apparel
+3. **danke** - accessories
+4. **danko-tojs** - kids, toys
+5. **dara** - apparel
+6. **dardav** - electronics
+7. **darina** - apparel
+8. **darina-rus** - apparel
+9. **dariush** - apparel
+10. **darkproject** - electronics
+11. **darling** - apparel
+12. **dasch** - accessories
+13. **dauscher** - electronics
+14. **davidoff** - accessories, apparel (fragrances)
+15. **davinci** - stationery
+16. **davita** - medicine
+17. **daye** - medicine
+18. **dbpower** - electronics
+19. **d-clinic** - medicine
+20. **dcshoes** - apparel, sport
+21. **dda** - apparel
+22. **dds** - apparel
+23. **ddstyle** - apparel
+24. **deamia** - apparel
+25. **dearest** - apparel
+
+Based on this mapping, the SQL INSERT statement is as follows:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('daniel', 'apparel'),
+    ('danielklein', 'accessories'),
+    ('danielklein', 'apparel'),
+    ('danke', 'accessories'),
+    ('danko-tojs', 'kids'),
+    ('danko-tojs', 'toys'),
+    ('dara', 'apparel'),
+    ('dardav', 'electronics'),
+    ('darina', 'apparel'),
+    ('darina-rus', 'apparel'),
+    ('dariush', 'apparel'),
+    ('darkproject', 'electronics'),
+    ('darling', 'apparel'),
+    ('dasch', 'accessories'),
+    ('dauscher', 'electronics'),
+    ('davidoff', 'accessories'),
+    ('davidoff', 'apparel'),
+    ('davinci', 'stationery'),
+    ('davita', 'medicine'),
+    ('daye', 'medicine'),
+    ('dbpower', 'electronics'),
+    ('d-clinic', 'medicine'),
+    ('dcshoes', 'apparel'),
+    ('dcshoes', 'sport'),
+    ('dda', 'apparel'),
+    ('dds', 'apparel'),
+    ('ddstyle', 'apparel'),
+    ('deamia', 'apparel'),
+    ('dearest', 'apparel');
+```
+[2024-12-05T21:19:37.721+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to their respective categories based on the search results and available information:
+
+1. **daniel** - apparel
+2. **danielklein** - accessories, apparel
+3. **danke** - accessories
+4. **danko-tojs** - kids, toys
+5. **dara** - apparel
+6. **dardav** - electronics
+7. **darina** - apparel
+8. **darina-rus** - apparel
+9. **dariush** - apparel
+10. **darkproject** - electronics
+11. **darling** - apparel
+12. **dasch** - accessories
+13. **dauscher** - electronics
+14. **davidoff** - accessories, apparel (fragrances)
+15. **davinci** - stationery
+16. **davita** - medicine
+17. **daye** - medicine
+18. **dbpower** - electronics
+19. **d-clinic** - medicine
+20. **dcshoes** - apparel, sport
+21. **dda** - apparel
+22. **dds** - apparel
+23. **ddstyle** - apparel
+24. **deamia** - apparel
+25. **dearest** - apparel
+
+Based on this mapping, the SQL INSERT statement is as follows:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('daniel', 'apparel'),
+    ('danielklein', 'accessories'),
+    ('danielklein', 'apparel'),
+    ('danke', 'accessories'),
+    ('danko-tojs', 'kids'),
+    ('danko-tojs', 'toys'),
+    ('dara', 'apparel'),
+    ('dardav', 'electronics'),
+    ('darina', 'apparel'),
+    ('darina-rus', 'apparel'),
+    ('dariush', 'apparel'),
+    ('darkproject', 'electronics'),
+    ('darling', 'apparel'),
+    ('dasch', 'accessories'),
+    ('dauscher', 'electronics'),
+    ('davidoff', 'accessories'),
+    ('davidoff', 'apparel'),
+    ('davinci', 'stationery'),
+    ('davita', 'medicine'),
+    ('daye', 'medicine'),
+    ('dbpower', 'electronics'),
+    ('d-clinic', 'medicine'),
+    ('dcshoes', 'apparel'),
+    ('dcshoes', 'sport'),
+    ('dda', 'apparel'),
+    ('dds', 'apparel'),
+    ('ddstyle', 'apparel'),
+    ('deamia', 'apparel'),
+    ('dearest', 'apparel');
+```
+[2024-12-05T21:19:37.741+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:19:37.742+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:19:10.673028+00:00, execution_date=20241205T211910, start_date=20241205T211916, end_date=20241205T211937
+[2024-12-05T21:19:37.772+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:19:37.791+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:19:37.794+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

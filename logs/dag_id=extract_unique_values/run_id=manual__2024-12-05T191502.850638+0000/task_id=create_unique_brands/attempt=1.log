@@ -1,0 +1,32 @@
+[2024-12-05T19:15:05.622+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T19:15:05.634+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_brands manual__2024-12-05T19:15:02.850638+00:00 [queued]>
+[2024-12-05T19:15:05.641+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_brands manual__2024-12-05T19:15:02.850638+00:00 [queued]>
+[2024-12-05T19:15:05.642+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T19:15:05.653+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): create_unique_brands> on 2024-12-05 19:15:02.850638+00:00
+[2024-12-05T19:15:05.658+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1044) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T19:15:05.660+0000] {standard_task_runner.py:72} INFO - Started process 1045 to run task
+[2024-12-05T19:15:05.660+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_unique_values', 'create_unique_brands', 'manual__2024-12-05T19:15:02.850638+00:00', '--job-id', '512', '--raw', '--subdir', 'DAGS_FOLDER/select_distinct_brands_categories.py', '--cfg-path', '/tmp/tmpvkh40gbz']
+[2024-12-05T19:15:05.661+0000] {standard_task_runner.py:105} INFO - Job 512: Subtask create_unique_brands
+[2024-12-05T19:15:05.696+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_unique_values.create_unique_brands manual__2024-12-05T19:15:02.850638+00:00 [running]> on host c7780884450d
+[2024-12-05T19:15:05.762+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_unique_values' AIRFLOW_CTX_TASK_ID='create_unique_brands' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T19:15:02.850638+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T19:15:02.850638+00:00'
+[2024-12-05T19:15:05.763+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T19:15:05.788+0000] {select_distinct_brands_categories.py:50} INFO - Обрабатываем ключ: 7
+[2024-12-05T19:15:05.789+0000] {select_distinct_brands_categories.py:65} INFO - Источник брендов: DDS.brands_Apr
+[2024-12-05T19:15:05.789+0000] {select_distinct_brands_categories.py:66} INFO - Целевая таблица брендов: DDS.unique_brands
+[2024-12-05T19:15:05.798+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T19:15:06.519+0000] {select_distinct_brands_categories.py:87} INFO - Соединение с PostgreSQL установлено.
+[2024-12-05T19:15:06.846+0000] {select_distinct_brands_categories.py:100} INFO - Целевая таблица 'DDS.unique_brands' создана или уже существует.
+[2024-12-05T19:15:07.049+0000] {select_distinct_brands_categories.py:111} INFO - Количество уникальных брендов в источнике: 4309
+[2024-12-05T19:15:07.200+0000] {select_distinct_brands_categories.py:122} INFO - Количество брендов в целевой таблице до вставки: 5384
+[2024-12-05T19:15:07.418+0000] {select_distinct_brands_categories.py:140} INFO - Новые уникальные бренды добавлены в 'DDS.unique_brands': 291 записей.
+[2024-12-05T19:15:07.679+0000] {select_distinct_brands_categories.py:151} INFO - Количество брендов в целевой таблице после вставки: 5675
+[2024-12-05T19:15:07.679+0000] {select_distinct_brands_categories.py:161} INFO - Курсор закрыт.
+[2024-12-05T19:15:07.680+0000] {select_distinct_brands_categories.py:164} INFO - Соединение с PostgreSQL закрыто.
+[2024-12-05T19:15:07.681+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T19:15:07.693+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T19:15:07.693+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extract_unique_values, task_id=create_unique_brands, run_id=manual__2024-12-05T19:15:02.850638+00:00, execution_date=20241205T191502, start_date=20241205T191505, end_date=20241205T191507
+[2024-12-05T19:15:07.720+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T19:15:07.738+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T19:15:07.741+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

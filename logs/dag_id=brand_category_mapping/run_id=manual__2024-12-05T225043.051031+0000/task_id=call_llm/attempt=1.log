@@ -1,0 +1,144 @@
+[2024-12-05T22:50:47.982+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:50:47.995+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:50:43.051031+00:00 [queued]>
+[2024-12-05T22:50:48.000+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:50:43.051031+00:00 [queued]>
+[2024-12-05T22:50:48.001+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:50:48.012+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:50:43.051031+00:00
+[2024-12-05T22:50:48.018+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8624) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:50:48.019+0000] {standard_task_runner.py:72} INFO - Started process 8625 to run task
+[2024-12-05T22:50:48.019+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:50:43.051031+00:00', '--job-id', '1872', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpwqyoi6s5']
+[2024-12-05T22:50:48.021+0000] {standard_task_runner.py:105} INFO - Job 1872: Subtask call_llm
+[2024-12-05T22:50:48.056+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:50:43.051031+00:00 [running]> on host c7780884450d
+[2024-12-05T22:50:48.114+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:50:43.051031+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:50:43.051031+00:00'
+[2024-12-05T22:50:48.115+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:50:48.130+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['xg', 'x-game', 'xgimi', 'xgl', 'xiaomi', 'xiaoyueliangtoys', 'xieming', 'xigmatek', 'xilong', 'xing', 'xinyu', 'xjewellery', 'xkg', 'x-level', 'xlmedia', 'xp-pen', 'x-race', 'xstream', 'xtep', 'xti', 'xtrembots', 'xtrike-me', 'xun', 'xwsport', 'xxr'], 'next_index': 5550}
+[2024-12-05T22:50:48.131+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:50:48.539+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:51:05.296+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **xg** - electronics
+2. **x-game** - sport
+3. **xgimi** - electronics
+4. **xgl** - electronics
+5. **xiaomi** - electronics, appliances
+6. **xiaoyueliangtoys** - kids
+7. **xieming** - electronics
+8. **xigmatek** - computers
+9. **xilong** - electronics
+10. **xing** - electronics
+11. **xinyu** - construction
+12. **xjewellery** - accessories
+13. **xkg** - electronics
+14. **x-level** - electronics
+15. **xlmedia** - electronics
+16. **xp-pen** - computers
+17. **x-race** - sport
+18. **xstream** - electronics
+19. **xtep** - apparel, accessories
+20. **xti** - apparel
+21. **xtrembots** - kids, electronics
+22. **xtrike-me** - sport
+23. **xun** - electronics
+24. **xwsport** - sport
+25. **xxr** - auto
+
+Now, here’s the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('xg', 'electronics'),
+    ('x-game', 'sport'),
+    ('xgimi', 'electronics'),
+    ('xgl', 'electronics'),
+    ('xiaomi', 'electronics'),
+    ('xiaomi', 'appliances'),
+    ('xiaoyueliangtoys', 'kids'),
+    ('xieming', 'electronics'),
+    ('xigmatek', 'computers'),
+    ('xilong', 'electronics'),
+    ('xing', 'electronics'),
+    ('xinyu', 'construction'),
+    ('xjewellery', 'accessories'),
+    ('xkg', 'electronics'),
+    ('x-level', 'electronics'),
+    ('xlmedia', 'electronics'),
+    ('xp-pen', 'computers'),
+    ('x-race', 'sport'),
+    ('xstream', 'electronics'),
+    ('xtep', 'apparel'),
+    ('xtep', 'accessories'),
+    ('xti', 'apparel'),
+    ('xtrembots', 'kids'),
+    ('xtrembots', 'electronics'),
+    ('xtrike-me', 'sport'),
+    ('xun', 'electronics'),
+    ('xwsport', 'sport'),
+    ('xxr', 'auto');
+```
+[2024-12-05T22:51:05.297+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **xg** - electronics
+2. **x-game** - sport
+3. **xgimi** - electronics
+4. **xgl** - electronics
+5. **xiaomi** - electronics, appliances
+6. **xiaoyueliangtoys** - kids
+7. **xieming** - electronics
+8. **xigmatek** - computers
+9. **xilong** - electronics
+10. **xing** - electronics
+11. **xinyu** - construction
+12. **xjewellery** - accessories
+13. **xkg** - electronics
+14. **x-level** - electronics
+15. **xlmedia** - electronics
+16. **xp-pen** - computers
+17. **x-race** - sport
+18. **xstream** - electronics
+19. **xtep** - apparel, accessories
+20. **xti** - apparel
+21. **xtrembots** - kids, electronics
+22. **xtrike-me** - sport
+23. **xun** - electronics
+24. **xwsport** - sport
+25. **xxr** - auto
+
+Now, here’s the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('xg', 'electronics'),
+    ('x-game', 'sport'),
+    ('xgimi', 'electronics'),
+    ('xgl', 'electronics'),
+    ('xiaomi', 'electronics'),
+    ('xiaomi', 'appliances'),
+    ('xiaoyueliangtoys', 'kids'),
+    ('xieming', 'electronics'),
+    ('xigmatek', 'computers'),
+    ('xilong', 'electronics'),
+    ('xing', 'electronics'),
+    ('xinyu', 'construction'),
+    ('xjewellery', 'accessories'),
+    ('xkg', 'electronics'),
+    ('x-level', 'electronics'),
+    ('xlmedia', 'electronics'),
+    ('xp-pen', 'computers'),
+    ('x-race', 'sport'),
+    ('xstream', 'electronics'),
+    ('xtep', 'apparel'),
+    ('xtep', 'accessories'),
+    ('xti', 'apparel'),
+    ('xtrembots', 'kids'),
+    ('xtrembots', 'electronics'),
+    ('xtrike-me', 'sport'),
+    ('xun', 'electronics'),
+    ('xwsport', 'sport'),
+    ('xxr', 'auto');
+```
+[2024-12-05T22:51:05.318+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:51:05.319+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:50:43.051031+00:00, execution_date=20241205T225043, start_date=20241205T225047, end_date=20241205T225105
+[2024-12-05T22:51:05.368+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:51:05.390+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:51:05.393+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

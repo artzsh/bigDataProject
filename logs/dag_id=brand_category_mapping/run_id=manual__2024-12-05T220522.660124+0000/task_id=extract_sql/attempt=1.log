@@ -1,0 +1,137 @@
+[2024-12-05T22:05:46.270+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:05:46.282+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:05:22.660124+00:00 [queued]>
+[2024-12-05T22:05:46.291+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:05:22.660124+00:00 [queued]>
+[2024-12-05T22:05:46.291+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:05:46.305+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:05:22.660124+00:00
+[2024-12-05T22:05:46.311+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6258) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:05:46.314+0000] {standard_task_runner.py:72} INFO - Started process 6259 to run task
+[2024-12-05T22:05:46.313+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:05:22.660124+00:00', '--job-id', '1363', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp_gdjvmgq']
+[2024-12-05T22:05:46.316+0000] {standard_task_runner.py:105} INFO - Job 1363: Subtask extract_sql
+[2024-12-05T22:05:46.354+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:05:22.660124+00:00 [running]> on host c7780884450d
+[2024-12-05T22:05:46.417+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:05:22.660124+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:05:22.660124+00:00'
+[2024-12-05T22:05:46.419+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:05:46.438+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Based on the provided brands, I will categorize each brand according to the predefined categories. Here is the mapping process and the resulting SQL INSERT statement.
+
+### Brand Categorization
+
+1. **molto**: Toys and children's products - **kids**
+2. **momentum**: Audio equipment - **electronics**
+3. **momert**: Kitchen appliances - **appliances**
+4. **momi**: Baby products - **kids**
+5. **momo**: Toys - **kids**
+6. **monami**: Stationery products - **stationery**
+7. **monchhichi**: Plush toys - **kids**
+8. **monge**: Pet food - **country_yard**
+9. **mongoose**: Bicycles - **sport**
+10. **monitoraudio**: Audio equipment - **electronics**
+11. **monix**: Kitchen appliances - **appliances**
+12. **monkey**: Toys - **kids**
+13. **monro**: Automotive products - **auto**
+14. **monsher**: Home goods - **furniture**
+15. **monsoon**: Fashion apparel - **apparel**
+16. **monster**: Audio equipment and accessories - **electronics**, **accessories**
+17. **montale**: Perfumes - **accessories**
+18. **montblanc**: Luxury accessories (pens, watches) - **accessories**
+19. **moo**: Stationery and printing - **stationery**
+20. **moon**: Baby products - **kids**
+21. **moongmbh**: Toys - **kids**
+22. **moony**: Baby products - **kids**
+23. **moonybaby**: Baby products - **kids**
+24. **moose**: Toys - **kids**
+25. **moosetoys**: Toys - **kids**
+
+### SQL INSERT Statement
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('molto', 'kids'),
+    ('momentum', 'electronics'),
+    ('momert', 'appliances'),
+    ('momi', 'kids'),
+    ('momo', 'kids'),
+    ('monami', 'stationery'),
+    ('monchhichi', 'kids'),
+    ('monge', 'country_yard'),
+    ('mongoose', 'sport'),
+    ('monitoraudio', 'electronics'),
+    ('monix', 'appliances'),
+    ('monkey', 'kids'),
+    ('monro', 'auto'),
+    ('monsher', 'furniture'),
+    ('monsoon', 'apparel'),
+    ('monster', 'electronics'),
+    ('monster', 'accessories'),
+    ('montale', 'accessories'),
+    ('montblanc', 'accessories'),
+    ('moo', 'stationery'),
+    ('moon', 'kids'),
+    ('moongmbh', 'kids'),
+    ('moony', 'kids'),
+    ('moonybaby', 'kids'),
+    ('moose', 'kids'),
+    ('moosetoys', 'kids');
+```
+
+This SQL statement captures the brands and their respective categories based on the categorization process.
+[2024-12-05T22:05:46.439+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('molto', 'kids'),
+    ('momentum', 'electronics'),
+    ('momert', 'appliances'),
+    ('momi', 'kids'),
+    ('momo', 'kids'),
+    ('monami', 'stationery'),
+    ('monchhichi', 'kids'),
+    ('monge', 'country_yard'),
+    ('mongoose', 'sport'),
+    ('monitoraudio', 'electronics'),
+    ('monix', 'appliances'),
+    ('monkey', 'kids'),
+    ('monro', 'auto'),
+    ('monsher', 'furniture'),
+    ('monsoon', 'apparel'),
+    ('monster', 'electronics'),
+    ('monster', 'accessories'),
+    ('montale', 'accessories'),
+    ('montblanc', 'accessories'),
+    ('moo', 'stationery'),
+    ('moon', 'kids'),
+    ('moongmbh', 'kids'),
+    ('moony', 'kids'),
+    ('moonybaby', 'kids'),
+    ('moose', 'kids'),
+    ('moosetoys', 'kids');
+[2024-12-05T22:05:46.440+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('molto', 'kids'),
+    ('momentum', 'electronics'),
+    ('momert', 'appliances'),
+    ('momi', 'kids'),
+    ('momo', 'kids'),
+    ('monami', 'stationery'),
+    ('monchhichi', 'kids'),
+    ('monge', 'country_yard'),
+    ('mongoose', 'sport'),
+    ('monitoraudio', 'electronics'),
+    ('monix', 'appliances'),
+    ('monkey', 'kids'),
+    ('monro', 'auto'),
+    ('monsher', 'furniture'),
+    ('monsoon', 'apparel'),
+    ('monster', 'electronics'),
+    ('monster', 'accessories'),
+    ('montale', 'accessories'),
+    ('montblanc', 'accessories'),
+    ('moo', 'stationery'),
+    ('moon', 'kids'),
+    ('moongmbh', 'kids'),
+    ('moony', 'kids'),
+    ('moonybaby', 'kids'),
+    ('moose', 'kids'),
+    ('moosetoys', 'kids');
+[2024-12-05T22:05:46.459+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:05:46.460+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:05:22.660124+00:00, execution_date=20241205T220522, start_date=20241205T220546, end_date=20241205T220546
+[2024-12-05T22:05:46.489+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:05:46.507+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:05:46.510+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

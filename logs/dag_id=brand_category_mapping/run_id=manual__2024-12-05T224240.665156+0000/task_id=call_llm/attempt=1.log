@@ -1,0 +1,238 @@
+[2024-12-05T22:42:46.655+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:42:46.667+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:42:40.665156+00:00 [queued]>
+[2024-12-05T22:42:46.673+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:42:40.665156+00:00 [queued]>
+[2024-12-05T22:42:46.673+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:42:46.685+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:42:40.665156+00:00
+[2024-12-05T22:42:46.691+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8183) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:42:46.692+0000] {standard_task_runner.py:72} INFO - Started process 8184 to run task
+[2024-12-05T22:42:46.693+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:42:40.665156+00:00', '--job-id', '1776', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmphbu42bg5']
+[2024-12-05T22:42:46.695+0000] {standard_task_runner.py:105} INFO - Job 1776: Subtask call_llm
+[2024-12-05T22:42:46.734+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:42:40.665156+00:00 [running]> on host c7780884450d
+[2024-12-05T22:42:46.802+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:42:40.665156+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:42:40.665156+00:00'
+[2024-12-05T22:42:46.803+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:42:46.822+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['trendbeauty', 'trendbeuty', 'trendnet', 'trendvision', 'trendy', 'trento', 'tresemme', 'trespass', 'trevi', 't-rex', 'triangle', 'triban', 'trichup', 'tridevatoecarstvo', 'trikota', 'trinx', 'tristar', 'triton', 'tritower', 'triumf', 'triumphnord', 'triumphtree', 'trixie', 'trollbeads', 'trolls'], 'next_index': 5150}
+[2024-12-05T22:42:46.823+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:42:47.247+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:43:19.092+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to their respective categories based on the search queries:
+
+1. **trendbeauty**: cosmetics, beauty products
+   - Assigned Categories: (medicine)
+
+2. **trendbeuty**: (assumed typo for trendbeauty)
+   - Assigned Categories: (medicine)
+
+3. **trendnet**: networking hardware, electronics
+   - Assigned Categories: (electronics)
+
+4. **trendvision**: vision care, optics
+   - Assigned Categories: (medicine)
+
+5. **trendy**: fashion apparel
+   - Assigned Categories: (apparel)
+
+6. **trento**: outdoor clothing and equipment
+   - Assigned Categories: (apparel)
+
+7. **tresemme**: hair care products
+   - Assigned Categories: (medicine)
+
+8. **trespass**: outdoor clothing and gear
+   - Assigned Categories: (apparel)
+
+9. **trevi**: audio electronics
+   - Assigned Categories: (electronics)
+
+10. **t-rex**: outdoor gear and accessories
+    - Assigned Categories: (accessories)
+
+11. **triangle**: bicycles and outdoor equipment
+    - Assigned Categories: (sport)
+
+12. **triban**: bicycles and cycling gear
+    - Assigned Categories: (sport)
+
+13. **trichup**: hair care products
+    - Assigned Categories: (medicine)
+
+14. **tridevatoecarstvo**: (not enough information, assumed construction-related)
+    - Assigned Categories: (construction)
+
+15. **trikota**: clothing
+    - Assigned Categories: (apparel)
+
+16. **trinx**: bicycles and cycling accessories
+    - Assigned Categories: (sport)
+
+17. **tristar**: small appliances and electronics
+    - Assigned Categories: (appliances, electronics)
+
+18. **triton**: outdoor and sports gear
+    - Assigned Categories: (sport)
+
+19. **tritower**: (not enough information, assumed construction-related)
+    - Assigned Categories: (construction)
+
+20. **triumf**: (not enough information, assumed sport-related)
+    - Assigned Categories: (sport)
+
+21. **triumphnord**: (not enough information, assumed apparel-related)
+    - Assigned Categories: (apparel)
+
+22. **triumphtree**: (not enough information, assumed furniture-related)
+    - Assigned Categories: (furniture)
+
+23. **trixie**: pet products and accessories
+    - Assigned Categories: (accessories)
+
+24. **trollbeads**: jewelry and accessories
+    - Assigned Categories: (accessories)
+
+25. **trolls**: toys and kids' products
+    - Assigned Categories: (kids)
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('trendbeauty', 'medicine'),
+    ('trendbeuty', 'medicine'),
+    ('trendnet', 'electronics'),
+    ('trendvision', 'medicine'),
+    ('trendy', 'apparel'),
+    ('trento', 'apparel'),
+    ('tresemme', 'medicine'),
+    ('trespass', 'apparel'),
+    ('trevi', 'electronics'),
+    ('t-rex', 'accessories'),
+    ('triangle', 'sport'),
+    ('triban', 'sport'),
+    ('trichup', 'medicine'),
+    ('tridevatoecarstvo', 'construction'),
+    ('trikota', 'apparel'),
+    ('trinx', 'sport'),
+    ('tristar', 'appliances'),
+    ('tristar', 'electronics'),
+    ('triton', 'sport'),
+    ('tritower', 'construction'),
+    ('triumf', 'sport'),
+    ('triumphnord', 'apparel'),
+    ('triumphtree', 'furniture'),
+    ('trixie', 'accessories'),
+    ('trollbeads', 'accessories'),
+    ('trolls', 'kids');
+```
+[2024-12-05T22:43:19.093+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to their respective categories based on the search queries:
+
+1. **trendbeauty**: cosmetics, beauty products
+   - Assigned Categories: (medicine)
+
+2. **trendbeuty**: (assumed typo for trendbeauty)
+   - Assigned Categories: (medicine)
+
+3. **trendnet**: networking hardware, electronics
+   - Assigned Categories: (electronics)
+
+4. **trendvision**: vision care, optics
+   - Assigned Categories: (medicine)
+
+5. **trendy**: fashion apparel
+   - Assigned Categories: (apparel)
+
+6. **trento**: outdoor clothing and equipment
+   - Assigned Categories: (apparel)
+
+7. **tresemme**: hair care products
+   - Assigned Categories: (medicine)
+
+8. **trespass**: outdoor clothing and gear
+   - Assigned Categories: (apparel)
+
+9. **trevi**: audio electronics
+   - Assigned Categories: (electronics)
+
+10. **t-rex**: outdoor gear and accessories
+    - Assigned Categories: (accessories)
+
+11. **triangle**: bicycles and outdoor equipment
+    - Assigned Categories: (sport)
+
+12. **triban**: bicycles and cycling gear
+    - Assigned Categories: (sport)
+
+13. **trichup**: hair care products
+    - Assigned Categories: (medicine)
+
+14. **tridevatoecarstvo**: (not enough information, assumed construction-related)
+    - Assigned Categories: (construction)
+
+15. **trikota**: clothing
+    - Assigned Categories: (apparel)
+
+16. **trinx**: bicycles and cycling accessories
+    - Assigned Categories: (sport)
+
+17. **tristar**: small appliances and electronics
+    - Assigned Categories: (appliances, electronics)
+
+18. **triton**: outdoor and sports gear
+    - Assigned Categories: (sport)
+
+19. **tritower**: (not enough information, assumed construction-related)
+    - Assigned Categories: (construction)
+
+20. **triumf**: (not enough information, assumed sport-related)
+    - Assigned Categories: (sport)
+
+21. **triumphnord**: (not enough information, assumed apparel-related)
+    - Assigned Categories: (apparel)
+
+22. **triumphtree**: (not enough information, assumed furniture-related)
+    - Assigned Categories: (furniture)
+
+23. **trixie**: pet products and accessories
+    - Assigned Categories: (accessories)
+
+24. **trollbeads**: jewelry and accessories
+    - Assigned Categories: (accessories)
+
+25. **trolls**: toys and kids' products
+    - Assigned Categories: (kids)
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('trendbeauty', 'medicine'),
+    ('trendbeuty', 'medicine'),
+    ('trendnet', 'electronics'),
+    ('trendvision', 'medicine'),
+    ('trendy', 'apparel'),
+    ('trento', 'apparel'),
+    ('tresemme', 'medicine'),
+    ('trespass', 'apparel'),
+    ('trevi', 'electronics'),
+    ('t-rex', 'accessories'),
+    ('triangle', 'sport'),
+    ('triban', 'sport'),
+    ('trichup', 'medicine'),
+    ('tridevatoecarstvo', 'construction'),
+    ('trikota', 'apparel'),
+    ('trinx', 'sport'),
+    ('tristar', 'appliances'),
+    ('tristar', 'electronics'),
+    ('triton', 'sport'),
+    ('tritower', 'construction'),
+    ('triumf', 'sport'),
+    ('triumphnord', 'apparel'),
+    ('triumphtree', 'furniture'),
+    ('trixie', 'accessories'),
+    ('trollbeads', 'accessories'),
+    ('trolls', 'kids');
+```
+[2024-12-05T22:43:19.113+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:43:19.113+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:42:40.665156+00:00, execution_date=20241205T224240, start_date=20241205T224246, end_date=20241205T224319
+[2024-12-05T22:43:19.130+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:43:19.156+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:43:19.169+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,124 @@
+[2024-12-05T18:54:37.699+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T18:54:37.713+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T18:54:32.982917+00:00 [queued]>
+[2024-12-05T18:54:37.720+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T18:54:32.982917+00:00 [queued]>
+[2024-12-05T18:54:37.721+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T18:54:37.733+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): create_unique_categories> on 2024-12-05 18:54:32.982917+00:00
+[2024-12-05T18:54:37.739+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=442) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T18:54:37.741+0000] {standard_task_runner.py:72} INFO - Started process 443 to run task
+[2024-12-05T18:54:37.741+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_unique_values', 'create_unique_categories', 'manual__2024-12-05T18:54:32.982917+00:00', '--job-id', '406', '--raw', '--subdir', 'DAGS_FOLDER/select_distinct_brands_categories.py', '--cfg-path', '/tmp/tmpfxyl39fs']
+[2024-12-05T18:54:37.742+0000] {standard_task_runner.py:105} INFO - Job 406: Subtask create_unique_categories
+[2024-12-05T18:54:37.778+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T18:54:32.982917+00:00 [running]> on host c7780884450d
+[2024-12-05T18:54:37.836+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_unique_values' AIRFLOW_CTX_TASK_ID='create_unique_categories' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T18:54:32.982917+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T18:54:32.982917+00:00'
+[2024-12-05T18:54:37.837+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T18:54:37.861+0000] {select_distinct_brands_categories.py:134} INFO - Обрабатываем ключ: 1
+[2024-12-05T18:54:37.862+0000] {select_distinct_brands_categories.py:148} INFO - Источник категорий: DDS.categories_Oct
+[2024-12-05T18:54:37.863+0000] {select_distinct_brands_categories.py:149} INFO - Целевая таблица категорий: DDS.unique_categories
+[2024-12-05T18:54:37.870+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T18:54:38.539+0000] {select_distinct_brands_categories.py:170} INFO - Соединение с PostgreSQL установлено.
+[2024-12-05T18:54:38.816+0000] {select_distinct_brands_categories.py:183} INFO - Целевая таблица 'DDS.unique_categories' создана или уже существует.
+[2024-12-05T18:54:38.992+0000] {select_distinct_brands_categories.py:203} ERROR - Ошибка при добавлении категорий: relation "DDS-STG.categories_Oct" does not exist
+LINE 4:             FROM "DDS-STG"."categories_Oct"
+                         ^
+
+[2024-12-05T18:54:39.084+0000] {select_distinct_brands_categories.py:210} INFO - Курсор закрыт.
+[2024-12-05T18:54:39.085+0000] {select_distinct_brands_categories.py:213} INFO - Соединение с PostgreSQL закрыто.
+[2024-12-05T18:54:39.086+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/select_distinct_brands_categories.py", line 198, in create_unique_categories
+    cursor.execute(insert_query)
+psycopg2.errors.UndefinedTable: relation "DDS-STG.categories_Oct" does not exist
+LINE 4:             FROM "DDS-STG"."categories_Oct"
+                         ^
+
+[2024-12-05T18:54:39.099+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=extract_unique_values, task_id=create_unique_categories, run_id=manual__2024-12-05T18:54:32.982917+00:00, execution_date=20241205T185432, start_date=20241205T185437, end_date=20241205T185439
+[2024-12-05T18:54:39.112+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T18:54:39.113+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 406 for task create_unique_categories (relation "DDS-STG.categories_Oct" does not exist
+LINE 4:             FROM "DDS-STG"."categories_Oct"
+                         ^
+; 443)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/select_distinct_brands_categories.py", line 198, in create_unique_categories
+    cursor.execute(insert_query)
+psycopg2.errors.UndefinedTable: relation "DDS-STG.categories_Oct" does not exist
+LINE 4:             FROM "DDS-STG"."categories_Oct"
+                         ^
+
+[2024-12-05T18:54:39.159+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-12-05T18:54:39.175+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T18:54:39.178+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,171 @@
+[2024-12-05T22:14:37.709+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:14:37.722+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:14:12.249386+00:00 [queued]>
+[2024-12-05T22:14:37.729+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:14:12.249386+00:00 [queued]>
+[2024-12-05T22:14:37.730+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:14:37.744+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:14:12.249386+00:00
+[2024-12-05T22:14:37.750+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6734) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:14:37.751+0000] {standard_task_runner.py:72} INFO - Started process 6735 to run task
+[2024-12-05T22:14:37.752+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:14:12.249386+00:00', '--job-id', '1465', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmppzcc6yd4']
+[2024-12-05T22:14:37.753+0000] {standard_task_runner.py:105} INFO - Job 1465: Subtask extract_sql
+[2024-12-05T22:14:37.797+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:14:12.249386+00:00 [running]> on host c7780884450d
+[2024-12-05T22:14:37.864+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:14:12.249386+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:14:12.249386+00:00'
+[2024-12-05T22:14:37.865+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:14:37.885+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **palit** - electronics
+2. **palitra** - stationery
+3. **palmbaby** - kids, apparel
+4. **palmers** - medicine, cosmetics
+5. **palmolive** - medicine, cosmetics
+6. **palms** - apparel
+7. **palplay** - kids, toys
+8. **pampers** - kids, medicine
+9. **panasonic** - electronics, appliances
+10. **pandect** - auto
+11. **pandora** - accessories, jewelry
+12. **pangao** - apparel
+13. **panier** - furniture
+14. **panolino** - kids, apparel
+15. **panouge** - cosmetics
+16. **pantum** - computers, electronics
+17. **papakarlo** - furniture
+18. **papilla** - medicine, cosmetics
+19. **parachute** - home, furniture
+20. **paradiso** - apparel
+21. **parafar** - medicine
+22. **parallelkomiks** - stationery
+23. **paremo** - kids, toys
+24. **parfumsdemarly** - cosmetics, accessories
+25. **parkcity** - sport, outdoor
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('palit', 'electronics'),
+    ('palitra', 'stationery'),
+    ('palmbaby', 'kids'),
+    ('palmbaby', 'apparel'),
+    ('palmers', 'medicine'),
+    ('palmers', 'cosmetics'),
+    ('palmolive', 'medicine'),
+    ('palmolive', 'cosmetics'),
+    ('palms', 'apparel'),
+    ('palplay', 'kids'),
+    ('palplay', 'toys'),
+    ('pampers', 'kids'),
+    ('pampers', 'medicine'),
+    ('panasonic', 'electronics'),
+    ('panasonic', 'appliances'),
+    ('pandect', 'auto'),
+    ('pandora', 'accessories'),
+    ('pandora', 'jewelry'),
+    ('pangao', 'apparel'),
+    ('panier', 'furniture'),
+    ('panolino', 'kids'),
+    ('panolino', 'apparel'),
+    ('panouge', 'cosmetics'),
+    ('pantum', 'computers'),
+    ('pantum', 'electronics'),
+    ('papakarlo', 'furniture'),
+    ('papilla', 'medicine'),
+    ('papilla', 'cosmetics'),
+    ('parachute', 'furniture'),
+    ('paradiso', 'apparel'),
+    ('parafar', 'medicine'),
+    ('parallelkomiks', 'stationery'),
+    ('paremo', 'kids'),
+    ('paremo', 'toys'),
+    ('parfumsdemarly', 'cosmetics'),
+    ('parfumsdemarly', 'accessories'),
+    ('parkcity', 'sport'),
+    ('parkcity', 'outdoor');
+```
+
+This SQL statement reflects the brand and their assigned categories based on the research performed.
+[2024-12-05T22:14:37.886+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('palit', 'electronics'),
+    ('palitra', 'stationery'),
+    ('palmbaby', 'kids'),
+    ('palmbaby', 'apparel'),
+    ('palmers', 'medicine'),
+    ('palmers', 'cosmetics'),
+    ('palmolive', 'medicine'),
+    ('palmolive', 'cosmetics'),
+    ('palms', 'apparel'),
+    ('palplay', 'kids'),
+    ('palplay', 'toys'),
+    ('pampers', 'kids'),
+    ('pampers', 'medicine'),
+    ('panasonic', 'electronics'),
+    ('panasonic', 'appliances'),
+    ('pandect', 'auto'),
+    ('pandora', 'accessories'),
+    ('pandora', 'jewelry'),
+    ('pangao', 'apparel'),
+    ('panier', 'furniture'),
+    ('panolino', 'kids'),
+    ('panolino', 'apparel'),
+    ('panouge', 'cosmetics'),
+    ('pantum', 'computers'),
+    ('pantum', 'electronics'),
+    ('papakarlo', 'furniture'),
+    ('papilla', 'medicine'),
+    ('papilla', 'cosmetics'),
+    ('parachute', 'furniture'),
+    ('paradiso', 'apparel'),
+    ('parafar', 'medicine'),
+    ('parallelkomiks', 'stationery'),
+    ('paremo', 'kids'),
+    ('paremo', 'toys'),
+    ('parfumsdemarly', 'cosmetics'),
+    ('parfumsdemarly', 'accessories'),
+    ('parkcity', 'sport'),
+    ('parkcity', 'outdoor');
+[2024-12-05T22:14:37.886+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('palit', 'electronics'),
+    ('palitra', 'stationery'),
+    ('palmbaby', 'kids'),
+    ('palmbaby', 'apparel'),
+    ('palmers', 'medicine'),
+    ('palmers', 'cosmetics'),
+    ('palmolive', 'medicine'),
+    ('palmolive', 'cosmetics'),
+    ('palms', 'apparel'),
+    ('palplay', 'kids'),
+    ('palplay', 'toys'),
+    ('pampers', 'kids'),
+    ('pampers', 'medicine'),
+    ('panasonic', 'electronics'),
+    ('panasonic', 'appliances'),
+    ('pandect', 'auto'),
+    ('pandora', 'accessories'),
+    ('pandora', 'jewelry'),
+    ('pangao', 'apparel'),
+    ('panier', 'furniture'),
+    ('panolino', 'kids'),
+    ('panolino', 'apparel'),
+    ('panouge', 'cosmetics'),
+    ('pantum', 'computers'),
+    ('pantum', 'electronics'),
+    ('papakarlo', 'furniture'),
+    ('papilla', 'medicine'),
+    ('papilla', 'cosmetics'),
+    ('parachute', 'furniture'),
+    ('paradiso', 'apparel'),
+    ('parafar', 'medicine'),
+    ('parallelkomiks', 'stationery'),
+    ('paremo', 'kids'),
+    ('paremo', 'toys'),
+    ('parfumsdemarly', 'cosmetics'),
+    ('parfumsdemarly', 'accessories'),
+    ('parkcity', 'sport'),
+    ('parkcity', 'outdoor');
+[2024-12-05T22:14:37.904+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:14:37.905+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:14:12.249386+00:00, execution_date=20241205T221412, start_date=20241205T221437, end_date=20241205T221437
+[2024-12-05T22:14:37.926+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:14:37.945+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:14:37.948+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

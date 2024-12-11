@@ -1,0 +1,99 @@
+[2024-12-05T22:39:46.899+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:39:46.911+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:39:19.435423+00:00 [queued]>
+[2024-12-05T22:39:46.916+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:39:19.435423+00:00 [queued]>
+[2024-12-05T22:39:46.917+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:39:46.929+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:39:19.435423+00:00
+[2024-12-05T22:39:46.935+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8051) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:39:46.936+0000] {standard_task_runner.py:72} INFO - Started process 8052 to run task
+[2024-12-05T22:39:46.936+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:39:19.435423+00:00', '--job-id', '1748', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpdby8iuug']
+[2024-12-05T22:39:46.938+0000] {standard_task_runner.py:105} INFO - Job 1748: Subtask execute_sql
+[2024-12-05T22:39:46.971+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:39:19.435423+00:00 [running]> on host c7780884450d
+[2024-12-05T22:39:47.027+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:39:19.435423+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:39:19.435423+00:00'
+[2024-12-05T22:39:47.028+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:39:47.044+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('textura', 'accessories'),
+    ('teyko', 'electronics'),
+    ('tgr', 'apparel'),
+    ('tgr', 'sport'),
+    ('thefaceshop', 'accessories'),
+    ('thenice', 'furniture'),
+    ('thenorthface', 'apparel'),
+    ('thenorthface', 'accessories'),
+    ('thenorthface', 'sport'),
+    ('thermalright', 'electronics'),
+    ('thermalright', 'appliances'),
+    ('thermaltake', 'electronics'),
+    ('thermaltake', 'computers'),
+    ('thermex', 'appliances'),
+    ('theshinestonetrade', 'construction'),
+    ('thomas', 'appliances'),
+    ('thor', 'auto'),
+    ('thor', 'apparel'),
+    ('thronmax', 'electronics'),
+    ('thrustmaster', 'electronics'),
+    ('thrustmaster', 'accessories'),
+    ('thule', 'auto'),
+    ('thule', 'accessories'),
+    ('thunz', 'apparel'),
+    ('tianzhanfitness', 'sport'),
+    ('tianzhanfitness', 'apparel'),
+    ('tide', 'appliances'),
+    ('tide', 'medicine'),
+    ('tierra', 'apparel'),
+    ('tierra', 'accessories'),
+    ('tigar', 'auto'),
+    ('tigerking', 'appliances'),
+    ('tigernu', 'accessories'),
+    ('tigres', 'apparel'),
+    ('tima', 'appliances'),
+    ('timbergroup', 'construction'),
+    ('timbergroup', 'furniture');
+[2024-12-05T22:39:47.051+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:39:47.832+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('textura', 'accessories'),
+    ('teyko', 'electronics'),
+    ('tgr', 'apparel'),
+    ('tgr', 'sport'),
+    ('thefaceshop', 'accessories'),
+    ('thenice', 'furniture'),
+    ('thenorthface', 'apparel'),
+    ('thenorthface', 'accessories'),
+    ('thenorthface', 'sport'),
+    ('thermalright', 'electronics'),
+    ('thermalright', 'appliances'),
+    ('thermaltake', 'electronics'),
+    ('thermaltake', 'computers'),
+    ('thermex', 'appliances'),
+    ('theshinestonetrade', 'construction'),
+    ('thomas', 'appliances'),
+    ('thor', 'auto'),
+    ('thor', 'apparel'),
+    ('thronmax', 'electronics'),
+    ('thrustmaster', 'electronics'),
+    ('thrustmaster', 'accessories'),
+    ('thule', 'auto'),
+    ('thule', 'accessories'),
+    ('thunz', 'apparel'),
+    ('tianzhanfitness', 'sport'),
+    ('tianzhanfitness', 'apparel'),
+    ('tide', 'appliances'),
+    ('tide', 'medicine'),
+    ('tierra', 'apparel'),
+    ('tierra', 'accessories'),
+    ('tigar', 'auto'),
+    ('tigerking', 'appliances'),
+    ('tigernu', 'accessories'),
+    ('tigres', 'apparel'),
+    ('tima', 'appliances'),
+    ('timbergroup', 'construction'),
+    ('timbergroup', 'furniture');
+[2024-12-05T22:39:48.003+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:39:48.004+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:39:48.011+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:39:48.011+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:39:19.435423+00:00, execution_date=20241205T223919, start_date=20241205T223946, end_date=20241205T223948
+[2024-12-05T22:39:48.033+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:39:48.050+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:39:48.053+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

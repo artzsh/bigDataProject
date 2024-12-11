@@ -1,0 +1,181 @@
+[2024-12-05T22:44:58.067+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:44:58.078+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:44:32.924652+00:00 [queued]>
+[2024-12-05T22:44:58.084+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:44:32.924652+00:00 [queued]>
+[2024-12-05T22:44:58.085+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:44:58.097+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:44:32.924652+00:00
+[2024-12-05T22:44:58.102+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8279) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:44:58.104+0000] {standard_task_runner.py:72} INFO - Started process 8280 to run task
+[2024-12-05T22:44:58.104+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:44:32.924652+00:00', '--job-id', '1795', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpvkmwb1qi']
+[2024-12-05T22:44:58.105+0000] {standard_task_runner.py:105} INFO - Job 1795: Subtask extract_sql
+[2024-12-05T22:44:58.139+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:44:32.924652+00:00 [running]> on host c7780884450d
+[2024-12-05T22:44:58.204+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:44:32.924652+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:44:32.924652+00:00'
+[2024-12-05T22:44:58.205+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:44:58.227+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the categories assigned to each brand based on the search results:
+
+1. **uglydolls**: kids, apparel
+2. **ugreen**: electronics, appliances
+3. **ukikids**: kids, apparel
+4. **ulker**: food (not in predefined categories, but could be considered under country_yard for snacks)
+5. **ultimate**: sport, supplements
+6. **ultimatenutrition**: medicine, sport
+7. **ultimatumboxing**: sport, apparel
+8. **ultra**: electronics, appliances (depends on context, could also be sport)
+9. **ultraflash**: electronics
+10. **ultrapowersports**: sport, auto
+11. **ultrasone**: electronics
+12. **ultravit**: medicine, supplements
+13. **umbro**: sport, apparel
+14. **umi**: kids, apparel
+15. **umka**: kids, apparel
+16. **underarmour**: sport, apparel
+17. **unex**: construction, appliances
+18. **unice**: medicine
+19. **unicum**: medicine
+20. **unidec**: construction, appliances
+21. **uniforce**: construction
+22. **uni-fortunetoys**: kids
+23. **unifur**: accessories, apparel (fur-related)
+24. **unikum**: accessories
+25. **unilux**: electronics, appliances
+
+Now, here is the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('uglydolls', 'kids'),
+    ('uglydolls', 'apparel'),
+    ('ugreen', 'electronics'),
+    ('ugreen', 'appliances'),
+    ('ukikids', 'kids'),
+    ('ukikids', 'apparel'),
+    ('ulker', 'country_yard'),
+    ('ultimate', 'sport'),
+    ('ultimate', 'supplements'),
+    ('ultimatenutrition', 'medicine'),
+    ('ultimatenutrition', 'sport'),
+    ('ultimatumboxing', 'sport'),
+    ('ultimatumboxing', 'apparel'),
+    ('ultra', 'electronics'),
+    ('ultra', 'appliances'),
+    ('ultraflash', 'electronics'),
+    ('ultrapowersports', 'sport'),
+    ('ultrapowersports', 'auto'),
+    ('ultrasone', 'electronics'),
+    ('ultravit', 'medicine'),
+    ('ultravit', 'supplements'),
+    ('umbro', 'sport'),
+    ('umbro', 'apparel'),
+    ('umi', 'kids'),
+    ('umi', 'apparel'),
+    ('umka', 'kids'),
+    ('umka', 'apparel'),
+    ('underarmour', 'sport'),
+    ('underarmour', 'apparel'),
+    ('unex', 'construction'),
+    ('unex', 'appliances'),
+    ('unice', 'medicine'),
+    ('unicum', 'medicine'),
+    ('unidec', 'construction'),
+    ('unidec', 'appliances'),
+    ('uniforce', 'construction'),
+    ('uni-fortunetoys', 'kids'),
+    ('unifur', 'accessories'),
+    ('unifur', 'apparel'),
+    ('unikum', 'accessories'),
+    ('unilux', 'electronics'),
+    ('unilux', 'appliances');
+```
+[2024-12-05T22:44:58.228+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('uglydolls', 'kids'),
+    ('uglydolls', 'apparel'),
+    ('ugreen', 'electronics'),
+    ('ugreen', 'appliances'),
+    ('ukikids', 'kids'),
+    ('ukikids', 'apparel'),
+    ('ulker', 'country_yard'),
+    ('ultimate', 'sport'),
+    ('ultimate', 'supplements'),
+    ('ultimatenutrition', 'medicine'),
+    ('ultimatenutrition', 'sport'),
+    ('ultimatumboxing', 'sport'),
+    ('ultimatumboxing', 'apparel'),
+    ('ultra', 'electronics'),
+    ('ultra', 'appliances'),
+    ('ultraflash', 'electronics'),
+    ('ultrapowersports', 'sport'),
+    ('ultrapowersports', 'auto'),
+    ('ultrasone', 'electronics'),
+    ('ultravit', 'medicine'),
+    ('ultravit', 'supplements'),
+    ('umbro', 'sport'),
+    ('umbro', 'apparel'),
+    ('umi', 'kids'),
+    ('umi', 'apparel'),
+    ('umka', 'kids'),
+    ('umka', 'apparel'),
+    ('underarmour', 'sport'),
+    ('underarmour', 'apparel'),
+    ('unex', 'construction'),
+    ('unex', 'appliances'),
+    ('unice', 'medicine'),
+    ('unicum', 'medicine'),
+    ('unidec', 'construction'),
+    ('unidec', 'appliances'),
+    ('uniforce', 'construction'),
+    ('uni-fortunetoys', 'kids'),
+    ('unifur', 'accessories'),
+    ('unifur', 'apparel'),
+    ('unikum', 'accessories'),
+    ('unilux', 'electronics'),
+    ('unilux', 'appliances');
+[2024-12-05T22:44:58.228+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('uglydolls', 'kids'),
+    ('uglydolls', 'apparel'),
+    ('ugreen', 'electronics'),
+    ('ugreen', 'appliances'),
+    ('ukikids', 'kids'),
+    ('ukikids', 'apparel'),
+    ('ulker', 'country_yard'),
+    ('ultimate', 'sport'),
+    ('ultimate', 'supplements'),
+    ('ultimatenutrition', 'medicine'),
+    ('ultimatenutrition', 'sport'),
+    ('ultimatumboxing', 'sport'),
+    ('ultimatumboxing', 'apparel'),
+    ('ultra', 'electronics'),
+    ('ultra', 'appliances'),
+    ('ultraflash', 'electronics'),
+    ('ultrapowersports', 'sport'),
+    ('ultrapowersports', 'auto'),
+    ('ultrasone', 'electronics'),
+    ('ultravit', 'medicine'),
+    ('ultravit', 'supplements'),
+    ('umbro', 'sport'),
+    ('umbro', 'apparel'),
+    ('umi', 'kids'),
+    ('umi', 'apparel'),
+    ('umka', 'kids'),
+    ('umka', 'apparel'),
+    ('underarmour', 'sport'),
+    ('underarmour', 'apparel'),
+    ('unex', 'construction'),
+    ('unex', 'appliances'),
+    ('unice', 'medicine'),
+    ('unicum', 'medicine'),
+    ('unidec', 'construction'),
+    ('unidec', 'appliances'),
+    ('uniforce', 'construction'),
+    ('uni-fortunetoys', 'kids'),
+    ('unifur', 'accessories'),
+    ('unifur', 'apparel'),
+    ('unikum', 'accessories'),
+    ('unilux', 'electronics'),
+    ('unilux', 'appliances');
+[2024-12-05T22:44:58.246+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:44:58.247+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:44:32.924652+00:00, execution_date=20241205T224432, start_date=20241205T224458, end_date=20241205T224458
+[2024-12-05T22:44:58.278+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:44:58.297+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:44:58.300+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

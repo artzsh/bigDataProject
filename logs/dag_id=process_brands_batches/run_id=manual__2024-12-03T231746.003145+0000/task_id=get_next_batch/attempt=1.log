@@ -1,0 +1,23 @@
+[2024-12-03T23:17:48.438+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-03T23:17:48.450+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_brands_batches.get_next_batch manual__2024-12-03T23:17:46.003145+00:00 [queued]>
+[2024-12-03T23:17:48.457+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_brands_batches.get_next_batch manual__2024-12-03T23:17:46.003145+00:00 [queued]>
+[2024-12-03T23:17:48.457+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-03T23:17:48.469+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): get_next_batch> on 2024-12-03 23:17:46.003145+00:00
+[2024-12-03T23:17:48.475+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=82) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-03T23:17:48.477+0000] {standard_task_runner.py:72} INFO - Started process 83 to run task
+[2024-12-03T23:17:48.476+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'process_brands_batches', 'get_next_batch', 'manual__2024-12-03T23:17:46.003145+00:00', '--job-id', '320', '--raw', '--subdir', 'DAGS_FOLDER/llm_test.py', '--cfg-path', '/tmp/tmpgkvo8xg4']
+[2024-12-03T23:17:48.478+0000] {standard_task_runner.py:105} INFO - Job 320: Subtask get_next_batch
+[2024-12-03T23:17:48.517+0000] {task_command.py:467} INFO - Running <TaskInstance: process_brands_batches.get_next_batch manual__2024-12-03T23:17:46.003145+00:00 [running]> on host 175560b3a058
+[2024-12-03T23:17:48.581+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='process_brands_batches' AIRFLOW_CTX_TASK_ID='get_next_batch' AIRFLOW_CTX_EXECUTION_DATE='2024-12-03T23:17:46.003145+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-03T23:17:46.003145+00:00'
+[2024-12-03T23:17:48.582+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-03T23:17:48.618+0000] {base.py:84} INFO - Retrieving connection 'postgres_default'
+[2024-12-03T23:18:49.001+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-12-03T23:18:49.003+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-12-03T23:18:49.004+0000] {process_utils.py:132} INFO - Sending 15 to group 83. PIDs of all processes in the group: [83]
+[2024-12-03T23:18:49.004+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 83
+[2024-12-03T23:19:49.025+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=83, name='airflow task ru', status='sleeping', started='23:17:47') did not respond to SIGTERM. Trying SIGKILL
+[2024-12-03T23:19:49.026+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 83
+[2024-12-03T23:19:49.034+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=83, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='23:17:47') (83) terminated with exit code -9
+[2024-12-03T23:19:49.035+0000] {standard_task_runner.py:190} ERROR - ('Job 320 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

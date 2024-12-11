@@ -1,0 +1,144 @@
+[2024-12-05T22:40:53.631+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:40:53.641+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:40:48.696281+00:00 [queued]>
+[2024-12-05T22:40:53.647+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:40:48.696281+00:00 [queued]>
+[2024-12-05T22:40:53.647+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:40:53.659+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:40:48.696281+00:00
+[2024-12-05T22:40:53.665+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8120) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:40:53.666+0000] {standard_task_runner.py:72} INFO - Started process 8121 to run task
+[2024-12-05T22:40:53.667+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:40:48.696281+00:00', '--job-id', '1764', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpuep4ojjm']
+[2024-12-05T22:40:53.668+0000] {standard_task_runner.py:105} INFO - Job 1764: Subtask call_llm
+[2024-12-05T22:40:53.700+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:40:48.696281+00:00 [running]> on host c7780884450d
+[2024-12-05T22:40:53.758+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:40:48.696281+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:40:48.696281+00:00'
+[2024-12-05T22:40:53.760+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:40:53.778+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['to-plan', 'toplitz', 'topran', 'topten', 'torch', 'torgue', 'tornado', 'torneo', 'toro', 'torr', 'torrent', 'torres', 'torso', 'tortine', 'tosato', 'toscom', 'toshiba', 'totachi', 'totaku', 'total', 'totalbox', 'toto', 'totolink', 'totu', 'touchbeauty'], 'next_index': 5100}
+[2024-12-05T22:40:53.779+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:40:54.194+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:42:02.685+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the assigned categories for each brand based on the search results:
+
+1. **to-plan**: construction
+2. **toplitz**: electronics, appliances
+3. **topran**: auto
+4. **topten**: electronics
+5. **torch**: electronics, appliances
+6. **torgue**: auto
+7. **tornado**: appliances
+8. **torneo**: sport
+9. **toro**: country_yard
+10. **torr**: electronics
+11. **torrent**: electronics
+12. **torres**: furniture
+13. **torso**: apparel
+14. **tortine**: food (not in provided categories, but can be considered as part of appliances for kitchen use)
+15. **tosato**: appliances
+16. **toscom**: electronics
+17. **toshiba**: electronics, appliances
+18. **totachi**: auto
+19. **totaku**: electronics
+20. **total**: construction
+21. **totalbox**: appliances
+22. **toto**: appliances
+23. **totolink**: electronics
+24. **totu**: accessories
+25. **touchbeauty**: beauty accessories (not in provided categories, but can be considered as accessories)
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('to-plan', 'construction'),
+    ('toplitz', 'electronics'),
+    ('toplitz', 'appliances'),
+    ('topran', 'auto'),
+    ('topten', 'electronics'),
+    ('torch', 'electronics'),
+    ('torch', 'appliances'),
+    ('torgue', 'auto'),
+    ('tornado', 'appliances'),
+    ('torneo', 'sport'),
+    ('toro', 'country_yard'),
+    ('torr', 'electronics'),
+    ('torrent', 'electronics'),
+    ('torres', 'furniture'),
+    ('torso', 'apparel'),
+    ('tortine', 'appliances'),
+    ('tosato', 'appliances'),
+    ('toscom', 'electronics'),
+    ('toshiba', 'electronics'),
+    ('toshiba', 'appliances'),
+    ('totachi', 'auto'),
+    ('totaku', 'electronics'),
+    ('total', 'construction'),
+    ('totalbox', 'appliances'),
+    ('toto', 'appliances'),
+    ('totolink', 'electronics'),
+    ('totu', 'accessories'),
+    ('touchbeauty', 'accessories');
+```
+[2024-12-05T22:42:02.686+0000] {python.py:240} INFO - Done. Returned value was: Here are the assigned categories for each brand based on the search results:
+
+1. **to-plan**: construction
+2. **toplitz**: electronics, appliances
+3. **topran**: auto
+4. **topten**: electronics
+5. **torch**: electronics, appliances
+6. **torgue**: auto
+7. **tornado**: appliances
+8. **torneo**: sport
+9. **toro**: country_yard
+10. **torr**: electronics
+11. **torrent**: electronics
+12. **torres**: furniture
+13. **torso**: apparel
+14. **tortine**: food (not in provided categories, but can be considered as part of appliances for kitchen use)
+15. **tosato**: appliances
+16. **toscom**: electronics
+17. **toshiba**: electronics, appliances
+18. **totachi**: auto
+19. **totaku**: electronics
+20. **total**: construction
+21. **totalbox**: appliances
+22. **toto**: appliances
+23. **totolink**: electronics
+24. **totu**: accessories
+25. **touchbeauty**: beauty accessories (not in provided categories, but can be considered as accessories)
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('to-plan', 'construction'),
+    ('toplitz', 'electronics'),
+    ('toplitz', 'appliances'),
+    ('topran', 'auto'),
+    ('topten', 'electronics'),
+    ('torch', 'electronics'),
+    ('torch', 'appliances'),
+    ('torgue', 'auto'),
+    ('tornado', 'appliances'),
+    ('torneo', 'sport'),
+    ('toro', 'country_yard'),
+    ('torr', 'electronics'),
+    ('torrent', 'electronics'),
+    ('torres', 'furniture'),
+    ('torso', 'apparel'),
+    ('tortine', 'appliances'),
+    ('tosato', 'appliances'),
+    ('toscom', 'electronics'),
+    ('toshiba', 'electronics'),
+    ('toshiba', 'appliances'),
+    ('totachi', 'auto'),
+    ('totaku', 'electronics'),
+    ('total', 'construction'),
+    ('totalbox', 'appliances'),
+    ('toto', 'appliances'),
+    ('totolink', 'electronics'),
+    ('totu', 'accessories'),
+    ('touchbeauty', 'accessories');
+```
+[2024-12-05T22:42:02.705+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:42:02.705+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:40:48.696281+00:00, execution_date=20241205T224048, start_date=20241205T224053, end_date=20241205T224202
+[2024-12-05T22:42:02.761+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:42:02.775+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:42:02.781+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

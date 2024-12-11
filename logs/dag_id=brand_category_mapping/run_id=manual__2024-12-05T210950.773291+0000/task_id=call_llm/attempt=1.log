@@ -1,0 +1,148 @@
+[2024-12-05T21:09:55.621+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:09:55.634+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:09:50.773291+00:00 [queued]>
+[2024-12-05T21:09:55.642+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:09:50.773291+00:00 [queued]>
+[2024-12-05T21:09:55.644+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:09:55.659+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:09:50.773291+00:00
+[2024-12-05T21:09:55.665+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3277) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:09:55.666+0000] {standard_task_runner.py:72} INFO - Started process 3278 to run task
+[2024-12-05T21:09:55.666+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:09:50.773291+00:00', '--job-id', '720', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmph1cztcb6']
+[2024-12-05T21:09:55.668+0000] {standard_task_runner.py:105} INFO - Job 720: Subtask call_llm
+[2024-12-05T21:09:55.707+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:09:50.773291+00:00 [running]> on host c7780884450d
+[2024-12-05T21:09:55.771+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:09:50.773291+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:09:50.773291+00:00'
+[2024-12-05T21:09:55.772+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:09:55.789+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['blueidea', 'blueprint', 'blueseven', 'bluesonic', 'blumarine', 'blw', 'bmw', 'boarteks', 'boboli', 'boccia', 'bochetti', 'bodyboom', 'bodykraft', 'bodysculpture', 'body-solid', 'bodysolid', 'boge', 'bohemia', 'bohemiacrystal', 'bohemian', 'bohmann', 'boley', 'bomann', 'bombbar', 'bombcat'], 'next_index': 750}
+[2024-12-05T21:09:55.789+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:09:56.442+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:10:16.341+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here is the mapping of the provided brands to their respective categories based on the search results:
+
+1. **blueidea** - electronics
+2. **blueprint** - stationery
+3. **blueseven** - apparel, kids
+4. **bluesonic** - electronics
+5. **blumarine** - apparel, accessories
+6. **blw** - accessories
+7. **bmw** - auto
+8. **boarteks** - appliances
+9. **boboli** - apparel, kids
+10. **boccia** - accessories
+11. **bochetti** - furniture
+12. **bodyboom** - medicine, sport
+13. **bodykraft** - sport
+14. **bodysculpture** - sport
+15. **body-solid** - sport
+16. **bodysolid** - sport
+17. **boge** - auto
+18. **bohemia** - furniture
+19. **bohemiacrystal** - furniture
+20. **bohemian** - furniture
+21. **bohmann** - appliances
+22. **boley** - kids
+23. **bomann** - appliances
+24. **bombbar** - medicine, sport
+25. **bombcat** - apparel
+
+Now, I will generate the SQL INSERT statement based on this mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('blueidea', 'electronics'),
+    ('blueprint', 'stationery'),
+    ('blueseven', 'apparel'),
+    ('blueseven', 'kids'),
+    ('bluesonic', 'electronics'),
+    ('blumarine', 'apparel'),
+    ('blumarine', 'accessories'),
+    ('blw', 'accessories'),
+    ('bmw', 'auto'),
+    ('boarteks', 'appliances'),
+    ('boboli', 'apparel'),
+    ('boboli', 'kids'),
+    ('boccia', 'accessories'),
+    ('bochetti', 'furniture'),
+    ('bodyboom', 'medicine'),
+    ('bodyboom', 'sport'),
+    ('bodykraft', 'sport'),
+    ('bodysculpture', 'sport'),
+    ('body-solid', 'sport'),
+    ('bodysolid', 'sport'),
+    ('boge', 'auto'),
+    ('bohemia', 'furniture'),
+    ('bohemiacrystal', 'furniture'),
+    ('bohemian', 'furniture'),
+    ('bohmann', 'appliances'),
+    ('boley', 'kids'),
+    ('bomann', 'appliances'),
+    ('bombbar', 'medicine'),
+    ('bombbar', 'sport'),
+    ('bombcat', 'apparel');
+```
+[2024-12-05T21:10:16.342+0000] {python.py:240} INFO - Done. Returned value was: Here is the mapping of the provided brands to their respective categories based on the search results:
+
+1. **blueidea** - electronics
+2. **blueprint** - stationery
+3. **blueseven** - apparel, kids
+4. **bluesonic** - electronics
+5. **blumarine** - apparel, accessories
+6. **blw** - accessories
+7. **bmw** - auto
+8. **boarteks** - appliances
+9. **boboli** - apparel, kids
+10. **boccia** - accessories
+11. **bochetti** - furniture
+12. **bodyboom** - medicine, sport
+13. **bodykraft** - sport
+14. **bodysculpture** - sport
+15. **body-solid** - sport
+16. **bodysolid** - sport
+17. **boge** - auto
+18. **bohemia** - furniture
+19. **bohemiacrystal** - furniture
+20. **bohemian** - furniture
+21. **bohmann** - appliances
+22. **boley** - kids
+23. **bomann** - appliances
+24. **bombbar** - medicine, sport
+25. **bombcat** - apparel
+
+Now, I will generate the SQL INSERT statement based on this mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('blueidea', 'electronics'),
+    ('blueprint', 'stationery'),
+    ('blueseven', 'apparel'),
+    ('blueseven', 'kids'),
+    ('bluesonic', 'electronics'),
+    ('blumarine', 'apparel'),
+    ('blumarine', 'accessories'),
+    ('blw', 'accessories'),
+    ('bmw', 'auto'),
+    ('boarteks', 'appliances'),
+    ('boboli', 'apparel'),
+    ('boboli', 'kids'),
+    ('boccia', 'accessories'),
+    ('bochetti', 'furniture'),
+    ('bodyboom', 'medicine'),
+    ('bodyboom', 'sport'),
+    ('bodykraft', 'sport'),
+    ('bodysculpture', 'sport'),
+    ('body-solid', 'sport'),
+    ('bodysolid', 'sport'),
+    ('boge', 'auto'),
+    ('bohemia', 'furniture'),
+    ('bohemiacrystal', 'furniture'),
+    ('bohemian', 'furniture'),
+    ('bohmann', 'appliances'),
+    ('boley', 'kids'),
+    ('bomann', 'appliances'),
+    ('bombbar', 'medicine'),
+    ('bombbar', 'sport'),
+    ('bombcat', 'apparel');
+```
+[2024-12-05T21:10:16.370+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:10:16.371+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:09:50.773291+00:00, execution_date=20241205T210950, start_date=20241205T210955, end_date=20241205T211016
+[2024-12-05T21:10:16.407+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:10:16.426+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:10:16.429+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

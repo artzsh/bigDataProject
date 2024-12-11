@@ -1,0 +1,113 @@
+[2024-12-05T22:44:29.858+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:44:29.870+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:44:03.707457+00:00 [queued]>
+[2024-12-05T22:44:29.876+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:44:03.707457+00:00 [queued]>
+[2024-12-05T22:44:29.877+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:44:29.890+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:44:03.707457+00:00
+[2024-12-05T22:44:29.896+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8254) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:44:29.897+0000] {standard_task_runner.py:72} INFO - Started process 8255 to run task
+[2024-12-05T22:44:29.898+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:44:03.707457+00:00', '--job-id', '1790', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpgi5vqpz5']
+[2024-12-05T22:44:29.900+0000] {standard_task_runner.py:105} INFO - Job 1790: Subtask execute_sql
+[2024-12-05T22:44:29.938+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:44:03.707457+00:00 [running]> on host c7780884450d
+[2024-12-05T22:44:30.002+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:44:03.707457+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:44:03.707457+00:00'
+[2024-12-05T22:44:30.003+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:44:30.023+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('turboair', 'appliances'),
+    ('turbosound', 'electronics'),
+    ('turtle', 'kids'),
+    ('turtle', 'accessories'),
+    ('turtles', 'kids'),
+    ('turtles', 'accessories'),
+    ('tutis', 'kids'),
+    ('tutis', 'apparel'),
+    ('tutti', 'kids'),
+    ('tutti', 'accessories'),
+    ('tutu', 'kids'),
+    ('tutu', 'apparel'),
+    ('tvs', 'electronics'),
+    ('tv-shop', 'electronics'),
+    ('twinkly', 'electronics'),
+    ('twins', 'kids'),
+    ('twins', 'apparel'),
+    ('twistclimbingcar', 'kids'),
+    ('twistclimbingcar', 'toys'),
+    ('twistypetz', 'kids'),
+    ('twistypetz', 'toys'),
+    ('ty', 'kids'),
+    ('ty', 'toys'),
+    ('ty', 'accessories'),
+    ('tyc', 'auto'),
+    ('tyc', 'electronics'),
+    ('tyent', 'appliances'),
+    ('tyent', 'electronics'),
+    ('tyr', 'sport'),
+    ('tyr', 'apparel'),
+    ('tyrex', 'auto'),
+    ('tytan', 'construction'),
+    ('tytan', 'appliances'),
+    ('ub', 'electronics'),
+    ('ubear', 'kids'),
+    ('ubear', 'toys'),
+    ('ubiquiti', 'electronics'),
+    ('ubisoft', 'electronics'),
+    ('ubisoft', 'computers'),
+    ('ubtech', 'electronics'),
+    ('ubtech', 'toys'),
+    ('ugears', 'kids'),
+    ('ugears', 'toys'),
+    ('ugears', 'construction');
+[2024-12-05T22:44:30.029+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:44:30.806+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('turboair', 'appliances'),
+    ('turbosound', 'electronics'),
+    ('turtle', 'kids'),
+    ('turtle', 'accessories'),
+    ('turtles', 'kids'),
+    ('turtles', 'accessories'),
+    ('tutis', 'kids'),
+    ('tutis', 'apparel'),
+    ('tutti', 'kids'),
+    ('tutti', 'accessories'),
+    ('tutu', 'kids'),
+    ('tutu', 'apparel'),
+    ('tvs', 'electronics'),
+    ('tv-shop', 'electronics'),
+    ('twinkly', 'electronics'),
+    ('twins', 'kids'),
+    ('twins', 'apparel'),
+    ('twistclimbingcar', 'kids'),
+    ('twistclimbingcar', 'toys'),
+    ('twistypetz', 'kids'),
+    ('twistypetz', 'toys'),
+    ('ty', 'kids'),
+    ('ty', 'toys'),
+    ('ty', 'accessories'),
+    ('tyc', 'auto'),
+    ('tyc', 'electronics'),
+    ('tyent', 'appliances'),
+    ('tyent', 'electronics'),
+    ('tyr', 'sport'),
+    ('tyr', 'apparel'),
+    ('tyrex', 'auto'),
+    ('tytan', 'construction'),
+    ('tytan', 'appliances'),
+    ('ub', 'electronics'),
+    ('ubear', 'kids'),
+    ('ubear', 'toys'),
+    ('ubiquiti', 'electronics'),
+    ('ubisoft', 'electronics'),
+    ('ubisoft', 'computers'),
+    ('ubtech', 'electronics'),
+    ('ubtech', 'toys'),
+    ('ugears', 'kids'),
+    ('ugears', 'toys'),
+    ('ugears', 'construction');
+[2024-12-05T22:44:30.980+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:44:30.981+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:44:30.988+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:44:30.989+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:44:03.707457+00:00, execution_date=20241205T224403, start_date=20241205T224429, end_date=20241205T224430
+[2024-12-05T22:44:31.034+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:44:31.051+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:44:31.054+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

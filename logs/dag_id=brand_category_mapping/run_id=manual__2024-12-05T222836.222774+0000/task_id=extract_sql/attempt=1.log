@@ -1,0 +1,151 @@
+[2024-12-05T22:29:01.824+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:29:01.839+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:28:36.222774+00:00 [queued]>
+[2024-12-05T22:29:01.846+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:28:36.222774+00:00 [queued]>
+[2024-12-05T22:29:01.847+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:29:01.859+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:28:36.222774+00:00
+[2024-12-05T22:29:01.865+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7511) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:29:01.867+0000] {standard_task_runner.py:72} INFO - Started process 7512 to run task
+[2024-12-05T22:29:01.867+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:28:36.222774+00:00', '--job-id', '1633', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpi2ugqf_c']
+[2024-12-05T22:29:01.869+0000] {standard_task_runner.py:105} INFO - Job 1633: Subtask extract_sql
+[2024-12-05T22:29:01.906+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:28:36.222774+00:00 [running]> on host c7780884450d
+[2024-12-05T22:29:01.973+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:28:36.222774+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:28:36.222774+00:00'
+[2024-12-05T22:29:01.974+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:29:01.993+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results:
+
+1. **seventeen** - apparel
+2. **seventeenkids** - kids, apparel
+3. **sevillia** - apparel
+4. **sgary** - apparel, accessories
+5. **shagovita** - apparel
+6. **shahirani** - apparel
+7. **shaik** - apparel, accessories
+8. **shakira** - apparel, accessories
+9. **shamsi-irani** - apparel
+10. **shangpree** - cosmetics, accessories
+11. **shantou** - toys, kids
+12. **shantougepai** - toys, kids
+13. **shark** - appliances, electronics
+14. **sharking** - electronics
+15. **sharp** - electronics
+16. **sheba** - appliances
+17. **shedi** - apparel
+18. **sheffilton** - furniture
+19. **sheila** - apparel
+20. **shengyuan** - electronics
+21. **shenma** - electronics
+22. **sherlock** - stationery
+23. **sheyk** - apparel
+24. **shhongri** - electronics
+25. **shima** - apparel
+
+Now, here’s the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('seventeen', 'apparel'),
+    ('seventeenkids', 'kids'),
+    ('seventeenkids', 'apparel'),
+    ('sevillia', 'apparel'),
+    ('sgary', 'apparel'),
+    ('sgary', 'accessories'),
+    ('shagovita', 'apparel'),
+    ('shahirani', 'apparel'),
+    ('shaik', 'apparel'),
+    ('shaik', 'accessories'),
+    ('shakira', 'apparel'),
+    ('shakira', 'accessories'),
+    ('shamsi-irani', 'apparel'),
+    ('shangpree', 'accessories'),
+    ('shantou', 'kids'),
+    ('shantou', 'toys'),
+    ('shantougepai', 'kids'),
+    ('shantougepai', 'toys'),
+    ('shark', 'appliances'),
+    ('shark', 'electronics'),
+    ('sharking', 'electronics'),
+    ('sharp', 'electronics'),
+    ('sheba', 'appliances'),
+    ('shedi', 'apparel'),
+    ('sheffilton', 'furniture'),
+    ('sheila', 'apparel'),
+    ('shengyuan', 'electronics'),
+    ('shenma', 'electronics'),
+    ('sherlock', 'stationery'),
+    ('sheyk', 'apparel'),
+    ('shhongri', 'electronics'),
+    ('shima', 'apparel');
+```
+[2024-12-05T22:29:01.994+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('seventeen', 'apparel'),
+    ('seventeenkids', 'kids'),
+    ('seventeenkids', 'apparel'),
+    ('sevillia', 'apparel'),
+    ('sgary', 'apparel'),
+    ('sgary', 'accessories'),
+    ('shagovita', 'apparel'),
+    ('shahirani', 'apparel'),
+    ('shaik', 'apparel'),
+    ('shaik', 'accessories'),
+    ('shakira', 'apparel'),
+    ('shakira', 'accessories'),
+    ('shamsi-irani', 'apparel'),
+    ('shangpree', 'accessories'),
+    ('shantou', 'kids'),
+    ('shantou', 'toys'),
+    ('shantougepai', 'kids'),
+    ('shantougepai', 'toys'),
+    ('shark', 'appliances'),
+    ('shark', 'electronics'),
+    ('sharking', 'electronics'),
+    ('sharp', 'electronics'),
+    ('sheba', 'appliances'),
+    ('shedi', 'apparel'),
+    ('sheffilton', 'furniture'),
+    ('sheila', 'apparel'),
+    ('shengyuan', 'electronics'),
+    ('shenma', 'electronics'),
+    ('sherlock', 'stationery'),
+    ('sheyk', 'apparel'),
+    ('shhongri', 'electronics'),
+    ('shima', 'apparel');
+[2024-12-05T22:29:01.994+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('seventeen', 'apparel'),
+    ('seventeenkids', 'kids'),
+    ('seventeenkids', 'apparel'),
+    ('sevillia', 'apparel'),
+    ('sgary', 'apparel'),
+    ('sgary', 'accessories'),
+    ('shagovita', 'apparel'),
+    ('shahirani', 'apparel'),
+    ('shaik', 'apparel'),
+    ('shaik', 'accessories'),
+    ('shakira', 'apparel'),
+    ('shakira', 'accessories'),
+    ('shamsi-irani', 'apparel'),
+    ('shangpree', 'accessories'),
+    ('shantou', 'kids'),
+    ('shantou', 'toys'),
+    ('shantougepai', 'kids'),
+    ('shantougepai', 'toys'),
+    ('shark', 'appliances'),
+    ('shark', 'electronics'),
+    ('sharking', 'electronics'),
+    ('sharp', 'electronics'),
+    ('sheba', 'appliances'),
+    ('shedi', 'apparel'),
+    ('sheffilton', 'furniture'),
+    ('sheila', 'apparel'),
+    ('shengyuan', 'electronics'),
+    ('shenma', 'electronics'),
+    ('sherlock', 'stationery'),
+    ('sheyk', 'apparel'),
+    ('shhongri', 'electronics'),
+    ('shima', 'apparel');
+[2024-12-05T22:29:02.011+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:29:02.012+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:28:36.222774+00:00, execution_date=20241205T222836, start_date=20241205T222901, end_date=20241205T222902
+[2024-12-05T22:29:02.041+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:29:02.063+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:29:02.066+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

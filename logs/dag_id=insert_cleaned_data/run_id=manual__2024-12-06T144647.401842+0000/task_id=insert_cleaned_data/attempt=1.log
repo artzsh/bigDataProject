@@ -1,0 +1,115 @@
+[2024-12-06T14:46:49.987+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T14:46:50.001+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T14:46:47.401842+00:00 [queued]>
+[2024-12-06T14:46:50.006+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T14:46:47.401842+00:00 [queued]>
+[2024-12-06T14:46:50.007+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T14:46:50.017+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): insert_cleaned_data> on 2024-12-06 14:46:47.401842+00:00
+[2024-12-06T14:46:50.022+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2341) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T14:46:50.023+0000] {standard_task_runner.py:72} INFO - Started process 2342 to run task
+[2024-12-06T14:46:50.024+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'insert_cleaned_data', 'manual__2024-12-06T14:46:47.401842+00:00', '--job-id', '1988', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmpb078vjht']
+[2024-12-06T14:46:50.024+0000] {standard_task_runner.py:105} INFO - Job 1988: Subtask insert_cleaned_data
+[2024-12-06T14:46:50.056+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T14:46:47.401842+00:00 [running]> on host cb0074367deb
+[2024-12-06T14:46:50.111+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='insert_cleaned_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T14:46:47.401842+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T14:46:47.401842+00:00'
+[2024-12-06T14:46:50.112+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T14:46:50.131+0000] {insert_cleaned_data.py:51} INFO - Обрабатываем ключ: 1
+[2024-12-06T14:46:50.131+0000] {insert_cleaned_data.py:67} INFO - Источник данных: DDS-STG.eCommerce_Oct
+[2024-12-06T14:46:50.131+0000] {insert_cleaned_data.py:68} INFO - Целевая таблица: DDS.final_cleaned_data
+[2024-12-06T14:46:50.136+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-06T14:46:50.829+0000] {insert_cleaned_data.py:89} INFO - Соединение с PostgreSQL установлено.
+[2024-12-06T14:47:43.284+0000] {insert_cleaned_data.py:173} ERROR - Ошибка при вставке данных: relation "DDS.final_cleaned_data" does not exist
+
+[2024-12-06T14:47:43.387+0000] {insert_cleaned_data.py:180} INFO - Курсор закрыт.
+[2024-12-06T14:47:43.389+0000] {insert_cleaned_data.py:183} INFO - Соединение с PostgreSQL закрыто.
+[2024-12-06T14:47:43.391+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/insert_cleaned_data.py", line 160, in insert_cleaned_data
+    cursor.copy_expert(copy_query, buffer)
+psycopg2.errors.UndefinedTable: relation "DDS.final_cleaned_data" does not exist
+
+[2024-12-06T14:47:43.413+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=insert_cleaned_data, task_id=insert_cleaned_data, run_id=manual__2024-12-06T14:46:47.401842+00:00, execution_date=20241206T144647, start_date=20241206T144650, end_date=20241206T144743
+[2024-12-06T14:47:43.440+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-06T14:47:43.441+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 1988 for task insert_cleaned_data (relation "DDS.final_cleaned_data" does not exist
+; 2342)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/insert_cleaned_data.py", line 160, in insert_cleaned_data
+    cursor.copy_expert(copy_query, buffer)
+psycopg2.errors.UndefinedTable: relation "DDS.final_cleaned_data" does not exist
+
+[2024-12-06T14:47:43.492+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-12-06T14:47:43.505+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-06T14:47:43.508+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

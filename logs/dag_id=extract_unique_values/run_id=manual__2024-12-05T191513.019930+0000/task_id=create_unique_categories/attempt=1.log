@@ -1,0 +1,22 @@
+[2024-12-05T19:15:16.848+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T19:15:16.862+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T19:15:13.019930+00:00 [queued]>
+[2024-12-05T19:15:16.872+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T19:15:13.019930+00:00 [queued]>
+[2024-12-05T19:15:16.873+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T19:15:16.888+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): create_unique_categories> on 2024-12-05 19:15:13.019930+00:00
+[2024-12-05T19:15:16.895+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1063) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T19:15:16.896+0000] {standard_task_runner.py:72} INFO - Started process 1064 to run task
+[2024-12-05T19:15:16.896+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_unique_values', 'create_unique_categories', 'manual__2024-12-05T19:15:13.019930+00:00', '--job-id', '518', '--raw', '--subdir', 'DAGS_FOLDER/select_distinct_brands_categories.py', '--cfg-path', '/tmp/tmpeilfk9k8']
+[2024-12-05T19:15:16.897+0000] {standard_task_runner.py:105} INFO - Job 518: Subtask create_unique_categories
+[2024-12-05T19:15:16.938+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_unique_values.create_unique_categories manual__2024-12-05T19:15:13.019930+00:00 [running]> on host c7780884450d
+[2024-12-05T19:15:17.001+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_unique_values' AIRFLOW_CTX_TASK_ID='create_unique_categories' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T19:15:13.019930+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T19:15:13.019930+00:00'
+[2024-12-05T19:15:17.002+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T19:15:17.025+0000] {select_distinct_brands_categories.py:176} INFO - Обрабатываем ключ: 8
+[2024-12-05T19:15:17.026+0000] {select_distinct_brands_categories.py:180} INFO - Ключ '8' не найден. Завершение обработки категорий.
+[2024-12-05T19:15:17.027+0000] {python.py:240} INFO - Done. Returned value was: stop
+[2024-12-05T19:15:17.046+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T19:15:17.046+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extract_unique_values, task_id=create_unique_categories, run_id=manual__2024-12-05T19:15:13.019930+00:00, execution_date=20241205T191513, start_date=20241205T191516, end_date=20241205T191517
+[2024-12-05T19:15:17.071+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T19:15:17.091+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T19:15:17.094+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

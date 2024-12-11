@@ -1,0 +1,192 @@
+[2024-12-05T22:00:37.389+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:00:37.402+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:00:31.474150+00:00 [queued]>
+[2024-12-05T22:00:37.408+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:00:31.474150+00:00 [queued]>
+[2024-12-05T22:00:37.409+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:00:37.422+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:00:31.474150+00:00
+[2024-12-05T22:00:37.428+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5980) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:00:37.429+0000] {standard_task_runner.py:72} INFO - Started process 5981 to run task
+[2024-12-05T22:00:37.429+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:00:31.474150+00:00', '--job-id', '1302', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp36qkn749']
+[2024-12-05T22:00:37.431+0000] {standard_task_runner.py:105} INFO - Job 1302: Subtask call_llm
+[2024-12-05T22:00:37.466+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:00:31.474150+00:00 [running]> on host c7780884450d
+[2024-12-05T22:00:37.527+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:00:31.474150+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:00:31.474150+00:00'
+[2024-12-05T22:00:37.528+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:00:37.545+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['mastrad', 'masuma', 'matador', 'matebo', 'matel', 'mateus', 'matex', 'matrix', 'matrol', 'mattel', 'mattini', 'mattnawill', 'mauboussin', 'm-audio', 'maunfeld', 'mauricelacroix', 'maverick', 'mavic', 'max', 'maxcare', 'maxcity', 'maxcolor', 'maxfactor', 'maxi', 'maxi-cosi'], 'next_index': 3175}
+[2024-12-05T22:00:37.545+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:00:37.960+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:00:54.085+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **mastrad** - appliances, kitchenware
+2. **masuma** - auto, automotive parts
+3. **matador** - tools, construction
+4. **matebo** - electronics, gadgets
+5. **matel** - electronics, consumer electronics
+6. **mateus** - furniture, home decor
+7. **matex** - apparel, textiles
+8. **matrix** - computers, software
+9. **matrol** - construction, tools
+10. **mattel** - kids, toys
+11. **mattini** - apparel, fashion
+12. **mattnawill** - apparel, fashion
+13. **mauboussin** - accessories, jewelry
+14. **m-audio** - electronics, audio equipment
+15. **maunfeld** - appliances, kitchen appliances
+16. **mauricelacroix** - accessories, watches
+17. **maverick** - sport, outdoor gear
+18. **mavic** - sport, cycling
+19. **max** - apparel, fashion
+20. **maxcare** - medicine, health products
+21. **maxcity** - construction, building materials
+22. **maxcolor** - stationery, art supplies
+23. **maxfactor** - cosmetics, beauty products
+24. **maxi** - kids, baby products
+25. **maxi-cosi** - kids, baby gear
+
+Now, here’s the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mastrad', 'appliances'),
+    ('mastrad', 'kitchenware'),
+    ('masuma', 'auto'),
+    ('masuma', 'automotive parts'),
+    ('matador', 'tools'),
+    ('matador', 'construction'),
+    ('matebo', 'electronics'),
+    ('matebo', 'gadgets'),
+    ('matel', 'electronics'),
+    ('matel', 'consumer electronics'),
+    ('mateus', 'furniture'),
+    ('mateus', 'home decor'),
+    ('matex', 'apparel'),
+    ('matex', 'textiles'),
+    ('matrix', 'computers'),
+    ('matrix', 'software'),
+    ('matrol', 'construction'),
+    ('matrol', 'tools'),
+    ('mattel', 'kids'),
+    ('mattel', 'toys'),
+    ('mattini', 'apparel'),
+    ('mattini', 'fashion'),
+    ('mattnawill', 'apparel'),
+    ('mattnawill', 'fashion'),
+    ('mauboussin', 'accessories'),
+    ('mauboussin', 'jewelry'),
+    ('m-audio', 'electronics'),
+    ('m-audio', 'audio equipment'),
+    ('maunfeld', 'appliances'),
+    ('maunfeld', 'kitchen appliances'),
+    ('mauricelacroix', 'accessories'),
+    ('mauricelacroix', 'watches'),
+    ('maverick', 'sport'),
+    ('maverick', 'outdoor gear'),
+    ('mavic', 'sport'),
+    ('mavic', 'cycling'),
+    ('max', 'apparel'),
+    ('max', 'fashion'),
+    ('maxcare', 'medicine'),
+    ('maxcare', 'health products'),
+    ('maxcity', 'construction'),
+    ('maxcity', 'building materials'),
+    ('maxcolor', 'stationery'),
+    ('maxcolor', 'art supplies'),
+    ('maxfactor', 'cosmetics'),
+    ('maxfactor', 'beauty products'),
+    ('maxi', 'kids'),
+    ('maxi', 'baby products'),
+    ('maxi-cosi', 'kids'),
+    ('maxi-cosi', 'baby gear');
+``` 
+
+This SQL statement inserts the brand-category mappings into the specified table format.
+[2024-12-05T22:00:54.086+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **mastrad** - appliances, kitchenware
+2. **masuma** - auto, automotive parts
+3. **matador** - tools, construction
+4. **matebo** - electronics, gadgets
+5. **matel** - electronics, consumer electronics
+6. **mateus** - furniture, home decor
+7. **matex** - apparel, textiles
+8. **matrix** - computers, software
+9. **matrol** - construction, tools
+10. **mattel** - kids, toys
+11. **mattini** - apparel, fashion
+12. **mattnawill** - apparel, fashion
+13. **mauboussin** - accessories, jewelry
+14. **m-audio** - electronics, audio equipment
+15. **maunfeld** - appliances, kitchen appliances
+16. **mauricelacroix** - accessories, watches
+17. **maverick** - sport, outdoor gear
+18. **mavic** - sport, cycling
+19. **max** - apparel, fashion
+20. **maxcare** - medicine, health products
+21. **maxcity** - construction, building materials
+22. **maxcolor** - stationery, art supplies
+23. **maxfactor** - cosmetics, beauty products
+24. **maxi** - kids, baby products
+25. **maxi-cosi** - kids, baby gear
+
+Now, here’s the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('mastrad', 'appliances'),
+    ('mastrad', 'kitchenware'),
+    ('masuma', 'auto'),
+    ('masuma', 'automotive parts'),
+    ('matador', 'tools'),
+    ('matador', 'construction'),
+    ('matebo', 'electronics'),
+    ('matebo', 'gadgets'),
+    ('matel', 'electronics'),
+    ('matel', 'consumer electronics'),
+    ('mateus', 'furniture'),
+    ('mateus', 'home decor'),
+    ('matex', 'apparel'),
+    ('matex', 'textiles'),
+    ('matrix', 'computers'),
+    ('matrix', 'software'),
+    ('matrol', 'construction'),
+    ('matrol', 'tools'),
+    ('mattel', 'kids'),
+    ('mattel', 'toys'),
+    ('mattini', 'apparel'),
+    ('mattini', 'fashion'),
+    ('mattnawill', 'apparel'),
+    ('mattnawill', 'fashion'),
+    ('mauboussin', 'accessories'),
+    ('mauboussin', 'jewelry'),
+    ('m-audio', 'electronics'),
+    ('m-audio', 'audio equipment'),
+    ('maunfeld', 'appliances'),
+    ('maunfeld', 'kitchen appliances'),
+    ('mauricelacroix', 'accessories'),
+    ('mauricelacroix', 'watches'),
+    ('maverick', 'sport'),
+    ('maverick', 'outdoor gear'),
+    ('mavic', 'sport'),
+    ('mavic', 'cycling'),
+    ('max', 'apparel'),
+    ('max', 'fashion'),
+    ('maxcare', 'medicine'),
+    ('maxcare', 'health products'),
+    ('maxcity', 'construction'),
+    ('maxcity', 'building materials'),
+    ('maxcolor', 'stationery'),
+    ('maxcolor', 'art supplies'),
+    ('maxfactor', 'cosmetics'),
+    ('maxfactor', 'beauty products'),
+    ('maxi', 'kids'),
+    ('maxi', 'baby products'),
+    ('maxi-cosi', 'kids'),
+    ('maxi-cosi', 'baby gear');
+``` 
+
+This SQL statement inserts the brand-category mappings into the specified table format.
+[2024-12-05T22:00:54.104+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:00:54.105+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:00:31.474150+00:00, execution_date=20241205T220031, start_date=20241205T220037, end_date=20241205T220054
+[2024-12-05T22:00:54.145+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:00:54.183+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:00:54.190+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

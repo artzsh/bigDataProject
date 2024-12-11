@@ -1,0 +1,164 @@
+[2024-12-05T22:39:54.829+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:39:54.841+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:39:50.021909+00:00 [queued]>
+[2024-12-05T22:39:54.847+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:39:50.021909+00:00 [queued]>
+[2024-12-05T22:39:54.848+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:39:54.862+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 22:39:50.021909+00:00
+[2024-12-05T22:39:54.868+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=8064) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:39:54.869+0000] {standard_task_runner.py:72} INFO - Started process 8065 to run task
+[2024-12-05T22:39:54.870+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T22:39:50.021909+00:00', '--job-id', '1752', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpwogabffx']
+[2024-12-05T22:39:54.871+0000] {standard_task_runner.py:105} INFO - Job 1752: Subtask call_llm
+[2024-12-05T22:39:54.910+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T22:39:50.021909+00:00 [running]> on host c7780884450d
+[2024-12-05T22:39:54.975+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:39:50.021909+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:39:50.021909+00:00'
+[2024-12-05T22:39:54.976+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:39:54.993+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['timberk', 'timejump', 'timi', 'timilostworld', 'timson', 'tines', 'tinyfurries', 'tinylove', 'tinytoes', 'tiod', 'tiret', 'tisa', 'tissot', 'titan', 'titanik', 'tiziana', 'tizianaterenzi', 'tizo', 'tl', 't-max', 'tmnt', 'tobot', 'today', 'tofu', 'tognana'], 'next_index': 5050}
+[2024-12-05T22:39:54.993+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T22:39:55.411+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T22:40:13.192+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here's the mapping of the brands to their respective categories based on the search results:
+
+1. **timberk**: appliances, electronics
+2. **timejump**: electronics
+3. **timi**: kids, apparel
+4. **timilostworld**: kids, apparel
+5. **timson**: stationery
+6. **tines**: stationery
+7. **tinyfurries**: kids
+8. **tinylove**: kids, accessories
+9. **tinytoes**: kids, apparel
+10. **tiod**: electronics
+11. **tiret**: auto
+12. **tisa**: apparel, accessories
+13. **tissot**: accessories, apparel
+14. **titan**: appliances, electronics
+15. **titanik**: furniture
+16. **tiziana**: apparel
+17. **tizianaterenzi**: apparel, accessories
+18. **tizo**: furniture
+19. **tl**: electronics
+20. **t-max**: auto
+21. **tmnt**: kids, apparel
+22. **tobot**: kids, electronics
+23. **today**: appliances, electronics
+24. **tofu**: food (not in the provided categories, but could be considered under country_yard for gardening-related products)
+25. **tognana**: appliances, furniture
+
+Now, here's the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('timberk', 'appliances'),
+    ('timberk', 'electronics'),
+    ('timejump', 'electronics'),
+    ('timi', 'kids'),
+    ('timi', 'apparel'),
+    ('timilostworld', 'kids'),
+    ('timilostworld', 'apparel'),
+    ('timson', 'stationery'),
+    ('tines', 'stationery'),
+    ('tinyfurries', 'kids'),
+    ('tinylove', 'kids'),
+    ('tinylove', 'accessories'),
+    ('tinytoes', 'kids'),
+    ('tinytoes', 'apparel'),
+    ('tiod', 'electronics'),
+    ('tiret', 'auto'),
+    ('tisa', 'apparel'),
+    ('tisa', 'accessories'),
+    ('tissot', 'accessories'),
+    ('tissot', 'apparel'),
+    ('titan', 'appliances'),
+    ('titan', 'electronics'),
+    ('titanik', 'furniture'),
+    ('tiziana', 'apparel'),
+    ('tizianaterenzi', 'apparel'),
+    ('tizianaterenzi', 'accessories'),
+    ('tizo', 'furniture'),
+    ('tl', 'electronics'),
+    ('t-max', 'auto'),
+    ('tmnt', 'kids'),
+    ('tmnt', 'apparel'),
+    ('tobot', 'kids'),
+    ('tobot', 'electronics'),
+    ('today', 'appliances'),
+    ('today', 'electronics'),
+    ('tofu', 'country_yard'),
+    ('tognana', 'appliances'),
+    ('tognana', 'furniture');
+```
+[2024-12-05T22:40:13.193+0000] {python.py:240} INFO - Done. Returned value was: Here's the mapping of the brands to their respective categories based on the search results:
+
+1. **timberk**: appliances, electronics
+2. **timejump**: electronics
+3. **timi**: kids, apparel
+4. **timilostworld**: kids, apparel
+5. **timson**: stationery
+6. **tines**: stationery
+7. **tinyfurries**: kids
+8. **tinylove**: kids, accessories
+9. **tinytoes**: kids, apparel
+10. **tiod**: electronics
+11. **tiret**: auto
+12. **tisa**: apparel, accessories
+13. **tissot**: accessories, apparel
+14. **titan**: appliances, electronics
+15. **titanik**: furniture
+16. **tiziana**: apparel
+17. **tizianaterenzi**: apparel, accessories
+18. **tizo**: furniture
+19. **tl**: electronics
+20. **t-max**: auto
+21. **tmnt**: kids, apparel
+22. **tobot**: kids, electronics
+23. **today**: appliances, electronics
+24. **tofu**: food (not in the provided categories, but could be considered under country_yard for gardening-related products)
+25. **tognana**: appliances, furniture
+
+Now, here's the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('timberk', 'appliances'),
+    ('timberk', 'electronics'),
+    ('timejump', 'electronics'),
+    ('timi', 'kids'),
+    ('timi', 'apparel'),
+    ('timilostworld', 'kids'),
+    ('timilostworld', 'apparel'),
+    ('timson', 'stationery'),
+    ('tines', 'stationery'),
+    ('tinyfurries', 'kids'),
+    ('tinylove', 'kids'),
+    ('tinylove', 'accessories'),
+    ('tinytoes', 'kids'),
+    ('tinytoes', 'apparel'),
+    ('tiod', 'electronics'),
+    ('tiret', 'auto'),
+    ('tisa', 'apparel'),
+    ('tisa', 'accessories'),
+    ('tissot', 'accessories'),
+    ('tissot', 'apparel'),
+    ('titan', 'appliances'),
+    ('titan', 'electronics'),
+    ('titanik', 'furniture'),
+    ('tiziana', 'apparel'),
+    ('tizianaterenzi', 'apparel'),
+    ('tizianaterenzi', 'accessories'),
+    ('tizo', 'furniture'),
+    ('tl', 'electronics'),
+    ('t-max', 'auto'),
+    ('tmnt', 'kids'),
+    ('tmnt', 'apparel'),
+    ('tobot', 'kids'),
+    ('tobot', 'electronics'),
+    ('today', 'appliances'),
+    ('today', 'electronics'),
+    ('tofu', 'country_yard'),
+    ('tognana', 'appliances'),
+    ('tognana', 'furniture');
+```
+[2024-12-05T22:40:13.213+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:40:13.213+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T22:39:50.021909+00:00, execution_date=20241205T223950, start_date=20241205T223954, end_date=20241205T224013
+[2024-12-05T22:40:13.266+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:40:13.289+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:40:13.293+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

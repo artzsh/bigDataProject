@@ -1,0 +1,28 @@
+[2024-11-28T07:40:02.995+0000] {processor.py:186} INFO - Started process (PID=64) to work on /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:40:02.996+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/download_Test_1.py for tasks to queue
+[2024-11-28T07:40:02.999+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:02.999+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:40:03.464+0000] {processor.py:925} INFO - DAG(s) 'load_csv_from_internet_to_postgres' retrieved from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:40:03.479+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:03.479+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:40:03.496+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:03.496+0000] {dag.py:4180} INFO - Setting next_dagrun for load_csv_from_internet_to_postgres to 2024-11-27 00:00:00+00:00, run_after=2024-11-28 00:00:00+00:00
+[2024-11-28T07:40:03.511+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/download_Test_1.py took 0.522 seconds
+[2024-11-28T07:40:33.633+0000] {processor.py:186} INFO - Started process (PID=85) to work on /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:40:33.634+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/download_Test_1.py for tasks to queue
+[2024-11-28T07:40:33.636+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:33.635+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:40:34.058+0000] {processor.py:925} INFO - DAG(s) 'load_csv_from_internet_to_postgres' retrieved from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:40:34.074+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:34.073+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:40:34.099+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:40:34.099+0000] {dag.py:4180} INFO - Setting next_dagrun for load_csv_from_internet_to_postgres to 2024-11-27 00:00:00+00:00, run_after=2024-11-28 00:00:00+00:00
+[2024-11-28T07:40:34.126+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/download_Test_1.py took 0.497 seconds
+[2024-11-28T07:41:05.022+0000] {processor.py:186} INFO - Started process (PID=110) to work on /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:41:05.023+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/download_Test_1.py for tasks to queue
+[2024-11-28T07:41:05.025+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:05.024+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:41:05.386+0000] {processor.py:925} INFO - DAG(s) 'load_csv_from_internet_to_postgres' retrieved from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:41:05.399+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:05.399+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:41:05.413+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:05.413+0000] {dag.py:4180} INFO - Setting next_dagrun for load_csv_from_internet_to_postgres to 2024-11-27 00:00:00+00:00, run_after=2024-11-28 00:00:00+00:00
+[2024-11-28T07:41:05.425+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/download_Test_1.py took 0.407 seconds
+[2024-11-28T07:41:36.103+0000] {processor.py:186} INFO - Started process (PID=128) to work on /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:41:36.104+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/download_Test_1.py for tasks to queue
+[2024-11-28T07:41:36.106+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:36.106+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:41:36.473+0000] {processor.py:925} INFO - DAG(s) 'load_csv_from_internet_to_postgres' retrieved from /opt/airflow/dags/download_Test_1.py
+[2024-11-28T07:41:36.505+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:36.505+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-28T07:41:36.536+0000] {logging_mixin.py:190} INFO - [2024-11-28T07:41:36.535+0000] {dag.py:4180} INFO - Setting next_dagrun for load_csv_from_internet_to_postgres to 2024-11-27 00:00:00+00:00, run_after=2024-11-28 00:00:00+00:00
+[2024-11-28T07:41:36.568+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/download_Test_1.py took 0.470 seconds

@@ -1,0 +1,163 @@
+[2024-12-05T22:28:31.664+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:28:31.676+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:28:05.933759+00:00 [queued]>
+[2024-12-05T22:28:31.682+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:28:05.933759+00:00 [queued]>
+[2024-12-05T22:28:31.682+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:28:31.694+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:28:05.933759+00:00
+[2024-12-05T22:28:31.700+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7483) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:28:31.702+0000] {standard_task_runner.py:72} INFO - Started process 7484 to run task
+[2024-12-05T22:28:31.702+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:28:05.933759+00:00', '--job-id', '1627', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp3yx4is3v']
+[2024-12-05T22:28:31.704+0000] {standard_task_runner.py:105} INFO - Job 1627: Subtask extract_sql
+[2024-12-05T22:28:31.739+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:28:05.933759+00:00 [running]> on host c7780884450d
+[2024-12-05T22:28:31.799+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:28:05.933759+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:28:05.933759+00:00'
+[2024-12-05T22:28:31.800+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:28:31.819+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories based on the brands provided:
+
+1. **seintex** - apparel, accessories
+2. **sekiguchi** - kids
+3. **selby** - furniture
+4. **select** - sport
+5. **selective** - appliances, electronics
+6. **selectiveprofessional** - appliances, electronics
+7. **selena** - appliances, electronics
+8. **seletti** - furniture, accessories
+9. **selma** - apparel, accessories
+10. **selpak** - stationery
+11. **senci** - appliances
+12. **senco** - construction
+13. **sencor** - electronics
+14. **sennheiser** - electronics
+15. **sensen** - appliances
+16. **sensis** - apparel, accessories
+17. **sensodyne** - medicine
+18. **senspa** - medicine, accessories
+19. **serax** - furniture, accessories
+20. **serebro** - medicine
+21. **serebroff** - medicine
+22. **sergiorossi** - apparel, accessories
+23. **sergiotacchini** - apparel, sport
+24. **sess** - apparel
+25. **sevenfriday** - accessories
+
+Now, here’s the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('seintex', 'apparel'),
+    ('seintex', 'accessories'),
+    ('sekiguchi', 'kids'),
+    ('selby', 'furniture'),
+    ('select', 'sport'),
+    ('selective', 'appliances'),
+    ('selective', 'electronics'),
+    ('selectiveprofessional', 'appliances'),
+    ('selectiveprofessional', 'electronics'),
+    ('selena', 'appliances'),
+    ('selena', 'electronics'),
+    ('seletti', 'furniture'),
+    ('seletti', 'accessories'),
+    ('selma', 'apparel'),
+    ('selma', 'accessories'),
+    ('selpak', 'stationery'),
+    ('senci', 'appliances'),
+    ('senco', 'construction'),
+    ('sencor', 'electronics'),
+    ('sennheiser', 'electronics'),
+    ('sensen', 'appliances'),
+    ('sensis', 'apparel'),
+    ('sensis', 'accessories'),
+    ('sensodyne', 'medicine'),
+    ('senspa', 'medicine'),
+    ('senspa', 'accessories'),
+    ('serax', 'furniture'),
+    ('serax', 'accessories'),
+    ('serebro', 'medicine'),
+    ('serebroff', 'medicine'),
+    ('sergiorossi', 'apparel'),
+    ('sergiorossi', 'accessories'),
+    ('sergiotacchini', 'apparel'),
+    ('sergiotacchini', 'sport'),
+    ('sess', 'apparel'),
+    ('sevenfriday', 'accessories');
+```
+[2024-12-05T22:28:31.820+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('seintex', 'apparel'),
+    ('seintex', 'accessories'),
+    ('sekiguchi', 'kids'),
+    ('selby', 'furniture'),
+    ('select', 'sport'),
+    ('selective', 'appliances'),
+    ('selective', 'electronics'),
+    ('selectiveprofessional', 'appliances'),
+    ('selectiveprofessional', 'electronics'),
+    ('selena', 'appliances'),
+    ('selena', 'electronics'),
+    ('seletti', 'furniture'),
+    ('seletti', 'accessories'),
+    ('selma', 'apparel'),
+    ('selma', 'accessories'),
+    ('selpak', 'stationery'),
+    ('senci', 'appliances'),
+    ('senco', 'construction'),
+    ('sencor', 'electronics'),
+    ('sennheiser', 'electronics'),
+    ('sensen', 'appliances'),
+    ('sensis', 'apparel'),
+    ('sensis', 'accessories'),
+    ('sensodyne', 'medicine'),
+    ('senspa', 'medicine'),
+    ('senspa', 'accessories'),
+    ('serax', 'furniture'),
+    ('serax', 'accessories'),
+    ('serebro', 'medicine'),
+    ('serebroff', 'medicine'),
+    ('sergiorossi', 'apparel'),
+    ('sergiorossi', 'accessories'),
+    ('sergiotacchini', 'apparel'),
+    ('sergiotacchini', 'sport'),
+    ('sess', 'apparel'),
+    ('sevenfriday', 'accessories');
+[2024-12-05T22:28:31.820+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('seintex', 'apparel'),
+    ('seintex', 'accessories'),
+    ('sekiguchi', 'kids'),
+    ('selby', 'furniture'),
+    ('select', 'sport'),
+    ('selective', 'appliances'),
+    ('selective', 'electronics'),
+    ('selectiveprofessional', 'appliances'),
+    ('selectiveprofessional', 'electronics'),
+    ('selena', 'appliances'),
+    ('selena', 'electronics'),
+    ('seletti', 'furniture'),
+    ('seletti', 'accessories'),
+    ('selma', 'apparel'),
+    ('selma', 'accessories'),
+    ('selpak', 'stationery'),
+    ('senci', 'appliances'),
+    ('senco', 'construction'),
+    ('sencor', 'electronics'),
+    ('sennheiser', 'electronics'),
+    ('sensen', 'appliances'),
+    ('sensis', 'apparel'),
+    ('sensis', 'accessories'),
+    ('sensodyne', 'medicine'),
+    ('senspa', 'medicine'),
+    ('senspa', 'accessories'),
+    ('serax', 'furniture'),
+    ('serax', 'accessories'),
+    ('serebro', 'medicine'),
+    ('serebroff', 'medicine'),
+    ('sergiorossi', 'apparel'),
+    ('sergiorossi', 'accessories'),
+    ('sergiotacchini', 'apparel'),
+    ('sergiotacchini', 'sport'),
+    ('sess', 'apparel'),
+    ('sevenfriday', 'accessories');
+[2024-12-05T22:28:31.838+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:28:31.839+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:28:05.933759+00:00, execution_date=20241205T222805, start_date=20241205T222831, end_date=20241205T222831
+[2024-12-05T22:28:31.876+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:28:31.894+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:28:31.897+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

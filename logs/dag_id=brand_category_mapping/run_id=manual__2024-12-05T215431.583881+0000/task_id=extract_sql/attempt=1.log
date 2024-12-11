@@ -1,0 +1,160 @@
+[2024-12-05T21:54:58.802+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:54:58.816+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:54:31.583881+00:00 [queued]>
+[2024-12-05T21:54:58.823+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:54:31.583881+00:00 [queued]>
+[2024-12-05T21:54:58.824+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:54:58.838+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:54:31.583881+00:00
+[2024-12-05T21:54:58.844+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5677) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:54:58.846+0000] {standard_task_runner.py:72} INFO - Started process 5678 to run task
+[2024-12-05T21:54:58.846+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:54:31.583881+00:00', '--job-id', '1237', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpp78an0ro']
+[2024-12-05T21:54:58.848+0000] {standard_task_runner.py:105} INFO - Job 1237: Subtask extract_sql
+[2024-12-05T21:54:58.886+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:54:31.583881+00:00 [running]> on host c7780884450d
+[2024-12-05T21:54:58.949+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:54:31.583881+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:54:31.583881+00:00'
+[2024-12-05T21:54:58.950+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:54:58.969+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here are the assigned categories for each brand based on the search results:
+
+1. **levante** - apparel
+2. **leven** - electronics
+3. **levenhuk** - electronics, accessories
+4. **levrana** - apparel, accessories
+5. **lewinner** - electronics
+6. **lexand** - electronics
+7. **lexmark** - electronics, computers
+8. **lexus** - auto
+9. **lexustrike** - sport
+10. **lezard** - apparel, accessories
+11. **lg** - electronics, appliances
+12. **liapis** - construction
+13. **libero** - kids
+14. **liberty** - apparel, accessories
+15. **libtech** - sport
+16. **lider** - construction
+17. **lidonet** - electronics
+18. **liebert** - appliances, electronics
+19. **liebherr** - appliances, construction
+20. **lifedeco** - furniture
+21. **lifegear** - sport, accessories
+22. **lifespan** - sport, electronics
+23. **lifetrons** - electronics
+24. **light** - electronics
+25. **lightstar** - electronics
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('levante', 'apparel'),
+    ('leven', 'electronics'),
+    ('levenhuk', 'electronics'),
+    ('levenhuk', 'accessories'),
+    ('levrana', 'apparel'),
+    ('levrana', 'accessories'),
+    ('lewinner', 'electronics'),
+    ('lexand', 'electronics'),
+    ('lexmark', 'electronics'),
+    ('lexmark', 'computers'),
+    ('lexus', 'auto'),
+    ('lexustrike', 'sport'),
+    ('lezard', 'apparel'),
+    ('lezard', 'accessories'),
+    ('lg', 'electronics'),
+    ('lg', 'appliances'),
+    ('liapis', 'construction'),
+    ('libero', 'kids'),
+    ('liberty', 'apparel'),
+    ('liberty', 'accessories'),
+    ('libtech', 'sport'),
+    ('lider', 'construction'),
+    ('lidonet', 'electronics'),
+    ('liebert', 'appliances'),
+    ('liebert', 'electronics'),
+    ('liebherr', 'appliances'),
+    ('liebherr', 'construction'),
+    ('lifedeco', 'furniture'),
+    ('lifegear', 'sport'),
+    ('lifegear', 'accessories'),
+    ('lifespan', 'sport'),
+    ('lifespan', 'electronics'),
+    ('lifetrons', 'electronics'),
+    ('light', 'electronics'),
+    ('lightstar', 'electronics');
+```
+[2024-12-05T21:54:58.970+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('levante', 'apparel'),
+    ('leven', 'electronics'),
+    ('levenhuk', 'electronics'),
+    ('levenhuk', 'accessories'),
+    ('levrana', 'apparel'),
+    ('levrana', 'accessories'),
+    ('lewinner', 'electronics'),
+    ('lexand', 'electronics'),
+    ('lexmark', 'electronics'),
+    ('lexmark', 'computers'),
+    ('lexus', 'auto'),
+    ('lexustrike', 'sport'),
+    ('lezard', 'apparel'),
+    ('lezard', 'accessories'),
+    ('lg', 'electronics'),
+    ('lg', 'appliances'),
+    ('liapis', 'construction'),
+    ('libero', 'kids'),
+    ('liberty', 'apparel'),
+    ('liberty', 'accessories'),
+    ('libtech', 'sport'),
+    ('lider', 'construction'),
+    ('lidonet', 'electronics'),
+    ('liebert', 'appliances'),
+    ('liebert', 'electronics'),
+    ('liebherr', 'appliances'),
+    ('liebherr', 'construction'),
+    ('lifedeco', 'furniture'),
+    ('lifegear', 'sport'),
+    ('lifegear', 'accessories'),
+    ('lifespan', 'sport'),
+    ('lifespan', 'electronics'),
+    ('lifetrons', 'electronics'),
+    ('light', 'electronics'),
+    ('lightstar', 'electronics');
+[2024-12-05T21:54:58.971+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('levante', 'apparel'),
+    ('leven', 'electronics'),
+    ('levenhuk', 'electronics'),
+    ('levenhuk', 'accessories'),
+    ('levrana', 'apparel'),
+    ('levrana', 'accessories'),
+    ('lewinner', 'electronics'),
+    ('lexand', 'electronics'),
+    ('lexmark', 'electronics'),
+    ('lexmark', 'computers'),
+    ('lexus', 'auto'),
+    ('lexustrike', 'sport'),
+    ('lezard', 'apparel'),
+    ('lezard', 'accessories'),
+    ('lg', 'electronics'),
+    ('lg', 'appliances'),
+    ('liapis', 'construction'),
+    ('libero', 'kids'),
+    ('liberty', 'apparel'),
+    ('liberty', 'accessories'),
+    ('libtech', 'sport'),
+    ('lider', 'construction'),
+    ('lidonet', 'electronics'),
+    ('liebert', 'appliances'),
+    ('liebert', 'electronics'),
+    ('liebherr', 'appliances'),
+    ('liebherr', 'construction'),
+    ('lifedeco', 'furniture'),
+    ('lifegear', 'sport'),
+    ('lifegear', 'accessories'),
+    ('lifespan', 'sport'),
+    ('lifespan', 'electronics'),
+    ('lifetrons', 'electronics'),
+    ('light', 'electronics'),
+    ('lightstar', 'electronics');
+[2024-12-05T21:54:58.988+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:54:58.988+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:54:31.583881+00:00, execution_date=20241205T215431, start_date=20241205T215458, end_date=20241205T215458
+[2024-12-05T21:54:59.021+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:54:59.042+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:54:59.045+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

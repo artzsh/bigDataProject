@@ -1,0 +1,103 @@
+[2024-12-05T22:28:02.496+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:28:02.510+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:27:36.429229+00:00 [queued]>
+[2024-12-05T22:28:02.518+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:27:36.429229+00:00 [queued]>
+[2024-12-05T22:28:02.518+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:28:02.532+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:27:36.429229+00:00
+[2024-12-05T22:28:02.539+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7458) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:28:02.541+0000] {standard_task_runner.py:72} INFO - Started process 7459 to run task
+[2024-12-05T22:28:02.541+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:27:36.429229+00:00', '--job-id', '1622', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmph_vyy5je']
+[2024-12-05T22:28:02.543+0000] {standard_task_runner.py:105} INFO - Job 1622: Subtask execute_sql
+[2024-12-05T22:28:02.582+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:27:36.429229+00:00 [running]> on host c7780884450d
+[2024-12-05T22:28:02.651+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:27:36.429229+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:27:36.429229+00:00'
+[2024-12-05T22:28:02.652+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:28:02.674+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('scorpion', 'apparel'),
+    ('scorpion', 'accessories'),
+    ('scott', 'apparel'),
+    ('scott', 'sport'),
+    ('scovo', 'electronics'),
+    ('scoyco', 'apparel'),
+    ('scoyco', 'accessories'),
+    ('scoyco', 'auto'),
+    ('screecherswild', 'kids'),
+    ('screecherswild', 'sport'),
+    ('scruff-a-luvs', 'kids'),
+    ('scruff-a-luvs', 'accessories'),
+    ('scythe', 'computers'),
+    ('scythe', 'electronics'),
+    ('sdt', 'electronics'),
+    ('sea-doo', 'auto'),
+    ('sea-doo', 'sport'),
+    ('seagate', 'computers'),
+    ('seagate', 'electronics'),
+    ('seakoo', 'electronics'),
+    ('sealy', 'furniture'),
+    ('seasonic', 'electronics'),
+    ('sebamed', 'medicine'),
+    ('secretgourmet', 'country_yard'),
+    ('secretgourmet', 'food'),
+    ('secretkey', 'medicine'),
+    ('secretkey', 'accessories'),
+    ('sede', 'electronics'),
+    ('seealt', 'electronics'),
+    ('seed', 'country_yard'),
+    ('sega', 'electronics'),
+    ('sega', 'kids'),
+    ('segotep', 'electronics'),
+    ('segura', 'auto'),
+    ('segway', 'auto'),
+    ('segway', 'electronics'),
+    ('seicane', 'electronics'),
+    ('seiko', 'accessories'),
+    ('seiko', 'electronics');
+[2024-12-05T22:28:02.682+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:28:03.472+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('scorpion', 'apparel'),
+    ('scorpion', 'accessories'),
+    ('scott', 'apparel'),
+    ('scott', 'sport'),
+    ('scovo', 'electronics'),
+    ('scoyco', 'apparel'),
+    ('scoyco', 'accessories'),
+    ('scoyco', 'auto'),
+    ('screecherswild', 'kids'),
+    ('screecherswild', 'sport'),
+    ('scruff-a-luvs', 'kids'),
+    ('scruff-a-luvs', 'accessories'),
+    ('scythe', 'computers'),
+    ('scythe', 'electronics'),
+    ('sdt', 'electronics'),
+    ('sea-doo', 'auto'),
+    ('sea-doo', 'sport'),
+    ('seagate', 'computers'),
+    ('seagate', 'electronics'),
+    ('seakoo', 'electronics'),
+    ('sealy', 'furniture'),
+    ('seasonic', 'electronics'),
+    ('sebamed', 'medicine'),
+    ('secretgourmet', 'country_yard'),
+    ('secretgourmet', 'food'),
+    ('secretkey', 'medicine'),
+    ('secretkey', 'accessories'),
+    ('sede', 'electronics'),
+    ('seealt', 'electronics'),
+    ('seed', 'country_yard'),
+    ('sega', 'electronics'),
+    ('sega', 'kids'),
+    ('segotep', 'electronics'),
+    ('segura', 'auto'),
+    ('segway', 'auto'),
+    ('segway', 'electronics'),
+    ('seicane', 'electronics'),
+    ('seiko', 'accessories'),
+    ('seiko', 'electronics');
+[2024-12-05T22:28:03.663+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:28:03.664+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:28:03.672+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:28:03.672+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:27:36.429229+00:00, execution_date=20241205T222736, start_date=20241205T222802, end_date=20241205T222803
+[2024-12-05T22:28:03.719+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:28:03.742+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:28:03.745+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

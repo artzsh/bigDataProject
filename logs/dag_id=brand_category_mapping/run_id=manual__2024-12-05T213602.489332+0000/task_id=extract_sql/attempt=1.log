@@ -1,0 +1,145 @@
+[2024-12-05T21:36:25.029+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:36:25.042+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:36:02.489332+00:00 [queued]>
+[2024-12-05T21:36:25.048+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:36:02.489332+00:00 [queued]>
+[2024-12-05T21:36:25.048+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:36:25.061+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:36:02.489332+00:00
+[2024-12-05T21:36:25.068+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4718) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:36:25.069+0000] {standard_task_runner.py:72} INFO - Started process 4719 to run task
+[2024-12-05T21:36:25.069+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:36:02.489332+00:00', '--job-id', '1033', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpntrsadd9']
+[2024-12-05T21:36:25.071+0000] {standard_task_runner.py:105} INFO - Job 1033: Subtask extract_sql
+[2024-12-05T21:36:25.103+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:36:02.489332+00:00 [running]> on host c7780884450d
+[2024-12-05T21:36:25.164+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:36:02.489332+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:36:02.489332+00:00'
+[2024-12-05T21:36:25.165+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:36:25.183+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the brands to their appropriate categories based on the search results:
+
+1. **grans** - appliances
+2. **gran-stone** - appliances, construction
+3. **grape** - food, country_yard
+4. **graphite** - stationery
+5. **graphiteleader** - sport
+6. **grass** - country_yard
+7. **grattant** - medicine, appliances
+8. **grattol** - medicine
+9. **graude** - appliances
+10. **gravas** - construction
+11. **gree** - appliances, electronics
+12. **greenbank** - country_yard
+13. **greenbike** - auto, sport
+14. **greengard** - country_yard
+15. **greenhill** - sport
+16. **greenland** - country_yard
+17. **greenpan** - appliances
+18. **greenpro** - country_yard
+19. **greentek** - electronics
+20. **greentree** - country_yard
+21. **greentrees** - country_yard
+22. **greenvill** - country_yard
+23. **greenway** - country_yard
+24. **greenwood** - country_yard
+25. **greenworks** - country_yard, appliances
+
+Now, here is the SQL INSERT statement with the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('grans', 'appliances'),
+    ('gran-stone', 'appliances'),
+    ('gran-stone', 'construction'),
+    ('grape', 'country_yard'),
+    ('graphite', 'stationery'),
+    ('graphiteleader', 'sport'),
+    ('grass', 'country_yard'),
+    ('grattant', 'medicine'),
+    ('grattant', 'appliances'),
+    ('grattol', 'medicine'),
+    ('graude', 'appliances'),
+    ('gravas', 'construction'),
+    ('gree', 'appliances'),
+    ('gree', 'electronics'),
+    ('greenbank', 'country_yard'),
+    ('greenbike', 'auto'),
+    ('greenbike', 'sport'),
+    ('greengard', 'country_yard'),
+    ('greenhill', 'sport'),
+    ('greenland', 'country_yard'),
+    ('greenpan', 'appliances'),
+    ('greenpro', 'country_yard'),
+    ('greentek', 'electronics'),
+    ('greentree', 'country_yard'),
+    ('greentrees', 'country_yard'),
+    ('greenvill', 'country_yard'),
+    ('greenway', 'country_yard'),
+    ('greenwood', 'country_yard'),
+    ('greenworks', 'country_yard'),
+    ('greenworks', 'appliances');
+```
+[2024-12-05T21:36:25.184+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('grans', 'appliances'),
+    ('gran-stone', 'appliances'),
+    ('gran-stone', 'construction'),
+    ('grape', 'country_yard'),
+    ('graphite', 'stationery'),
+    ('graphiteleader', 'sport'),
+    ('grass', 'country_yard'),
+    ('grattant', 'medicine'),
+    ('grattant', 'appliances'),
+    ('grattol', 'medicine'),
+    ('graude', 'appliances'),
+    ('gravas', 'construction'),
+    ('gree', 'appliances'),
+    ('gree', 'electronics'),
+    ('greenbank', 'country_yard'),
+    ('greenbike', 'auto'),
+    ('greenbike', 'sport'),
+    ('greengard', 'country_yard'),
+    ('greenhill', 'sport'),
+    ('greenland', 'country_yard'),
+    ('greenpan', 'appliances'),
+    ('greenpro', 'country_yard'),
+    ('greentek', 'electronics'),
+    ('greentree', 'country_yard'),
+    ('greentrees', 'country_yard'),
+    ('greenvill', 'country_yard'),
+    ('greenway', 'country_yard'),
+    ('greenwood', 'country_yard'),
+    ('greenworks', 'country_yard'),
+    ('greenworks', 'appliances');
+[2024-12-05T21:36:25.184+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('grans', 'appliances'),
+    ('gran-stone', 'appliances'),
+    ('gran-stone', 'construction'),
+    ('grape', 'country_yard'),
+    ('graphite', 'stationery'),
+    ('graphiteleader', 'sport'),
+    ('grass', 'country_yard'),
+    ('grattant', 'medicine'),
+    ('grattant', 'appliances'),
+    ('grattol', 'medicine'),
+    ('graude', 'appliances'),
+    ('gravas', 'construction'),
+    ('gree', 'appliances'),
+    ('gree', 'electronics'),
+    ('greenbank', 'country_yard'),
+    ('greenbike', 'auto'),
+    ('greenbike', 'sport'),
+    ('greengard', 'country_yard'),
+    ('greenhill', 'sport'),
+    ('greenland', 'country_yard'),
+    ('greenpan', 'appliances'),
+    ('greenpro', 'country_yard'),
+    ('greentek', 'electronics'),
+    ('greentree', 'country_yard'),
+    ('greentrees', 'country_yard'),
+    ('greenvill', 'country_yard'),
+    ('greenway', 'country_yard'),
+    ('greenwood', 'country_yard'),
+    ('greenworks', 'country_yard'),
+    ('greenworks', 'appliances');
+[2024-12-05T21:36:25.201+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:36:25.201+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:36:02.489332+00:00, execution_date=20241205T213602, start_date=20241205T213625, end_date=20241205T213625
+[2024-12-05T21:36:25.243+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:36:25.262+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:36:25.265+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

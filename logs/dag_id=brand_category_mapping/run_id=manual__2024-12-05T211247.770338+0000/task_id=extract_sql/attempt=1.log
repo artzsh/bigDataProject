@@ -1,0 +1,150 @@
+[2024-12-05T21:13:14.811+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:13:14.823+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:12:47.770338+00:00 [queued]>
+[2024-12-05T21:13:14.829+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:12:47.770338+00:00 [queued]>
+[2024-12-05T21:13:14.830+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:13:14.842+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 21:12:47.770338+00:00
+[2024-12-05T21:13:14.847+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3451) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:13:14.849+0000] {standard_task_runner.py:72} INFO - Started process 3452 to run task
+[2024-12-05T21:13:14.849+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T21:12:47.770338+00:00', '--job-id', '757', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp5aijxm8v']
+[2024-12-05T21:13:14.851+0000] {standard_task_runner.py:105} INFO - Job 757: Subtask extract_sql
+[2024-12-05T21:13:14.885+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T21:12:47.770338+00:00 [running]> on host c7780884450d
+[2024-12-05T21:13:14.948+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:12:47.770338+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:12:47.770338+00:00'
+[2024-12-05T21:13:14.950+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:13:14.967+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here is the mapping of the brands to their respective categories based on the search results:
+
+1. **byredo**: cosmetics, accessories
+2. **byz**: accessories
+3. **cablexpert**: electronics
+4. **cacharel**: apparel, accessories
+5. **cada**: accessories
+6. **cadelvetro**: furniture
+7. **cadillac**: auto
+8. **cafe-cafe**: food & beverage
+9. **cafemimi**: cosmetics, accessories
+10. **cailyn**: cosmetics
+11. **caiman**: construction, appliances
+12. **calgaro**: apparel
+13. **calgon**: medicine, cosmetics
+14. **calipso**: apparel
+15. **callida**: apparel
+16. **calligrata**: stationery
+17. **calorie**: food & beverage
+18. **calve**: food & beverage
+19. **calvinklein**: apparel, accessories
+20. **calypso**: apparel
+21. **cam**: appliances
+22. **camay**: cosmetics
+23. **camelion**: cosmetics
+24. **cameo**: accessories
+25. **cameron**: furniture
+
+Now, I'll compile the SQL INSERT statement based on these mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('byredo', 'accessories'),
+    ('byredo', 'cosmetics'),
+    ('byz', 'accessories'),
+    ('cablexpert', 'electronics'),
+    ('cacharel', 'apparel'),
+    ('cacharel', 'accessories'),
+    ('cada', 'accessories'),
+    ('cadelvetro', 'furniture'),
+    ('cadillac', 'auto'),
+    ('cafe-cafe', 'food & beverage'),
+    ('cafemimi', 'cosmetics'),
+    ('cafemimi', 'accessories'),
+    ('cailyn', 'cosmetics'),
+    ('caiman', 'construction'),
+    ('caiman', 'appliances'),
+    ('calgaro', 'apparel'),
+    ('calgon', 'medicine'),
+    ('calgon', 'cosmetics'),
+    ('calipso', 'apparel'),
+    ('callida', 'apparel'),
+    ('calligrata', 'stationery'),
+    ('calorie', 'food & beverage'),
+    ('calve', 'food & beverage'),
+    ('calvinklein', 'apparel'),
+    ('calvinklein', 'accessories'),
+    ('calypso', 'apparel'),
+    ('cam', 'appliances'),
+    ('camay', 'cosmetics'),
+    ('camelion', 'cosmetics'),
+    ('cameo', 'accessories'),
+    ('cameron', 'furniture');
+```
+
+This SQL statement contains all the brands and their assigned categories based on the findings.
+[2024-12-05T21:13:14.968+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('byredo', 'accessories'),
+    ('byredo', 'cosmetics'),
+    ('byz', 'accessories'),
+    ('cablexpert', 'electronics'),
+    ('cacharel', 'apparel'),
+    ('cacharel', 'accessories'),
+    ('cada', 'accessories'),
+    ('cadelvetro', 'furniture'),
+    ('cadillac', 'auto'),
+    ('cafe-cafe', 'food & beverage'),
+    ('cafemimi', 'cosmetics'),
+    ('cafemimi', 'accessories'),
+    ('cailyn', 'cosmetics'),
+    ('caiman', 'construction'),
+    ('caiman', 'appliances'),
+    ('calgaro', 'apparel'),
+    ('calgon', 'medicine'),
+    ('calgon', 'cosmetics'),
+    ('calipso', 'apparel'),
+    ('callida', 'apparel'),
+    ('calligrata', 'stationery'),
+    ('calorie', 'food & beverage'),
+    ('calve', 'food & beverage'),
+    ('calvinklein', 'apparel'),
+    ('calvinklein', 'accessories'),
+    ('calypso', 'apparel'),
+    ('cam', 'appliances'),
+    ('camay', 'cosmetics'),
+    ('camelion', 'cosmetics'),
+    ('cameo', 'accessories'),
+    ('cameron', 'furniture');
+[2024-12-05T21:13:14.968+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('byredo', 'accessories'),
+    ('byredo', 'cosmetics'),
+    ('byz', 'accessories'),
+    ('cablexpert', 'electronics'),
+    ('cacharel', 'apparel'),
+    ('cacharel', 'accessories'),
+    ('cada', 'accessories'),
+    ('cadelvetro', 'furniture'),
+    ('cadillac', 'auto'),
+    ('cafe-cafe', 'food & beverage'),
+    ('cafemimi', 'cosmetics'),
+    ('cafemimi', 'accessories'),
+    ('cailyn', 'cosmetics'),
+    ('caiman', 'construction'),
+    ('caiman', 'appliances'),
+    ('calgaro', 'apparel'),
+    ('calgon', 'medicine'),
+    ('calgon', 'cosmetics'),
+    ('calipso', 'apparel'),
+    ('callida', 'apparel'),
+    ('calligrata', 'stationery'),
+    ('calorie', 'food & beverage'),
+    ('calve', 'food & beverage'),
+    ('calvinklein', 'apparel'),
+    ('calvinklein', 'accessories'),
+    ('calypso', 'apparel'),
+    ('cam', 'appliances'),
+    ('camay', 'cosmetics'),
+    ('camelion', 'cosmetics'),
+    ('cameo', 'accessories'),
+    ('cameron', 'furniture');
+[2024-12-05T21:13:14.984+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:13:14.985+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T21:12:47.770338+00:00, execution_date=20241205T211247, start_date=20241205T211314, end_date=20241205T211314
+[2024-12-05T21:13:15.022+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:13:15.040+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:13:15.043+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

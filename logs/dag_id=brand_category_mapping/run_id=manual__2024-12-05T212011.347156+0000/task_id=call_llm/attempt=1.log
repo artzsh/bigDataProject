@@ -1,0 +1,170 @@
+[2024-12-05T21:20:17.198+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:20:17.211+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:20:11.347156+00:00 [queued]>
+[2024-12-05T21:20:17.220+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:20:11.347156+00:00 [queued]>
+[2024-12-05T21:20:17.220+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:20:17.233+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:20:11.347156+00:00
+[2024-12-05T21:20:17.239+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3852) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:20:17.240+0000] {standard_task_runner.py:72} INFO - Started process 3853 to run task
+[2024-12-05T21:20:17.240+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:20:11.347156+00:00', '--job-id', '846', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp9ap8x1x2']
+[2024-12-05T21:20:17.242+0000] {standard_task_runner.py:105} INFO - Job 846: Subtask call_llm
+[2024-12-05T21:20:17.279+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:20:11.347156+00:00 [running]> on host c7780884450d
+[2024-12-05T21:20:17.344+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:20:11.347156+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:20:11.347156+00:00'
+[2024-12-05T21:20:17.345+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:20:17.361+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['delsot', 'delta', 'deltalux', 'delux', 'deluxe', 'demark', 'demi', 'demidovskijzavod', 'demiray', 'demix', 'dendy', 'denn', 'denon', 'denso', 'denzel', 'deonica', 'deoproce', 'depileve', 'depo', 'deppa', 'derevaski', 'dermacol', 'derspur', 'derwent', 'desatoekorolevstvo'], 'next_index': 1275}
+[2024-12-05T21:20:17.362+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:20:17.836+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:20:40.194+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the results of the searches and the assigned categories for each brand:
+
+1. **delsot**: electronics
+2. **delta**: appliances, electronics
+3. **deltalux**: electronics, appliances
+4. **delux**: furniture, appliances
+5. **deluxe**: furniture, appliances
+6. **demark**: electronics, appliances
+7. **demi**: apparel, accessories
+8. **demidovskijzavod**: construction
+9. **demiray**: electronics
+10. **demix**: sport, apparel
+11. **dendy**: electronics
+12. **denn**: electronics
+13. **denon**: electronics
+14. **denso**: auto, electronics
+15. **denzel**: electronics
+16. **deonica**: medicine, cosmetics
+17. **deoproce**: cosmetics, medicine
+18. **depileve**: cosmetics, medicine
+19. **depo**: construction, appliances
+20. **deppa**: electronics
+21. **derevaski**: furniture
+22. **dermacol**: cosmetics, medicine
+23. **derspur**: stationery
+24. **derwent**: stationery
+25. **desatoekorolevstvo**: furniture, accessories
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('delsot', 'electronics'),
+    ('delta', 'appliances'),
+    ('delta', 'electronics'),
+    ('deltalux', 'electronics'),
+    ('deltalux', 'appliances'),
+    ('delux', 'furniture'),
+    ('delux', 'appliances'),
+    ('deluxe', 'furniture'),
+    ('deluxe', 'appliances'),
+    ('demark', 'electronics'),
+    ('demark', 'appliances'),
+    ('demi', 'apparel'),
+    ('demi', 'accessories'),
+    ('demidovskijzavod', 'construction'),
+    ('demiray', 'electronics'),
+    ('demix', 'sport'),
+    ('demix', 'apparel'),
+    ('dendy', 'electronics'),
+    ('denn', 'electronics'),
+    ('denon', 'electronics'),
+    ('denso', 'auto'),
+    ('denso', 'electronics'),
+    ('denzel', 'electronics'),
+    ('deonica', 'medicine'),
+    ('deonica', 'cosmetics'),
+    ('deoproce', 'cosmetics'),
+    ('deoproce', 'medicine'),
+    ('depileve', 'cosmetics'),
+    ('depileve', 'medicine'),
+    ('depo', 'construction'),
+    ('depo', 'appliances'),
+    ('deppa', 'electronics'),
+    ('derevaski', 'furniture'),
+    ('dermacol', 'cosmetics'),
+    ('dermacol', 'medicine'),
+    ('derspur', 'stationery'),
+    ('derwent', 'stationery'),
+    ('desatoekorolevstvo', 'furniture'),
+    ('desatoekorolevstvo', 'accessories');
+```
+
+This SQL statement maps each brand to its respective categories based on the searches conducted.
+[2024-12-05T21:20:40.195+0000] {python.py:240} INFO - Done. Returned value was: Here are the results of the searches and the assigned categories for each brand:
+
+1. **delsot**: electronics
+2. **delta**: appliances, electronics
+3. **deltalux**: electronics, appliances
+4. **delux**: furniture, appliances
+5. **deluxe**: furniture, appliances
+6. **demark**: electronics, appliances
+7. **demi**: apparel, accessories
+8. **demidovskijzavod**: construction
+9. **demiray**: electronics
+10. **demix**: sport, apparel
+11. **dendy**: electronics
+12. **denn**: electronics
+13. **denon**: electronics
+14. **denso**: auto, electronics
+15. **denzel**: electronics
+16. **deonica**: medicine, cosmetics
+17. **deoproce**: cosmetics, medicine
+18. **depileve**: cosmetics, medicine
+19. **depo**: construction, appliances
+20. **deppa**: electronics
+21. **derevaski**: furniture
+22. **dermacol**: cosmetics, medicine
+23. **derspur**: stationery
+24. **derwent**: stationery
+25. **desatoekorolevstvo**: furniture, accessories
+
+Now, I will generate the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('delsot', 'electronics'),
+    ('delta', 'appliances'),
+    ('delta', 'electronics'),
+    ('deltalux', 'electronics'),
+    ('deltalux', 'appliances'),
+    ('delux', 'furniture'),
+    ('delux', 'appliances'),
+    ('deluxe', 'furniture'),
+    ('deluxe', 'appliances'),
+    ('demark', 'electronics'),
+    ('demark', 'appliances'),
+    ('demi', 'apparel'),
+    ('demi', 'accessories'),
+    ('demidovskijzavod', 'construction'),
+    ('demiray', 'electronics'),
+    ('demix', 'sport'),
+    ('demix', 'apparel'),
+    ('dendy', 'electronics'),
+    ('denn', 'electronics'),
+    ('denon', 'electronics'),
+    ('denso', 'auto'),
+    ('denso', 'electronics'),
+    ('denzel', 'electronics'),
+    ('deonica', 'medicine'),
+    ('deonica', 'cosmetics'),
+    ('deoproce', 'cosmetics'),
+    ('deoproce', 'medicine'),
+    ('depileve', 'cosmetics'),
+    ('depileve', 'medicine'),
+    ('depo', 'construction'),
+    ('depo', 'appliances'),
+    ('deppa', 'electronics'),
+    ('derevaski', 'furniture'),
+    ('dermacol', 'cosmetics'),
+    ('dermacol', 'medicine'),
+    ('derspur', 'stationery'),
+    ('derwent', 'stationery'),
+    ('desatoekorolevstvo', 'furniture'),
+    ('desatoekorolevstvo', 'accessories');
+```
+
+This SQL statement maps each brand to its respective categories based on the searches conducted.
+[2024-12-05T21:20:40.217+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:20:40.218+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:20:11.347156+00:00, execution_date=20241205T212011, start_date=20241205T212017, end_date=20241205T212040
+[2024-12-05T21:20:40.241+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:20:40.260+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:20:40.263+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

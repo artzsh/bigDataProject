@@ -1,0 +1,168 @@
+[2024-12-05T20:58:37.124+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T20:58:37.137+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T20:58:32.248355+00:00 [queued]>
+[2024-12-05T20:58:37.144+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T20:58:32.248355+00:00 [queued]>
+[2024-12-05T20:58:37.145+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T20:58:37.158+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 20:58:32.248355+00:00
+[2024-12-05T20:58:37.164+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2686) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T20:58:37.166+0000] {standard_task_runner.py:72} INFO - Started process 2687 to run task
+[2024-12-05T20:58:37.166+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T20:58:32.248355+00:00', '--job-id', '594', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp3o_rakb2']
+[2024-12-05T20:58:37.168+0000] {standard_task_runner.py:105} INFO - Job 594: Subtask call_llm
+[2024-12-05T20:58:37.205+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T20:58:32.248355+00:00 [running]> on host c7780884450d
+[2024-12-05T20:58:37.275+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T20:58:32.248355+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T20:58:32.248355+00:00'
+[2024-12-05T20:58:37.276+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T20:58:37.299+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['amatis', 'amazfit', 'amazon', 'ambassador', 'ambition', 'amd', 'amefa', 'a-mega', 'amega', 'amen', 'amercook', 'americancrew', 'americanmotionfitness', 'amet', 'amf', 'amico', 'amigami', 'amiibo', 'amistar', 'amos', 'amouage', 'amova', 'ampeg', 'am-pm', 'am.pm'], 'next_index': 225}
+[2024-12-05T20:58:37.299+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T20:58:37.756+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T20:59:00.014+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Based on the brands provided, I will categorize each one according to their products. Here are the results of the categorization:
+
+1. **amatis** - appliances
+2. **amazfit** - electronics, sport
+3. **amazon** - electronics, appliances, apparel, accessories, furniture, stationery
+4. **ambassador** - apparel, accessories
+5. **ambition** - apparel, sport
+6. **amd** - computers, electronics
+7. **amefa** - appliances, kitchenware
+8. **a-mega** - appliances
+9. **amega** - appliances
+10. **amen** - apparel
+11. **amercook** - appliances, kitchenware
+12. **americancrew** - accessories, apparel
+13. **americanmotionfitness** - sport, appliances
+14. **amet** - electronics
+15. **amf** - sport
+16. **amico** - electronics
+17. **amigami** - kids
+18. **amiibo** - kids, electronics
+19. **amistar** - appliances
+20. **amos** - stationery
+21. **amouage** - accessories, apparel
+22. **amova** - electronics
+23. **ampeg** - electronics
+24. **am-pm** - appliances
+25. **am.pm** - appliances
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('amatis', 'appliances'),
+    ('amazfit', 'electronics'),
+    ('amazfit', 'sport'),
+    ('amazon', 'electronics'),
+    ('amazon', 'appliances'),
+    ('amazon', 'apparel'),
+    ('amazon', 'accessories'),
+    ('amazon', 'furniture'),
+    ('amazon', 'stationery'),
+    ('ambassador', 'apparel'),
+    ('ambassador', 'accessories'),
+    ('ambition', 'apparel'),
+    ('ambition', 'sport'),
+    ('amd', 'computers'),
+    ('amd', 'electronics'),
+    ('amefa', 'appliances'),
+    ('amefa', 'kitchenware'),
+    ('a-mega', 'appliances'),
+    ('amega', 'appliances'),
+    ('amen', 'apparel'),
+    ('amercook', 'appliances'),
+    ('amercook', 'kitchenware'),
+    ('americancrew', 'accessories'),
+    ('americancrew', 'apparel'),
+    ('americanmotionfitness', 'sport'),
+    ('americanmotionfitness', 'appliances'),
+    ('amet', 'electronics'),
+    ('amf', 'sport'),
+    ('amico', 'electronics'),
+    ('amigami', 'kids'),
+    ('amiibo', 'kids'),
+    ('amiibo', 'electronics'),
+    ('amistar', 'appliances'),
+    ('amos', 'stationery'),
+    ('amouage', 'accessories'),
+    ('amouage', 'apparel'),
+    ('amova', 'electronics'),
+    ('ampeg', 'electronics'),
+    ('am-pm', 'appliances'),
+    ('am.pm', 'appliances');
+```
+[2024-12-05T20:59:00.015+0000] {python.py:240} INFO - Done. Returned value was: Based on the brands provided, I will categorize each one according to their products. Here are the results of the categorization:
+
+1. **amatis** - appliances
+2. **amazfit** - electronics, sport
+3. **amazon** - electronics, appliances, apparel, accessories, furniture, stationery
+4. **ambassador** - apparel, accessories
+5. **ambition** - apparel, sport
+6. **amd** - computers, electronics
+7. **amefa** - appliances, kitchenware
+8. **a-mega** - appliances
+9. **amega** - appliances
+10. **amen** - apparel
+11. **amercook** - appliances, kitchenware
+12. **americancrew** - accessories, apparel
+13. **americanmotionfitness** - sport, appliances
+14. **amet** - electronics
+15. **amf** - sport
+16. **amico** - electronics
+17. **amigami** - kids
+18. **amiibo** - kids, electronics
+19. **amistar** - appliances
+20. **amos** - stationery
+21. **amouage** - accessories, apparel
+22. **amova** - electronics
+23. **ampeg** - electronics
+24. **am-pm** - appliances
+25. **am.pm** - appliances
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('amatis', 'appliances'),
+    ('amazfit', 'electronics'),
+    ('amazfit', 'sport'),
+    ('amazon', 'electronics'),
+    ('amazon', 'appliances'),
+    ('amazon', 'apparel'),
+    ('amazon', 'accessories'),
+    ('amazon', 'furniture'),
+    ('amazon', 'stationery'),
+    ('ambassador', 'apparel'),
+    ('ambassador', 'accessories'),
+    ('ambition', 'apparel'),
+    ('ambition', 'sport'),
+    ('amd', 'computers'),
+    ('amd', 'electronics'),
+    ('amefa', 'appliances'),
+    ('amefa', 'kitchenware'),
+    ('a-mega', 'appliances'),
+    ('amega', 'appliances'),
+    ('amen', 'apparel'),
+    ('amercook', 'appliances'),
+    ('amercook', 'kitchenware'),
+    ('americancrew', 'accessories'),
+    ('americancrew', 'apparel'),
+    ('americanmotionfitness', 'sport'),
+    ('americanmotionfitness', 'appliances'),
+    ('amet', 'electronics'),
+    ('amf', 'sport'),
+    ('amico', 'electronics'),
+    ('amigami', 'kids'),
+    ('amiibo', 'kids'),
+    ('amiibo', 'electronics'),
+    ('amistar', 'appliances'),
+    ('amos', 'stationery'),
+    ('amouage', 'accessories'),
+    ('amouage', 'apparel'),
+    ('amova', 'electronics'),
+    ('ampeg', 'electronics'),
+    ('am-pm', 'appliances'),
+    ('am.pm', 'appliances');
+```
+[2024-12-05T20:59:00.038+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T20:59:00.038+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T20:58:32.248355+00:00, execution_date=20241205T205832, start_date=20241205T205837, end_date=20241205T205900
+[2024-12-05T20:59:00.083+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T20:59:00.102+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T20:59:00.105+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

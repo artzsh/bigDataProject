@@ -1,0 +1,113 @@
+[2024-12-05T22:27:33.349+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:27:33.362+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:27:05.193053+00:00 [queued]>
+[2024-12-05T22:27:33.369+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:27:05.193053+00:00 [queued]>
+[2024-12-05T22:27:33.370+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:27:33.383+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:27:05.193053+00:00
+[2024-12-05T22:27:33.389+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7430) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:27:33.391+0000] {standard_task_runner.py:72} INFO - Started process 7431 to run task
+[2024-12-05T22:27:33.391+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:27:05.193053+00:00', '--job-id', '1616', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp3b207je1']
+[2024-12-05T22:27:33.392+0000] {standard_task_runner.py:105} INFO - Job 1616: Subtask execute_sql
+[2024-12-05T22:27:33.429+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:27:05.193053+00:00 [running]> on host c7780884450d
+[2024-12-05T22:27:33.492+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:27:05.193053+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:27:05.193053+00:00'
+[2024-12-05T22:27:33.493+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:27:33.513+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('savic', 'accessories'),
+    ('savic', 'appliances'),
+    ('sbs', 'electronics'),
+    ('sbw', 'electronics'),
+    ('scan', 'appliances'),
+    ('scan', 'electronics'),
+    ('scandinaviafurs', 'apparel'),
+    ('scandinaviafurs', 'accessories'),
+    ('scarlett', 'appliances'),
+    ('scentos', 'kids'),
+    ('scentos', 'stationery'),
+    ('schardt', 'furniture'),
+    ('schardt', 'kids'),
+    ('schaublorenz', 'electronics'),
+    ('schaublorenz', 'appliances'),
+    ('schauma', 'medicine'),
+    ('schauma', 'personal care'),
+    ('schecter', 'accessories'),
+    ('schecter', 'electronics'),
+    ('scher-khan', 'auto'),
+    ('scher-khan', 'electronics'),
+    ('schleich', 'kids'),
+    ('schleich', 'toys'),
+    ('schneider', 'stationery'),
+    ('schreuder', 'furniture'),
+    ('schreuders', 'furniture'),
+    ('schwarzkopf', 'medicine'),
+    ('schwarzkopf', 'personal care'),
+    ('schwinn', 'sport'),
+    ('schwinn', 'auto'),
+    ('scierra', 'sport'),
+    ('scierra', 'apparel'),
+    ('scinic', 'medicine'),
+    ('scinic', 'personal care'),
+    ('scivation', 'sport'),
+    ('scivation', 'medicine'),
+    ('scool', 'kids'),
+    ('scool', 'stationery'),
+    ('scoole', 'kids'),
+    ('scoole', 'stationery'),
+    ('scooter', 'auto'),
+    ('scooter', 'sport'),
+    ('scorpena', 'sport'),
+    ('scorpena', 'electronics');
+[2024-12-05T22:27:33.519+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:27:34.322+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('savic', 'accessories'),
+    ('savic', 'appliances'),
+    ('sbs', 'electronics'),
+    ('sbw', 'electronics'),
+    ('scan', 'appliances'),
+    ('scan', 'electronics'),
+    ('scandinaviafurs', 'apparel'),
+    ('scandinaviafurs', 'accessories'),
+    ('scarlett', 'appliances'),
+    ('scentos', 'kids'),
+    ('scentos', 'stationery'),
+    ('schardt', 'furniture'),
+    ('schardt', 'kids'),
+    ('schaublorenz', 'electronics'),
+    ('schaublorenz', 'appliances'),
+    ('schauma', 'medicine'),
+    ('schauma', 'personal care'),
+    ('schecter', 'accessories'),
+    ('schecter', 'electronics'),
+    ('scher-khan', 'auto'),
+    ('scher-khan', 'electronics'),
+    ('schleich', 'kids'),
+    ('schleich', 'toys'),
+    ('schneider', 'stationery'),
+    ('schreuder', 'furniture'),
+    ('schreuders', 'furniture'),
+    ('schwarzkopf', 'medicine'),
+    ('schwarzkopf', 'personal care'),
+    ('schwinn', 'sport'),
+    ('schwinn', 'auto'),
+    ('scierra', 'sport'),
+    ('scierra', 'apparel'),
+    ('scinic', 'medicine'),
+    ('scinic', 'personal care'),
+    ('scivation', 'sport'),
+    ('scivation', 'medicine'),
+    ('scool', 'kids'),
+    ('scool', 'stationery'),
+    ('scoole', 'kids'),
+    ('scoole', 'stationery'),
+    ('scooter', 'auto'),
+    ('scooter', 'sport'),
+    ('scorpena', 'sport'),
+    ('scorpena', 'electronics');
+[2024-12-05T22:27:34.494+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:27:34.495+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:27:34.502+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:27:34.503+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:27:05.193053+00:00, execution_date=20241205T222705, start_date=20241205T222733, end_date=20241205T222734
+[2024-12-05T22:27:34.528+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:27:34.547+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:27:34.550+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

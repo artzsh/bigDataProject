@@ -1,0 +1,166 @@
+[2024-12-05T22:37:10.511+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:37:10.522+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:36:47.348085+00:00 [queued]>
+[2024-12-05T22:37:10.529+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:36:47.348085+00:00 [queued]>
+[2024-12-05T22:37:10.529+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:37:10.541+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-05 22:36:47.348085+00:00
+[2024-12-05T22:37:10.548+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7908) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:37:10.549+0000] {standard_task_runner.py:72} INFO - Started process 7909 to run task
+[2024-12-05T22:37:10.549+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'extract_sql', 'manual__2024-12-05T22:36:47.348085+00:00', '--job-id', '1717', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp_4132m1v']
+[2024-12-05T22:37:10.551+0000] {standard_task_runner.py:105} INFO - Job 1717: Subtask extract_sql
+[2024-12-05T22:37:10.587+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.extract_sql manual__2024-12-05T22:36:47.348085+00:00 [running]> on host c7780884450d
+[2024-12-05T22:37:10.656+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:36:47.348085+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:36:47.348085+00:00'
+[2024-12-05T22:37:10.658+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:37:10.701+0000] {llm_mapping.py:187} INFO - Извлечён llm_response: Here's the mapping of the brands to their respective categories based on the search results:
+
+1. **swarovski** - accessories, apparel
+2. **swat** - apparel, accessories
+3. **swatch** - accessories, apparel
+4. **swb** - electronics
+5. **sweety** - kids
+6. **sweetyhome** - furniture, home
+7. **swissgear** - accessories, apparel
+8. **swissimage** - electronics
+9. **swissline** - medicine, cosmetics
+10. **swissmilitarybychrono** - accessories
+11. **swissmilitaryhanowa** - accessories
+12. **switel** - electronics, appliances
+13. **sx** - electronics
+14. **sylvania** - electronics
+15. **sylvanianfamilies** - kids
+16. **syma** - electronics, toys
+17. **symkaj** - electronics
+18. **syncwire** - electronics, accessories
+19. **syneo** - electronics
+20. **synology** - computers, electronics
+21. **syntrax** - medicine, supplements
+22. **syoss** - medicine, cosmetics
+23. **szkeo** - electronics
+24. **tac** - apparel, accessories
+25. **tacki** - stationery
+
+Now, here's the SQL INSERT statement for the brand-category mapping:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('swarovski', 'accessories'),
+    ('swarovski', 'apparel'),
+    ('swat', 'apparel'),
+    ('swat', 'accessories'),
+    ('swatch', 'accessories'),
+    ('swatch', 'apparel'),
+    ('swb', 'electronics'),
+    ('sweety', 'kids'),
+    ('sweetyhome', 'furniture'),
+    ('swissgear', 'accessories'),
+    ('swissgear', 'apparel'),
+    ('swissimage', 'electronics'),
+    ('swissline', 'medicine'),
+    ('swissline', 'cosmetics'),
+    ('swissmilitarybychrono', 'accessories'),
+    ('swissmilitaryhanowa', 'accessories'),
+    ('switel', 'electronics'),
+    ('switel', 'appliances'),
+    ('sx', 'electronics'),
+    ('sylvania', 'electronics'),
+    ('sylvanianfamilies', 'kids'),
+    ('syma', 'electronics'),
+    ('syma', 'toys'),
+    ('symkaj', 'electronics'),
+    ('syncwire', 'electronics'),
+    ('syncwire', 'accessories'),
+    ('syneo', 'electronics'),
+    ('synology', 'computers'),
+    ('synology', 'electronics'),
+    ('syntrax', 'medicine'),
+    ('syntrax', 'supplements'),
+    ('syoss', 'medicine'),
+    ('syoss', 'cosmetics'),
+    ('szkeo', 'electronics'),
+    ('tac', 'apparel'),
+    ('tac', 'accessories'),
+    ('tacki', 'stationery');
+```
+[2024-12-05T22:37:10.703+0000] {llm_mapping.py:174} INFO - Извлечён SQL-код:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('swarovski', 'accessories'),
+    ('swarovski', 'apparel'),
+    ('swat', 'apparel'),
+    ('swat', 'accessories'),
+    ('swatch', 'accessories'),
+    ('swatch', 'apparel'),
+    ('swb', 'electronics'),
+    ('sweety', 'kids'),
+    ('sweetyhome', 'furniture'),
+    ('swissgear', 'accessories'),
+    ('swissgear', 'apparel'),
+    ('swissimage', 'electronics'),
+    ('swissline', 'medicine'),
+    ('swissline', 'cosmetics'),
+    ('swissmilitarybychrono', 'accessories'),
+    ('swissmilitaryhanowa', 'accessories'),
+    ('switel', 'electronics'),
+    ('switel', 'appliances'),
+    ('sx', 'electronics'),
+    ('sylvania', 'electronics'),
+    ('sylvanianfamilies', 'kids'),
+    ('syma', 'electronics'),
+    ('syma', 'toys'),
+    ('symkaj', 'electronics'),
+    ('syncwire', 'electronics'),
+    ('syncwire', 'accessories'),
+    ('syneo', 'electronics'),
+    ('synology', 'computers'),
+    ('synology', 'electronics'),
+    ('syntrax', 'medicine'),
+    ('syntrax', 'supplements'),
+    ('syoss', 'medicine'),
+    ('syoss', 'cosmetics'),
+    ('szkeo', 'electronics'),
+    ('tac', 'apparel'),
+    ('tac', 'accessories'),
+    ('tacki', 'stationery');
+[2024-12-05T22:37:10.704+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('swarovski', 'accessories'),
+    ('swarovski', 'apparel'),
+    ('swat', 'apparel'),
+    ('swat', 'accessories'),
+    ('swatch', 'accessories'),
+    ('swatch', 'apparel'),
+    ('swb', 'electronics'),
+    ('sweety', 'kids'),
+    ('sweetyhome', 'furniture'),
+    ('swissgear', 'accessories'),
+    ('swissgear', 'apparel'),
+    ('swissimage', 'electronics'),
+    ('swissline', 'medicine'),
+    ('swissline', 'cosmetics'),
+    ('swissmilitarybychrono', 'accessories'),
+    ('swissmilitaryhanowa', 'accessories'),
+    ('switel', 'electronics'),
+    ('switel', 'appliances'),
+    ('sx', 'electronics'),
+    ('sylvania', 'electronics'),
+    ('sylvanianfamilies', 'kids'),
+    ('syma', 'electronics'),
+    ('syma', 'toys'),
+    ('symkaj', 'electronics'),
+    ('syncwire', 'electronics'),
+    ('syncwire', 'accessories'),
+    ('syneo', 'electronics'),
+    ('synology', 'computers'),
+    ('synology', 'electronics'),
+    ('syntrax', 'medicine'),
+    ('syntrax', 'supplements'),
+    ('syoss', 'medicine'),
+    ('syoss', 'cosmetics'),
+    ('szkeo', 'electronics'),
+    ('tac', 'apparel'),
+    ('tac', 'accessories'),
+    ('tacki', 'stationery');
+[2024-12-05T22:37:10.741+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:37:10.742+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=extract_sql, run_id=manual__2024-12-05T22:36:47.348085+00:00, execution_date=20241205T223647, start_date=20241205T223710, end_date=20241205T223710
+[2024-12-05T22:37:10.804+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:37:10.825+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:37:10.829+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

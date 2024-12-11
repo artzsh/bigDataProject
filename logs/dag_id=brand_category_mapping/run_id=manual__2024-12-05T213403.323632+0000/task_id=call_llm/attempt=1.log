@@ -1,0 +1,253 @@
+[2024-12-05T21:34:07.496+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:34:07.507+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:34:03.323632+00:00 [queued]>
+[2024-12-05T21:34:07.514+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:34:03.323632+00:00 [queued]>
+[2024-12-05T21:34:07.514+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:34:07.526+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:34:03.323632+00:00
+[2024-12-05T21:34:07.532+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4601) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:34:07.533+0000] {standard_task_runner.py:72} INFO - Started process 4602 to run task
+[2024-12-05T21:34:07.533+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:34:03.323632+00:00', '--job-id', '1008', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpcnr9jlxo']
+[2024-12-05T21:34:07.535+0000] {standard_task_runner.py:105} INFO - Job 1008: Subtask call_llm
+[2024-12-05T21:34:07.568+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:34:03.323632+00:00 [running]> on host c7780884450d
+[2024-12-05T21:34:07.625+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:34:03.323632+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:34:03.323632+00:00'
+[2024-12-05T21:34:07.626+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:34:07.642+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['gewa', 'gezatone', 'gf', 'ghnfitness', 'ghost', 'giant', 'gid-ceramic', 'gigabyte', 'gigawatt', 'gigazone', 'gigwi', 'gimi', 'ginzza', 'gionee', 'giorgioarmani', 'giornonotte', 'gioseppo', 'giotto', 'giottos', 'gipfel', 'gislaved', 'gitzo', 'givenchy', 'gk', 'gkhair'], 'next_index': 1950}
+[2024-12-05T21:34:07.642+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:34:08.055+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:34:26.103+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to their respective categories based on the search queries:
+
+1. **gewa**: musical instruments (not in the provided categories, but closest is electronics)
+   - Categories: electronics
+
+2. **gezatone**: beauty and wellness devices
+   - Categories: appliances
+
+3. **gf**: outdoor gear and apparel
+   - Categories: apparel, sport
+
+4. **ghnfitness**: fitness equipment
+   - Categories: sport
+
+5. **ghost**: bicycles and cycling gear
+   - Categories: apparel, sport
+
+6. **giant**: bicycles and cycling gear
+   - Categories: apparel, sport
+
+7. **gid-ceramic**: ceramic products (home goods)
+   - Categories: furniture
+
+8. **gigabyte**: computer hardware and components
+   - Categories: computers, electronics
+
+9. **gigawatt**: energy solutions and electrical products
+   - Categories: appliances, electronics
+
+10. **gigazone**: computer accessories and peripherals
+    - Categories: computers, electronics
+
+11. **gigwi**: pet products and toys
+    - Categories: kids
+
+12. **gimi**: household products and cleaning tools
+    - Categories: appliances
+
+13. **ginzza**: fashion and apparel
+    - Categories: apparel
+
+14. **gionee**: smartphones and electronics
+    - Categories: electronics
+
+15. **giorgioarmani**: luxury fashion and accessories
+    - Categories: apparel, accessories
+
+16. **giornonotte**: home textiles and bedding
+    - Categories: furniture
+
+17. **gioseppo**: footwear and accessories
+    - Categories: apparel, accessories
+
+18. **giotto**: art supplies and stationery
+    - Categories: stationery
+
+19. **giottos**: camera accessories and cleaning products
+    - Categories: electronics
+
+20. **gipfel**: kitchenware and cookware
+    - Categories: appliances
+
+21. **gislaved**: tires and automotive products
+    - Categories: auto
+
+22. **gitzo**: camera tripods and accessories
+    - Categories: electronics
+
+23. **givenchy**: luxury fashion and cosmetics
+    - Categories: apparel, accessories
+
+24. **gk**: hair care products
+    - Categories: medicine
+
+25. **gkhair**: hair care products
+    - Categories: medicine
+
+Now, here is the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gewa', 'electronics'),
+    ('gezatone', 'appliances'),
+    ('gf', 'apparel'),
+    ('gf', 'sport'),
+    ('ghnfitness', 'sport'),
+    ('ghost', 'apparel'),
+    ('ghost', 'sport'),
+    ('giant', 'apparel'),
+    ('giant', 'sport'),
+    ('gid-ceramic', 'furniture'),
+    ('gigabyte', 'computers'),
+    ('gigabyte', 'electronics'),
+    ('gigawatt', 'appliances'),
+    ('gigawatt', 'electronics'),
+    ('gigazone', 'computers'),
+    ('gigazone', 'electronics'),
+    ('gigwi', 'kids'),
+    ('gimi', 'appliances'),
+    ('ginzza', 'apparel'),
+    ('gionee', 'electronics'),
+    ('giorgioarmani', 'apparel'),
+    ('giorgioarmani', 'accessories'),
+    ('giornonotte', 'furniture'),
+    ('gioseppo', 'apparel'),
+    ('gioseppo', 'accessories'),
+    ('giotto', 'stationery'),
+    ('giottos', 'electronics'),
+    ('gipfel', 'appliances'),
+    ('gislaved', 'auto'),
+    ('gitzo', 'electronics'),
+    ('givenchy', 'apparel'),
+    ('givenchy', 'accessories'),
+    ('gk', 'medicine'),
+    ('gkhair', 'medicine');
+```
+[2024-12-05T21:34:26.104+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to their respective categories based on the search queries:
+
+1. **gewa**: musical instruments (not in the provided categories, but closest is electronics)
+   - Categories: electronics
+
+2. **gezatone**: beauty and wellness devices
+   - Categories: appliances
+
+3. **gf**: outdoor gear and apparel
+   - Categories: apparel, sport
+
+4. **ghnfitness**: fitness equipment
+   - Categories: sport
+
+5. **ghost**: bicycles and cycling gear
+   - Categories: apparel, sport
+
+6. **giant**: bicycles and cycling gear
+   - Categories: apparel, sport
+
+7. **gid-ceramic**: ceramic products (home goods)
+   - Categories: furniture
+
+8. **gigabyte**: computer hardware and components
+   - Categories: computers, electronics
+
+9. **gigawatt**: energy solutions and electrical products
+   - Categories: appliances, electronics
+
+10. **gigazone**: computer accessories and peripherals
+    - Categories: computers, electronics
+
+11. **gigwi**: pet products and toys
+    - Categories: kids
+
+12. **gimi**: household products and cleaning tools
+    - Categories: appliances
+
+13. **ginzza**: fashion and apparel
+    - Categories: apparel
+
+14. **gionee**: smartphones and electronics
+    - Categories: electronics
+
+15. **giorgioarmani**: luxury fashion and accessories
+    - Categories: apparel, accessories
+
+16. **giornonotte**: home textiles and bedding
+    - Categories: furniture
+
+17. **gioseppo**: footwear and accessories
+    - Categories: apparel, accessories
+
+18. **giotto**: art supplies and stationery
+    - Categories: stationery
+
+19. **giottos**: camera accessories and cleaning products
+    - Categories: electronics
+
+20. **gipfel**: kitchenware and cookware
+    - Categories: appliances
+
+21. **gislaved**: tires and automotive products
+    - Categories: auto
+
+22. **gitzo**: camera tripods and accessories
+    - Categories: electronics
+
+23. **givenchy**: luxury fashion and cosmetics
+    - Categories: apparel, accessories
+
+24. **gk**: hair care products
+    - Categories: medicine
+
+25. **gkhair**: hair care products
+    - Categories: medicine
+
+Now, here is the SQL INSERT statement based on the mappings:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('gewa', 'electronics'),
+    ('gezatone', 'appliances'),
+    ('gf', 'apparel'),
+    ('gf', 'sport'),
+    ('ghnfitness', 'sport'),
+    ('ghost', 'apparel'),
+    ('ghost', 'sport'),
+    ('giant', 'apparel'),
+    ('giant', 'sport'),
+    ('gid-ceramic', 'furniture'),
+    ('gigabyte', 'computers'),
+    ('gigabyte', 'electronics'),
+    ('gigawatt', 'appliances'),
+    ('gigawatt', 'electronics'),
+    ('gigazone', 'computers'),
+    ('gigazone', 'electronics'),
+    ('gigwi', 'kids'),
+    ('gimi', 'appliances'),
+    ('ginzza', 'apparel'),
+    ('gionee', 'electronics'),
+    ('giorgioarmani', 'apparel'),
+    ('giorgioarmani', 'accessories'),
+    ('giornonotte', 'furniture'),
+    ('gioseppo', 'apparel'),
+    ('gioseppo', 'accessories'),
+    ('giotto', 'stationery'),
+    ('giottos', 'electronics'),
+    ('gipfel', 'appliances'),
+    ('gislaved', 'auto'),
+    ('gitzo', 'electronics'),
+    ('givenchy', 'apparel'),
+    ('givenchy', 'accessories'),
+    ('gk', 'medicine'),
+    ('gkhair', 'medicine');
+```
+[2024-12-05T21:34:26.123+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:34:26.124+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:34:03.323632+00:00, execution_date=20241205T213403, start_date=20241205T213407, end_date=20241205T213426
+[2024-12-05T21:34:26.166+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:34:26.172+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

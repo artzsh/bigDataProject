@@ -1,0 +1,27 @@
+[2024-12-06T00:06:24.694+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T00:06:24.709+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T00:06:22.935917+00:00 [queued]>
+[2024-12-06T00:06:24.716+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T00:06:22.935917+00:00 [queued]>
+[2024-12-06T00:06:24.716+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T00:06:24.728+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): insert_cleaned_data> on 2024-12-06 00:06:22.935917+00:00
+[2024-12-06T00:06:24.734+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=9967) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T00:06:24.735+0000] {standard_task_runner.py:72} INFO - Started process 9968 to run task
+[2024-12-06T00:06:24.735+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'insert_cleaned_data', 'manual__2024-12-06T00:06:22.935917+00:00', '--job-id', '1979', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmp7cumwyco']
+[2024-12-06T00:06:24.736+0000] {standard_task_runner.py:105} INFO - Job 1979: Subtask insert_cleaned_data
+[2024-12-06T00:06:24.776+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T00:06:22.935917+00:00 [running]> on host c7780884450d
+[2024-12-06T00:06:24.848+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='insert_cleaned_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T00:06:22.935917+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T00:06:22.935917+00:00'
+[2024-12-06T00:06:24.849+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T00:06:24.873+0000] {insert_cleaned_data.py:50} INFO - Обрабатываем ключ: 1
+[2024-12-06T00:06:24.874+0000] {insert_cleaned_data.py:66} INFO - Источник данных: DDS-STG.eCommerce_Oct
+[2024-12-06T00:06:24.874+0000] {insert_cleaned_data.py:67} INFO - Целевая таблица: DDS.final_cleaned_data
+[2024-12-06T00:06:24.882+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-06T00:06:25.494+0000] {insert_cleaned_data.py:88} INFO - Соединение с PostgreSQL установлено.
+[2024-12-06T00:15:04.146+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-12-06T00:15:04.147+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-12-06T00:15:04.149+0000] {process_utils.py:132} INFO - Sending 15 to group 9968. PIDs of all processes in the group: [9968]
+[2024-12-06T00:15:04.149+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 9968
+[2024-12-06T00:16:04.158+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=9968, name='airflow task ru', status='sleeping', started='00:06:23') did not respond to SIGTERM. Trying SIGKILL
+[2024-12-06T00:16:04.160+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 9968
+[2024-12-06T00:16:04.168+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=9968, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='00:06:23') (9968) terminated with exit code -9
+[2024-12-06T00:16:04.169+0000] {standard_task_runner.py:190} ERROR - ('Job 1979 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

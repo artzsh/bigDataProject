@@ -1,0 +1,195 @@
+[2024-12-06T00:05:12.660+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T00:05:12.673+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T00:05:10.626663+00:00 [queued]>
+[2024-12-06T00:05:12.678+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T00:05:10.626663+00:00 [queued]>
+[2024-12-06T00:05:12.679+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T00:05:12.691+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): insert_cleaned_data> on 2024-12-06 00:05:10.626663+00:00
+[2024-12-06T00:05:12.697+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=9947) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T00:05:12.699+0000] {standard_task_runner.py:72} INFO - Started process 9948 to run task
+[2024-12-06T00:05:12.699+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'insert_cleaned_data', 'manual__2024-12-06T00:05:10.626663+00:00', '--job-id', '1977', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmp67ykcwhq']
+[2024-12-06T00:05:12.700+0000] {standard_task_runner.py:105} INFO - Job 1977: Subtask insert_cleaned_data
+[2024-12-06T00:05:12.739+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T00:05:10.626663+00:00 [running]> on host c7780884450d
+[2024-12-06T00:05:12.801+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='insert_cleaned_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T00:05:10.626663+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T00:05:10.626663+00:00'
+[2024-12-06T00:05:12.802+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T00:05:12.826+0000] {insert_cleaned_data.py:50} INFO - Обрабатываем ключ: 1
+[2024-12-06T00:05:12.827+0000] {insert_cleaned_data.py:66} INFO - Источник данных: DDS-STG.eCommerce_Oct
+[2024-12-06T00:05:12.827+0000] {insert_cleaned_data.py:67} INFO - Целевая таблица: DDS.final_cleaned_data
+[2024-12-06T00:05:12.835+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-06T00:05:13.513+0000] {insert_cleaned_data.py:88} INFO - Соединение с PostgreSQL установлено.
+[2024-12-06T00:05:13.697+0000] {insert_cleaned_data.py:147} ERROR - Ошибка при вставке данных: column bcm.allowed_category does not exist
+LINE 6:                      AND st.category_code = bcm.allowed_cate...
+                                                    ^
+QUERY:  WITH batch AS (
+                    SELECT st.*
+                    FROM "DDS-STG"."eCommerce_Oct" st
+                    JOIN "DDS"."brand_category_mapping_final" bcm
+                      ON st.brand = bcm.brand
+                     AND st.category_code = bcm.allowed_category
+                    WHERE st.ctid > last_ctid
+                    ORDER BY st.ctid
+                    LIMIT batch_size
+                ),
+                inserted AS (
+                    INSERT INTO "DDS"."final_cleaned_data" (brand, category_code)
+                    SELECT st.brand, st.category_code
+                    FROM batch st
+                    RETURNING ctid
+                )
+                SELECT MAX(ctid)                    FROM inserted
+CONTEXT:  PL/pgSQL function inline_code_block line 10 at SQL statement
+
+[2024-12-06T00:05:13.785+0000] {insert_cleaned_data.py:154} INFO - Курсор закрыт.
+[2024-12-06T00:05:13.785+0000] {insert_cleaned_data.py:157} INFO - Соединение с PostgreSQL закрыто.
+[2024-12-06T00:05:13.786+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/insert_cleaned_data.py", line 142, in insert_cleaned_data
+    cursor.execute(plpgsql_block)
+psycopg2.errors.UndefinedColumn: column bcm.allowed_category does not exist
+LINE 6:                      AND st.category_code = bcm.allowed_cate...
+                                                    ^
+QUERY:  WITH batch AS (
+                    SELECT st.*
+                    FROM "DDS-STG"."eCommerce_Oct" st
+                    JOIN "DDS"."brand_category_mapping_final" bcm
+                      ON st.brand = bcm.brand
+                     AND st.category_code = bcm.allowed_category
+                    WHERE st.ctid > last_ctid
+                    ORDER BY st.ctid
+                    LIMIT batch_size
+                ),
+                inserted AS (
+                    INSERT INTO "DDS"."final_cleaned_data" (brand, category_code)
+                    SELECT st.brand, st.category_code
+                    FROM batch st
+                    RETURNING ctid
+                )
+                SELECT MAX(ctid)                    FROM inserted
+CONTEXT:  PL/pgSQL function inline_code_block line 10 at SQL statement
+
+[2024-12-06T00:05:13.806+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=insert_cleaned_data, task_id=insert_cleaned_data, run_id=manual__2024-12-06T00:05:10.626663+00:00, execution_date=20241206T000510, start_date=20241206T000512, end_date=20241206T000513
+[2024-12-06T00:05:13.825+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-06T00:05:13.826+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 1977 for task insert_cleaned_data (column bcm.allowed_category does not exist
+LINE 6:                      AND st.category_code = bcm.allowed_cate...
+                                                    ^
+QUERY:  WITH batch AS (
+                    SELECT st.*
+                    FROM "DDS-STG"."eCommerce_Oct" st
+                    JOIN "DDS"."brand_category_mapping_final" bcm
+                      ON st.brand = bcm.brand
+                     AND st.category_code = bcm.allowed_category
+                    WHERE st.ctid > last_ctid
+                    ORDER BY st.ctid
+                    LIMIT batch_size
+                ),
+                inserted AS (
+                    INSERT INTO "DDS"."final_cleaned_data" (brand, category_code)
+                    SELECT st.brand, st.category_code
+                    FROM batch st
+                    RETURNING ctid
+                )
+                SELECT MAX(ctid)                    FROM inserted
+CONTEXT:  PL/pgSQL function inline_code_block line 10 at SQL statement
+; 9948)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/insert_cleaned_data.py", line 142, in insert_cleaned_data
+    cursor.execute(plpgsql_block)
+psycopg2.errors.UndefinedColumn: column bcm.allowed_category does not exist
+LINE 6:                      AND st.category_code = bcm.allowed_cate...
+                                                    ^
+QUERY:  WITH batch AS (
+                    SELECT st.*
+                    FROM "DDS-STG"."eCommerce_Oct" st
+                    JOIN "DDS"."brand_category_mapping_final" bcm
+                      ON st.brand = bcm.brand
+                     AND st.category_code = bcm.allowed_category
+                    WHERE st.ctid > last_ctid
+                    ORDER BY st.ctid
+                    LIMIT batch_size
+                ),
+                inserted AS (
+                    INSERT INTO "DDS"."final_cleaned_data" (brand, category_code)
+                    SELECT st.brand, st.category_code
+                    FROM batch st
+                    RETURNING ctid
+                )
+                SELECT MAX(ctid)                    FROM inserted
+CONTEXT:  PL/pgSQL function inline_code_block line 10 at SQL statement
+
+[2024-12-06T00:05:13.837+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-12-06T00:05:13.858+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-06T00:05:13.861+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

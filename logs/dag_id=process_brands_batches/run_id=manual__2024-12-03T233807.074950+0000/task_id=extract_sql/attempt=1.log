@@ -1,0 +1,153 @@
+[2024-12-03T23:38:28.239+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-03T23:38:28.251+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_brands_batches.extract_sql manual__2024-12-03T23:38:07.074950+00:00 [queued]>
+[2024-12-03T23:38:28.257+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_brands_batches.extract_sql manual__2024-12-03T23:38:07.074950+00:00 [queued]>
+[2024-12-03T23:38:28.257+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-03T23:38:28.274+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_sql> on 2024-12-03 23:38:07.074950+00:00
+[2024-12-03T23:38:28.279+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=443) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-03T23:38:28.281+0000] {standard_task_runner.py:72} INFO - Started process 444 to run task
+[2024-12-03T23:38:28.281+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'process_brands_batches', 'extract_sql', 'manual__2024-12-03T23:38:07.074950+00:00', '--job-id', '346', '--raw', '--subdir', 'DAGS_FOLDER/llm_test.py', '--cfg-path', '/tmp/tmpqdt2cbyn']
+[2024-12-03T23:38:28.282+0000] {standard_task_runner.py:105} INFO - Job 346: Subtask extract_sql
+[2024-12-03T23:38:28.321+0000] {task_command.py:467} INFO - Running <TaskInstance: process_brands_batches.extract_sql manual__2024-12-03T23:38:07.074950+00:00 [running]> on host 175560b3a058
+[2024-12-03T23:38:28.391+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='process_brands_batches' AIRFLOW_CTX_TASK_ID='extract_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-03T23:38:07.074950+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-03T23:38:07.074950+00:00'
+[2024-12-03T23:38:28.392+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-03T23:38:28.411+0000] {llm_test.py:184} INFO - Извлечён llm_response: Here’s the mapping of the brands to their respective categories based on the search results:
+
+1. **action**: sport
+2. **active**: apparel, sport
+3. **activision**: electronics
+4. **acuvue**: medicine
+5. **acv**: electronics
+6. **adagio**: furniture
+7. **adal**: furniture
+8. **adam**: furniture
+9. **adamas**: electronics
+10. **adamex**: kids, accessories
+11. **adata**: computers, electronics
+12. **addlink**: computers, electronics
+13. **adel**: furniture
+14. **adelline**: apparel
+15. **adidas**: apparel, sport
+16. **adil**: apparel
+17. **adile**: apparel
+18. **adili**: apparel
+19. **adking**: apparel
+20. **admira**: furniture
+21. **adora**: furniture
+22. **adriatica**: accessories
+23. **advan**: computers, electronics
+24. **aeg**: appliances, electronics
+25. **aenepure**: medicine
+
+Now, here is the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO project.brand_category_rules_1 (brand, category_index) VALUES
+    ('action', 'sport'),
+    ('active', 'apparel'),
+    ('active', 'sport'),
+    ('activision', 'electronics'),
+    ('acuvue', 'medicine'),
+    ('acv', 'electronics'),
+    ('adagio', 'furniture'),
+    ('adal', 'furniture'),
+    ('adam', 'furniture'),
+    ('adamas', 'electronics'),
+    ('adamex', 'kids'),
+    ('adamex', 'accessories'),
+    ('adata', 'computers'),
+    ('adata', 'electronics'),
+    ('addlink', 'computers'),
+    ('addlink', 'electronics'),
+    ('adel', 'furniture'),
+    ('adelline', 'apparel'),
+    ('adidas', 'apparel'),
+    ('adidas', 'sport'),
+    ('adil', 'apparel'),
+    ('adile', 'apparel'),
+    ('adili', 'apparel'),
+    ('adking', 'apparel'),
+    ('admira', 'furniture'),
+    ('adora', 'furniture'),
+    ('adriatica', 'accessories'),
+    ('advan', 'computers'),
+    ('advan', 'electronics'),
+    ('aeg', 'appliances'),
+    ('aeg', 'electronics'),
+    ('aenepure', 'medicine');
+```
+
+This SQL statement includes all the brands and their corresponding categories as mapped.
+[2024-12-03T23:38:28.412+0000] {llm_test.py:171} INFO - Извлечён SQL-код:
+INSERT INTO project.brand_category_rules_1 (brand, category_index) VALUES
+    ('action', 'sport'),
+    ('active', 'apparel'),
+    ('active', 'sport'),
+    ('activision', 'electronics'),
+    ('acuvue', 'medicine'),
+    ('acv', 'electronics'),
+    ('adagio', 'furniture'),
+    ('adal', 'furniture'),
+    ('adam', 'furniture'),
+    ('adamas', 'electronics'),
+    ('adamex', 'kids'),
+    ('adamex', 'accessories'),
+    ('adata', 'computers'),
+    ('adata', 'electronics'),
+    ('addlink', 'computers'),
+    ('addlink', 'electronics'),
+    ('adel', 'furniture'),
+    ('adelline', 'apparel'),
+    ('adidas', 'apparel'),
+    ('adidas', 'sport'),
+    ('adil', 'apparel'),
+    ('adile', 'apparel'),
+    ('adili', 'apparel'),
+    ('adking', 'apparel'),
+    ('admira', 'furniture'),
+    ('adora', 'furniture'),
+    ('adriatica', 'accessories'),
+    ('advan', 'computers'),
+    ('advan', 'electronics'),
+    ('aeg', 'appliances'),
+    ('aeg', 'electronics'),
+    ('aenepure', 'medicine');
+[2024-12-03T23:38:28.413+0000] {python.py:240} INFO - Done. Returned value was: INSERT INTO project.brand_category_rules_1 (brand, category_index) VALUES
+    ('action', 'sport'),
+    ('active', 'apparel'),
+    ('active', 'sport'),
+    ('activision', 'electronics'),
+    ('acuvue', 'medicine'),
+    ('acv', 'electronics'),
+    ('adagio', 'furniture'),
+    ('adal', 'furniture'),
+    ('adam', 'furniture'),
+    ('adamas', 'electronics'),
+    ('adamex', 'kids'),
+    ('adamex', 'accessories'),
+    ('adata', 'computers'),
+    ('adata', 'electronics'),
+    ('addlink', 'computers'),
+    ('addlink', 'electronics'),
+    ('adel', 'furniture'),
+    ('adelline', 'apparel'),
+    ('adidas', 'apparel'),
+    ('adidas', 'sport'),
+    ('adil', 'apparel'),
+    ('adile', 'apparel'),
+    ('adili', 'apparel'),
+    ('adking', 'apparel'),
+    ('admira', 'furniture'),
+    ('adora', 'furniture'),
+    ('adriatica', 'accessories'),
+    ('advan', 'computers'),
+    ('advan', 'electronics'),
+    ('aeg', 'appliances'),
+    ('aeg', 'electronics'),
+    ('aenepure', 'medicine');
+[2024-12-03T23:38:28.431+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-03T23:38:28.431+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=process_brands_batches, task_id=extract_sql, run_id=manual__2024-12-03T23:38:07.074950+00:00, execution_date=20241203T233807, start_date=20241203T233828, end_date=20241203T233828
+[2024-12-03T23:38:28.455+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-03T23:38:28.473+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-03T23:38:28.476+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

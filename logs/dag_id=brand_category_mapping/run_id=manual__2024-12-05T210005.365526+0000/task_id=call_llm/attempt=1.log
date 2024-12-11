@@ -1,0 +1,154 @@
+[2024-12-05T21:00:10.258+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:00:10.271+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:00:05.365526+00:00 [queued]>
+[2024-12-05T21:00:10.278+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:00:05.365526+00:00 [queued]>
+[2024-12-05T21:00:10.279+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:00:10.292+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:00:05.365526+00:00
+[2024-12-05T21:00:10.298+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2770) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:00:10.299+0000] {standard_task_runner.py:72} INFO - Started process 2771 to run task
+[2024-12-05T21:00:10.299+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:00:05.365526+00:00', '--job-id', '612', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp0rqkos9d']
+[2024-12-05T21:00:10.301+0000] {standard_task_runner.py:105} INFO - Job 612: Subtask call_llm
+[2024-12-05T21:00:10.338+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:00:05.365526+00:00 [running]> on host c7780884450d
+[2024-12-05T21:00:10.401+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:00:05.365526+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:00:05.365526+00:00'
+[2024-12-05T21:00:10.403+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:00:10.421+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['apc', 'apcbyschneiderelectric', 'apex', 'aplus', 'apocalypse', 'apollo', 'apple', 'applegate', 'appollo', 'apriori', 'aps', 'aqoamarin', 'aqua', 'aquabeads', 'aquael', 'aquafit', 'aquafresh', 'aquafruit', 'aquajet', 'aqualife', 'aquamarine', 'aquanet', 'aquapick', 'aquarodos', 'aquastar'], 'next_index': 300}
+[2024-12-05T21:00:10.422+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:00:10.874+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:00:36.263+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here is the mapping of the brands to their respective categories based on the search results:
+
+1. **apc** - apparel
+2. **apcbyschneiderelectric** - electronics, appliances
+3. **apex** - electronics, auto
+4. **aplus** - computers, electronics
+5. **apocalypse** - apparel
+6. **apollo** - electronics, auto
+7. **apple** - electronics, computers
+8. **applegate** - food (not in provided categories, but closest would be country_yard)
+9. **appollo** - electronics, auto
+10. **apriori** - apparel
+11. **aps** - electronics
+12. **aqoamarin** - electronics
+13. **aqua** - appliances, country_yard
+14. **aquabeads** - kids
+15. **aquael** - appliances, country_yard
+16. **aquafit** - sport
+17. **aquafresh** - medicine
+18. **aquafruit** - food (not in provided categories, but closest would be country_yard)
+19. **aquajet** - appliances
+20. **aqualife** - appliances
+21. **aquamarine** - electronics
+22. **aquanet** - accessories
+23. **aquapick** - medicine
+24. **aquarodos** - kids
+25. **aquastar** - electronics
+
+Now, generating the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('apc', 'apparel'),
+    ('apcbyschneiderelectric', 'electronics'),
+    ('apcbyschneiderelectric', 'appliances'),
+    ('apex', 'electronics'),
+    ('apex', 'auto'),
+    ('aplus', 'computers'),
+    ('aplus', 'electronics'),
+    ('apocalypse', 'apparel'),
+    ('apollo', 'electronics'),
+    ('apollo', 'auto'),
+    ('apple', 'electronics'),
+    ('apple', 'computers'),
+    ('applegate', 'country_yard'),
+    ('appollo', 'electronics'),
+    ('appollo', 'auto'),
+    ('apriori', 'apparel'),
+    ('aps', 'electronics'),
+    ('aqoamarin', 'electronics'),
+    ('aqua', 'appliances'),
+    ('aqua', 'country_yard'),
+    ('aquabeads', 'kids'),
+    ('aquael', 'appliances'),
+    ('aquael', 'country_yard'),
+    ('aquafit', 'sport'),
+    ('aquafresh', 'medicine'),
+    ('aquafruit', 'country_yard'),
+    ('aquajet', 'appliances'),
+    ('aqualife', 'appliances'),
+    ('aquamarine', 'electronics'),
+    ('aquanet', 'accessories'),
+    ('aquapick', 'medicine'),
+    ('aquarodos', 'kids'),
+    ('aquastar', 'electronics');
+```
+[2024-12-05T21:00:36.263+0000] {python.py:240} INFO - Done. Returned value was: Here is the mapping of the brands to their respective categories based on the search results:
+
+1. **apc** - apparel
+2. **apcbyschneiderelectric** - electronics, appliances
+3. **apex** - electronics, auto
+4. **aplus** - computers, electronics
+5. **apocalypse** - apparel
+6. **apollo** - electronics, auto
+7. **apple** - electronics, computers
+8. **applegate** - food (not in provided categories, but closest would be country_yard)
+9. **appollo** - electronics, auto
+10. **apriori** - apparel
+11. **aps** - electronics
+12. **aqoamarin** - electronics
+13. **aqua** - appliances, country_yard
+14. **aquabeads** - kids
+15. **aquael** - appliances, country_yard
+16. **aquafit** - sport
+17. **aquafresh** - medicine
+18. **aquafruit** - food (not in provided categories, but closest would be country_yard)
+19. **aquajet** - appliances
+20. **aqualife** - appliances
+21. **aquamarine** - electronics
+22. **aquanet** - accessories
+23. **aquapick** - medicine
+24. **aquarodos** - kids
+25. **aquastar** - electronics
+
+Now, generating the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('apc', 'apparel'),
+    ('apcbyschneiderelectric', 'electronics'),
+    ('apcbyschneiderelectric', 'appliances'),
+    ('apex', 'electronics'),
+    ('apex', 'auto'),
+    ('aplus', 'computers'),
+    ('aplus', 'electronics'),
+    ('apocalypse', 'apparel'),
+    ('apollo', 'electronics'),
+    ('apollo', 'auto'),
+    ('apple', 'electronics'),
+    ('apple', 'computers'),
+    ('applegate', 'country_yard'),
+    ('appollo', 'electronics'),
+    ('appollo', 'auto'),
+    ('apriori', 'apparel'),
+    ('aps', 'electronics'),
+    ('aqoamarin', 'electronics'),
+    ('aqua', 'appliances'),
+    ('aqua', 'country_yard'),
+    ('aquabeads', 'kids'),
+    ('aquael', 'appliances'),
+    ('aquael', 'country_yard'),
+    ('aquafit', 'sport'),
+    ('aquafresh', 'medicine'),
+    ('aquafruit', 'country_yard'),
+    ('aquajet', 'appliances'),
+    ('aqualife', 'appliances'),
+    ('aquamarine', 'electronics'),
+    ('aquanet', 'accessories'),
+    ('aquapick', 'medicine'),
+    ('aquarodos', 'kids'),
+    ('aquastar', 'electronics');
+```
+[2024-12-05T21:00:36.283+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:00:36.284+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:00:05.365526+00:00, execution_date=20241205T210005, start_date=20241205T210010, end_date=20241205T210036
+[2024-12-05T21:00:36.334+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:00:36.355+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:00:36.359+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

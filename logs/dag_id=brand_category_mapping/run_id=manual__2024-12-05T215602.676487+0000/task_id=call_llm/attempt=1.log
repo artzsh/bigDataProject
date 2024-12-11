@@ -1,0 +1,140 @@
+[2024-12-05T21:56:08.550+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:56:08.561+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:56:02.676487+00:00 [queued]>
+[2024-12-05T21:56:08.567+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:56:02.676487+00:00 [queued]>
+[2024-12-05T21:56:08.567+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:56:08.578+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:56:02.676487+00:00
+[2024-12-05T21:56:08.584+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5749) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:56:08.585+0000] {standard_task_runner.py:72} INFO - Started process 5750 to run task
+[2024-12-05T21:56:08.586+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:56:02.676487+00:00', '--job-id', '1254', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpmtlox6w6']
+[2024-12-05T21:56:08.588+0000] {standard_task_runner.py:105} INFO - Job 1254: Subtask call_llm
+[2024-12-05T21:56:08.622+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:56:02.676487+00:00 [running]> on host c7780884450d
+[2024-12-05T21:56:08.681+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:56:02.676487+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:56:02.676487+00:00'
+[2024-12-05T21:56:08.682+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:56:08.698+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['longway', 'lorado', 'lorain', 'lord', 'loreal', 'lorealparis', 'lorelli', 'lorelli-bertoni', 'lorellibolgaria', 'lori', 'loropiana', 'lorus', 'losk', 'lostkitties', 'lotos', 'lotus', 'louiserard', 'lovecoil', 'lovular', 'lpr', 'lsa', 'ltd', 'luazon', 'luazonlighting', 'luberckiekovry'], 'next_index': 2975}
+[2024-12-05T21:56:08.699+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:56:09.114+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:56:31.144+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here are the assigned categories for each brand based on the search results:
+
+1. **longway** - apparel
+2. **lorado** - apparel
+3. **lorain** - apparel
+4. **lord** - apparel
+5. **loreal** - cosmetics, medicine
+6. **lorealparis** - cosmetics, medicine
+7. **lorelli** - kids, accessories
+8. **lorelli-bertoni** - kids, accessories
+9. **lorellibolgaria** - kids, accessories
+10. **lori** - stationery, kids
+11. **loropiana** - apparel
+12. **lorus** - accessories
+13. **losk** - appliances
+14. **lostkitties** - kids
+15. **lotos** - stationery
+16. **lotus** - accessories
+17. **louiserard** - apparel
+18. **lovecoil** - appliances
+19. **lovular** - kids
+20. **lpr** - electronics
+21. **lsa** - electronics
+22. **ltd** - electronics
+23. **luazon** - appliances
+24. **luazonlighting** - appliances, electronics
+25. **luberckiekovry** - appliances
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('longway', 'apparel'),
+    ('lorado', 'apparel'),
+    ('lorain', 'apparel'),
+    ('lord', 'apparel'),
+    ('loreal', 'medicine'),
+    ('lorealparis', 'medicine'),
+    ('lorelli', 'kids'),
+    ('lorelli-bertoni', 'kids'),
+    ('lorellibolgaria', 'kids'),
+    ('lori', 'stationery'),
+    ('loropiana', 'apparel'),
+    ('lorus', 'accessories'),
+    ('losk', 'appliances'),
+    ('lostkitties', 'kids'),
+    ('lotos', 'stationery'),
+    ('lotus', 'accessories'),
+    ('louiserard', 'apparel'),
+    ('lovecoil', 'appliances'),
+    ('lovular', 'kids'),
+    ('lpr', 'electronics'),
+    ('lsa', 'electronics'),
+    ('ltd', 'electronics'),
+    ('luazon', 'appliances'),
+    ('luazonlighting', 'appliances'),
+    ('luazonlighting', 'electronics'),
+    ('luberckiekovry', 'appliances');
+```
+[2024-12-05T21:56:31.145+0000] {python.py:240} INFO - Done. Returned value was: Here are the assigned categories for each brand based on the search results:
+
+1. **longway** - apparel
+2. **lorado** - apparel
+3. **lorain** - apparel
+4. **lord** - apparel
+5. **loreal** - cosmetics, medicine
+6. **lorealparis** - cosmetics, medicine
+7. **lorelli** - kids, accessories
+8. **lorelli-bertoni** - kids, accessories
+9. **lorellibolgaria** - kids, accessories
+10. **lori** - stationery, kids
+11. **loropiana** - apparel
+12. **lorus** - accessories
+13. **losk** - appliances
+14. **lostkitties** - kids
+15. **lotos** - stationery
+16. **lotus** - accessories
+17. **louiserard** - apparel
+18. **lovecoil** - appliances
+19. **lovular** - kids
+20. **lpr** - electronics
+21. **lsa** - electronics
+22. **ltd** - electronics
+23. **luazon** - appliances
+24. **luazonlighting** - appliances, electronics
+25. **luberckiekovry** - appliances
+
+Now, I will generate the SQL INSERT statement based on the assigned categories:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('longway', 'apparel'),
+    ('lorado', 'apparel'),
+    ('lorain', 'apparel'),
+    ('lord', 'apparel'),
+    ('loreal', 'medicine'),
+    ('lorealparis', 'medicine'),
+    ('lorelli', 'kids'),
+    ('lorelli-bertoni', 'kids'),
+    ('lorellibolgaria', 'kids'),
+    ('lori', 'stationery'),
+    ('loropiana', 'apparel'),
+    ('lorus', 'accessories'),
+    ('losk', 'appliances'),
+    ('lostkitties', 'kids'),
+    ('lotos', 'stationery'),
+    ('lotus', 'accessories'),
+    ('louiserard', 'apparel'),
+    ('lovecoil', 'appliances'),
+    ('lovular', 'kids'),
+    ('lpr', 'electronics'),
+    ('lsa', 'electronics'),
+    ('ltd', 'electronics'),
+    ('luazon', 'appliances'),
+    ('luazonlighting', 'appliances'),
+    ('luazonlighting', 'electronics'),
+    ('luberckiekovry', 'appliances');
+```
+[2024-12-05T21:56:31.194+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:56:31.196+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:56:02.676487+00:00, execution_date=20241205T215602, start_date=20241205T215608, end_date=20241205T215631
+[2024-12-05T21:56:31.267+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:56:31.298+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:56:31.302+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,113 @@
+[2024-12-05T22:13:03.196+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:13:03.208+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:12:35.883768+00:00 [queued]>
+[2024-12-05T22:13:03.215+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:12:35.883768+00:00 [queued]>
+[2024-12-05T22:13:03.216+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:13:03.231+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:12:35.883768+00:00
+[2024-12-05T22:13:03.238+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6653) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:13:03.240+0000] {standard_task_runner.py:72} INFO - Started process 6654 to run task
+[2024-12-05T22:13:03.240+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:12:35.883768+00:00', '--job-id', '1448', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpasqe_j2s']
+[2024-12-05T22:13:03.242+0000] {standard_task_runner.py:105} INFO - Job 1448: Subtask execute_sql
+[2024-12-05T22:13:03.279+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:12:35.883768+00:00 [running]> on host c7780884450d
+[2024-12-05T22:13:03.341+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:12:35.883768+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:12:35.883768+00:00'
+[2024-12-05T22:13:03.342+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:13:03.361+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('orangetoys', 'kids'),
+    ('orbotix', 'electronics'),
+    ('orbotix', 'toys'),
+    ('orchestra', 'apparel'),
+    ('orchestra', 'kids'),
+    ('oregon', 'electronics'),
+    ('oregon', 'appliances'),
+    ('organickitchen', 'medicine'),
+    ('organicshop', 'medicine'),
+    ('organiczone', 'medicine'),
+    ('oribel', 'kids'),
+    ('oribel', 'furniture'),
+    ('orico', 'electronics'),
+    ('orico', 'accessories'),
+    ('orient', 'appliances'),
+    ('orient', 'electronics'),
+    ('origami', 'furniture'),
+    ('origami', 'appliances'),
+    ('original', 'apparel'),
+    ('original', 'accessories'),
+    ('originalam.net', 'apparel'),
+    ('originalam.net', 'accessories'),
+    ('originalamnet', 'apparel'),
+    ('originalamnet', 'accessories'),
+    ('originalfittools', 'sport'),
+    ('originalfittools', 'accessories'),
+    ('origins', 'medicine'),
+    ('origins', 'cosmetics'),
+    ('orijen', 'medicine'),
+    ('orijen', 'food'),
+    ('orimag', 'electronics'),
+    ('orion', 'electronics'),
+    ('orion', 'appliances'),
+    ('oris', 'accessories'),
+    ('oris', 'electronics'),
+    ('orivel', 'accessories'),
+    ('orivel', 'apparel'),
+    ('orjade', 'accessories'),
+    ('orjade', 'apparel'),
+    ('orla', 'apparel'),
+    ('orliman', 'medicine'),
+    ('orliman', 'accessories'),
+    ('orly', 'cosmetics'),
+    ('orly', 'accessories');
+[2024-12-05T22:13:03.368+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:13:04.151+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('orangetoys', 'kids'),
+    ('orbotix', 'electronics'),
+    ('orbotix', 'toys'),
+    ('orchestra', 'apparel'),
+    ('orchestra', 'kids'),
+    ('oregon', 'electronics'),
+    ('oregon', 'appliances'),
+    ('organickitchen', 'medicine'),
+    ('organicshop', 'medicine'),
+    ('organiczone', 'medicine'),
+    ('oribel', 'kids'),
+    ('oribel', 'furniture'),
+    ('orico', 'electronics'),
+    ('orico', 'accessories'),
+    ('orient', 'appliances'),
+    ('orient', 'electronics'),
+    ('origami', 'furniture'),
+    ('origami', 'appliances'),
+    ('original', 'apparel'),
+    ('original', 'accessories'),
+    ('originalam.net', 'apparel'),
+    ('originalam.net', 'accessories'),
+    ('originalamnet', 'apparel'),
+    ('originalamnet', 'accessories'),
+    ('originalfittools', 'sport'),
+    ('originalfittools', 'accessories'),
+    ('origins', 'medicine'),
+    ('origins', 'cosmetics'),
+    ('orijen', 'medicine'),
+    ('orijen', 'food'),
+    ('orimag', 'electronics'),
+    ('orion', 'electronics'),
+    ('orion', 'appliances'),
+    ('oris', 'accessories'),
+    ('oris', 'electronics'),
+    ('orivel', 'accessories'),
+    ('orivel', 'apparel'),
+    ('orjade', 'accessories'),
+    ('orjade', 'apparel'),
+    ('orla', 'apparel'),
+    ('orliman', 'medicine'),
+    ('orliman', 'accessories'),
+    ('orly', 'cosmetics'),
+    ('orly', 'accessories');
+[2024-12-05T22:13:04.323+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:13:04.324+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:13:04.331+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:13:04.331+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:12:35.883768+00:00, execution_date=20241205T221235, start_date=20241205T221303, end_date=20241205T221304
+[2024-12-05T22:13:04.377+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:13:04.395+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:13:04.398+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

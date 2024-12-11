@@ -1,0 +1,97 @@
+[2024-12-05T22:21:05.112+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T22:21:05.125+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:20:39.831321+00:00 [queued]>
+[2024-12-05T22:21:05.133+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:20:39.831321+00:00 [queued]>
+[2024-12-05T22:21:05.134+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T22:21:05.147+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): execute_sql> on 2024-12-05 22:20:39.831321+00:00
+[2024-12-05T22:21:05.153+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7073) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T22:21:05.155+0000] {standard_task_runner.py:72} INFO - Started process 7074 to run task
+[2024-12-05T22:21:05.155+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'execute_sql', 'manual__2024-12-05T22:20:39.831321+00:00', '--job-id', '1538', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmpex6mkect']
+[2024-12-05T22:21:05.157+0000] {standard_task_runner.py:105} INFO - Job 1538: Subtask execute_sql
+[2024-12-05T22:21:05.201+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.execute_sql manual__2024-12-05T22:20:39.831321+00:00 [running]> on host c7780884450d
+[2024-12-05T22:21:05.271+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='execute_sql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T22:20:39.831321+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T22:20:39.831321+00:00'
+[2024-12-05T22:21:05.273+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T22:21:05.293+0000] {llm_mapping.py:235} INFO - Извлечён sql_code: INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('qvs', 'appliances'),
+    ('racer', 'sport'),
+    ('racer', 'apparel'),
+    ('raceready', 'sport'),
+    ('raceready', 'apparel'),
+    ('radian', 'electronics'),
+    ('radiant', 'electronics'),
+    ('radiant', 'appliances'),
+    ('rado', 'accessories'),
+    ('raduga', 'kids'),
+    ('raduga', 'stationery'),
+    ('raffer', 'furniture'),
+    ('ragolle', 'furniture'),
+    ('raidmax', 'computers'),
+    ('raidmax', 'electronics'),
+    ('raido', 'electronics'),
+    ('railking', 'kids'),
+    ('rainbo', 'apparel'),
+    ('rainbo', 'accessories'),
+    ('rainbow', 'kids'),
+    ('rainbow', 'stationery'),
+    ('rainstahl', 'appliances'),
+    ('rajton', 'construction'),
+    ('ralfringer', 'apparel'),
+    ('ralphlauren', 'apparel'),
+    ('ralphlauren', 'accessories'),
+    ('rals', 'apparel'),
+    ('ramili', 'apparel'),
+    ('rand', 'furniture'),
+    ('ranok-creative', 'kids'),
+    ('ranok-creative', 'stationery'),
+    ('rant', 'apparel'),
+    ('rapala', 'sport'),
+    ('rapala', 'accessories'),
+    ('rapid', 'stationery'),
+    ('rapid', 'electronics');
+[2024-12-05T22:21:05.300+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-05T22:21:06.083+0000] {llm_mapping.py:214} INFO - Выполнение SQL-кода:
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('qvs', 'appliances'),
+    ('racer', 'sport'),
+    ('racer', 'apparel'),
+    ('raceready', 'sport'),
+    ('raceready', 'apparel'),
+    ('radian', 'electronics'),
+    ('radiant', 'electronics'),
+    ('radiant', 'appliances'),
+    ('rado', 'accessories'),
+    ('raduga', 'kids'),
+    ('raduga', 'stationery'),
+    ('raffer', 'furniture'),
+    ('ragolle', 'furniture'),
+    ('raidmax', 'computers'),
+    ('raidmax', 'electronics'),
+    ('raido', 'electronics'),
+    ('railking', 'kids'),
+    ('rainbo', 'apparel'),
+    ('rainbo', 'accessories'),
+    ('rainbow', 'kids'),
+    ('rainbow', 'stationery'),
+    ('rainstahl', 'appliances'),
+    ('rajton', 'construction'),
+    ('ralfringer', 'apparel'),
+    ('ralphlauren', 'apparel'),
+    ('ralphlauren', 'accessories'),
+    ('rals', 'apparel'),
+    ('ramili', 'apparel'),
+    ('rand', 'furniture'),
+    ('ranok-creative', 'kids'),
+    ('ranok-creative', 'stationery'),
+    ('rant', 'apparel'),
+    ('rapala', 'sport'),
+    ('rapala', 'accessories'),
+    ('rapid', 'stationery'),
+    ('rapid', 'electronics');
+[2024-12-05T22:21:06.257+0000] {llm_mapping.py:217} INFO - SQL-код успешно выполнен.
+[2024-12-05T22:21:06.258+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T22:21:06.266+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T22:21:06.267+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=execute_sql, run_id=manual__2024-12-05T22:20:39.831321+00:00, execution_date=20241205T222039, start_date=20241205T222105, end_date=20241205T222106
+[2024-12-05T22:21:06.293+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T22:21:06.309+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T22:21:06.312+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

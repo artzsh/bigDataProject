@@ -1,0 +1,22 @@
+[2024-12-05T19:14:51.509+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T19:14:51.534+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_unique_values.set_vars manual__2024-12-05T19:14:42.578106+00:00 [queued]>
+[2024-12-05T19:14:51.548+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_unique_values.set_vars manual__2024-12-05T19:14:42.578106+00:00 [queued]>
+[2024-12-05T19:14:51.549+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T19:14:51.570+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): set_vars> on 2024-12-05 19:14:42.578106+00:00
+[2024-12-05T19:14:51.582+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1018) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T19:14:51.585+0000] {standard_task_runner.py:72} INFO - Started process 1019 to run task
+[2024-12-05T19:14:51.586+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_unique_values', 'set_vars', 'manual__2024-12-05T19:14:42.578106+00:00', '--job-id', '504', '--raw', '--subdir', 'DAGS_FOLDER/select_distinct_brands_categories.py', '--cfg-path', '/tmp/tmpujsr9e9n']
+[2024-12-05T19:14:51.588+0000] {standard_task_runner.py:105} INFO - Job 504: Subtask set_vars
+[2024-12-05T19:14:51.636+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_unique_values.set_vars manual__2024-12-05T19:14:42.578106+00:00 [running]> on host c7780884450d
+[2024-12-05T19:14:51.718+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_unique_values' AIRFLOW_CTX_TASK_ID='set_vars' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T19:14:42.578106+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T19:14:42.578106+00:00'
+[2024-12-05T19:14:51.720+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T19:14:51.776+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-12-05T19:14:51.784+0000] {select_distinct_brands_categories.py:308} INFO - Обновлён distinct_var до 6
+[2024-12-05T19:14:51.786+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-05T19:14:51.801+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T19:14:51.802+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=extract_unique_values, task_id=set_vars, run_id=manual__2024-12-05T19:14:42.578106+00:00, execution_date=20241205T191442, start_date=20241205T191451, end_date=20241205T191451
+[2024-12-05T19:14:51.843+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T19:14:51.859+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T19:14:51.862+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

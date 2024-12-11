@@ -1,0 +1,76 @@
+[2024-12-06T15:44:24.081+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-06T15:44:24.092+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T15:44:19.958684+00:00 [queued]>
+[2024-12-06T15:44:24.098+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T15:44:19.958684+00:00 [queued]>
+[2024-12-06T15:44:24.098+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-06T15:44:24.108+0000] {taskinstance.py:2889} INFO - Executing <Task(PostgresOperator): insert_cleaned_data> on 2024-12-06 15:44:19.958684+00:00
+[2024-12-06T15:44:24.113+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3207) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-06T15:44:24.115+0000] {standard_task_runner.py:72} INFO - Started process 3208 to run task
+[2024-12-06T15:44:24.114+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'insert_cleaned_data', 'insert_cleaned_data', 'manual__2024-12-06T15:44:19.958684+00:00', '--job-id', '2026', '--raw', '--subdir', 'DAGS_FOLDER/insert_cleaned_data.py', '--cfg-path', '/tmp/tmp8k5qcp22']
+[2024-12-06T15:44:24.115+0000] {standard_task_runner.py:105} INFO - Job 2026: Subtask insert_cleaned_data
+[2024-12-06T15:44:24.145+0000] {task_command.py:467} INFO - Running <TaskInstance: insert_cleaned_data.insert_cleaned_data manual__2024-12-06T15:44:19.958684+00:00 [running]> on host cb0074367deb
+[2024-12-06T15:44:24.207+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='insert_cleaned_data' AIRFLOW_CTX_TASK_ID='insert_cleaned_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-06T15:44:19.958684+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-06T15:44:19.958684+00:00'
+[2024-12-06T15:44:24.207+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-06T15:44:24.215+0000] {sql.py:278} INFO - Executing: 
+        INSERT INTO "DDS"."final_table" (
+            event_time, 
+            event_type, 
+            product_id, 
+            category_id, 
+            category_code, 
+            brand, 
+            price, 
+            user_id, 
+            user_session
+        )
+        SELECT 
+            st.event_time, 
+            st.event_type, 
+            st.product_id, 
+            st.category_id, 
+            st.category_code, 
+            st.brand, 
+            st.price, 
+            st.user_id, 
+            st.user_session
+        FROM "DDS-STG"."eCommerce_Jan" st
+        JOIN "DDS"."brand_category_mapping_final" bcm
+          ON st.brand = bcm.brand
+         AND st.category_code = bcm.category_code;
+    
+[2024-12-06T15:44:24.221+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-06T15:44:24.225+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-06T15:44:24.295+0000] {sql.py:544} INFO - Running statement: 
+        INSERT INTO "DDS"."final_table" (
+            event_time, 
+            event_type, 
+            product_id, 
+            category_id, 
+            category_code, 
+            brand, 
+            price, 
+            user_id, 
+            user_session
+        )
+        SELECT 
+            st.event_time, 
+            st.event_type, 
+            st.product_id, 
+            st.category_id, 
+            st.category_code, 
+            st.brand, 
+            st.price, 
+            st.user_id, 
+            st.user_session
+        FROM "DDS-STG"."eCommerce_Jan" st
+        JOIN "DDS"."brand_category_mapping_final" bcm
+          ON st.brand = bcm.brand
+         AND st.category_code = bcm.category_code;
+    , parameters: None
+[2024-12-06T15:45:53.183+0000] {sql.py:553} INFO - Rows affected: 12474347
+[2024-12-06T15:45:53.242+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-06T15:45:53.244+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=insert_cleaned_data, task_id=insert_cleaned_data, run_id=manual__2024-12-06T15:44:19.958684+00:00, execution_date=20241206T154419, start_date=20241206T154424, end_date=20241206T154553
+[2024-12-06T15:45:53.304+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-06T15:45:53.321+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-06T15:45:53.324+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

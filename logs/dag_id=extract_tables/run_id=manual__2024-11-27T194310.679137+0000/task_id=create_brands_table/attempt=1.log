@@ -1,0 +1,130 @@
+[2024-11-27T19:43:13.516+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-27T19:43:13.528+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_tables.create_brands_table manual__2024-11-27T19:43:10.679137+00:00 [queued]>
+[2024-11-27T19:43:13.535+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_tables.create_brands_table manual__2024-11-27T19:43:10.679137+00:00 [queued]>
+[2024-11-27T19:43:13.536+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-27T19:43:13.546+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): create_brands_table> on 2024-11-27 19:43:10.679137+00:00
+[2024-11-27T19:43:13.553+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1112) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-27T19:43:13.555+0000] {standard_task_runner.py:72} INFO - Started process 1114 to run task
+[2024-11-27T19:43:13.554+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'extract_tables', 'create_brands_table', 'manual__2024-11-27T19:43:10.679137+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/extract_tables.py', '--cfg-path', '/tmp/tmp26wvfgv9']
+[2024-11-27T19:43:13.556+0000] {standard_task_runner.py:105} INFO - Job 50: Subtask create_brands_table
+[2024-11-27T19:43:13.590+0000] {task_command.py:467} INFO - Running <TaskInstance: extract_tables.create_brands_table manual__2024-11-27T19:43:10.679137+00:00 [running]> on host b6d44e76794e
+[2024-11-27T19:43:13.781+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='extract_tables' AIRFLOW_CTX_TASK_ID='create_brands_table' AIRFLOW_CTX_EXECUTION_DATE='2024-11-27T19:43:10.679137+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-27T19:43:10.679137+00:00'
+[2024-11-27T19:43:13.782+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-27T19:43:13.800+0000] {logging_mixin.py:190} INFO - [INFO] Обрабатываем ключ: 4
+[2024-11-27T19:43:13.801+0000] {logging_mixin.py:190} INFO - [INFO] Информация о таблице: {'1': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Oct.csv.gz', 'table_name': 'eCommerce_Oct', 'brands_table_name': 'brands_Oct', 'categories_table_name': 'categories_Oct'}, '2': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz', 'table_name': 'eCommerce_Nov', 'brands_table_name': 'brands_Nov', 'categories_table_name': 'categories_Nov'}, '3': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Dec.csv.gz', 'table_name': 'eCommerce_Dec', 'brands_table_name': 'brands_Dec', 'categories_table_name': 'categories_Dec'}, '4': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz', 'table_name': 'eCommerce_Jan', 'brands_table_name': 'brands_Jan', 'categories_table_name': 'categories_Jan'}, '5': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Feb.csv.gz', 'table_name': 'eCommerce_Feb', 'brands_table_name': 'brands_Feb', 'categories_table_name': 'categories_Feb'}, '6': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Mar.csv.gz', 'table_name': 'eCommerce_Mar', 'brands_table_name': 'brands_Mar', 'categories_table_name': 'categories_Mar'}, '7': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Apr.csv.gz', 'table_name': 'eCommerce_Apr', 'brands_table_name': 'brands_Apr', 'categories_table_name': 'categories_Apr'}}
+[2024-11-27T19:43:13.801+0000] {logging_mixin.py:190} INFO - [INFO] Основная таблица: DDS.eCommerce_Jan
+[2024-11-27T19:43:13.801+0000] {logging_mixin.py:190} INFO - [INFO] Таблица брендов: DDS.brands_Jan
+[2024-11-27T19:43:13.805+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-11-27T19:43:13.805+0000] {logging_mixin.py:190} INFO - [INFO] Установка соединения с PostgreSQL.
+[2024-11-27T19:43:13.866+0000] {logging_mixin.py:190} INFO - [INFO] Соединение установлено.
+[2024-11-27T19:43:13.866+0000] {logging_mixin.py:190} INFO - [INFO] Создание таблицы брендов 'DDS.brands_Jan' с уникальными брендами.
+[2024-11-27T19:44:06.113+0000] {logging_mixin.py:190} INFO - [ERROR] Произошла ошибка при создании таблицы брендов: SSL SYSCALL error: EOF detected
+[2024-11-27T19:44:06.114+0000] {logging_mixin.py:190} INFO - [INFO] Курсор закрыт.
+[2024-11-27T19:44:06.114+0000] {logging_mixin.py:190} INFO - [INFO] Соединение с PostgreSQL закрыто.
+[2024-11-27T19:44:06.115+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/extract_tables.py", line 112, in create_brands_table
+    cursor.execute(create_brands_table_query)
+psycopg2.OperationalError: SSL SYSCALL error: EOF detected
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/extract_tables.py", line 119, in create_brands_table
+    conn.rollback()
+psycopg2.InterfaceError: connection already closed
+[2024-11-27T19:44:06.127+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=extract_tables, task_id=create_brands_table, run_id=manual__2024-11-27T19:43:10.679137+00:00, execution_date=20241127T194310, start_date=20241127T194313, end_date=20241127T194406
+[2024-11-27T19:44:06.138+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-27T19:44:06.139+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 50 for task create_brands_table (connection already closed; 1114)
+Traceback (most recent call last):
+  File "/opt/airflow/dags/extract_tables.py", line 112, in create_brands_table
+    cursor.execute(create_brands_table_query)
+psycopg2.OperationalError: SSL SYSCALL error: EOF detected
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/extract_tables.py", line 119, in create_brands_table
+    conn.rollback()
+psycopg2.InterfaceError: connection already closed
+[2024-11-27T19:44:06.153+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-11-27T19:44:06.167+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-27T19:44:06.170+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

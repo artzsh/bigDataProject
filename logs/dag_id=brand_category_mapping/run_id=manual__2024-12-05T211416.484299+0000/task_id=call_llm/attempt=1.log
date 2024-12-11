@@ -1,0 +1,150 @@
+[2024-12-05T21:14:21.489+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-05T21:14:21.501+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:14:16.484299+00:00 [queued]>
+[2024-12-05T21:14:21.508+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:14:16.484299+00:00 [queued]>
+[2024-12-05T21:14:21.509+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-05T21:14:21.520+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): call_llm> on 2024-12-05 21:14:16.484299+00:00
+[2024-12-05T21:14:21.527+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3523) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-05T21:14:21.528+0000] {standard_task_runner.py:72} INFO - Started process 3524 to run task
+[2024-12-05T21:14:21.528+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brand_category_mapping', 'call_llm', 'manual__2024-12-05T21:14:16.484299+00:00', '--job-id', '774', '--raw', '--subdir', 'DAGS_FOLDER/llm_mapping.py', '--cfg-path', '/tmp/tmp2u2ti0vj']
+[2024-12-05T21:14:21.530+0000] {standard_task_runner.py:105} INFO - Job 774: Subtask call_llm
+[2024-12-05T21:14:21.570+0000] {task_command.py:467} INFO - Running <TaskInstance: brand_category_mapping.call_llm manual__2024-12-05T21:14:16.484299+00:00 [running]> on host c7780884450d
+[2024-12-05T21:14:21.638+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='brand_category_mapping' AIRFLOW_CTX_TASK_ID='call_llm' AIRFLOW_CTX_EXECUTION_DATE='2024-12-05T21:14:16.484299+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-05T21:14:16.484299+00:00'
+[2024-12-05T21:14:21.639+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-05T21:14:21.657+0000] {llm_mapping.py:155} INFO - Извлечён return_value: {'batch': ['caso', 'casp', 'casta', 'castelgarden', 'castorland', 'cat', 'cata', 'catimini', 'catlitter', 'catrice', 'catsan', 'catunltd', 'cavaletto', 'cavanova', 'cayee', 'cayin', 'ccm', 'cd', 'celebrat', 'celestron', 'celine', 'cellarprivate', 'cellio', 'cellucor', 'cempioneria'], 'next_index': 975}
+[2024-12-05T21:14:21.658+0000] {llm_mapping.py:127} INFO - Отправка запроса к LLM.
+[2024-12-05T21:14:22.093+0000] {logging_mixin.py:190} INFO - New g4f version: 0.3.8.3 (current: 0.3.8.0) | pip install -U g4f
+[2024-12-05T21:14:46.016+0000] {llm_mapping.py:141} INFO - Получен ответ от LLM: Here’s the mapping of the brands to their appropriate categories based on the information gathered:
+
+1. **caso** - appliances
+2. **casp** - stationery
+3. **casta** - apparel
+4. **castelgarden** - appliances, outdoor
+5. **castorland** - kids
+6. **cat** - auto
+7. **cata** - accessories
+8. **catimini** - kids, apparel
+9. **catlitter** - pet supplies
+10. **catrice** - cosmetics, accessories
+11. **catsan** - pet supplies
+12. **catunltd** - apparel
+13. **cavaletto** - stationery
+14. **cavanova** - apparel
+15. **cayee** - electronics
+16. **cayin** - electronics
+17. **ccm** - sport
+18. **cd** - electronics
+19. **celebrat** - stationery
+20. **celestron** - electronics
+21. **celine** - apparel, accessories
+22. **cellarprivate** - appliances
+23. **cellio** - accessories
+24. **cellucor** - sport, medicine
+25. **cempioneria** - appliances
+
+Now, here’s the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('caso', 'appliances'),
+    ('casp', 'stationery'),
+    ('casta', 'apparel'),
+    ('castelgarden', 'appliances'),
+    ('castelgarden', 'country_yard'),
+    ('castorland', 'kids'),
+    ('cat', 'auto'),
+    ('cata', 'accessories'),
+    ('catimini', 'kids'),
+    ('catimini', 'apparel'),
+    ('catlitter', 'pet supplies'),
+    ('catrice', 'accessories'),
+    ('catsan', 'pet supplies'),
+    ('catunltd', 'apparel'),
+    ('cavaletto', 'stationery'),
+    ('cavanova', 'apparel'),
+    ('cayee', 'electronics'),
+    ('cayin', 'electronics'),
+    ('ccm', 'sport'),
+    ('cd', 'electronics'),
+    ('celebrat', 'stationery'),
+    ('celestron', 'electronics'),
+    ('celine', 'apparel'),
+    ('celine', 'accessories'),
+    ('cellarprivate', 'appliances'),
+    ('cellio', 'accessories'),
+    ('cellucor', 'sport'),
+    ('cellucor', 'medicine'),
+    ('cempioneria', 'appliances');
+``` 
+
+This format provides a clear mapping of each brand to its respective categories.
+[2024-12-05T21:14:46.017+0000] {python.py:240} INFO - Done. Returned value was: Here’s the mapping of the brands to their appropriate categories based on the information gathered:
+
+1. **caso** - appliances
+2. **casp** - stationery
+3. **casta** - apparel
+4. **castelgarden** - appliances, outdoor
+5. **castorland** - kids
+6. **cat** - auto
+7. **cata** - accessories
+8. **catimini** - kids, apparel
+9. **catlitter** - pet supplies
+10. **catrice** - cosmetics, accessories
+11. **catsan** - pet supplies
+12. **catunltd** - apparel
+13. **cavaletto** - stationery
+14. **cavanova** - apparel
+15. **cayee** - electronics
+16. **cayin** - electronics
+17. **ccm** - sport
+18. **cd** - electronics
+19. **celebrat** - stationery
+20. **celestron** - electronics
+21. **celine** - apparel, accessories
+22. **cellarprivate** - appliances
+23. **cellio** - accessories
+24. **cellucor** - sport, medicine
+25. **cempioneria** - appliances
+
+Now, here’s the SQL INSERT statement:
+
+```sql
+INSERT INTO "DDS".brand_category_mapping (brand, category_index) VALUES
+    ('caso', 'appliances'),
+    ('casp', 'stationery'),
+    ('casta', 'apparel'),
+    ('castelgarden', 'appliances'),
+    ('castelgarden', 'country_yard'),
+    ('castorland', 'kids'),
+    ('cat', 'auto'),
+    ('cata', 'accessories'),
+    ('catimini', 'kids'),
+    ('catimini', 'apparel'),
+    ('catlitter', 'pet supplies'),
+    ('catrice', 'accessories'),
+    ('catsan', 'pet supplies'),
+    ('catunltd', 'apparel'),
+    ('cavaletto', 'stationery'),
+    ('cavanova', 'apparel'),
+    ('cayee', 'electronics'),
+    ('cayin', 'electronics'),
+    ('ccm', 'sport'),
+    ('cd', 'electronics'),
+    ('celebrat', 'stationery'),
+    ('celestron', 'electronics'),
+    ('celine', 'apparel'),
+    ('celine', 'accessories'),
+    ('cellarprivate', 'appliances'),
+    ('cellio', 'accessories'),
+    ('cellucor', 'sport'),
+    ('cellucor', 'medicine'),
+    ('cempioneria', 'appliances');
+``` 
+
+This format provides a clear mapping of each brand to its respective categories.
+[2024-12-05T21:14:46.058+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-05T21:14:46.060+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brand_category_mapping, task_id=call_llm, run_id=manual__2024-12-05T21:14:16.484299+00:00, execution_date=20241205T211416, start_date=20241205T211421, end_date=20241205T211446
+[2024-12-05T21:14:46.121+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-05T21:14:46.162+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-05T21:14:46.165+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

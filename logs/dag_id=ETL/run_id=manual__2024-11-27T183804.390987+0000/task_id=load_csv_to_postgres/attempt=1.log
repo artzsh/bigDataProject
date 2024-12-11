@@ -1,0 +1,53 @@
+[2024-11-27T18:38:10.182+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-27T18:38:10.327+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.load_csv_to_postgres manual__2024-11-27T18:38:04.390987+00:00 [queued]>
+[2024-11-27T18:38:10.333+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.load_csv_to_postgres manual__2024-11-27T18:38:04.390987+00:00 [queued]>
+[2024-11-27T18:38:10.334+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-11-27T18:38:10.345+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): load_csv_to_postgres> on 2024-11-27 18:38:04.390987+00:00
+[2024-11-27T18:38:10.351+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=135) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-27T18:38:10.353+0000] {standard_task_runner.py:72} INFO - Started process 137 to run task
+[2024-11-27T18:38:10.353+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'load_csv_to_postgres', 'manual__2024-11-27T18:38:04.390987+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpjz0ggvak']
+[2024-11-27T18:38:10.354+0000] {standard_task_runner.py:105} INFO - Job 17: Subtask load_csv_to_postgres
+[2024-11-27T18:38:10.389+0000] {task_command.py:467} INFO - Running <TaskInstance: ETL.load_csv_to_postgres manual__2024-11-27T18:38:04.390987+00:00 [running]> on host b6d44e76794e
+[2024-11-27T18:38:10.445+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='load_csv_to_postgres' AIRFLOW_CTX_EXECUTION_DATE='2024-11-27T18:38:04.390987+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-27T18:38:04.390987+00:00'
+[2024-11-27T18:38:10.446+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-27T18:38:10.467+0000] {etl.py:52} INFO - Обрабатываем ключ: 2
+[2024-11-27T18:38:10.468+0000] {etl.py:53} INFO - Информация о таблице: {'1': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Oct.csv.gz', 'table_name': 'eCommerce_Oct', 'brands_table_name': 'brands_Oct', 'categories_table_name': 'categories_Oct'}, '2': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz', 'table_name': 'eCommerce_Nov', 'brands_table_name': 'brands_Nov', 'categories_table_name': 'categories_Nov'}, '3': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2019-Dec.csv.gz', 'table_name': 'eCommerce_Dec', 'brands_table_name': 'brands_Dec', 'categories_table_name': 'categories_Dec'}, '4': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz', 'table_name': 'eCommerce_Jan', 'brands_table_name': 'brands_Jan', 'categories_table_name': 'categories_Jan'}, '5': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Feb.csv.gz', 'table_name': 'eCommerce_Feb', 'brands_table_name': 'brands_Feb', 'categories_table_name': 'categories_Feb'}, '6': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Mar.csv.gz', 'table_name': 'eCommerce_Mar', 'brands_table_name': 'brands_Mar', 'categories_table_name': 'categories_Mar'}, '7': {'dataset_url': 'https://data.rees46.com/datasets/marketplace/2020-Apr.csv.gz', 'table_name': 'eCommerce_Apr', 'brands_table_name': 'brands_Apr', 'categories_table_name': 'categories_Apr'}}
+[2024-11-27T18:38:10.468+0000] {etl.py:67} INFO - URL датасета: https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz
+[2024-11-27T18:38:10.469+0000] {etl.py:68} INFO - Название таблицы: DDS-STG.eCommerce_Nov
+[2024-11-27T18:38:10.472+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-11-27T18:38:10.473+0000] {etl.py:85} INFO - Файл сжат: True
+[2024-11-27T18:38:10.473+0000] {etl.py:95} INFO - Скачивание CSV-файла с URL: https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz
+[2024-11-27T18:38:11.315+0000] {etl.py:98} INFO - Файл успешно скачан.
+[2024-11-27T18:38:11.316+0000] {etl.py:101} INFO - Начало чтения CSV-файла в чанках.
+[2024-11-27T18:38:11.617+0000] {etl.py:111} INFO - Установка соединения с PostgreSQL.
+[2024-11-27T18:38:12.670+0000] {etl.py:114} INFO - Соединение установлено.
+[2024-11-27T18:38:13.805+0000] {etl.py:125} INFO - Обработка 100000 строк (первый чанк).
+[2024-11-27T18:38:13.806+0000] {etl.py:141} INFO - Создание таблицы 'DDS-STG.eCommerce_Nov' (если не существует).
+[2024-11-27T18:38:14.155+0000] {etl.py:154} INFO - Таблица 'DDS-STG.eCommerce_Nov' готова для загрузки данных.
+[2024-11-27T18:38:14.155+0000] {etl.py:157} INFO - Загрузка данных в таблицу 'DDS-STG.eCommerce_Nov' с использованием COPY.
+[2024-11-27T18:38:21.657+0000] {etl.py:177} INFO - Чанк 1 загружен: 100000 строк за 7.07 секунд. Всего загружено: 100000 строк.
+[2024-11-27T18:38:21.802+0000] {etl.py:184} INFO - Обработка 100000 строк.
+[2024-11-27T18:38:21.802+0000] {etl.py:186} INFO - Загрузка данных в таблицу 'DDS-STG.eCommerce_Nov' с использованием COPY.
+[2024-11-27T18:38:30.008+0000] {etl.py:199} INFO - Чанк 2 загружен: 100000 строк за 7.94 секунд. Всего загружено: 200000 строк.
+[2024-11-27T18:38:30.181+0000] {etl.py:184} INFO - Обработка 100000 строк.
+[2024-11-27T18:38:30.182+0000] {etl.py:186} INFO - Загрузка данных в таблицу 'DDS-STG.eCommerce_Nov' с использованием COPY.
+[2024-11-27T18:38:41.476+0000] {etl.py:199} INFO - Чанк 3 загружен: 100000 строк за 11.02 секунд. Всего загружено: 300000 строк.
+[2024-11-27T18:38:41.627+0000] {etl.py:184} INFO - Обработка 100000 строк.
+[2024-11-27T18:38:41.628+0000] {etl.py:186} INFO - Загрузка данных в таблицу 'DDS-STG.eCommerce_Nov' с использованием COPY.
+[2024-11-27T18:38:50.431+0000] {etl.py:199} INFO - Чанк 4 загружен: 100000 строк за 8.54 секунд. Всего загружено: 400000 строк.
+[2024-11-27T18:38:50.578+0000] {etl.py:184} INFO - Обработка 100000 строк.
+[2024-11-27T18:38:50.578+0000] {etl.py:186} INFO - Загрузка данных в таблицу 'DDS-STG.eCommerce_Nov' с использованием COPY.
+[2024-11-27T18:39:01.369+0000] {etl.py:199} INFO - Чанк 5 загружен: 100000 строк за 10.54 секунд. Всего загружено: 500000 строк.
+[2024-11-27T18:39:01.513+0000] {etl.py:184} INFO - Обработка 100000 строк.
+[2024-11-27T18:39:01.514+0000] {etl.py:186} INFO - Загрузка данных в таблицу 'DDS-STG.eCommerce_Nov' с использованием COPY.
+[2024-11-27T18:39:05.840+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-11-27T18:39:05.842+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-11-27T18:39:05.844+0000] {process_utils.py:132} INFO - Sending 15 to group 137. PIDs of all processes in the group: [137]
+[2024-11-27T18:39:05.845+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 137
+[2024-11-27T18:39:09.560+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-11-27T18:39:09.560+0000] {etl.py:220} INFO - Курсор закрыт.
+[2024-11-27T18:39:09.561+0000] {etl.py:223} INFO - Соединение с PostgreSQL закрыто.
+[2024-11-27T18:39:09.583+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-27T18:39:09.625+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=137, status='terminated', exitcode=0, started='18:38:09') (137) terminated with exit code 0
