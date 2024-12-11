@@ -222,3 +222,185 @@
 [2024-12-11T15:51:18.527+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:18.527+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2024-12-11T15:51:18.537+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:18.537+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
 [2024-12-11T15:51:18.556+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.080 seconds
+[2024-12-11T15:51:49.165+0000] {processor.py:186} INFO - Started process (PID=477) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:51:49.165+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:51:49.168+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:49.168+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:51:49.195+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:51:49.210+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:49.210+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:51:49.221+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:49.221+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:51:49.236+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.077 seconds
+[2024-12-11T15:52:19.702+0000] {processor.py:186} INFO - Started process (PID=490) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:52:19.703+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:52:19.705+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:52:19.705+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:52:19.731+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:52:19.747+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:52:19.747+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:52:19.758+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:52:19.758+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:52:19.772+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.075 seconds
+[2024-12-11T15:52:50.300+0000] {processor.py:186} INFO - Started process (PID=503) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:52:50.301+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:52:50.302+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:52:50.302+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:52:50.329+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:52:50.346+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:52:50.346+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:52:50.356+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:52:50.356+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:52:50.370+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.075 seconds
+[2024-12-11T15:53:20.833+0000] {processor.py:186} INFO - Started process (PID=516) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:53:20.834+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:53:20.835+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:53:20.835+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:53:20.858+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:53:20.872+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:53:20.872+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:53:20.881+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:53:20.881+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:53:20.896+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.067 seconds
+[2024-12-11T15:53:51.384+0000] {processor.py:186} INFO - Started process (PID=529) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:53:51.384+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:53:51.387+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:53:51.386+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:53:51.416+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:53:51.434+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:53:51.434+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:53:51.446+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:53:51.446+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:53:51.466+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.087 seconds
+[2024-12-11T15:54:21.977+0000] {processor.py:186} INFO - Started process (PID=542) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:54:21.978+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:54:21.979+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:54:21.979+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:54:22.005+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:54:22.019+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:54:22.019+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:54:22.029+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:54:22.029+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:54:22.045+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.073 seconds
+[2024-12-11T15:55:34.409+0000] {processor.py:186} INFO - Started process (PID=55) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:55:34.410+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:55:34.413+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:55:34.412+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:55:34.527+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:55:34.557+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:55:34.557+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:55:34.571+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:55:34.571+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:55:34.594+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.190 seconds
+[2024-12-11T15:56:05.026+0000] {processor.py:186} INFO - Started process (PID=74) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:56:05.027+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:56:05.030+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:56:05.030+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:56:05.057+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:56:05.074+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:56:05.074+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:56:05.086+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:56:05.086+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:56:05.110+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.089 seconds
+[2024-12-11T15:56:35.825+0000] {processor.py:186} INFO - Started process (PID=87) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:56:35.826+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:56:35.827+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:56:35.827+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:56:35.854+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:56:35.868+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:56:35.868+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:56:35.878+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:56:35.878+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:56:35.893+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.072 seconds
+[2024-12-11T15:57:06.560+0000] {processor.py:186} INFO - Started process (PID=100) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:57:06.561+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:57:06.563+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:57:06.562+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:57:06.696+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:57:06.708+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:57:06.708+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:57:06.716+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:57:06.716+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:57:06.728+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.172 seconds
+[2024-12-11T15:57:37.349+0000] {processor.py:186} INFO - Started process (PID=113) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:57:37.350+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:57:37.351+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:57:37.351+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:57:37.374+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:57:37.389+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:57:37.388+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:57:37.399+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:57:37.399+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:57:37.416+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.071 seconds
+[2024-12-11T15:58:07.925+0000] {processor.py:186} INFO - Started process (PID=126) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:58:07.926+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:58:07.928+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:58:07.927+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:58:07.953+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:58:07.968+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:58:07.968+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:58:07.978+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:58:07.978+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:58:07.996+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.075 seconds
+[2024-12-11T15:58:38.468+0000] {processor.py:186} INFO - Started process (PID=139) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:58:38.469+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:58:38.470+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:58:38.470+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:58:38.493+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:58:38.507+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:58:38.507+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:58:38.517+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:58:38.517+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:58:38.531+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.068 seconds
+[2024-12-11T15:59:09.087+0000] {processor.py:186} INFO - Started process (PID=152) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:59:09.088+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:59:09.089+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:59:09.089+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:59:09.114+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:59:09.130+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:59:09.130+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:59:09.140+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:59:09.140+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:59:09.157+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.075 seconds
+[2024-12-11T15:59:39.637+0000] {processor.py:186} INFO - Started process (PID=165) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:59:39.638+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T15:59:39.639+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:59:39.639+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:59:39.664+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T15:59:39.679+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:59:39.679+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:59:39.689+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:59:39.688+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T15:59:39.702+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.069 seconds
+[2024-12-11T16:00:10.175+0000] {processor.py:186} INFO - Started process (PID=178) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:00:10.177+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:00:10.181+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:00:10.181+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:00:10.239+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:00:10.280+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:00:10.280+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:00:10.303+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:00:10.302+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:00:10.322+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.157 seconds
+[2024-12-11T16:00:40.929+0000] {processor.py:186} INFO - Started process (PID=191) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:00:40.930+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:00:40.932+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:00:40.931+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:00:40.953+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:00:40.968+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:00:40.968+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:00:40.977+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:00:40.977+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:00:40.990+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.066 seconds
+[2024-12-11T16:01:11.464+0000] {processor.py:186} INFO - Started process (PID=204) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:01:11.465+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:01:11.467+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:01:11.466+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:01:11.490+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:01:11.504+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:01:11.504+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:01:11.514+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:01:11.514+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:01:11.528+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.068 seconds
+[2024-12-11T16:01:42.047+0000] {processor.py:186} INFO - Started process (PID=217) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:01:42.049+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:01:42.051+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:01:42.050+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:01:42.084+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:01:42.103+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:01:42.103+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:01:42.114+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:01:42.114+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:01:42.130+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.088 seconds
+[2024-12-11T16:02:12.632+0000] {processor.py:186} INFO - Started process (PID=231) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:02:12.633+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:02:12.635+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:02:12.635+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:02:12.665+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:02:12.689+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:02:12.688+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:02:12.703+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:02:12.703+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:02:12.723+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.097 seconds
+[2024-12-11T16:02:43.304+0000] {processor.py:186} INFO - Started process (PID=244) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:02:43.304+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:02:43.306+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:02:43.306+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:02:43.334+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:02:43.348+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:02:43.348+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:02:43.358+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:02:43.358+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:02:43.375+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.077 seconds
+[2024-12-11T16:03:13.955+0000] {processor.py:186} INFO - Started process (PID=257) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:03:13.956+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:03:13.958+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:03:13.957+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:03:13.985+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:03:14.002+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:03:14.001+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:03:14.012+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:03:14.012+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:03:14.028+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.078 seconds
+[2024-12-11T16:03:44.623+0000] {processor.py:186} INFO - Started process (PID=270) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:03:44.623+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:03:44.625+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:03:44.625+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:03:44.650+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:03:44.666+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:03:44.666+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:03:44.677+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:03:44.677+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:03:44.692+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.075 seconds
+[2024-12-11T16:04:15.215+0000] {processor.py:186} INFO - Started process (PID=283) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:04:15.216+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:04:15.217+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:04:15.217+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:04:15.241+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:04:15.254+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:04:15.254+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:04:15.266+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:04:15.266+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:04:15.285+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.074 seconds
+[2024-12-11T16:04:46.044+0000] {processor.py:186} INFO - Started process (PID=296) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:04:46.045+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:04:46.047+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:04:46.046+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:04:46.073+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:04:46.088+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:04:46.088+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:04:46.097+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:04:46.097+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:04:46.111+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.071 seconds
+[2024-12-11T16:05:11.666+0000] {processor.py:186} INFO - Started process (PID=309) to work on /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:05:11.668+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/insert_cleaned_data.py for tasks to queue
+[2024-12-11T16:05:11.672+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:05:11.671+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:05:11.729+0000] {processor.py:925} INFO - DAG(s) 'insert_cleaned_data' retrieved from /opt/airflow/dags/insert_cleaned_data.py
+[2024-12-11T16:05:11.746+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:05:11.746+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T16:05:11.757+0000] {logging_mixin.py:190} INFO - [2024-12-11T16:05:11.756+0000] {dag.py:4180} INFO - Setting next_dagrun for insert_cleaned_data to None, run_after=None
+[2024-12-11T16:05:11.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/insert_cleaned_data.py took 0.118 seconds

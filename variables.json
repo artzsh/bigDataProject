@@ -1,0 +1,50 @@
+{
+    "brand_batch_index": 0,
+    "distinct_var": 1,
+    "dm_var": 1,
+    "test_var": 1,
+    "tables_json": {
+        "1": {
+          "dataset_url": "https://data.rees46.com/datasets/marketplace/2019-Oct.csv.gz",
+          "table_name": "eCommerce_Oct",
+          "brands_table_name": "brands_Oct",
+          "categories_table_name": "categories_Oct"
+        },
+        "2": {
+          "dataset_url": "https://data.rees46.com/datasets/marketplace/2019-Nov.csv.gz",
+          "table_name": "eCommerce_Nov",
+          "brands_table_name": "brands_Nov",
+          "categories_table_name": "categories_Nov"
+        },
+        "3": {
+          "dataset_url": "https://data.rees46.com/datasets/marketplace/2019-Dec.csv.gz",
+          "table_name": "eCommerce_Dec",
+          "brands_table_name": "brands_Dec",
+          "categories_table_name": "categories_Dec"
+        },
+        "4": {
+          "dataset_url": "https://data.rees46.com/datasets/marketplace/2020-Jan.csv.gz",
+          "table_name": "eCommerce_Jan",
+          "brands_table_name": "brands_Jan",
+          "categories_table_name": "categories_Jan"
+        },
+        "5": {
+          "dataset_url": "https://data.rees46.com/datasets/marketplace/2020-Feb.csv.gz",
+          "table_name": "eCommerce_Feb",
+          "brands_table_name": "brands_Feb",
+          "categories_table_name": "categories_Feb"
+        },
+        "6": {
+          "dataset_url": "https://data.rees46.com/datasets/marketplace/2020-Mar.csv.gz",
+          "table_name": "eCommerce_Mar",
+          "brands_table_name": "brands_Mar",
+          "categories_table_name": "categories_Mar"
+        },
+        "7": {
+          "dataset_url": "https://data.rees46.com/datasets/marketplace/2020-Apr.csv.gz",
+          "table_name": "eCommerce_Apr",
+          "brands_table_name": "brands_Apr",
+          "categories_table_name": "categories_Apr"
+        }
+      }
+}
