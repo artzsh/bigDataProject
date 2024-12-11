@@ -208,3 +208,17 @@
 [2024-12-11T15:50:18.475+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:18.475+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2024-12-11T15:50:18.486+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:18.486+0000] {dag.py:4180} INFO - Setting next_dagrun for brand_category_mapping to None, run_after=None
 [2024-12-11T15:50:18.501+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/llm_mapping.py took 0.226 seconds
+[2024-12-11T15:50:48.918+0000] {processor.py:186} INFO - Started process (PID=453) to work on /opt/airflow/dags/llm_mapping.py
+[2024-12-11T15:50:48.919+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/llm_mapping.py for tasks to queue
+[2024-12-11T15:50:48.920+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:48.920+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/llm_mapping.py
+[2024-12-11T15:50:49.122+0000] {processor.py:925} INFO - DAG(s) 'brand_category_mapping' retrieved from /opt/airflow/dags/llm_mapping.py
+[2024-12-11T15:50:49.140+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:49.140+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:50:49.152+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:49.152+0000] {dag.py:4180} INFO - Setting next_dagrun for brand_category_mapping to None, run_after=None
+[2024-12-11T15:50:49.169+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/llm_mapping.py took 0.257 seconds
+[2024-12-11T15:51:19.510+0000] {processor.py:186} INFO - Started process (PID=466) to work on /opt/airflow/dags/llm_mapping.py
+[2024-12-11T15:51:19.511+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/llm_mapping.py for tasks to queue
+[2024-12-11T15:51:19.513+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:19.513+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/llm_mapping.py
+[2024-12-11T15:51:19.808+0000] {processor.py:925} INFO - DAG(s) 'brand_category_mapping' retrieved from /opt/airflow/dags/llm_mapping.py
+[2024-12-11T15:51:19.825+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:19.824+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:51:19.835+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:19.835+0000] {dag.py:4180} INFO - Setting next_dagrun for brand_category_mapping to None, run_after=None
+[2024-12-11T15:51:19.850+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/llm_mapping.py took 0.345 seconds

@@ -208,3 +208,17 @@
 [2024-12-11T15:50:17.289+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:17.288+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2024-12-11T15:50:17.299+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:17.299+0000] {dag.py:4180} INFO - Setting next_dagrun for extract_unique_values to None, run_after=None
 [2024-12-11T15:50:17.314+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/select_distinct_brands_categories.py took 0.062 seconds
+[2024-12-11T15:50:47.903+0000] {processor.py:186} INFO - Started process (PID=452) to work on /opt/airflow/dags/select_distinct_brands_categories.py
+[2024-12-11T15:50:47.904+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/select_distinct_brands_categories.py for tasks to queue
+[2024-12-11T15:50:47.906+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:47.906+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/select_distinct_brands_categories.py
+[2024-12-11T15:50:47.923+0000] {processor.py:925} INFO - DAG(s) 'extract_unique_values' retrieved from /opt/airflow/dags/select_distinct_brands_categories.py
+[2024-12-11T15:50:47.940+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:47.940+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:50:47.953+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:50:47.952+0000] {dag.py:4180} INFO - Setting next_dagrun for extract_unique_values to None, run_after=None
+[2024-12-11T15:50:47.976+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/select_distinct_brands_categories.py took 0.080 seconds
+[2024-12-11T15:51:18.488+0000] {processor.py:186} INFO - Started process (PID=465) to work on /opt/airflow/dags/select_distinct_brands_categories.py
+[2024-12-11T15:51:18.489+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/select_distinct_brands_categories.py for tasks to queue
+[2024-12-11T15:51:18.490+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:18.490+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/select_distinct_brands_categories.py
+[2024-12-11T15:51:18.510+0000] {processor.py:925} INFO - DAG(s) 'extract_unique_values' retrieved from /opt/airflow/dags/select_distinct_brands_categories.py
+[2024-12-11T15:51:18.527+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:18.527+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-11T15:51:18.537+0000] {logging_mixin.py:190} INFO - [2024-12-11T15:51:18.537+0000] {dag.py:4180} INFO - Setting next_dagrun for extract_unique_values to None, run_after=None
+[2024-12-11T15:51:18.553+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/select_distinct_brands_categories.py took 0.069 seconds
