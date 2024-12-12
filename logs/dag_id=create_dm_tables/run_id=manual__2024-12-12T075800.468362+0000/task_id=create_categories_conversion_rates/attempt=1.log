@@ -1,0 +1,72 @@
+[2024-12-12T07:59:25.446+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-12T07:59:25.460+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: create_dm_tables.create_categories_conversion_rates manual__2024-12-12T07:58:00.468362+00:00 [queued]>
+[2024-12-12T07:59:25.467+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: create_dm_tables.create_categories_conversion_rates manual__2024-12-12T07:58:00.468362+00:00 [queued]>
+[2024-12-12T07:59:25.468+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-12T07:59:25.480+0000] {taskinstance.py:2889} INFO - Executing <Task(PostgresOperator): create_categories_conversion_rates> on 2024-12-12 07:58:00.468362+00:00
+[2024-12-12T07:59:25.486+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=138) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-12T07:59:25.488+0000] {standard_task_runner.py:72} INFO - Started process 139 to run task
+[2024-12-12T07:59:25.488+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'create_dm_tables', 'create_categories_conversion_rates', 'manual__2024-12-12T07:58:00.468362+00:00', '--job-id', '2059', '--raw', '--subdir', 'DAGS_FOLDER/create_dm_tables.py', '--cfg-path', '/tmp/tmpb007y3j6']
+[2024-12-12T07:59:25.489+0000] {standard_task_runner.py:105} INFO - Job 2059: Subtask create_categories_conversion_rates
+[2024-12-12T07:59:25.526+0000] {task_command.py:467} INFO - Running <TaskInstance: create_dm_tables.create_categories_conversion_rates manual__2024-12-12T07:58:00.468362+00:00 [running]> on host eed3c171fcd4
+[2024-12-12T07:59:25.587+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='create_dm_tables' AIRFLOW_CTX_TASK_ID='create_categories_conversion_rates' AIRFLOW_CTX_EXECUTION_DATE='2024-12-12T07:58:00.468362+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-12T07:58:00.468362+00:00'
+[2024-12-12T07:59:25.588+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-12T07:59:25.597+0000] {sql.py:278} INFO - Executing: 
+            CREATE TABLE "DM".categories_conversion_rates AS
+            SELECT 
+                split_part(category_code, '.', 1) AS top_category, 
+                COUNT(*) FILTER (WHERE event_type = 'cart') AS add_to_cart_count, 
+                COUNT(*) FILTER (WHERE event_type = 'purchase') AS purchase_count, 
+                ROUND( 
+                    COUNT(*) FILTER (WHERE event_type = 'purchase')::decimal / NULLIF(COUNT(*) FILTER (WHERE event_type = 'cart'), 0), 
+                    4 
+                ) AS conversion_rate,
+                CASE 
+                    WHEN split_part(category_code, '.', 1) IN ('auto', 'computers', 'medicine', 'construction') THEN 'Узконаправленные товары'
+                    ELSE 'Широконаправленные'
+                END AS category
+            FROM 
+                "DDS".final_table 
+            WHERE 
+                event_type IN ('cart', 'purchase') AND split_part(category_code, '.', 1) != 'electronics' 
+            GROUP BY 
+                top_category 
+            HAVING 
+                COUNT(*) FILTER (WHERE event_type = 'cart') > 0 
+            ORDER BY 
+                conversion_rate DESC;
+        
+[2024-12-12T07:59:25.605+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-12T07:59:25.613+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-12T07:59:26.331+0000] {sql.py:544} INFO - Running statement: 
+            CREATE TABLE "DM".categories_conversion_rates AS
+            SELECT 
+                split_part(category_code, '.', 1) AS top_category, 
+                COUNT(*) FILTER (WHERE event_type = 'cart') AS add_to_cart_count, 
+                COUNT(*) FILTER (WHERE event_type = 'purchase') AS purchase_count, 
+                ROUND( 
+                    COUNT(*) FILTER (WHERE event_type = 'purchase')::decimal / NULLIF(COUNT(*) FILTER (WHERE event_type = 'cart'), 0), 
+                    4 
+                ) AS conversion_rate,
+                CASE 
+                    WHEN split_part(category_code, '.', 1) IN ('auto', 'computers', 'medicine', 'construction') THEN 'Узконаправленные товары'
+                    ELSE 'Широконаправленные'
+                END AS category
+            FROM 
+                "DDS".final_table 
+            WHERE 
+                event_type IN ('cart', 'purchase') AND split_part(category_code, '.', 1) != 'electronics' 
+            GROUP BY 
+                top_category 
+            HAVING 
+                COUNT(*) FILTER (WHERE event_type = 'cart') > 0 
+            ORDER BY 
+                conversion_rate DESC;
+        , parameters: None
+[2024-12-12T07:59:50.794+0000] {sql.py:553} INFO - Rows affected: 12
+[2024-12-12T07:59:50.896+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-12T07:59:50.896+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=create_dm_tables, task_id=create_categories_conversion_rates, run_id=manual__2024-12-12T07:58:00.468362+00:00, execution_date=20241212T075800, start_date=20241212T075925, end_date=20241212T075950
+[2024-12-12T07:59:50.948+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-12T07:59:50.961+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-12T07:59:50.964+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

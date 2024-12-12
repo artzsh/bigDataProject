@@ -1,0 +1,70 @@
+[2024-12-12T07:59:51.905+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-12T07:59:51.918+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: create_dm_tables.create_black_friday_sales manual__2024-12-12T07:58:00.468362+00:00 [queued]>
+[2024-12-12T07:59:51.925+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: create_dm_tables.create_black_friday_sales manual__2024-12-12T07:58:00.468362+00:00 [queued]>
+[2024-12-12T07:59:51.925+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-12T07:59:51.936+0000] {taskinstance.py:2889} INFO - Executing <Task(PostgresOperator): create_black_friday_sales> on 2024-12-12 07:58:00.468362+00:00
+[2024-12-12T07:59:51.941+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=141) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-12T07:59:51.943+0000] {standard_task_runner.py:72} INFO - Started process 142 to run task
+[2024-12-12T07:59:51.942+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'create_dm_tables', 'create_black_friday_sales', 'manual__2024-12-12T07:58:00.468362+00:00', '--job-id', '2060', '--raw', '--subdir', 'DAGS_FOLDER/create_dm_tables.py', '--cfg-path', '/tmp/tmp7y78fztd']
+[2024-12-12T07:59:51.943+0000] {standard_task_runner.py:105} INFO - Job 2060: Subtask create_black_friday_sales
+[2024-12-12T07:59:51.978+0000] {task_command.py:467} INFO - Running <TaskInstance: create_dm_tables.create_black_friday_sales manual__2024-12-12T07:58:00.468362+00:00 [running]> on host eed3c171fcd4
+[2024-12-12T07:59:52.036+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='create_dm_tables' AIRFLOW_CTX_TASK_ID='create_black_friday_sales' AIRFLOW_CTX_EXECUTION_DATE='2024-12-12T07:58:00.468362+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-12T07:58:00.468362+00:00'
+[2024-12-12T07:59:52.037+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-12T07:59:52.048+0000] {sql.py:278} INFO - Executing: 
+            CREATE TABLE "DM".black_friday_sales AS
+            WITH novembertable AS (
+                SELECT 
+                    count(*) AS purchases, 
+                    DATE(ft.event_time) AS day
+                FROM "DDS".final_table ft 
+                WHERE ft.event_type = 'purchase' 
+                  AND DATE(ft.event_time) BETWEEN '2019-11-10' AND '2019-12-03'
+                GROUP BY DATE(ft.event_time)
+            )
+            SELECT 
+                purchases, 
+                day,
+                CASE 
+                    WHEN day BETWEEN '2019-11-22' AND '2019-12-02' THEN 'Black Friday'
+                    WHEN day = '2019-12-03' THEN 'Last sale day'
+                    ELSE 'no sale'
+                END AS saleday
+            FROM novembertable
+            LEFT JOIN "DDS".holidays h 
+                ON h."date" = novembertable.day
+            ORDER BY day;
+        
+[2024-12-12T07:59:52.055+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-12T07:59:52.061+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-12T07:59:52.780+0000] {sql.py:544} INFO - Running statement: 
+            CREATE TABLE "DM".black_friday_sales AS
+            WITH novembertable AS (
+                SELECT 
+                    count(*) AS purchases, 
+                    DATE(ft.event_time) AS day
+                FROM "DDS".final_table ft 
+                WHERE ft.event_type = 'purchase' 
+                  AND DATE(ft.event_time) BETWEEN '2019-11-10' AND '2019-12-03'
+                GROUP BY DATE(ft.event_time)
+            )
+            SELECT 
+                purchases, 
+                day,
+                CASE 
+                    WHEN day BETWEEN '2019-11-22' AND '2019-12-02' THEN 'Black Friday'
+                    WHEN day = '2019-12-03' THEN 'Last sale day'
+                    ELSE 'no sale'
+                END AS saleday
+            FROM novembertable
+            LEFT JOIN "DDS".holidays h 
+                ON h."date" = novembertable.day
+            ORDER BY day;
+        , parameters: None
+[2024-12-12T08:00:35.848+0000] {sql.py:553} INFO - Rows affected: 23
+[2024-12-12T08:00:35.944+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-12T08:00:35.945+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=create_dm_tables, task_id=create_black_friday_sales, run_id=manual__2024-12-12T07:58:00.468362+00:00, execution_date=20241212T075800, start_date=20241212T075951, end_date=20241212T080035
+[2024-12-12T08:00:35.973+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-12T08:00:35.984+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-12T08:00:35.987+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

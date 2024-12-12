@@ -1,0 +1,379 @@
+[2024-12-12T07:55:04.541+0000] {processor.py:186} INFO - Started process (PID=66) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:55:04.542+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:55:04.544+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.544+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:55:04.582+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:55:04.822+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.821+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:create_dm_tables
+[2024-12-12T07:55:04.848+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.847+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:create_dm_tables
+[2024-12-12T07:55:04.864+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.863+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:create_dm_tables
+[2024-12-12T07:55:04.885+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.884+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:create_dm_tables
+[2024-12-12T07:55:04.904+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.903+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:create_dm_tables
+[2024-12-12T07:55:04.921+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.920+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:create_dm_tables
+[2024-12-12T07:55:04.930+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.929+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:create_dm_tables
+[2024-12-12T07:55:04.931+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.931+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:55:04.946+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.945+0000] {dag.py:3262} INFO - Creating ORM DAG for create_dm_tables
+[2024-12-12T07:55:04.947+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:04.947+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:55:04.966+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.430 seconds
+[2024-12-12T07:55:35.796+0000] {processor.py:186} INFO - Started process (PID=81) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:55:35.797+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:55:35.799+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:35.798+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:55:35.815+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:55:35.833+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:35.833+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:55:35.844+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:55:35.844+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:55:35.857+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.066 seconds
+[2024-12-12T07:56:06.157+0000] {processor.py:186} INFO - Started process (PID=95) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:56:06.158+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:56:06.160+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:56:06.160+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:56:06.175+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:56:06.193+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:56:06.193+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:56:06.204+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:56:06.204+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:56:06.220+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.068 seconds
+[2024-12-12T07:56:37.040+0000] {processor.py:186} INFO - Started process (PID=109) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:56:37.041+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:56:37.043+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:56:37.042+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:56:37.081+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:56:37.118+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:56:37.118+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:56:37.285+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:56:37.285+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:56:37.300+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.264 seconds
+[2024-12-12T07:57:07.607+0000] {processor.py:186} INFO - Started process (PID=123) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:07.611+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:57:07.617+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:07.617+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:07.656+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:07.699+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:07.698+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:57:07.719+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:07.719+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:57:07.738+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.143 seconds
+[2024-12-12T07:57:38.412+0000] {processor.py:186} INFO - Started process (PID=137) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:38.413+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:57:38.414+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:38.414+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:38.427+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:38.444+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:38.444+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:57:38.455+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:38.455+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:57:38.471+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.063 seconds
+[2024-12-12T07:57:52.024+0000] {processor.py:186} INFO - Started process (PID=150) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:52.025+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:57:52.027+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:52.027+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:52.046+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:52.186+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:52.185+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:57:52.204+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:52.204+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:57:52.255+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.236 seconds
+[2024-12-12T07:57:57.081+0000] {processor.py:186} INFO - Started process (PID=151) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:57.082+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:57:57.084+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:57.084+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:57.097+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:57:57.106+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:57.106+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:57:57.118+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:57:57.118+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:57:57.135+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.059 seconds
+[2024-12-12T07:58:27.727+0000] {processor.py:186} INFO - Started process (PID=165) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:58:27.728+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:58:27.730+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:58:27.729+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:58:27.745+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:58:27.764+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:58:27.764+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:58:27.775+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:58:27.774+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:58:27.791+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.068 seconds
+[2024-12-12T07:58:58.657+0000] {processor.py:186} INFO - Started process (PID=179) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:58:58.658+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:58:58.660+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:58:58.659+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:58:58.674+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:58:58.689+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:58:58.689+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:58:58.700+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:58:58.700+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:58:58.716+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.063 seconds
+[2024-12-12T07:59:29.326+0000] {processor.py:186} INFO - Started process (PID=193) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:59:29.327+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T07:59:29.329+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:59:29.329+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:59:29.342+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T07:59:29.357+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:59:29.357+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T07:59:29.367+0000] {logging_mixin.py:190} INFO - [2024-12-12T07:59:29.367+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T07:59:29.382+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.061 seconds
+[2024-12-12T08:00:00.025+0000] {processor.py:186} INFO - Started process (PID=207) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:00:00.026+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:00:00.028+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:00:00.028+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:00:00.041+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:00:00.058+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:00:00.058+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:00:00.070+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:00:00.069+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:00:00.088+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.068 seconds
+[2024-12-12T08:00:30.745+0000] {processor.py:186} INFO - Started process (PID=221) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:00:30.745+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:00:30.747+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:00:30.747+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:00:30.761+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:00:30.777+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:00:30.777+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:00:30.788+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:00:30.788+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:00:30.803+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.063 seconds
+[2024-12-12T08:01:01.402+0000] {processor.py:186} INFO - Started process (PID=235) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:01:01.403+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:01:01.405+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:01:01.405+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:01:01.421+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:01:01.437+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:01:01.436+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:01:01.448+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:01:01.448+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:01:01.463+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.065 seconds
+[2024-12-12T08:01:32.091+0000] {processor.py:186} INFO - Started process (PID=249) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:01:32.092+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:01:32.094+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:01:32.093+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:01:32.108+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:01:32.126+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:01:32.125+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:01:32.137+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:01:32.137+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:01:32.155+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.068 seconds
+[2024-12-12T08:02:02.882+0000] {processor.py:186} INFO - Started process (PID=263) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:02:02.883+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:02:02.885+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:02:02.885+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:02:02.899+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:02:02.914+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:02:02.914+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:02:02.927+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:02:02.926+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:02:02.942+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.064 seconds
+[2024-12-12T08:02:33.547+0000] {processor.py:186} INFO - Started process (PID=277) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:02:33.550+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:02:33.555+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:02:33.554+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:02:33.572+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:02:33.589+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:02:33.588+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:02:33.600+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:02:33.600+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:02:33.615+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.077 seconds
+[2024-12-12T08:03:04.325+0000] {processor.py:186} INFO - Started process (PID=291) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:03:04.326+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:03:04.328+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:03:04.328+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:03:04.343+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:03:04.362+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:03:04.361+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:03:04.373+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:03:04.373+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:03:04.390+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.070 seconds
+[2024-12-12T08:03:34.972+0000] {processor.py:186} INFO - Started process (PID=305) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:03:34.973+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:03:34.975+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:03:34.975+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:03:34.990+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:03:35.006+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:03:35.006+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:03:35.016+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:03:35.016+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:03:35.033+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.065 seconds
+[2024-12-12T08:04:05.653+0000] {processor.py:186} INFO - Started process (PID=319) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:04:05.654+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:04:05.656+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:04:05.655+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:04:05.669+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:04:05.685+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:04:05.685+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:04:05.696+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:04:05.696+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:04:05.710+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.061 seconds
+[2024-12-12T08:04:36.491+0000] {processor.py:186} INFO - Started process (PID=333) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:04:36.491+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:04:36.493+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:04:36.493+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:04:36.505+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:04:36.520+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:04:36.520+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:04:36.530+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:04:36.530+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:04:36.544+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.057 seconds
+[2024-12-12T08:05:07.463+0000] {processor.py:186} INFO - Started process (PID=347) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:05:07.464+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:05:07.466+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:05:07.466+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:05:07.481+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:05:07.496+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:05:07.496+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:05:07.507+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:05:07.507+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:05:07.523+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.064 seconds
+[2024-12-12T08:05:38.274+0000] {processor.py:186} INFO - Started process (PID=361) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:05:38.275+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:05:38.277+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:05:38.276+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:05:38.289+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:05:38.305+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:05:38.305+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:05:38.316+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:05:38.315+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:05:38.330+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.061 seconds
+[2024-12-12T08:06:09.003+0000] {processor.py:186} INFO - Started process (PID=375) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:06:09.004+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:06:09.005+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:06:09.005+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:06:09.019+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:06:09.035+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:06:09.035+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:06:09.045+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:06:09.044+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:06:09.058+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.060 seconds
+[2024-12-12T08:06:39.617+0000] {processor.py:186} INFO - Started process (PID=396) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:06:39.618+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:06:39.620+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:06:39.620+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:06:39.632+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:06:39.647+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:06:39.647+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:06:39.657+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:06:39.657+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:06:39.670+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.057 seconds
+[2024-12-12T08:07:10.292+0000] {processor.py:186} INFO - Started process (PID=410) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:07:10.293+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:07:10.295+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:07:10.295+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:07:10.309+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:07:10.324+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:07:10.324+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:07:10.333+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:07:10.333+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:07:10.347+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.060 seconds
+[2024-12-12T08:07:41.006+0000] {processor.py:186} INFO - Started process (PID=423) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:07:41.007+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:07:41.008+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:07:41.008+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:07:41.023+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:07:41.042+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:07:41.042+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:07:41.055+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:07:41.055+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:07:41.070+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.069 seconds
+[2024-12-12T08:08:11.809+0000] {processor.py:186} INFO - Started process (PID=437) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:08:11.810+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:08:11.812+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:08:11.812+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:08:11.825+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:08:11.843+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:08:11.842+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:08:11.854+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:08:11.854+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:08:11.871+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.067 seconds
+[2024-12-12T08:08:42.460+0000] {processor.py:186} INFO - Started process (PID=451) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:08:42.461+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:08:42.463+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:08:42.463+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:08:42.476+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:08:42.491+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:08:42.490+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:08:42.501+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:08:42.501+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:08:42.514+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.059 seconds
+[2024-12-12T08:09:13.218+0000] {processor.py:186} INFO - Started process (PID=465) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:09:13.219+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:09:13.221+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:09:13.221+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:09:13.234+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:09:13.249+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:09:13.249+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:09:13.260+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:09:13.260+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:09:13.275+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.062 seconds
+[2024-12-12T08:09:43.957+0000] {processor.py:186} INFO - Started process (PID=479) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:09:43.958+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:09:43.960+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:09:43.959+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:09:43.971+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:09:43.985+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:09:43.984+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:09:43.994+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:09:43.994+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:09:44.008+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.055 seconds
+[2024-12-12T08:10:14.801+0000] {processor.py:186} INFO - Started process (PID=493) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:10:14.802+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:10:14.804+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:10:14.804+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:10:14.816+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:10:14.829+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:10:14.829+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:10:14.839+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:10:14.839+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:10:14.852+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.054 seconds
+[2024-12-12T08:10:45.461+0000] {processor.py:186} INFO - Started process (PID=507) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:10:45.462+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:10:45.464+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:10:45.464+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:10:45.478+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:10:45.498+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:10:45.497+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:10:45.507+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:10:45.507+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:10:45.520+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.063 seconds
+[2024-12-12T08:11:16.243+0000] {processor.py:186} INFO - Started process (PID=521) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:11:16.244+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:11:16.246+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:11:16.245+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:11:16.263+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:11:16.280+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:11:16.280+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:11:16.291+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:11:16.291+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:11:16.307+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.069 seconds
+[2024-12-12T08:11:46.880+0000] {processor.py:186} INFO - Started process (PID=535) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:11:46.881+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:11:46.883+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:11:46.882+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:11:46.894+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:11:46.909+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:11:46.908+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:11:46.919+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:11:46.918+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:11:46.932+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.056 seconds
+[2024-12-12T08:12:17.637+0000] {processor.py:186} INFO - Started process (PID=549) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:12:17.638+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:12:17.640+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:12:17.640+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:12:17.652+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:12:17.666+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:12:17.665+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:12:17.675+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:12:17.675+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:12:17.690+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.057 seconds
+[2024-12-12T08:12:48.289+0000] {processor.py:186} INFO - Started process (PID=563) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:12:48.290+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:12:48.292+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:12:48.292+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:12:48.307+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:12:48.323+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:12:48.323+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:12:48.336+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:12:48.335+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:12:48.351+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.067 seconds
+[2024-12-12T08:13:18.973+0000] {processor.py:186} INFO - Started process (PID=577) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:13:18.974+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:13:18.976+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:13:18.976+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:13:18.989+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:13:19.005+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:13:19.005+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:13:19.015+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:13:19.015+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:13:19.030+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.061 seconds
+[2024-12-12T08:13:49.833+0000] {processor.py:186} INFO - Started process (PID=591) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:13:49.834+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:13:49.835+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:13:49.835+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:13:49.847+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:13:49.861+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:13:49.861+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:13:49.871+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:13:49.871+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:13:49.890+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.061 seconds
+[2024-12-12T08:14:20.483+0000] {processor.py:186} INFO - Started process (PID=605) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:14:20.484+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:14:20.486+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:14:20.485+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:14:20.502+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:14:20.518+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:14:20.518+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:14:20.528+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:14:20.527+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:14:20.540+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.062 seconds
+[2024-12-12T08:14:51.557+0000] {processor.py:186} INFO - Started process (PID=619) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:14:51.558+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:14:51.560+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:14:51.560+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:14:51.573+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:14:51.588+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:14:51.588+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:14:51.598+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:14:51.598+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:14:51.613+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.060 seconds
+[2024-12-12T08:15:22.243+0000] {processor.py:186} INFO - Started process (PID=632) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:15:22.244+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:15:22.246+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:15:22.246+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:15:22.259+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:15:22.273+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:15:22.273+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:15:22.283+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:15:22.283+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:15:22.296+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.058 seconds
+[2024-12-12T08:15:53.123+0000] {processor.py:186} INFO - Started process (PID=646) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:15:53.124+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:15:53.126+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:15:53.125+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:15:53.137+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:15:53.151+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:15:53.151+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:15:53.162+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:15:53.162+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:15:53.178+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.059 seconds
+[2024-12-12T08:16:24.015+0000] {processor.py:186} INFO - Started process (PID=660) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:16:24.016+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:16:24.018+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:16:24.017+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:16:24.030+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:16:24.046+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:16:24.046+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:16:24.055+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:16:24.055+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:16:24.070+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.060 seconds
+[2024-12-12T08:16:54.933+0000] {processor.py:186} INFO - Started process (PID=674) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:16:54.933+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:16:54.935+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:16:54.935+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:16:54.947+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:16:54.961+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:16:54.961+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:16:54.970+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:16:54.970+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:16:54.983+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.055 seconds
+[2024-12-12T08:17:25.583+0000] {processor.py:186} INFO - Started process (PID=688) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:17:25.583+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:17:25.585+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:17:25.585+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:17:25.597+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:17:25.612+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:17:25.611+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:17:25.621+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:17:25.621+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:17:25.636+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.058 seconds
+[2024-12-12T08:17:56.240+0000] {processor.py:186} INFO - Started process (PID=702) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:17:56.241+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:17:56.243+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:17:56.242+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:17:56.255+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:17:56.270+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:17:56.270+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:17:56.280+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:17:56.279+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:17:56.294+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.059 seconds
+[2024-12-12T08:18:26.866+0000] {processor.py:186} INFO - Started process (PID=716) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:18:26.867+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:18:26.869+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:18:26.869+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:18:26.886+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:18:26.901+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:18:26.901+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:18:26.911+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:18:26.911+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:18:26.925+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.064 seconds
+[2024-12-12T08:18:57.515+0000] {processor.py:186} INFO - Started process (PID=730) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:18:57.515+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:18:57.518+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:18:57.517+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:18:57.532+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:18:57.548+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:18:57.547+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:18:57.558+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:18:57.558+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:18:57.573+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.063 seconds
+[2024-12-12T08:19:28.410+0000] {processor.py:186} INFO - Started process (PID=744) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:19:28.411+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:19:28.412+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:19:28.412+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:19:28.425+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:19:28.440+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:19:28.439+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:19:28.449+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:19:28.449+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:19:28.462+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.057 seconds
+[2024-12-12T08:19:59.052+0000] {processor.py:186} INFO - Started process (PID=758) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:19:59.052+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:19:59.054+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:19:59.054+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:19:59.066+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:19:59.081+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:19:59.081+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:19:59.092+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:19:59.092+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:19:59.107+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.060 seconds
+[2024-12-12T08:20:29.953+0000] {processor.py:186} INFO - Started process (PID=772) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:20:29.954+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:20:29.956+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:20:29.956+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:20:29.970+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:20:29.985+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:20:29.985+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:20:29.995+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:20:29.995+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:20:30.008+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.060 seconds
+[2024-12-12T08:21:00.975+0000] {processor.py:186} INFO - Started process (PID=786) to work on /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:21:00.976+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/create_dm_tables.py for tasks to queue
+[2024-12-12T08:21:00.978+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:21:00.978+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:21:00.992+0000] {processor.py:925} INFO - DAG(s) 'create_dm_tables' retrieved from /opt/airflow/dags/create_dm_tables.py
+[2024-12-12T08:21:01.008+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:21:01.008+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-12T08:21:01.020+0000] {logging_mixin.py:190} INFO - [2024-12-12T08:21:01.020+0000] {dag.py:4180} INFO - Setting next_dagrun for create_dm_tables to None, run_after=None
+[2024-12-12T08:21:01.037+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/create_dm_tables.py took 0.067 seconds

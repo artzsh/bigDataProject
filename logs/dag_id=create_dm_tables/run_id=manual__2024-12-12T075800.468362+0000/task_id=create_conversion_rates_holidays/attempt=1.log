@@ -1,0 +1,126 @@
+[2024-12-12T07:58:00.877+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-12T07:58:00.891+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: create_dm_tables.create_conversion_rates_holidays manual__2024-12-12T07:58:00.468362+00:00 [queued]>
+[2024-12-12T07:58:00.898+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: create_dm_tables.create_conversion_rates_holidays manual__2024-12-12T07:58:00.468362+00:00 [queued]>
+[2024-12-12T07:58:00.899+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2024-12-12T07:58:00.912+0000] {taskinstance.py:2889} INFO - Executing <Task(PostgresOperator): create_conversion_rates_holidays> on 2024-12-12 07:58:00.468362+00:00
+[2024-12-12T07:58:00.917+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=114) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-12T07:58:00.919+0000] {standard_task_runner.py:72} INFO - Started process 115 to run task
+[2024-12-12T07:58:00.919+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'create_dm_tables', 'create_conversion_rates_holidays', 'manual__2024-12-12T07:58:00.468362+00:00', '--job-id', '2058', '--raw', '--subdir', 'DAGS_FOLDER/create_dm_tables.py', '--cfg-path', '/tmp/tmpdqdrtiq_']
+[2024-12-12T07:58:00.920+0000] {standard_task_runner.py:105} INFO - Job 2058: Subtask create_conversion_rates_holidays
+[2024-12-12T07:58:00.959+0000] {task_command.py:467} INFO - Running <TaskInstance: create_dm_tables.create_conversion_rates_holidays manual__2024-12-12T07:58:00.468362+00:00 [running]> on host eed3c171fcd4
+[2024-12-12T07:58:01.022+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='artzsh' AIRFLOW_CTX_DAG_ID='create_dm_tables' AIRFLOW_CTX_TASK_ID='create_conversion_rates_holidays' AIRFLOW_CTX_EXECUTION_DATE='2024-12-12T07:58:00.468362+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-12T07:58:00.468362+00:00'
+[2024-12-12T07:58:01.023+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-12T07:58:01.033+0000] {sql.py:278} INFO - Executing: 
+            CREATE TABLE "DM".conversion_rates_holidays AS
+            WITH RankedEvents AS ( 
+                SELECT 
+                    ft.user_id, 
+                    ft.user_session, 
+                    ft.event_time, 
+                    ft.event_type, 
+                    ft.product_id 
+                FROM "DDS".final_table ft 
+                JOIN "DDS".holidays h ON ft.event_time BETWEEN h.start_date AND h.end_date 
+                WHERE h.holiday IN ('New Year', 'Black Friday', 'Valentines Day', 'International Womens Day', 'Defender of the Fatherland Day') 
+                    AND ft.event_type IN ('cart', 'purchase') 
+            ), 
+            FilteredEvents AS ( 
+                SELECT 
+                    user_id, 
+                    user_session, 
+                    product_id, 
+                    MIN(CASE WHEN event_type = 'cart' THEN event_time END) as added_to_cart_time, 
+                    MAX(CASE WHEN event_type = 'purchase' THEN event_time END) as purchased_time 
+                FROM RankedEvents 
+                GROUP BY user_id, user_session, product_id 
+                HAVING COUNT(*) = 2 
+            ), 
+            Purchase_Hol AS ( 
+                SELECT count(*) as holpurchase_count 
+                FROM FilteredEvents 
+                WHERE added_to_cart_time < purchased_time 
+            ), 
+            Cart_Hol AS ( 
+                SELECT count(*) as holcart_count 
+                FROM "DDS".final_table ft  
+                JOIN "DDS".holidays h ON ft.event_time BETWEEN h.start_date AND h.end_date  
+                WHERE h.holiday IN ('Black Friday', 'New Year', 'Valentines Day', 'International Womens Day', 'Defender of the Fatherland Day') 
+                    AND ft.event_type = 'cart' 
+            ), 
+            Purchase_all AS ( 
+                SELECT count(*) as overallpurchase 
+                FROM "DDS".final_table ft  
+                WHERE ft.event_type = 'purchase' 
+            ), 
+            Cart_all AS ( 
+                SELECT count(*) as overallcart 
+                FROM "DDS".final_table ft  
+                WHERE ft.event_type = 'cart' 
+            ) 
+            SELECT 
+                (holpurchase_count::numeric / holcart_count) as holiday_conversion,  
+                ((overallpurchase - holpurchase_count)::numeric / (overallcart - holcart_count)) as overall_conversion 
+            FROM Purchase_Hol, Cart_Hol, Purchase_all, Cart_all;
+        
+[2024-12-12T07:58:01.041+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-12T07:58:01.048+0000] {base.py:84} INFO - Retrieving connection 'database_cloud'
+[2024-12-12T07:58:01.741+0000] {sql.py:544} INFO - Running statement: 
+            CREATE TABLE "DM".conversion_rates_holidays AS
+            WITH RankedEvents AS ( 
+                SELECT 
+                    ft.user_id, 
+                    ft.user_session, 
+                    ft.event_time, 
+                    ft.event_type, 
+                    ft.product_id 
+                FROM "DDS".final_table ft 
+                JOIN "DDS".holidays h ON ft.event_time BETWEEN h.start_date AND h.end_date 
+                WHERE h.holiday IN ('New Year', 'Black Friday', 'Valentines Day', 'International Womens Day', 'Defender of the Fatherland Day') 
+                    AND ft.event_type IN ('cart', 'purchase') 
+            ), 
+            FilteredEvents AS ( 
+                SELECT 
+                    user_id, 
+                    user_session, 
+                    product_id, 
+                    MIN(CASE WHEN event_type = 'cart' THEN event_time END) as added_to_cart_time, 
+                    MAX(CASE WHEN event_type = 'purchase' THEN event_time END) as purchased_time 
+                FROM RankedEvents 
+                GROUP BY user_id, user_session, product_id 
+                HAVING COUNT(*) = 2 
+            ), 
+            Purchase_Hol AS ( 
+                SELECT count(*) as holpurchase_count 
+                FROM FilteredEvents 
+                WHERE added_to_cart_time < purchased_time 
+            ), 
+            Cart_Hol AS ( 
+                SELECT count(*) as holcart_count 
+                FROM "DDS".final_table ft  
+                JOIN "DDS".holidays h ON ft.event_time BETWEEN h.start_date AND h.end_date  
+                WHERE h.holiday IN ('Black Friday', 'New Year', 'Valentines Day', 'International Womens Day', 'Defender of the Fatherland Day') 
+                    AND ft.event_type = 'cart' 
+            ), 
+            Purchase_all AS ( 
+                SELECT count(*) as overallpurchase 
+                FROM "DDS".final_table ft  
+                WHERE ft.event_type = 'purchase' 
+            ), 
+            Cart_all AS ( 
+                SELECT count(*) as overallcart 
+                FROM "DDS".final_table ft  
+                WHERE ft.event_type = 'cart' 
+            ) 
+            SELECT 
+                (holpurchase_count::numeric / holcart_count) as holiday_conversion,  
+                ((overallpurchase - holpurchase_count)::numeric / (overallcart - holcart_count)) as overall_conversion 
+            FROM Purchase_Hol, Cart_Hol, Purchase_all, Cart_all;
+        , parameters: None
+[2024-12-12T07:59:24.600+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-12-12T07:59:24.694+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-12T07:59:24.695+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=create_dm_tables, task_id=create_conversion_rates_holidays, run_id=manual__2024-12-12T07:58:00.468362+00:00, execution_date=20241212T075800, start_date=20241212T075800, end_date=20241212T075924
+[2024-12-12T07:59:24.719+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-12T07:59:24.738+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-12T07:59:24.741+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
